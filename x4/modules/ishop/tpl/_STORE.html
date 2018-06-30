@@ -1,0 +1,38 @@
+{%section:_STORE%}
+
+<div class="panel-body">
+    <div class="col-lg-6">
+        {%if('{F:action}'=='edit')%}
+
+        <form id="edit_STORE" name="edit_STORE">
+            {%else%}
+
+            <form id="create_STORE" name="create_STORE">
+                {%endif%}
+
+                <div class="form-group">
+                    <label>{store_name}</label>
+                    <input id="Name" name="Name" class="validate[required,custom[alpha]] form-control" placeholder="">
+                </div>
+
+
+                <div class="form-group">
+                    <label>{store_id}</label>
+                    <input id="storeId" name="storeId" class="validate[required,custom[alpha]] form-control">
+                </div>
+
+                <div class="form-group">
+                    <label>{store_address}</label>
+                    <input id="storeAddress" name="storeAddress" class="form-control">
+                </div>
+
+            </form>
+
+
+            <a class="btn btn-primary save" href="#">{save}</a>
+
+
+    </div>
+</div>
+{%endsection:_STORE%}
+

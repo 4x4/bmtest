@@ -1,0 +1,46 @@
+@Ассист Беларусь
+
+
+{%section:assist.paysystem%}
+{%F:#tpl(TMS:load({"module":"ishop","prefix":"MODULES","path":"ishop/tpl/commonPaysystemSections.html"}))%}
+<div class="panel-body">
+    <div class="col-lg-8">
+        <form id="edit_PAYSYSTEM">
+            <input type="hidden" name="paysystem" value="assist">
+
+            {%F:@t(TMS:parse({"section":"commonPaysystemSections"}))%}
+
+
+            <div class="form-group">
+                <label>{Merchant_id}</label> <input class="form-control" lass="required" name=
+                    "Merchant_ID" value="">
+            </div>
+
+            <div class="form-group">
+                <div class="checkbox i-checks">
+                    <label><input type="checkbox" id="test" name="test"><i></i>
+                        {test_server}</label>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label>{currency}</label> <input class="form-control" name="currency">
+
+            </div>
+
+
+            <div class="form-group">
+                <label>{return_url}</label> <input class="form-control"
+                                                   name="URL_RETURN_OK" value="">
+            </div>
+
+            <div class="form-group">
+                <label>{return_url_fail}</label><input class="form-control" name="URL_RETURN_NO" value="">
+            </div>
+        </form>
+        <a class="btn btn-primary save" href="#">{save}</a>
+    </div>
+</div>
+
+{%endsection:assist.paysystem%}

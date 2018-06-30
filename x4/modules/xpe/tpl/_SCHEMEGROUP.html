@@ -1,0 +1,52 @@
+{%section:_SCHEMEGROUP%}
+
+
+<div class="m-t-lg m-l-sm">
+
+    <div class="col-sm-8">
+        <div class="panel-body">
+            {%if('{F:action}'=='edit')%}
+
+            <form id="edit_SCHEMEGROUP" name="edit_SCHEMEGROUP">
+                {%else%}
+
+                <form id="create_SCHEMEGROUP" name="create_SCHEMEGROUP">
+                    {%endif%}
+
+
+                    <div class="m-t-sm object-data">
+
+                        <div class="form-group">
+                            <label>{group_name}</label><input id="Name" name="Name"
+                                                              class="validate[required] form-control" placeholder="">
+                        </div>
+
+                        <div class="form-group">
+                            <label>{group_alias}</label><input id="Alias" name="Alias"
+                                                               class="validate[required] form-control" placeholder="">
+                        </div>
+
+
+                        <a class="btn btn-sm btn-primary m-b-sm addSchemaElement">
+                            <i class="fa fa-plus text"></i> <span class="text"> {add_scheme_item}</span>
+                        </a>
+
+                        <div id="SchemeItemList" style="min-height:400px"></div>
+
+
+                    </div>
+
+                    <a href="#" class="btn btn-success save">{apply}</a>
+
+                    {%if('{F:action}'=='edit')%}
+                    <a class="btn btn-primary saveback" href="#">{save}</a>
+                    {%endif%}
+
+        </div>
+
+        </form>
+
+    </div>
+
+
+    {%endsection:_SCHEMEGROUP%}

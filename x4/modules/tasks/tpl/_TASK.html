@@ -1,0 +1,59 @@
+{%section:_TASK%}
+
+
+<div class="m-t-lg m-l-sm">
+
+    <div class="col-sm-8">
+        <div class="panel-body">
+            {%if('{F:action}'=='edit')%}
+
+            <form id="edit_TASK" name="edit_TASK">
+                {%else%}
+
+                <form id="create_TASK" name="create_TASK">
+                    {%endif%}
+
+
+                    <div class="m-t-sm object-data">
+
+                        <div class="form-group">
+                            <label>{task_name}</label><input id="task_name" name="task_name"
+                                                             class="validate[required] form-control" placeholder="">
+                        </div>
+
+
+                        <div class="form-group">
+                            <label>{task_method}</label>
+
+                            <select id="task_method" name="task_method" class="chosen-select form-control"> </select>
+
+                        </div>
+
+                        <div class="form-group">
+                            <label>{task_params}</label>
+                            <textarea id="task_params" name="task_params"
+                                      class="validate[required] form-control"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label>{task_period}</label><input id="period" name="period"
+                                                               class="validate[required] form-control" placeholder="">
+                        </div>
+
+
+                    </div>
+
+                    <a href="#" class="btn btn-success save">{apply}</a>
+
+                    {%if('{F:action}'=='edit')%}
+                    <a class="btn btn-primary saveback" href="#">{save}</a>
+                    {%endif%}
+
+        </div>
+
+        </form>
+
+    </div>
+
+
+    {%endsection:_TASK%}

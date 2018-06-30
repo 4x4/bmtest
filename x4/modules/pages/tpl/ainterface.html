@@ -1,0 +1,90 @@
+{%section:showLevelMenu%}
+
+<p class="title">{select_group_to_display_the_menu}</p>
+
+
+<div class="input-group">
+
+    <input id="showGroup" readonly class="form-control validate-selection xoad-ignore"/>
+    <span class="input-group-btn">
+                                <a class="xList btn btn-default" data-wintext="{select_group_to_display_the_menu}"
+                                   data-callback="pages.onDialogGroup" data-destination="showGroup" data-topindex="45"
+                                   data-info="_GROUP,_DOMAIN,_LVERSION"> <i class="fa fa-css3"></i> Выбрать</a>                                                     <input
+            type="hidden" id="ancestorId" name="ancestorId"></span>
+    <input id="showGroupId" type="hidden"/>
+</div>
+
+
+<div class="form-group">
+    <h5>{template_menu}</h5>
+    <select class="form-control" id="menuTemplate" name="menuTemplate"></select>
+
+</div>
+
+<div class="form-group">
+    <h5>{number_of_levels_in_the_menu}</h5>
+    <input class="form-control" id="levels" name="levels" value="1"></select>
+    <span class="help-block m-b-none">{0_mean_to_show_the_menu_for_this_level}</span>
+
+</div>
+
+<div class="form-group">
+    <div class="checkbox i-checks">
+        <label>
+            <input type="checkbox" name="siteMap">
+            <i></i>{use_as_sitemap}</label>
+    </div>
+
+
+</div>
+
+
+<!--
+<ul class="chk">
+  <li>
+    <input id="dynamicAdapt" name="dynamicAdapt" type="checkbox" shows="_upLevels">
+    {show_up_to_the_selected_menu_item}    
+  </li>    
+</ul>
+
+
+<div id="_upLevels">
+    <p>{show_up_level_interval}</p>
+    <input id="upLevels" type="text" value='0'/>
+</div>
+
+
+<p>{separate_menus_for_columns}</p>
+<p style="font-weight:normal">{if_0_not_to_share_objects} </p>
+<input id="objectInRows" type="text" value='0'/>
+-->
+{%endsection:showLevelMenu%}
+
+{%section:showPath%}
+
+<div class="form-group">
+    <h5>{template_display_ways}</h5>
+    <select class="form-control" id="Template" name="Template"></select>
+
+</div>
+
+
+<div class="form-group">
+    <div class="checkbox i-checks">
+        <label>
+            <input id="HideRootPage" name="HideRootPage" type="checkbox">
+            <i></i>{hideRootPage}</label>
+    </div>
+</div>
+
+{%endsection:showPath%}
+
+
+{%section:showUserMenu%}
+<p>{select_menu}</p>
+<select id="menu" class="requiired validate-selection">
+</select>
+<p>{select_template}</p>
+<select id="Template" class="required validate-selection">
+</select>
+{%endsection:showUserMenu%} 

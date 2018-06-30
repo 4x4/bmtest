@@ -1,0 +1,104 @@
+{%section:webpay%}
+
+
+     {%if('{F:wsb_test_server}'=='1')%}
+        <form id="webpayForm" action="https://securesandbox.webpay.by/" method="post">
+        {%else%}
+        <form  id="webpayForm" action="https://payment.webpay.by" method="post">
+        
+    {%endif%}
+    
+    <input type="hidden" name="*scart">
+    <input type="hidden" name="wsb_version" value="2">
+    <input type="hidden" name="wsb_language_id" value="russian">
+    <input type="hidden" name="wsb_currency_id" value="{%F:wsb_currency_id%}" >
+    
+    
+    {%if('{F:wsb_test}'=='1')%}
+        <input type="hidden" name="wsb_test" value="1">
+    {%endif%}
+    
+    <input type="hidden" name="wsb_storeid" value="{%F:wsb_storeid%}" >
+    <input type="hidden" name="wsb_store" value="{%F:wsb_store%}" >
+    <input type="hidden" name="wsb_order_num" value="{%F:wsb_order_num%}" >
+    
+    
+    
+    <input type="hidden" name="wsb_seed" value="{%F:wsb_seed%}">
+    <input type="hidden" name="wsb_return_url" value="{%F:wsb_return_url%}">
+    <input type="hidden" name="wsb_cancel_return_url" value="{%F:wsb_cancel_return_url%}">
+    <input type="hidden" name="wsb_notify_url" value="{%F:wsb_notify_url%}">
+    
+    <input type="hidden" name="wsb_email" value="{%F:wsb_email%}" >
+    <input type="hidden" name="wsb_phone" value="{%F:wsb_phone%}" >
+
+    <!--{%F:webpay_ishop_currency%}-->
+    
+    {%each({F:cartItems},k,item)%}    
+        <input type="hidden" name="wsb_invoice_item_name[]" value="{%F:item>object>_main>Name%}">
+        <input type="hidden" name="wsb_invoice_item_quantity[]" value="{%F:item>count%}">
+        <input type="hidden" name="wsb_invoice_item_price[]" value="{%F:item>price%}">
+    {%endeach%}
+    
+    <input type="hidden" name="wsb_total" value="{%F:wsb_total%}" >
+    
+    <input type="hidden" name="wsb_signature" value="{%F:wsb_signature%}" >
+    
+    
+    
+    {%if('{F:wsb_tax}')%}
+        <input type="hidden" name="wsb_tax" value="">
+    {%endif%}
+    
+   {%if({F:wsb_shipping_name})%}
+        <input type="hidden" name="wsb_shipping_name" value="{%F:wsb_shipping_name%}" >
+    {%endif%}
+    
+    {%if('{F:wsb_shipping_price}')%}
+    <input type="hidden" name="wsb_shipping_price" value="{%F:wsb_shipping_price%}" >
+    {%endif%}
+    
+    {%if('{F:wsb_discount_name}')%}
+        <input type="hidden" name="wsb_discount_name" value="Скидка на товар" >
+    {%endif%}
+    
+    {%if({F:wsb_discount_price})%}    
+        <input type="hidden" name="wsb_discount_price" value="{%F:wsb_discount_price%}" >
+    {%endif%}
+	
+    
+</form>
+<script>
+document.getElementById('webpayForm').submit();
+</script>
+
+{%endsection:webpay%}
+
+
+{%section:fail%}
+<div class="dotted_content">
+                    <div class="zakaz_priniat">
+						<p class="red_title35">Оплата вашего заказа отменена</p>     
+						</div>
+						</div>
+
+{%endsection:fail%}
+
+
+{%section:success%}
+
+     <div class="dotted_content">
+                    <div class="zakaz_priniat">
+						<p class="red_title35">Ваш заказ успешно оплачен</p>     
+						<ul>
+							<li>Номер заказа: <strong>{%F:orderData>id%}</strong>  на сумму <strong>{%F:orderData>orderSums>orderTotalSum%} </strong>руб.</li>
+							<li>Клиент:{%F:orderData>client>surname%} {%F:orderData>client>name%}  {%F:orderData>client>lastname%} {%F:orderData>client>surname%}</li>
+							<li>Тип доставки: <strong>{%F:orderData>deliveryData>params>Name%} </strong></li>
+					</ul>
+                        
+                        <a href="/" class="big_red_button">Продолжить покупки</a>
+                    </div>
+      </div>
+
+{%endsection:success%}
+

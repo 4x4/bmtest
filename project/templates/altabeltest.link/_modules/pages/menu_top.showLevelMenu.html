@@ -1,0 +1,40 @@
+{%F:@s(D:getVars())%}
+              
+{%section:_menu_main_level0%}
+    
+    <ul class="nav navbar-nav navbar-left">
+          
+        {%F:@catalogMenu(E:callModuleAction({"module":"catalog","params":{"_Action":"showCatalogMenu","_Priority":"2","sourceCatGroupId":"60902","menuTemplate":"menu_top.showCatalogMenu.html","DestinationPage":"8714","Level":"1","_Cache":"1","_cacheLevel":"dynamic"}}))%} 
+
+        {%F:menuItems%}
+          
+    </ul>
+   
+{%endsection:_menu_main_level0%}
+
+{%section:_menu_item_level0%}
+
+    <li {%if('{F:submenu}')%}class="dropdown_hover"{%endif%}><a href="{%F:link%}" {%if('{F:selected}'=='1'||'{F:branch}'=='1')%} class="active"{%endif%}>{%F:Name%}</a>{%F:submenu%}</li>
+
+{%endsection:_menu_item_level0%}
+
+
+
+{%section:_menu_main_level1%}
+
+    <ul class="dropdown-menu">
+        <li>
+        
+        {%F:menuItems%}
+        
+        </li>
+    </ul>
+
+{%endsection:_menu_main_level1%}
+
+{%section:_menu_item_level1%}
+
+<a href="{%F:link%}" {%if('{F:selected}'=='1')%} class="active"{%endif%}>{%F:Name%}</a>
+
+{%endsection:_menu_item_level1%}
+

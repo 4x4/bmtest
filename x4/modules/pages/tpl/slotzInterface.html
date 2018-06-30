@@ -1,0 +1,117 @@
+<div class="slotzEditorSlider panel-body dker">
+
+    <div class="unoSlider">
+        <ul style="padding-left:0px">
+
+            <li class="current slide">
+
+
+                <section class="row m-l-none m-r-none m-b text-center modules-list modulesList">
+
+
+                </section>
+
+
+            </li>
+
+            <li class="slide">
+                <div class="row modules actions">
+                    <div class="action col-md-5">
+
+                        <aside class="aside-l padder">
+                            <h4 class="wrapper header">{choose_action}</h4>
+                            <ul class="nav chooseAction">
+                            </ul>
+                        </aside>
+
+                    </div>
+
+                    <div class="action-info-right col-lg-7">
+                        <form id="slotz_moduleTunesForm">
+                            <div class="row">
+                                <div class="form-group col-sm-4">
+                                    <label class="control-label">{execution_priority}</label>
+                                    <select name="_Priority" class="form-control " id="_Priority">
+                                        <option value="auto">{auto}</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group col-sm-3 m-l-sm">
+                                    <label class="control-label">{cache_this_module}</label>
+                                    <input id="_Cache" name="_Cache" type="checkbox" class="form-control">
+
+                                </div>
+
+                                <div class="form-group col-sm-4 m-l-sm">
+                                    <label class="control-label">{cache_type}</label>
+                                    <select name="_cacheLevel" class="input-sm form-control" id="_cacheLevel">
+                                        <option value="dynamic">{dynamic}</option>
+                                        <option value="static">{static}</option>
+
+                                    </select>
+
+                                </div>
+
+
+                            </div>
+
+                            <div class="form-group m-t-sm">
+                                <input id="_Alias" name="_Alias" placeholder="{module_name_in_slot}"
+                                       class="form-control"/>
+                            </div>
+                            <div class="line line-dashed b-b line-lg pull-in"></div>
+
+
+                            <section class="panel panel-default" style="height:400px; overflow-y:auto">
+
+                                <div class="panel-body actionInfo padder">
+
+                                </div>
+
+                                <div class="panel-body secondaryAction padder" style="display:none">
+
+                                </div>
+
+                            </section>
+
+
+                        </form>
+
+
+                    </div>
+
+
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="hide nav-buttons m-sm">
+        <div class="col-md-4">
+            <a class="btn btn-s-md btn-default btn-rounded prev" href="#">{back}</a>
+        </div>
+
+        <div class="col-md-8 text-right">
+            <a href="#" class="btn hide btn-success btn-rounded save-and-close-slot">{save_and_close_window}</a>
+        </div>
+
+    </div>
+
+</div>
+
+<!--
+
+  <input id="article" class="inp article" />
+                            <input type="hidden" id="articleId" class="inp article" />
+
+                            <a href="#" callback="pages.onDialogGroup" topIndex="50" destination="article" class="button-light folders xList">Выбрать<span></span></a>
+
+-->

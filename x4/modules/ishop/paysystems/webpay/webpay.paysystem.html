@@ -1,0 +1,77 @@
+@Платежная система Webpay(Беларусь)
+
+{%section:webpay.paysystem%}
+{%F:#tpl(TMS:load({"module":"ishop","prefix":"MODULES","path":"ishop/tpl/commonPaysystemSections.html"}))%}
+<div class="panel-body">
+
+
+    <form id="edit_PAYSYSTEM">
+        <div class="row">
+            <div class="col-lg-5">
+
+                <input type="hidden" name="paysystem" value="webpay">
+
+                {%F:@t(TMS:parse({"section":"commonPaysystemSections"}))%}
+
+
+                <div class="form-group">
+                    <p>{webpay_store_id}</p> <input class="form-control" name="wsb_storeid" value="">
+                </div>
+
+                <div class="form-group">
+                    <p>{webpay_store_name}</p> <input class="form-control" name="wsb_store" value="">
+                </div>
+
+
+                <div class="form-group">
+                    <div class="checkbox i-checks">
+                        <label>
+                            <p><input type="checkbox" id="wsb_test_server" name="wsb_test_server"><i></i>{wsb_test_server}
+                            </p>
+                        </label>
+                    </div>
+                    <div class="checkbox i-checks">
+                        <label>
+                            <p><input type="checkbox" id="wsb_test" name="wsb_test"><i></i>{webpay_enable_test_mode}</p>
+                        </label>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <p>{webpay_ishop_currency}</p> <input class="form-control" name="wsb_currency_id" value="">
+                </div>
+
+
+                <div class="form-group">
+                    <p>{secret_key}</p> <input class="form-control" name="secret_key" value="">
+                </div>
+
+                <div class="form-group">
+                    <p>{wsb_return_url}</p> <input class="form-control" name="wsb_return_url" value="">
+                </div>
+
+
+                <div class="form-group">
+                    <p>{wsb_cancel_return_url}</p> <input class="form-control" name="wsb_cancel_return_url" value="">
+                </div>
+
+
+                <div class="form-group">
+                    <p>{wsb_notify_url}</p> <input class="form-control" name="wsb_notify_url" value="">
+                </div>
+
+
+    </form>
+    <a class="btn btn-primary save" href="#">{save}</a>
+
+</div>
+
+{%endsection:webpay.paysystem%}
+
+<!--<input type="hidden" name="wsb_currency_id" value="BYR" >
+<input type="hidden" name="wsb_signature" value="40aa8af3ce7a1f7c3635ac2227475094a59d574c" >
+<input type="hidden" name="wsb_seed" value="1242649174">
+-->
+
+

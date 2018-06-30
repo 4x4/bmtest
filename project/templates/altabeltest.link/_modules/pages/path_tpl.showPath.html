@@ -1,0 +1,38 @@
+{%section:_bones%}
+
+
+<div class="breadcrumbs_section" style="margin-bottom:15px">
+    <div class="row align-middle">
+        <div class="column small-9 large-9 text-left">
+            <ul class="breadcrumbs">
+                {%->:bones_item%}
+            </ul>
+        </div>
+        <div class="column small-9 large-9 text-right">
+            <div class="button_block">
+                <a href="#" class="left_arrow"><i class="ion-android-arrow-back"></i></a>
+                <a href="#" class="center_button"><i class="ion-android-apps"></i></a>
+                <a href="#" class="right_arrow"><i class="ion-android-arrow-forward"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{%endsection:_bones%}
+
+{%section:_bones_item->bones_item%}   
+
+    <li><a href="{%F:link%}">{%F:name%}</a></li>
+          
+{%endsection:_bones_item%}        
+
+
+{%section:_bones_item_no_link->bones_item%}
+
+<li class="current">{%F:name%}</li>
+
+{%endsection:_bones_item_no_link%}
+
+{%section:_bones_delimiter%}
+
+{%endsection:_bones_delimiter%}

@@ -1,0 +1,19 @@
+@Оплата наличными
+
+
+{%section:cash.paysystem%}
+{%F:#tpl(TMS:load({"module":"ishop","prefix":"MODULES","path":"ishop/tpl/commonPaysystemSections.html"}))%}
+<div class="panel-body">
+    <div class="col-lg-8">
+        <form id="edit_PAYSYSTEM">
+            <input type="hidden" name="paysystem" value="cash">
+
+            {%F:@t(TMS:parse({"section":"commonPaysystemSections"}))%}
+
+
+        </form>
+        <a class="btn btn-primary save" href="#">{save}</a>
+    </div>
+</div>
+
+{%endsection:cash.paysystem%}

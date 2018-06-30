@@ -1,0 +1,22 @@
+{%section:popupChanger%}
+
+
+<div class="m-t-lg m-l-sm">
+
+    <div class="form-group">
+        <h5>{select_an_article}</h5>
+        <div class="input-group">
+            <input id="contentSource" name="contentSource" readonly class="form-control xoad-ignore">
+            <span class="input-group-btn"><a href="#"
+                                             data-wintext="{content_situation}" data-winwidth="500"
+                                             data-callback="content.onDialogGroupFull"
+                                             data-destination="contentSource" data-topindex="105"
+                                             data-info="_CONTENT" class="xList btn btn-default">
+              {choose}</a> <input name="contentSourceId" id="contentSourceId" type="hidden"></span>
+        </div>
+    </div>
+
+</div>
+
+
+{%endsection:popupChanger%}

@@ -1,0 +1,180 @@
+<div class="input-group">
+    <input id="ctg_" name="ctg_" readonly class=
+            "form-control validate-selection xoad-ignore">
+    <span class="input-group-btn"><a href="#"
+                                     data-wintext="{news_situation}" data-winwidth=
+                                             "500" data-on-data-return=
+                                             "news.onTreeDialogReturn" data-callback=
+                                             "news.onDialogGroup" data-destination="ctg_"
+                                     data-topindex="45" data-info="_NEWSGROUP" class=
+                                             "xList btn btn-default"> {choose}</a>
+                  <input class="form-control" name="ctg_id" id=
+                          "ctg_id" type="hidden"></span>
+</div>
+</div>
+
+{%section:_NEWS%}
+
+{%F:#tpl(TMS:load({"module":"content","prefix":"MODULES","path":"content/tpl/commonSections.html"}))%}
+
+
+<div class="m-t-lg m-l-sm">
+    <div class="btn-group">
+        <button class="btn btn-info btn-switch" data-target="object-data" type="button">{news_data}</button>
+        <button class="btn btn-switch" data-target="author-data" type="button">{author_data}</button>
+        <button class="btn btn-switch" data-target="meta-data" type="button">{seo_data}</button>
+    </div>
+</div>
+
+
+<div class="col-sm-8">
+    <div class="panel-body">
+        {%if('{F:action}'=='edit')%}
+
+        <form id="edit_NEWS" name="edit_NEWS">
+            {%else%}
+
+            <form id="create_NEWS" name="create_NEWS">
+                {%endif%}
+
+
+                <div class="m-t-sm author-data hide">
+
+                    <div class="form-group"><label>{choose_author}</label>
+
+                        <div class="input-group">
+                            <input id="author" name="author" readonly class=
+                                    "form-control validate-selection xoad-ignore">
+                            <span class="input-group-btn"><a href="#"
+                                                             data-wintext="{author_situation}" data-winwidth=
+                                                                     "500" data-on-data-return=
+                                                                     "fusers.onTreeDialogReturnFusers" data-callback=
+                                                                     "fusers.onDialogGroupFusers"
+                                                             data-destination="author"
+                                                             data-topindex="45" data-info="_FUSER" class=
+                                                                     "xList btn btn-default"> {choose}</a>
+                  <input class="form-control" name="author_id" id=
+                          "authorId" type="hidden"></span>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="m-t-sm meta-data hide">
+                    {%F:@t(TMS:parse({"section":"seoparams"}))%}
+                </div>
+
+
+                <div class="m-t-sm object-data">
+                    <div class="form-group">
+                        <label>{news_title}</label><input id="header" name=
+                            "header" class="validate[required,custom[alphaExt]] form-control"
+                                                          placeholder="">
+                    </div>
+
+
+                    <div class="form-group"><label>{image}</label>
+                        <div class="input-group">
+                            <input class="form-control validate-selection text-sm" readonly name="image" id="image">
+                            <span class="input-group-btn">
+                                          <a class="fileManagerApplyButton btn btn-default">
+                                           <i class="fa fa-folder-open-o"></i></a>  </span>
+                            <span class="input-group-btn">
+                                             <a class="fileManagerClearInput btn btn-default"> <i
+                                                     class="fa fa-times"></i></a>
+                                                </span>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>{show_news_in_groups}</label>
+
+                        <div class="newsCategories">
+
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-inline">
+                            <div class="form-group">
+                                <label>{publication_date}</label>
+
+                                <div class="input-group">
+                                    <input name="news_date" type="text"
+                                           data-format="dd/MM/yyyy hh:mm:ss" size="24"
+                                           class="datepicker-input form-control validate[required]">
+                                    <span class="add-on input-group-btn">
+                      <a class=" btn btn-default">      <i data-time-icon="fa fa-clock-o"
+                                                           data-date-icon="fa fa-calendar" class=""></i> </a>
+                   </span>
+
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label>{end_date}</label>
+                                <div class="input-group">
+                                    <input name="news_end" type="text"
+                                           data-format="dd/MM/yyyy hh:mm:ss" size="23"
+                                           class="datepicker-input form-control">
+                                    <span class="add-on input-group-btn">
+                      <a class="btn btn-default">      <i data-time-icon="fa fa-clock-o" data-date-icon="fa fa-calendar"
+                                                          class=""></i> </a>
+                   </span>
+
+                                    <span class="input-group-btn">
+                                             <a class="clearNearest btn btn-default"> <i class="fa fa-times"></i></a>                                                                                 
+                   </span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group m-t-sm"><label>{short_text_news}</label>
+                        <span class="pull-right">
+                  <a href="#" class="btn btn-xs btn-default editorApplyButton">{initiate-editor}</a></span>
+                        <textarea rows="4" class="form-control ck-apply" id="news_short" name="news_short"></textarea>
+                    </div>
+
+
+                    <div class="form-group"><label>{news_long}</label>
+                        <span class="pull-right">
+                  <a href="#" class="btn btn-xs btn-default editorApplyButton">{initiate-editor}</a></span>
+                        <textarea rows="6" class="form-control ck-apply" id="news_long" name="news_long"></textarea>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>{tags_news}</label>
+
+                        <select id="tags" data-placeholder="{tags_news}" multiple name="tags"
+                                class="chosen-select form-control tagManSource">
+
+                        </select>
+                    </div>
+
+
+                </div>
+
+
+                <a href="#" class="btn btn-success save">{apply}</a>
+
+                {%if('{F:action}'=='edit')%}
+                <a class="btn btn-primary saveback" href="#">{save}</a>
+                {%endif%}
+    </div>
+    </form>
+
+</div>
+
+
+{%endsection:_NEWS%}

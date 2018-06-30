@@ -1,0 +1,77 @@
+{%section:tunes%}
+<div class="form-block wide880">
+
+    <form id="tunes_forms">
+            <ul>
+
+              <li>
+                <p class="title">{default_form_template}</p>
+                <select name="Template" id="Template" class="inp">
+                </select>              
+              </li>
+    
+    <li>
+    <p>{default_charset}</p>
+    <select id="charset" name="charset" class="inp">
+      <option value="utf-8">utf-8</option>
+      <option value="windows-1251">windows-1251</option>
+    </select>
+    </li>
+    
+    <li>
+    <p>{default_timeout}</p>
+    <input type="text" name="timeout" id="timeout" value="60" class="inp" />
+    </li>
+    
+    <li>
+    <p>{default_message_after_sending}</p>
+    <textarea name="message_after" id="message_after" class="inp"></textarea>
+    </li>
+    
+    
+      <li>
+        <input type="checkbox" name="save_to_server" id="save_to_server" class="inp" />
+        {saves_the_results_to_the_server}
+      </li>
+      <li>
+        <input type="checkbox" id="use_captcha" name="use_captcha" class="inp" />
+        {use_the_CAPTCHA}
+      </li>
+      <li>
+        <input type="checkbox" name="async" class="inp" />
+        {async}
+      </li>
+      
+<li>
+    <p>{complexity_recognizers_CAPTCHA}</p>
+    <select id="captcha_settings" name="captcha_settings" class="inp">
+      <option value="4-110">{captcha_easy}</option>
+      <option value="6-145">{captcha_medium}</option>
+      <option value="10-210">{captcha_high}</option>
+      <option value="14-265">{captcha_very_high}</option>
+    </select>
+</li>
+
+
+<li>
+        <input type="checkbox" name="auto_save" class="inp" />
+        {auto_save}
+      </li>
+      
+<li>
+    <p>{auto_save_time}</p>
+    <select id="auto_save_time" name="auto_save_time" class="inp">
+      <option value=""></option>
+      <option value="5">{5 min}</option>
+      <option value="10">{10 min}</option>
+    </select>
+</li>
+    
+              </ul>
+              </form>
+              
+            <a href="#" id="saveFormsTunes" class="green-button save">{save}</a>  
+                     
+
+</div>
+{%endsection:tunes%}

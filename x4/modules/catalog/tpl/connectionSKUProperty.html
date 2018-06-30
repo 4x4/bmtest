@@ -1,0 +1,36 @@
+{%section:connectionSKUProperty%}
+
+<div class="form-group">
+    <label>{{alias}}</label>
+    <div style="height:180px" id="{{basic}}_datalist"
+         class="datalist  list-group gutter list-group-lg list-group-sp "></div>
+
+    <span class="input-group-btn"><a href="#" data-connection="{{basic}}"
+                                     data-wintext="{catobj_situation}" data-winwidth="500"
+                                     data-callback="catalog.onConnectionSKUDialog"
+                                     data-destination="ancestor" data-topindex="45"
+                                     data-info="_SKU" class="xList btn btn-default">
+              {choose}</a> <input name="{{basic}}" id="{{basic}}"
+                                  type="hidden"></span>
+
+</div>
+
+
+{%endsection:connectionSKUProperty%}
+
+
+{%section:connectionSKUPropertyOptions%}
+
+   <div class="form-group">
+
+
+    <div class="checkbox i-checks">
+        <label>
+            <input type="checkbox" id="optionsCalculate" name="options.calculate">
+            <i></i> {calculate_connected_objects}</label>
+    </div>
+
+</div>
+
+
+{%endsection:connectionSKUPropertyOptions%}

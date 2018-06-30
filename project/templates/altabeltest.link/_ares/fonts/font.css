@@ -1,0 +1,35 @@
+@font-face {
+    font-family: 'BMWGroupCondensed-Regular';
+    src: url('BMWGroupCondensed-Regular.woff') format('woff'),
+    url('BMWGroupCondensed-Regular.ttf') format('truetype'),
+    url('BMWGroupCondensed-Regular.svg#BMWGroupCondensed-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'BMWGroup_Cond_Regular';
+    src: url('BMWGroup_Cond_Regular.eot');
+    src: url('BMWGroup_Cond_Regular.woff2') format('woff2'),
+    url('BMWGroup_Cond_Regular.eot?#iefix') format('embedded-opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'BMWGroupCondensed-Bold';
+    src: url('BMWGroupCondensed-Bold.woff') format('woff'),
+    url('BMWGroupCondensed-Bold.ttf') format('truetype'),
+    url('BMWGroupCondensed-Bold.svg#BMWGroupCondensed-Bold') format('svg');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'BMWGroup_Cond_Bold';
+    src: url('BMWGroup_Cond_Bold.eot');
+    src: url('BMWGroup_Cond_Bold.woff2') format('woff2'),
+    url('BMWGroup_Cond_Bold.eot?#iefix') format('embedded-opentype');
+    font-weight: 700;
+    font-style: normal;
+}

@@ -1,0 +1,2353 @@
+@show product
+  
+  
+{%F:#e(D:dump({"value":"{F:connectedObjects}"}))%}
+{%F:#e(D:dump({"value":"{F:extended}"}))%}
+{%section:catalogObject%} 
+
+{%F:#tpl(TMS:load({"path":"altabeltest.link/_modules/extend/phones.html"}))%}
+
+
+{%F:#b(TPA:setGlobalField({"useOneColumn":"0"}))%}
+
+	<main class="main">
+		<div class="col col-1_2">
+			<div id="firstBlock" class="block">
+				<div class="col">
+					<div class="title-block">Customer Data and Position</div>
+				</div>
+				<div class="accardion">
+					<div id="customerDaP" class="accardion-header">
+						<span class="more">More details <img src="{%F:ARES%}img/png/arrow-down.png" alt=""></span>
+						<span class="less">Less details <img src="{%F:ARES%}img/png/arrow-up.png" alt=""></span>
+					</div>
+					<div class="accardion-content">
+						<div class="col col-1_3">
+							<div class="item">
+								<span class="title">Title:</span>
+								<span class="text">Mr</span>
+							</div>
+							<div class="item">
+								<span class="title">First name:</span>
+								<span class="text">John</span>
+							</div>
+							<div class="item">
+								<span class="title">Last name:</span>
+								<span class="text">Muller</span>
+							</div>
+							<div class="item">
+								<span class="title">Phone number:</span>
+								<span class="text">+49 89 1250 16000</span>
+							</div>
+							<div class="item">
+								<span class="title">Email:</span>
+								<span class="text">johnmullertest@gmail.com</span>
+							</div>
+							<div class="item">
+								<span class="title">Alias:</span>
+								<span class="text">johnmuller</span>
+							</div>
+							<div class="item">
+								<span class="title">Home address:</span>
+								<span class="text">Karl-Liebknecht-Str.</span>
+							</div>
+							<div class="item">
+								<span class="title">Home town:</span>
+								<span class="text">Berlin</span>
+							</div>
+							<div class="item">
+								<span class="title">Country:</span>
+								<span class="text">Germany</span>
+							</div>
+							<div class="item">
+								<span class="title">HMI language:</span>
+								<span class="text">de_DE</span>
+							</div>
+							<div class="item">
+								<span class="title">ConnectedDrive username:</span>
+								<span class="text">johnmuller</span>
+							</div>
+						</div>
+						<div class="col col-1_3">
+							<div class="item">
+								<span class="title">Position:</span>
+								<span id="nowPosition" class="text">Karl-Liebknecht-Str. 7E 10178 Berlin, Germany</span><br>
+								<span class="text">N 520 31’ 12.023’’, E 130 24’ 17.834’’<br>N 52.52, E 13.405</span>
+							</div>
+							<div class="item">
+								<span class="title">Heading:</span>
+								<span class="text">North (00)</span>
+							</div>
+							<div class="item">
+								<span class="title">Altitude:</span>
+								<span class="text">0m</span>
+							</div>
+						</div>
+						<div class="col col-1_3"></div>
+					</div>
+					<div class="driver-information">
+						<div class="driver-auto">
+							<img src="{%F:ARES%}img/svg/bmw-logo.svg" alt="">
+						</div>
+						<div class="driver-lang">
+							<img src="{%F:ARES%}img/png/flags/ger.png" alt="">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="secondBlock" class="block">
+				<div class="col">
+					<div class="title-block">Destination</div>
+				</div>
+				<div class="container">
+					<div class="col col-1_3">
+						<div class="item">
+							<span class="title">Destination:</span>
+							<span class="text">Karl-Liebknecht-Str. 7E 10178 Berlin, Germany</span>
+						</div>
+					</div>
+					<div class="col col-1_3">
+						<div class="item">
+							<span class="title">Distance:</span>
+							<span class="text">870 m</span>
+						</div>
+						<div class="item">
+							<span class="title">Time of arrival:</span>
+							<span class="text">15 minutes</span>
+						</div>
+					</div>
+					<div class="col col-1_3">
+						<div class="item">
+							<span class="title">Range:</span>
+							<span class="text">2 km</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="block-scroll">
+				<div class="block is-active">
+					<ul class="tabs" data-deep-link="true" data-update-history="true" data-deep-link-smudge="true" data-deep-link-smudge-delay="500" data-tabs id="deeplinked-tabs">
+						<li class="tabs-title is-active"><a href="#request" class="main-tabs" aria-selected="true">Request</a></li>
+						<li class="tabs-title"><a class="main-tabs" href="#report">Report</a></li>
+						<li class="tabs-title"><a href="#history" class="main-tabs">History</a></li>
+						<li class="tabs-title"><a id="reportTabs" href="#poi" class="main-tabs">POI</a></li>
+					</ul>
+
+					<div class="tabs-content" data-tabs-content="deeplinked-tabs">
+						<div class="tabs-panel is-active" id="request">
+							<div class="col">
+								<div class="title-block">Reroute to</div>
+								<div class="flex row-btn mb-28">
+									<a href="#" class="btn btn-color-orange">E-Call</a>
+									<a href="#" class="btn btn-color-blue">B-Call</a>
+									<a href="#" class="btn btn-color-dark">A-Call</a>
+									<a href="#" class="btn btn-color-brown">Hotline</a>
+								</div>
+								<div class="title-bold mb-16">I-Call</div>
+								<div class="item">
+									<span class="title">Started:</span>
+									<span class="text">2018-03-23 04:22 UTC</span>
+								</div>
+								<div class="item">
+									<span class="title">Last Event:</span>
+									<span class="text">2018-03-23 13:47 UTC - Assigned manually </span>
+								</div>
+								<div class="flex row-btn mt-16 mb-38">
+									<a href="#" class="btn btn-color-green updatePosition">Update Position</a>
+									<a href="#" id="closeTheCall" class="btn btn-color-red ml-auto disabled">Close The Call</a>
+								</div>
+							</div>
+
+							<div class="accardion-block">
+								<div class="accardion-block-header">Futher Call Options</div>
+								<div class="accardion-block-content">
+									<div class="col">
+										<a href="#" class="btn btn-color-float">Copy Request Status</a>
+									</div>
+								</div>
+							</div>
+
+							<div class="accardion-block">
+								<div class="accardion-block-header">Recall Information</div>
+								<div class="accardion-block-content">
+									<div class="col">
+										<div class="item">
+											<span class="text">There is no recall information for this VIN</span>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="accardion-block">
+								<div class="accardion-block-header">Vehicle Information</div>
+								<div class="accardion-block-content vehicleInformation">
+									<div class="flex">
+										<div class="col col-1_2">
+											<div class="item">
+												<span class="title">Country code:</span>
+												<span class="text">DE</span>
+												<span class="driver-lang">
+													<img src="{%F:ARES%}img/png/flags/ger.png" alt="">
+												</span>
+											</div>
+											<div class="item">
+												<span class="title">VIN:</span>
+												<span class="text">0000000000H007795</span>
+											</div>
+											<div class="item">
+												<span class="title">License plate:</span>
+												<span class="text">Maier</span>
+											</div>
+											<div class="item">
+												<span class="title">Account group:</span>
+												<span class="text">tsrm</span>
+											</div>
+											<div class="item">
+												<span class="title">Products:</span>
+												<span class="text">Remote Services, Concierge,
+												ConnectedDrive Services, BMW Apps,
+												Real Time Traffic Information, BMW Apps
+												Remote Rervices, Intelligent Emergency</span>
+											</div>
+											<div class="item">
+												<span class="title">Navigation system:</span>
+												<span class="text">yes</span>
+											</div>
+											<div class="item">
+												<span class="title">Device:</span>
+												<span class="text">TCB_NBT</span>
+											</div>
+											<div class="item">
+												<span class="title">Vehicle phone:</span>
+												<span class="text">882393722928939</span>
+												<a class="driver-lang">
+													<img src="{%F:ARES%}img/png/call.png" alt="">
+												</a>
+											</div>
+										</div>
+										<div class="col col-1_2">
+											<div class="item">
+												<span class="title">Brand:</span>
+												<span class="text">DE</span>
+											</div>
+											<div class="item">
+												<span class="title">Series:</span>
+												<span class="text">6</span>
+											</div>
+											<div class="item">
+												<span class="title">Basic model:</span>
+												<span class="text">640I</span>
+											</div>
+											<div class="item">
+												<span class="title">Body:</span>
+												<span class="text">Coupe</span>
+											</div>
+											<div class="item">
+												<span class="title">Model range:</span>
+												<span class="text">F13</span>
+											</div>
+											<div class="item">
+												<span class="title">Model key:</span>
+												<span class="text">LW32</span>
+											</div>
+											<div class="item">
+												<span class="title">Production date:</span>
+												<span class="text">Wed Mar 19 00:00:00</span>
+											</div>
+											<div class="item">
+												<span class="title">Color:</span>
+												<span class="text">Spacegray Metallic</span>
+											</div>
+											<div class="item">
+												<span class="title">Type of drive:</span>
+												<span class="text">Petrol</span>
+											</div>
+											<div class="item">
+												<span class="title">Type of hybrid:</span>
+												<span class="text">-</span>
+											</div>
+											<div class="item">
+												<span class="title">Drive type:</span>
+												<span class="text">Left-hand drive</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="accardion-block mb-38">
+								<div class="accardion-block-header">Dealer Information</div>
+								<div class="accardion-block-content">
+										<div class="col">
+										<div class="item">
+											<span class="text">Automag GmbH</span>
+											<span class="title">Home dealer</span>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="col">
+								<div class="title-block">Events</div>
+								<div class="item">
+									<span class="title">2018-03-23 13:47 UTC</span>
+									<span class="text">- Assigned manually</span>
+								</div>
+								<div class="item">
+									<span class="title">2018-03-23 13:47 UTC</span>
+									<span class="text">- Assigned manually</span>
+								</div>
+								<div class="item">
+									<span class="title">2018-03-23 13:47 UTC</span>
+									<span class="text">- Assigned manually</span>
+								</div>
+							</div>
+						</div>
+						<form class="tabs-panel" id="report">
+							<div class="col-row">
+								<div class="col col-2_5">
+									<div class="title-block">General</div>
+									<div class="form-item checkbox">
+				    					<input type="checkbox">
+				    					<span class="mr-14"></span>
+				    					<label for="">Reroute</label>
+				    				</div>
+				    				<div class="form-item checkbox">
+				    					<input type="checkbox">
+				    					<span class="mr-14"></span>
+				    					<label for="">SIXT customer</label>
+				    				</div>
+				    				<div class="form-item checkbox">
+				    					<input type="checkbox">
+				    					<span class="mr-14"></span>
+				    					<label for="">Technical problem</label>
+				    				</div>
+				    				<div class="form-item checkbox">
+				    					<input type="checkbox">
+				    					<span class="mr-14"></span>
+				    					<label for="">Test trigged by customer</label>
+				    				</div>
+				    				<div class="form-item checkbox">
+				    					<input type="checkbox">
+				    					<span class="mr-14"></span>
+				    					<label for="">Test trigged by BMW</label>
+				    				</div>
+				    				<div class="form-item checkbox">
+				    					<input type="checkbox">
+				    					<span class="mr-14"></span>
+				    					<label for="">Other</label>
+				    				</div>
+								</div>
+								<div class="col col-3_5">
+									<div class="title-block">I-Call</div>
+									<div class="form-item checkbox">
+				    					<input type="checkbox">
+				    					<span class="mr-14"></span>
+				    					<label for="">Address</label>
+				    				</div>
+				    				<div class="form-item checkbox">
+				    					<input type="checkbox">
+				    					<span class="mr-14"></span>
+				    					<label for="">Leisure activities, sport</label>
+				    				</div>
+				    				<div class="form-item checkbox">
+				    					<input type="checkbox">
+				    					<span class="mr-14"></span>
+				    					<label for="">Travel</label>
+				    				</div>
+				    				<div class="form-item checkbox">
+				    					<input type="checkbox">
+				    					<span class="mr-14"></span>
+				    					<label for="">RTTI</label>
+				    				</div>
+				    				<div class="form-item checkbox">
+				    					<input type="checkbox">
+				    					<span class="mr-14"></span>
+				    					<label for="">Weather</label>
+				    				</div>
+				    				<div class="form-item checkbox">
+				    					<input type="checkbox">
+				    					<span class="mr-14"></span>
+				    					<label for="">Parking</label>
+				    				</div>
+				    				<div class="form-item checkbox">
+				    					<input type="checkbox">
+				    					<span class="mr-14"></span>
+				    					<label for="">Charging stations</label>
+				    				</div>
+				    				<div class="form-item checkbox">
+				    					<input type="checkbox">
+				    					<span class="mr-14"></span>
+				    					<label for="">Acquaintance call</label>
+				    				</div>
+				    				<div class="form-item checkbox">
+				    					<input type="checkbox">
+				    					<span class="mr-14"></span>
+				    					<label for="">General inquiries about ConnectedDrive</label>
+				    				</div>
+				    				<div class="form-item checkbox">
+				    					<input type="checkbox">
+				    					<span class="mr-14"></span>
+				    					<label for="">Complaints</label>
+				    				</div>
+				    				<div class="form-item checkbox" id="otherComment">
+				    					<input type="checkbox" >
+				    					<span class="mr-14"></span>
+				    					<label for="">Other</label>
+				    				</div>
+				    				<div class="form-item">
+				    					<textarea name="" id="otherArea" disabled></textarea>
+				    				</div>
+								</div>
+							</div>
+							<hr noshade>
+							<div class="col-row">
+								<div class="col">
+									<div class="title-block">Additional note</div>
+									<div class="form-item" id="note">
+					    				<textarea maxlength="1024"></textarea>
+					    				<div class="form-item-count"><span>0</span>/1024</div>
+				    				</div>
+				    				<div class="flex align-right align-middle mt-16">
+										<div class="btns">
+											<a href="#" class="btn btn-color-grey mr-8 modal-cancel">Cancel</a>
+											<a href="#" class="btn btn-color-dark_grey createReport-save">Save</a>
+										</div>
+						    		</div>
+								</div>
+								<div class="col">
+									<div class="blue_table">
+						    			<div class="col-1_3"><div class="blue_table-title">Time</div></div>
+						    			<div class="col-1_3"><div class="blue_table-title">Agent</div></div>
+						    			<div class="col-1_3"><div class="blue_table-title">Note</div></div>
+							    	</div>
+								</div>
+								<div class="col">
+									<div class="flex row-btn">
+										<a id="fileReport" href="#" class="btn btn-color-green">File report</a>
+										<a id="closeCallOpen" href="#" class="btn btn-color-red disabled">Close The Call</a>
+										<div class="form-item checkbox ml-auto" style="margin-bottom: 0">
+					    					<input type="checkbox">
+					    					<span class="mr-14"></span>
+					    					<label for="">Notify supervisor</label>
+					    				</div>
+									</div>
+								</div>
+							</div>
+						</form>
+						
+						
+						
+						
+						
+						
+						<div class="tabs-panel" id="history">
+							<div class="flex mb-24">
+								<div class="pois-sort">
+									<label for="">Request type</label>
+									<select name="" id="">
+										<option value="All">All</option>
+										<option value="E-call">E-call</option>
+										<option value="B-call">B-call</option>
+										<option value="A-call">A-call</option>
+										<option value="I-call">I-call</option>
+										<option value="Hotline">Hotline</option>
+									</select>
+								</div>
+								<div class="pois-sort">
+									<label for="">Original service</label>
+									<select name="" id="">
+										<option value="All">All</option>
+										<option value="E-call">E-call</option>
+										<option value="B-call">B-call</option>
+										<option value="A-call">A-call</option>
+										<option value="I-call">I-call</option>
+										<option value="Hotline">Hotline</option>
+									</select>
+								</div>
+								<div class="pois-sort">
+									<label for="">Start time</label>
+									<div id="dropdown" class="jq-selectbox__select">
+										<div class="jq-selectbox__select-text">All</div>
+										<div class="jq-selectbox__trigger">
+											<div class="jq-selectbox__trigger-arrow"></div>
+										</div>
+									</div>
+									<div class="dropdown-content">
+										<div class="filter-item">
+						    				<div class="form-item checkbox"  data-index='all time'>
+						    					<input type="checkbox">
+						    					<span></span>
+						    				</div>
+						    				<div class="filter-name">all time</div>
+						    			</div>
+						    			<div class="filter-item">
+						    				<div class="form-item checkbox"  data-index='last 24 hours'>
+						    					<input type="checkbox">
+						    					<span></span>
+						    				</div>
+						    				<div class="filter-name">last 24 hours</div>
+						    			</div>
+						    			<div class="filter-item">
+						    				<div class="form-item checkbox"  data-index='last 48 hours'>
+						    					<input type="checkbox">
+						    					<span></span>
+						    				</div>
+						    				<div class="filter-name">last 48 hours</div>
+						    			</div>
+						    			<div class="filter-item">
+						    				<div class="form-item checkbox" data-index='date'>
+						    					<input type="checkbox">
+						    					<span></span>
+						    				</div>
+						    				<div class="filter-name">from <img src="assets/img/png/calendar.png" alt=""></div>
+						    				<input type="date">
+						    				<div class="filter-name">to <img src="assets/img/png/calendar.png" alt=""></div>
+						    				<input type="date">
+						    			</div>
+						    			<div class="flex">
+						    				<a id="dropdownShow" href="#" class="btn btn-color-grey ml-auto">Show</a>
+						    			</div>
+									</div>
+								</div>
+								<div class="pois-filter">
+									<input type="search" placeholder="Search VIN">
+								</div>
+							</div>
+
+							<div class="table">
+								<div class="table_row">
+									<div class="table_row-th">REQUEST TYPE</div>
+									<div class="table_row-th">ORIGINAL SERVICE</div>
+									<div class="table_row-th">START TIME</div>
+									<div class="table_row-th">VIN</div>
+								</div>
+								<div class="table_row table_row-col">
+									<div class="table_row-header">
+										<div class="table_row-td">E-Call</div>
+										<div class="table_row-td">E-Call</div>
+										<div class="table_row-td">2018-01-15 16:26 CET</div>
+										<div class="table_row-td">F394057</div>
+									</div>
+									<div class="table_row-content">
+										<div class="col">
+											<div class="item mb-24">
+												<span class="title">EventID:</span>
+												<span class="text"><b>2846464738383939@bmw.de</b></span>
+											</div>
+										</div>
+										<div class="col col-1_2">
+											<div class="item">
+												<span class="title">Start time:</span>
+												<span class="text">2018-01-15 16:26 CET</span>
+											</div>
+											<div class="item">
+												<span class="title">Stop time:</span>
+												<span class="text">2018-01-15 16:26 CET</span>
+											</div>
+											<div class="item">
+												<span class="title">Time filed:</span>
+												<span class="text">2018-01-15 16:26 CET</span>
+											</div>
+											<div class="item">
+												<span class="title">Last event:</span>
+												<span class="text">Canceled</span>
+											</div>
+											<div class="item">
+												<span class="title">Sent POIs:</span>
+												<span class="text">2</span>
+												<a href="#" class="item_accardion-btn">
+													<span class="hide">Hide</span>
+													<span class="show">Show</span>
+												</a>
+												<div class="item_accardion">
+													<div class="item">
+														<span class="text"><b>Vapiano Pizza</b></span>
+														<span class="text">Rathausstrasse 6, 10178 Berlin, Germany</span>
+													</div>
+													<div class="item">
+														<span class="text"><b>Vapiano Pizza</b></span>
+														<span class="text">Rathausstrasse 6, 10178 Berlin, Germany</span>
+													</div>
+
+													<a id="resendHistory" href="#" class="btn btn-color-dark_grey mt-10">Resend POIs</a>
+												</div>
+											</div>
+											<div class="item">
+												<span class="title">Call center:</span>
+												<span class="text">BMW Germany</span>
+											</div>
+											<div class="item">
+												<span class="title">Agent:</span>
+												<span class="text">Helen Lampard</span>
+											</div>
+										</div>
+										<div class="col col-1_3">
+											<div class="item">
+												<span class="title">Phone number:</span>
+												<span class="text">+49 89 1250 16000</span>
+												<a class="driver-lang">
+													<img src="assets/img/png/call.png" alt="">
+												</a>
+											</div>
+											<div class="item">
+												<span class="title">Address:</span>
+												<span class="text">Rathenaustrasse 92</span>
+											</div>
+											<div class="item">
+												<span class="title">Postal code:</span>
+												<span class="text">80937</span>
+											</div>
+											<div class="item">
+												<span class="title">City/town:</span>
+												<span class="text">Munchen</span>
+											</div>
+											<div class="item">
+												<span class="title">Province:</span>
+												<span class="text">Oberbayern</span>
+											</div>
+											<div class="item">
+												<span class="title">State/province:</span>
+												<span class="text">Bayern</span>
+											</div>
+											<div class="item">
+												<span class="title">Country:</span>
+												<span class="text">Germany</span>
+											</div>
+											<div class="item">
+												<span class="title">Current location:</span><br>
+												<span class="text">N 520 31’ 12.023’’, E 130 24’ 17.834’’ N 52.52, E 13.405  </span>
+											</div>
+										</div>
+										<div class="col mt-34 mb-24">
+											<div class="accardion-block">
+												<div class="accardion-block-header">Notes</div>
+												<div class="accardion-block-content">
+													<div class="blue_table">
+										    			<div class="col-1_3"><div class="blue_table-title">Time</div></div>
+										    			<div class="col-1_3"><div class="blue_table-title">Agent</div></div>
+										    			<div class="col-1_3"><div class="blue_table-title">Note</div></div>
+											    	</div>
+											    	<div class="flex flex-block">
+										    			<div class="col-1_3"><div class="">2018-01-15 16:26 CET</div></div>
+										    			<div class="col-1_3"><div class="">Cleanup Admin</div></div>
+										    			<div class="col-1_3"><div class="">Closed by supervisor using cleanup function. User: Cleanup Admin</div></div>
+											    	</div>
+											    	<div class="col">
+														<div class="title-block">Additional note</div>
+														<div class="form-item" >
+										    				<textarea></textarea>
+									    				</div>
+									    				<div class="flex align-right align-middle mt-16">
+															<div class="btns">
+																<a href="#" class="btn btn-color-grey mr-8 modal-cancel">Cancel</a>
+																<a href="#" class="btn btn-color-dark_grey creatPoi-save">Save</a>
+															</div>
+											    		</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col mb-24">
+											<div class="accardion-block">
+												<div class="accardion-block-header">Dealer Information</div>
+												<div class="accardion-block-content">
+													<div class="col-row">
+														<div class="col">
+															<div class="item">
+																<span class="text"><b>Automag GmbH </b></span>
+																<span class="title">Home dealer</span>
+															</div>
+														</div>
+														<div class="col col-1_2">
+															<div class="item">
+																<span class="title">Address:</span>
+																<span class="text">Frankfurter Ring 35, 80807, Munchen, Germany</span>
+															</div>
+															<div class="item">
+																<span class="title">Phone:</span>
+																<span class="text">+49 89 353510</span>
+															</div>
+															<div class="item">
+																<span class="title">Fax:</span>
+																<span class="text">+49 89 353510</span>
+																<a class="driver-lang">
+																	<img src="assets/img/png/call-blue.png" alt="">
+																</a>
+															</div>
+															<div class="item">
+																<span class="title">Portfolio:</span>
+																<span class="text"></span>
+															</div>
+														</div>
+														<div class="col col-1_2">
+															<div class="item">
+																<span class="title">Dealer code:</span>
+																<span class="text">00009773</span>
+															</div>
+															<div class="item">
+																<span class="title">Partner number:</span>
+																<span class="text">04107</span>
+															</div>
+															<div class="item">
+																<span class="title">Company number:</span>
+																<span class="text">4</span>
+															</div>
+															<div class="item">
+																<span class="title">Email:</span>
+																<span class="text"></span>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="table_row table_row-col">
+									<div class="table_row-header">
+										<div class="table_row-td">E-Call</div>
+										<div class="table_row-td">E-Call</div>
+										<div class="table_row-td">2018-01-15 16:26 CET</div>
+										<div class="table_row-td">F394057</div>
+									</div>
+									<div class="table_row-content">
+										<div class="col">
+											<div class="item mb-24">
+												<span class="title">EventID:</span>
+												<span class="text"><b>2846464738383939@bmw.de</b></span>
+											</div>
+										</div>
+										<div class="col col-1_2">
+											<div class="item">
+												<span class="title">Start time:</span>
+												<span class="text">2018-01-15 16:26 CET</span>
+											</div>
+											<div class="item">
+												<span class="title">Stop time:</span>
+												<span class="text">2018-01-15 16:26 CET</span>
+											</div>
+											<div class="item">
+												<span class="title">Time filed:</span>
+												<span class="text">2018-01-15 16:26 CET</span>
+											</div>
+											<div class="item">
+												<span class="title">Last event:</span>
+												<span class="text">Canceled</span>
+											</div>
+											<div class="item">
+												<span class="title">Sent POIs:</span>
+												<span class="text">2</span>
+												<a href="#" class="item_accardion-btn">
+													<span class="hide">Hide</span>
+													<span class="show">Show</span>
+												</a>
+												<div class="item_accardion">
+													<div class="item">
+														<span class="text"><b>Vapiano Pizza</b></span>
+														<span class="text">Rathausstrasse 6, 10178 Berlin, Germany</span>
+													</div>
+													<div class="item">
+														<span class="text"><b>Vapiano Pizza</b></span>
+														<span class="text">Rathausstrasse 6, 10178 Berlin, Germany</span>
+													</div>
+
+													<a id="resendHistory" href="#" class="btn btn-color-dark_grey mt-10">Resend POIs</a>
+												</div>
+											</div>
+											<div class="item">
+												<span class="title">Call center:</span>
+												<span class="text">BMW Germany</span>
+											</div>
+											<div class="item">
+												<span class="title">Agent:</span>
+												<span class="text">Helen Lampard</span>
+											</div>
+										</div>
+										<div class="col col-1_3">
+											<div class="item">
+												<span class="title">Phone number:</span>
+												<span class="text">+49 89 1250 16000</span>
+												<a class="driver-lang">
+													<img src="assets/img/png/call.png" alt="">
+												</a>
+											</div>
+											<div class="item">
+												<span class="title">Address:</span>
+												<span class="text">Rathenaustrasse 92</span>
+											</div>
+											<div class="item">
+												<span class="title">Postal code:</span>
+												<span class="text">80937</span>
+											</div>
+											<div class="item">
+												<span class="title">City/town:</span>
+												<span class="text">Munchen</span>
+											</div>
+											<div class="item">
+												<span class="title">Province:</span>
+												<span class="text">Oberbayern</span>
+											</div>
+											<div class="item">
+												<span class="title">State/province:</span>
+												<span class="text">Bayern</span>
+											</div>
+											<div class="item">
+												<span class="title">Country:</span>
+												<span class="text">Germany</span>
+											</div>
+											<div class="item">
+												<span class="title">Current location:</span><br>
+												<span class="text">N 520 31’ 12.023’’, E 130 24’ 17.834’’ N 52.52, E 13.405  </span>
+											</div>
+										</div>
+										<div class="col mt-34 mb-24">
+											<div class="accardion-block">
+												<div class="accardion-block-header">Notes</div>
+												<div class="accardion-block-content">
+													<div class="blue_table">
+										    			<div class="col-1_3"><div class="blue_table-title">Time</div></div>
+										    			<div class="col-1_3"><div class="blue_table-title">Agent</div></div>
+										    			<div class="col-1_3"><div class="blue_table-title">Note</div></div>
+											    	</div>
+											    	<div class="flex flex-block">
+										    			<div class="col-1_3"><div class="">2018-01-15 16:26 CET</div></div>
+										    			<div class="col-1_3"><div class="">Cleanup Admin</div></div>
+										    			<div class="col-1_3"><div class="">Closed by supervisor using cleanup function. User: Cleanup Admin</div></div>
+											    	</div>
+											    	<div class="col">
+														<div class="title-block">Additional note</div>
+														<div class="form-item" >
+										    				<textarea></textarea>
+									    				</div>
+									    				<div class="flex align-right align-middle mt-16">
+															<div class="btns">
+																<a href="#" class="btn btn-color-grey mr-8 modal-cancel">Cancel</a>
+																<a href="#" class="btn btn-color-dark_grey creatPoi-save">Save</a>
+															</div>
+											    		</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col mb-24">
+											<div class="accardion-block">
+												<div class="accardion-block-header">Dealer Information</div>
+												<div class="accardion-block-content">
+													<div class="col-row">
+														<div class="col">
+															<div class="item">
+																<span class="text"><b>Automag GmbH </b></span>
+																<span class="title">Home dealer</span>
+															</div>
+														</div>
+														<div class="col col-1_2">
+															<div class="item">
+																<span class="title">Address:</span>
+																<span class="text">Frankfurter Ring 35, 80807, Munchen, Germany</span>
+															</div>
+															<div class="item">
+																<span class="title">Phone:</span>
+																<span class="text">+49 89 353510</span>
+															</div>
+															<div class="item">
+																<span class="title">Fax:</span>
+																<span class="text">+49 89 353510</span>
+																<a class="driver-lang">
+																	<img src="assets/img/png/call-blue.png" alt="">
+																</a>
+															</div>
+															<div class="item">
+																<span class="title">Portfolio:</span>
+																<span class="text"></span>
+															</div>
+														</div>
+														<div class="col col-1_2">
+															<div class="item">
+																<span class="title">Dealer code:</span>
+																<span class="text">00009773</span>
+															</div>
+															<div class="item">
+																<span class="title">Partner number:</span>
+																<span class="text">04107</span>
+															</div>
+															<div class="item">
+																<span class="title">Company number:</span>
+																<span class="text">4</span>
+															</div>
+															<div class="item">
+																<span class="title">Email:</span>
+																<span class="text"></span>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="table_row table_row-col">
+									<div class="table_row-header">
+										<div class="table_row-td">E-Call</div>
+										<div class="table_row-td">E-Call</div>
+										<div class="table_row-td">2018-01-15 16:26 CET</div>
+										<div class="table_row-td">F394057</div>
+									</div>
+									<div class="table_row-content">
+										<div class="col">
+											<div class="item mb-24">
+												<span class="title">EventID:</span>
+												<span class="text"><b>2846464738383939@bmw.de</b></span>
+											</div>
+										</div>
+										<div class="col col-1_2">
+											<div class="item">
+												<span class="title">Start time:</span>
+												<span class="text">2018-01-15 16:26 CET</span>
+											</div>
+											<div class="item">
+												<span class="title">Stop time:</span>
+												<span class="text">2018-01-15 16:26 CET</span>
+											</div>
+											<div class="item">
+												<span class="title">Time filed:</span>
+												<span class="text">2018-01-15 16:26 CET</span>
+											</div>
+											<div class="item">
+												<span class="title">Last event:</span>
+												<span class="text">Canceled</span>
+											</div>
+											<div class="item">
+												<span class="title">Sent POIs:</span>
+												<span class="text">2</span>
+												<a href="#" class="item_accardion-btn">
+													<span class="hide">Hide</span>
+													<span class="show">Show</span>
+												</a>
+												<div class="item_accardion">
+													<div class="item">
+														<span class="text"><b>Vapiano Pizza</b></span>
+														<span class="text">Rathausstrasse 6, 10178 Berlin, Germany</span>
+													</div>
+													<div class="item">
+														<span class="text"><b>Vapiano Pizza</b></span>
+														<span class="text">Rathausstrasse 6, 10178 Berlin, Germany</span>
+													</div>
+
+													<a id="resendHistory" href="#" class="btn btn-color-dark_grey mt-10">Resend POIs</a>
+												</div>
+											</div>
+											<div class="item">
+												<span class="title">Call center:</span>
+												<span class="text">BMW Germany</span>
+											</div>
+											<div class="item">
+												<span class="title">Agent:</span>
+												<span class="text">Helen Lampard</span>
+											</div>
+										</div>
+										<div class="col col-1_3">
+											<div class="item">
+												<span class="title">Phone number:</span>
+												<span class="text">+49 89 1250 16000</span>
+												<a class="driver-lang">
+													<img src="assets/img/png/call.png" alt="">
+												</a>
+											</div>
+											<div class="item">
+												<span class="title">Address:</span>
+												<span class="text">Rathenaustrasse 92</span>
+											</div>
+											<div class="item">
+												<span class="title">Postal code:</span>
+												<span class="text">80937</span>
+											</div>
+											<div class="item">
+												<span class="title">City/town:</span>
+												<span class="text">Munchen</span>
+											</div>
+											<div class="item">
+												<span class="title">Province:</span>
+												<span class="text">Oberbayern</span>
+											</div>
+											<div class="item">
+												<span class="title">State/province:</span>
+												<span class="text">Bayern</span>
+											</div>
+											<div class="item">
+												<span class="title">Country:</span>
+												<span class="text">Germany</span>
+											</div>
+											<div class="item">
+												<span class="title">Current location:</span><br>
+												<span class="text">N 520 31’ 12.023’’, E 130 24’ 17.834’’ N 52.52, E 13.405  </span>
+											</div>
+										</div>
+										<div class="col mt-34 mb-24">
+											<div class="accardion-block">
+												<div class="accardion-block-header">Notes</div>
+												<div class="accardion-block-content">
+													<div class="blue_table">
+										    			<div class="col-1_3"><div class="blue_table-title">Time</div></div>
+										    			<div class="col-1_3"><div class="blue_table-title">Agent</div></div>
+										    			<div class="col-1_3"><div class="blue_table-title">Note</div></div>
+											    	</div>
+											    	<div class="flex flex-block">
+										    			<div class="col-1_3"><div class="">2018-01-15 16:26 CET</div></div>
+										    			<div class="col-1_3"><div class="">Cleanup Admin</div></div>
+										    			<div class="col-1_3"><div class="">Closed by supervisor using cleanup function. User: Cleanup Admin</div></div>
+											    	</div>
+											    	<div class="col">
+														<div class="title-block">Additional note</div>
+														<div class="form-item" >
+										    				<textarea></textarea>
+									    				</div>
+									    				<div class="flex align-right align-middle mt-16">
+															<div class="btns">
+																<a href="#" class="btn btn-color-grey mr-8 modal-cancel">Cancel</a>
+																<a href="#" class="btn btn-color-dark_grey creatPoi-save">Save</a>
+															</div>
+											    		</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col mb-24">
+											<div class="accardion-block">
+												<div class="accardion-block-header">Dealer Information</div>
+												<div class="accardion-block-content">
+													<div class="col-row">
+														<div class="col">
+															<div class="item">
+																<span class="text"><b>Automag GmbH </b></span>
+																<span class="title">Home dealer</span>
+															</div>
+														</div>
+														<div class="col col-1_2">
+															<div class="item">
+																<span class="title">Address:</span>
+																<span class="text">Frankfurter Ring 35, 80807, Munchen, Germany</span>
+															</div>
+															<div class="item">
+																<span class="title">Phone:</span>
+																<span class="text">+49 89 353510</span>
+															</div>
+															<div class="item">
+																<span class="title">Fax:</span>
+																<span class="text">+49 89 353510</span>
+																<a class="driver-lang">
+																	<img src="assets/img/png/call-blue.png" alt="">
+																</a>
+															</div>
+															<div class="item">
+																<span class="title">Portfolio:</span>
+																<span class="text"></span>
+															</div>
+														</div>
+														<div class="col col-1_2">
+															<div class="item">
+																<span class="title">Dealer code:</span>
+																<span class="text">00009773</span>
+															</div>
+															<div class="item">
+																<span class="title">Partner number:</span>
+																<span class="text">04107</span>
+															</div>
+															<div class="item">
+																<span class="title">Company number:</span>
+																<span class="text">4</span>
+															</div>
+															<div class="item">
+																<span class="title">Email:</span>
+																<span class="text"></span>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						
+						</div>
+						<div class="tabs-panel" id="poi">
+							<div class="col">
+								<div class="title-block">Create Points Of Interest</div>
+								<a id="createPOI" href="#" class="btn btn-color-grey">Create POI</a>
+								<hr noshade class="mt-34 mb-34">
+							</div>
+							<div class="col">
+								<div class="title-block">Find Points Of Interest</div>
+								<div class="tabs-small mb-34">
+									<ul class="tabs" data-deep-link="true" data-update-history="true" data-deep-link-smudge="true" data-deep-link-smudge-delay="500" data-tabs id="deeplinked-tabs">
+										<li class="tabs-title is-active"><a href="#form-position" aria-selected="true">At position</a></li>
+										<li class="tabs-title"><a href="#form-address">At address</a></li>
+										<li class="tabs-title"><a href="#form-destination">At destination</a></li>
+										<li class="tabs-title"><a href="#form-map">By map</a></li>
+									</ul>
+									<div class="tabs-content" data-tabs-content="deeplinked-tabs">
+									    <div class="tabs-panel is-active" id="form-position">
+									    	<form id="form-find-points-interest-position" class="form">
+									    		<div class="form-row mb-18">
+									    			<label for=""></label>
+									    			<input class="now-posiotion" type="text" disabled>
+									    		</div>
+									    		<div class="form-row mb-18">
+									    			<label for="">What:</label>
+									    			<input class="mr-16  POILocationInput" name="what" type="text" placeholder="Enter a location">
+									    			<label class="mr-16" for="">in</label>
+									    			<select name="language" id="">									    													    													    			
+															<option value="English">English</option>
+															<option value="German">German</option>
+															<option value="China">China</option>
+															<option value="Spain">Spain</option>
+									    			</select>
+									    		</div>
+									    		<div class="form-row mb-18">
+									    			<label for="">Category:</label>
+									    			<select name="category" id="" multiple>
+									    				<option value="Restaurant">Restaurant</option>
+									    				<option value="Named Place">Named Place</option>
+									    				<option value="German Food">German Food</option>
+									    				<option value="Speciality Store">Speciality Store</option>
+									    				<option value="School">School</option>
+									    				<option value="ATM">ATM</option>
+									    				<option value="Bank">Bank</option>
+									    				<option value="Public Parking">Public Parking</option>
+									    				<option value="Pharmacy">Pharmacy</option>
+									    				<option value="Medical Services">Medical Services</option>
+									    				<option value="BMW Service Partner">BMW Service Partner</option>
+									    				<option value="BMW Retailers">BMW Retailers</option>
+									    			</select>
+									    			<div class="btn-row ml-42">
+									    				<a href="#" class="btn btn-color-grey mr-8">Meta</a>
+									    				<a href="#" class="btn btn-color-dark_grey">Normal</a>
+									    			</div>
+									    		</div>
+									    		<div class="form-row">
+									    			<a href="#" class="btn btn-color-blue mr-8 searchPOI">Search</a>
+									    			<button type="reset" class="btn btn-color-grey reset-find">Clear</button>
+									    		</div>
+									    	</form>
+									    </div>
+									    <div class="tabs-panel" id="form-address">
+									    	<form id="form-find-points-interest-address" class="form">
+									    		<div class="form-row mb-18">
+									    			<label for="">What:</label>
+									    			<input class="mr-16 POILocationInput" name="what" type="text" placeholder="Enter a location">
+									    			<label class="mr-16" for="">in</label>
+									    			<select name="language" id="">
+															<option value="English">English</option>
+															<option value="German">German</option>
+															<option value="China">China</option>
+															<option value="Spain">Spain</option>									    				
+									    			</select>
+									    		</div>
+									    		<div class="form-row mb-18">
+									    			<label for="">Category:</label>
+									    			<select name="category" id="" multiple>
+															<option value="Restaurant">Restaurant</option>
+															<option value="Named Place">Named Place</option>
+															<option value="German Food">German Food</option>
+															<option value="Speciality Store">Speciality Store</option>
+															<option value="School">School</option>
+															<option value="ATM">ATM</option>
+															<option value="Bank">Bank</option>
+															<option value="Public Parking">Public Parking</option>
+															<option value="Pharmacy">Pharmacy</option>
+															<option value="Medical Services">Medical Services</option>
+															<option value="BMW Service Partner">BMW Service Partner</option>
+															<option value="BMW Retailers">BMW Retailers</option>
+														</select>
+									    			<div class="btn-row ml-42">
+									    				<a href="#" class="btn btn-color-grey mr-8">Meta</a>
+									    				<a href="#" class="btn btn-color-dark_grey">Normal</a>
+									    			</div>
+									    		</div>
+									    		<div class="form-row">
+									    			<a href="#" class="btn btn-color-blue mr-8 searchPOI">Search</a>
+									    			<button type="reset" class="btn btn-color-grey reset-find">Clear</button>
+									    		</div>
+									    	</form>
+									    </div>
+									    <div class="tabs-panel" id="form-destination">
+									    	<form id="form-find-points-interest-destination" class="form">
+									    		<div class="form-row mb-18">
+									    			<label for=""></label>
+									    			<input class="now-posiotion" type="text" disabled>
+									    		</div>
+									    		<div class="form-row mb-18">
+									    			<label for="">What:</label>
+									    			<input class="mr-16 POILocationInput" name="what" type="text" placeholder="Enter a location">
+									    			<label class="mr-16" for="">in</label>
+									    			<select name="language" id="">
+															<option value="English">English</option>
+															<option value="German">German</option>
+															<option value="China">China</option>
+															<option value="Spain">Spain</option>
+									    			</select>
+									    		</div>
+									    		<div class="form-row mb-18">
+									    			<label for="">Category:</label>
+									    			<select name="category" id="" multiple>
+															<option value="Restaurant">Restaurant</option>
+															<option value="Named Place">Named Place</option>
+															<option value="German Food">German Food</option>
+															<option value="Speciality Store">Speciality Store</option>
+															<option value="School">School</option>
+															<option value="ATM">ATM</option>
+															<option value="Bank">Bank</option>
+															<option value="Public Parking">Public Parking</option>
+															<option value="Pharmacy">Pharmacy</option>
+															<option value="Medical Services">Medical Services</option>
+															<option value="BMW Service Partner">BMW Service Partner</option>
+															<option value="BMW Retailers">BMW Retailers</option>
+														
+									    			</select>
+									    			<div class="btn-row ml-42">
+									    				<a href="#" class="btn btn-color-grey mr-8">Meta</a>
+									    				<a href="#" class="btn btn-color-dark_grey">Normal</a>
+									    			</div>
+									    		</div>
+									    		<div class="form-row">
+									    			<a href="#" class="btn btn-color-blue mr-8 searchPOI">Search</a>
+									    			<button type="reset" class="btn btn-color-grey reset-find">Clear</button>
+									    		</div>
+									    	</form>
+									    </div>
+									    <div class="tabs-panel" id="form-map">
+									    	<form id="form-find-points-interest-map" class="form">
+									    		<div class="form-row mb-18">
+									    			<label for="">What:</label>
+									    			<input class="mr-16 POILocationInput" name="what" type="text" placeholder="Enter a location">
+									    			<label class="mr-16" for="">in</label>
+									    			<select name="language" id="">
+															<option value="English">English</option>
+															<option value="German">German</option>
+															<option value="China">China</option>
+															<option value="Spain">Spain</option>
+									    			</select>
+									    		</div>
+									    		<div class="form-row mb-18">
+									    			<label for="">Category:</label>
+									    			<select name="category" id="" multiple>
+															<option value="Restaurant">Restaurant</option>
+															<option value="Named Place">Named Place</option>
+															<option value="German Food">German Food</option>
+															<option value="Speciality Store">Speciality Store</option>
+															<option value="School">School</option>
+															<option value="ATM">ATM</option>
+															<option value="Bank">Bank</option>
+															<option value="Public Parking">Public Parking</option>
+															<option value="Pharmacy">Pharmacy</option>
+															<option value="Medical Services">Medical Services</option>
+															<option value="BMW Service Partner">BMW Service Partner</option>
+															<option value="BMW Retailers">BMW Retailers</option>
+														
+									    			</select>
+									    			<div class="btn-row ml-42">
+									    				<a href="#" class="btn btn-color-grey mr-8">Meta</a>
+									    				<a href="#" class="btn btn-color-dark_grey">Normal</a>
+									    			</div>
+									    		</div>
+									    		<div class="form-row">
+									    			<a href="#" class="btn btn-color-blue mr-8 searchPOI">Search</a>
+									    			<button type="reset" class="btn btn-color-grey reset-find">Clear</button>
+									    		</div>
+									    	</form>
+									    </div>
+									</div>
+								</div>
+							</div>
+							<div class="col">
+								<div class="title-block">Favorites</div>
+								<div class="form-row">
+									<div class="flex mb-18 align-middle">
+						    			<label class="mr-24" for="">List of favorites:</label>
+						    			<div class="flex-row favorites-mini mr-10">
+						    				<img src="{%F:ARES%}img/png/icons/restr.png" alt="">						    	
+						    			</div>
+						    			<a id="manFavorites" href="#" class="btn btn-color-grey">Manage favorites</a>
+						    		</div>
+								</div>
+								<div class="accardion">
+								    <div id="favoritesAccardion" class="accardion-header">
+								        <span class="more">Show details <img src="{%F:ARES%}img/png/arrow-down.png" alt=""></span>
+								        <span class="less">Hide details <img src="{%F:ARES%}img/png/arrow-up.png" alt=""></span>
+								    </div>
+								    <div class="accardion-content">
+							           
+									   <div class="favorites-item">
+							            	<div class="item mr-16">
+												<span class="title">Favorite name:</span>
+												<span class="text">Sports pubs</span>
+											</div>
+											<div class="item mr-20">
+												<span class="title">Search type:</span>
+												<span class="text">By map</span>
+											</div>
+											<div class="item mr-20">
+												<span class="title">Language:</span>
+												<span class="text">EN</span>
+											</div>
+											<div class="item mr-20">
+												<span class="title">What:</span>
+												<span class="text">Champions Sportsbar</span>
+											</div>
+											<div class="item mr-20">
+												<span class="title">Category:</span>
+												<span class="text">Restaurants</span>
+											</div>
+							            </div>
+							           
+								    </div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="block tabs-panel block-report">
+					<div class="col">
+						<div class="title-block">List of Created and found POIs</div>
+						<div class="item mb-18">
+							<span class="text">Memory slots: </span>
+							<span class="title"><span class="freePois"></span> free / 5 max. - <span class="countPois"></span> POIs selected </span>
+						</div>
+						<div id="foundPous" class="pois">
+							
+						
+						</div>
+					</div>
+				</div>
+
+				<div class="block tabs-panel block-report">
+					<div class="col flex mb-24">
+						<div class="pois-filter">
+							<label for="">Filter</label>
+							<input type="search" >
+						</div>
+						<div class="pois-sort">
+							<label for="">Sort by</label>
+							<select name="" id="">
+								<option value="Distance">Distance</option>
+								<option value="Name">Name</option>
+								<option value="Postal code">Postal code</option>
+								<option value="City/town">City/town</option>
+								<option value="Region">Region</option>
+								<option value="Country">Country</option>
+								<option value="Provider">Provider</option>
+								<option value="Price">Price</option>
+							</select>
+						</div>
+					</div>
+					<div class="col pois-list">
+						<ul class="tabs" data-deep-link="true" data-update-history="true" data-deep-link-smudge="true" data-deep-link-smudge-delay="500" data-tabs id="deeplinked-tabs">
+							<li class="tabs-title is-active"><a href="#panel9d" aria-selected="true">Quick</a></li>
+							<li class="tabs-title"><a href="#panel10d">Premium</a></li>
+						</ul>
+						<div class="tabs-content" data-tabs-content="deeplinked-tabs">
+							<div class="tabs-panel is-active POIListItems" id="panel9d">
+													
+								<!--<nav aria-label="Pagination">
+									<ul class="pagination text-center">
+										<li class="pagination-previous"><a href="#"><img src="{%F:ARES%}img/png/arrow-prev.png" alt=""> Previous</a></li>
+										<li class="current">1</li>
+										<li><a href="#" aria-label="Page 2">2</a></li>
+										<li><a href="#" aria-label="Page 3">3</a></li>
+										<li><a href="#" aria-label="Page 4">4</a></li>
+										<li class="pagination-next"><a href="#">Next <img src="{%F:ARES%}img/png/arrow-next.png" alt=""></a></li>
+									</ul>
+								</nav>-->
+								
+							</div>
+							<div class="tabs-panel" id="panel10d">								
+								<nav aria-label="Pagination">
+									<ul class="pagination text-center">
+										<li class="pagination-previous"><a href="#"><img src="{%F:ARES%}img/png/arrow-prev.png" alt=""> Previous</a></li>
+										<li class="current">1</li>
+										<li><a href="#" aria-label="Page 2">2</a></li>
+										<li><a href="#" aria-label="Page 3">3</a></li>
+										<li><a href="#" aria-label="Page 4">4</a></li>
+										<li class="pagination-next"><a href="#">Next <img src="{%F:ARES%}img/png/arrow-next.png" alt=""></a></li>
+									</ul>
+								</nav>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col col-1_2">
+			<div class="block-map">
+				<div class="title-block">Map</div>
+				<div id="map"></div>
+			</div>
+		</div>
+	</main>
+
+	<div class="overlay">
+		<div id="creatPoi" class="modal">
+			<div class="modal-close"><img src="/project/templates/altabeltest.link/_ares/img/png/close-d.png" alt=""></div>
+			<div class="modal-name">Create Points Of Interest</div>
+			<div class="tabs-small">
+				<ul class="tabs" data-deep-link="true" data-update-history="true" data-deep-link-smudge="true" data-deep-link-smudge-delay="500" data-tabs id="deeplinked-tabs">
+					<li class="tabs-title is-active"><a href="#form-no-position-modal" aria-selected="true">No position</a></li>
+					<li class="tabs-title"><a href="#form-address-modal">At address</a></li>
+					<li class="tabs-title"><a href="#form-position-modal">At position</a></li>
+					<li class="tabs-title"><a href="#form-destination-modal">At destination</a></li>
+				</ul>
+				<div class="tabs-content" data-tabs-content="deeplinked-tabs">
+				    <div class="tabs-panel is-active" id="form-no-position-modal">
+				    	<form class="form" id="createPOIForm">
+				    		<div class="form-row mb-18">
+				    			<label for="">POI Position:</label>
+				    			<input class="now-posiotion" type="text" disabled>
+				    			<div class="btn-row ml-16 ml-16">
+				    				<a href="#" class="btn btn-color-grey mr-8 disabled">Search</a>
+				    				<a href="#" class="btn btn-color-grey disabled">Clear</a>
+				    			</div>
+				    		</div>
+				    		<div class="col-row modal-row">
+				    			<div class="col mr-44">
+				    				<div class="form-item">
+				    					<label for="">Name:</label>
+					    				<input name="Name" type="text" maxlength="100">
+					    				<div class="form-item-count"><span>0</span>/100</div>
+				    				</div>
+				    				<div class="form-item">
+				    					<label for="">Street:</label>
+					    				<input name="POI.street" type="text" maxlength="100">
+					    				<div class="form-item-count"><span>0</span>/100</div>
+				    				</div>
+				    				<div class="form-item">
+				    					<label for="">City/town or postal code:</label>
+					    				<input name="POI.city" type="text" maxlength="100">
+					    				<div class="form-item-count"><span>0</span>/100</div>
+				    				</div>
+				    				<div class="form-item">
+				    					<label for="">Country/ or state:</label>
+					    				<input name="POI.country" type="text" maxlength="100">
+					    				<div class="form-item-count"><span>0</span>/100</div>
+				    				</div>
+				    				<div class="form-item">
+				    					<label for="">Latitude:</label>
+					    				<input name="POI.lat" type="text" maxlength="100">
+				    				</div>
+				    				<div class="form-item">
+				    					<label for="">Longtitude:</label>
+					    				<input  name="POI.lon" type="text" maxlength="100">					    				
+				    				</div>
+				    			</div>
+				    			<div class="col">
+				    				<div class="form-item">
+				    					<label for="">Phone 1:</label>
+				    					<select name="phone1prefix" id="" class="mr-8">
+				    						{%F:@tpl(TMS:parse({"section":"phonecodes"}))%}
+				    						
+				    					</select>
+					    				<input  name="POI.phone1"  type="text" maxlength="100">
+					    				<div class="form-item-count"><span>0</span>/100</div>
+				    				</div>
+				    				<div class="form-item">
+				    					<label for="">Phone 2:</label>
+				    					<select name="phone2prefix" id="" class="mr-8">
+				    						
+				    						{%F:@tpl(TMS:parse({"section":"phonecodes"}))%}
+											
+				    					</select>
+					    				<input name="POI.phone2" type="text" maxlength="100">
+					    				<div class="form-item-count"><span>0</span>/100</div>
+				    				</div>
+				    				<div class="form-item">
+				    					<label for="">Phone 3:</label>
+				    					<select name="phone3prefix" id="" class="mr-8">
+				    						{%F:@tpl(TMS:parse({"section":"phonecodes"}))%}
+				    						
+				    					</select>
+					    				<input name="POI.phone3" type="text" maxlength="100">
+					    				<div class="form-item-count"><span>0</span>/100</div>
+				    				</div>
+				    				<div class="form-item">
+				    					<label for="">URL:</label>
+					    				<input name="POI.url" type="text" maxlength="100">
+				    				</div>
+				    				<div class="form-item">
+				    					<label for="">Email:</label>
+					    				<input name="POI.email" type="text" maxlength="100">
+					    				<div class="form-item-count"><span>0</span>/100</div>
+				    				</div>
+				    				<div class="form-item">
+				    					<label for="">Free text:</label>
+					    				<textarea name="POI.text" maxlength="512"></textarea>
+					    				<div class="form-item-count"><span>0</span>/512</div>
+				    				</div>
+				    			</div>
+				    		</div>
+				    		<div class="flex align-justify align-middle mt-16">
+				    			<div class="flex items">
+									<div class="item mr-16">
+										<span class="title">Provider:</span>
+										<span class="text">BMW</span>
+									</div>
+									<div class="item">
+										<span class="title">Sub-provider:</span>
+										<span class="text">ConnectedDrive</span>
+									</div>
+				    			</div>
+								<div class="btns mr-48">
+									<a href="#" class="btn btn-color-grey  mr-8 modal-cancel">Cancel</a>
+									<a href="#" class="btn btn-color-dark_grey creatPoi-save">Save</a>
+								</div>
+				    		</div>
+				    	</form>
+				    </div>
+				    <div class="tabs-panel" id="form-address-modal">
+				    	<form class="form">
+				    		<div class="form-row mb-18">
+				    			<label for="">POI Position:</label>
+				    			<input type="text" placeholder="Enter a query">
+				    			<div class="btn-row ml-16 ml-16">
+				    				<a href="#" class="btn btn-color-grey mr-8">Search</a>
+				    				<a href="#" class="btn btn-color-grey">Clear</a>
+				    			</div>
+				    		</div>
+				    		<div class="col-row modal-row">
+				    			<div class="col mr-44">
+				    				<div class="form-item">
+				    					<label for="">Name:</label>
+					    				<input type="text" maxlength="100">
+					    				<div class="form-item-count"><span>0</span>/100</div>
+				    				</div>
+				    				<div class="form-item">
+				    					<label for="">Street:</label>
+					    				<input type="text" maxlength="100" disabled>
+					    				<div class="form-item-count"><span>0</span>/100</div>
+				    				</div>
+				    				<div class="form-item">
+				    					<label for="">City/town or postal code:</label>
+					    				<input type="text" maxlength="100" disabled>
+					    				<div class="form-item-count"><span>0</span>/100</div>
+				    				</div>
+				    				<div class="form-item">
+				    					<label for="">Country/ or state:</label>
+					    				<input type="text" maxlength="100" disabled>
+					    				<div class="form-item-count"><span>0</span>/100</div>
+				    				</div>
+				    				<div class="form-item">
+				    					<label for="">Latitude:</label>
+					    				<input type="text" maxlength="100" disabled value="0.0">
+				    				</div>
+				    				<div class="form-item">
+				    					<label for="">Longtitude:</label>
+					    				<input type="text" maxlength="100" disabled value="0.0">
+				    				</div>
+				    			</div>
+				    			<div class="col">
+				    				<div class="form-item">
+				    					<label for="">Phone 1:</label>
+				    					<select name="phone1prefix" id="" class="mr-8">
+											{%F:@tpl(TMS:parse({"section":"phonecodes"}))%}
+				    					</select>
+					    				<input type="text" maxlength="100">
+					    				<div class="form-item-count"><span>0</span>/100</div>
+				    				</div>
+				    				<div class="form-item">
+				    					<label for="">Phone 2:</label>
+				    					<select name="phone2prefix" id="" class="mr-8">
+				    					{%F:@tpl(TMS:parse({"section":"phonecodes"}))%}
+				    					
+				    					</select>
+					    				<input type="text" maxlength="100">
+					    				<div class="form-item-count"><span>0</span>/100</div>
+				    				</div>
+				    				<div class="form-item">
+				    					<label for="">Phone 3:</label>
+				    					<select name="phone3prefix" id="" class="mr-8">
+				    						{%F:@tpl(TMS:parse({"section":"phonecodes"}))%}
+				    						
+				    					</select>
+					    				<input type="text" maxlength="100">
+					    				<div class="form-item-count"><span>0</span>/100</div>
+				    				</div>
+				    				<div class="form-item">
+				    					<label for="">URL:</label>
+					    				<input type="text" maxlength="100">
+				    				</div>
+				    				<div class="form-item">
+				    					<label for="">Email:</label>
+					    				<input type="text" maxlength="100">
+					    				<div class="form-item-count"><span>0</span>/100</div>
+				    				</div>
+				    				<div class="form-item">
+				    					<label for="">Free text:</label>
+					    				<textarea maxlength="512"></textarea>
+					    				<div class="form-item-count"><span>0</span>/512</div>
+				    				</div>
+				    			</div>
+				    		</div>
+				    		<div class="flex align-justify align-middle mt-16">
+				    			<div class="flex items">
+									<div class="item mr-16">
+										<span class="title">Provider:</span>
+										<span class="text">BMW</span>
+									</div>
+									<div class="item">
+										<span class="title">Sub-provider:</span>
+										<span class="text">ConnectedDrive</span>
+									</div>
+				    			</div>
+								<div class="btns mr-48">
+									<a href="#" class="btn btn-color-grey  mr-8 modal-cancel">Cancel</a>
+									<a href="#" class="btn btn-color-dark_grey creatPoi-save">Save</a>
+								</div>
+				    		</div>
+				    	</form>
+				    </div>
+				    <div class="tabs-panel" id="form-position-modal">
+				    	<form class="form">
+				    		<div class="form-row mb-18">
+				    			<label for="">POI Position:</label>
+				    			<input class="now-posiotion" type="text" disabled>
+				    			<div class="btn-row ml-16 ml-16">
+				    				<a href="#" class="btn btn-color-grey mr-8 disabled">Search</a>
+				    				<a href="#" class="btn btn-color-grey disabled">Clear</a>
+				    			</div>
+				    		</div>
+				    		<div class="col-row modal-row">
+				    			<div class="col mr-44">
+				    				<div class="form-item">
+				    					<label for="">Name:</label>
+					    				<input type="text" maxlength="100">
+					    				<div class="form-item-count"><span>0</span>/100</div>
+				    				</div>
+				    				<div class="form-item">
+				    					<label for="">Street:</label>
+					    				<input type="text" maxlength="100">
+					    				<div class="form-item-count"><span>0</span>/100</div>
+				    				</div>
+				    				<div class="form-item">
+				    					<label for="">City/town or postal code:</label>
+					    				<input type="text" maxlength="100">
+					    				<div class="form-item-count"><span>0</span>/100</div>
+				    				</div>
+				    				<div class="form-item">
+				    					<label for="">Country/ or state:</label>
+					    				<input type="text" maxlength="100">
+					    				<div class="form-item-count"><span>0</span>/100</div>
+				    				</div>
+				    				<div class="form-item">
+				    					<label for="">Latitude:</label>
+					    				<input type="text" maxlength="100" disabled value="0.0">
+				    				</div>
+				    				<div class="form-item">
+				    					<label for="">Longtitude:</label>
+					    				<input type="text" maxlength="100" disabled value="0.0">
+				    				</div>
+				    			</div>
+				    			<div class="col">
+				    				<div class="form-item">
+				    					<label for="">Phone 1:</label>
+				    					<select name="phone1prefix" id="" class="mr-8">
+				    					{%F:@tpl(TMS:parse({"section":"phonecodes"}))%}
+				    					
+				    					</select>
+					    				<input type="text" maxlength="100">
+					    				<div class="form-item-count"><span>0</span>/100</div>
+				    				</div>
+				    				<div class="form-item">
+				    					<label for="">Phone 2:</label>
+				    					<select name="phone2prefix" id="" class="mr-8">
+				    						{%F:@tpl(TMS:parse({"section":"phonecodes"}))%}
+				    					
+				    					</select>
+					    				<input type="text" maxlength="100">
+					    				<div class="form-item-count"><span>0</span>/100</div>
+				    				</div>
+				    				<div class="form-item">
+				    					<label for="">Phone 3:</label>
+				    					<select name="phone3prefix" id="" class="mr-8">
+				    						{%F:@tpl(TMS:parse({"section":"phonecodes"}))%}
+				    					
+				    					</select>
+					    				<input type="text" maxlength="100">
+					    				<div class="form-item-count"><span>0</span>/100</div>
+				    				</div>
+				    				<div class="form-item">
+				    					<label for="">URL:</label>
+					    				<input type="text" maxlength="100">
+				    				</div>
+				    				<div class="form-item">
+				    					<label for="">Email:</label>
+					    				<input type="text" maxlength="100">
+					    				<div class="form-item-count"><span>0</span>/100</div>
+				    				</div>
+				    				<div class="form-item">
+				    					<label for="">Free text:</label>
+					    				<textarea maxlength="512"></textarea>
+					    				<div class="form-item-count"><span>0</span>/512</div>
+				    				</div>
+				    			</div>
+				    		</div>
+				    		<div class="flex align-justify align-middle mt-16">
+				    			<div class="flex items">
+									<div class="item mr-16">
+										<span class="title">Provider:</span>
+										<span class="text">BMW</span>
+									</div>
+									<div class="item">
+										<span class="title">Sub-provider:</span>
+										<span class="text">ConnectedDrive</span>
+									</div>
+				    			</div>
+								<div class="btns mr-48">
+									<a href="#" class="btn btn-color-grey  mr-8 modal-cancel">Cancel</a>
+									<a href="#" class="btn btn-color-dark_grey creatPoi-save">Save</a>
+								</div>
+				    		</div>
+				    	</form>
+				    </div>
+				    <div class="tabs-panel" id="form-destination-modal">
+				    	<form class="form">
+				    		<div class="form-row mb-18">
+				    			<label for="">POI Position:</label>
+				    			<input type="text" class="now-posiotion" disabled>
+				    			<div class="btn-row ml-16 ml-16">
+				    				<a href="#" class="btn btn-color-grey mr-8 disabled">Search</a>
+				    				<a href="#" class="btn btn-color-grey disabled">Clear</a>
+				    			</div>
+				    		</div>
+				    		<div class="col-row modal-row">
+				    			<div class="col mr-44">
+				    				<div class="form-item">
+				    					<label for="">Name:</label>
+					    				<input type="text" maxlength="100">
+					    				<div class="form-item-count"><span>0</span>/100</div>
+				    				</div>
+				    				<div class="form-item">
+				    					<label for="">Street:</label>
+					    				<input type="text" maxlength="100" disabled class="now-posiotion">
+					    				<div class="form-item-count"><span>0</span>/100</div>
+				    				</div>
+				    				<div class="form-item">
+				    					<label for="">City/town or postal code:</label>
+					    				<input type="text" maxlength="100" disabled>
+					    				<div class="form-item-count"><span>0</span>/100</div>
+				    				</div>
+				    				<div class="form-item">
+				    					<label for="">Country/ or state:</label>
+					    				<input type="text" maxlength="100" disabled>
+					    				<div class="form-item-count"><span>0</span>/100</div>
+				    				</div>
+				    				<div class="form-item">
+				    					<label for="">Latitude:</label>
+					    				<input type="text" maxlength="100" disabled>
+				    				</div>
+				    				<div class="form-item">
+				    					<label for="">Longtitude:</label>
+					    				<input type="text" maxlength="100" disabled>
+				    				</div>
+				    			</div>
+				    			<div class="col">
+				    				<div class="form-item">
+				    					<label for="">Phone 1:</label>
+				    					<select name="phone1prefix" id="" class="mr-8">
+				    						{%F:@tpl(TMS:parse({"section":"phonecodes"}))%}
+				    					
+				    					</select>
+					    				<input type="text" maxlength="100">
+					    				<div class="form-item-count"><span>0</span>/100</div>
+				    				</div>
+				    				<div class="form-item">
+				    					<label for="phone2prefix">Phone 2:</label>
+				    					<select name="" id="" class="mr-8">
+				    						
+				    					{%F:@tpl(TMS:parse({"section":"phonecodes"}))%}
+				    					</select>
+					    				<input type="text" maxlength="100">
+					    				<div class="form-item-count"><span>0</span>/100</div>
+				    				</div>
+				    				<div class="form-item">
+				    					<label for="">Phone 3:</label>
+				    					<select name="phone3prefix" id="" class="mr-8">
+				    						{%F:@tpl(TMS:parse({"section":"phonecodes"}))%}
+				    					
+				    					</select>
+					    				<input type="text" maxlength="100">
+					    				<div class="form-item-count"><span>0</span>/100</div>
+				    				</div>
+				    				<div class="form-item">
+				    					<label for="">URL:</label>
+					    				<input type="text" maxlength="100">
+				    				</div>
+				    				<div class="form-item">
+				    					<label for="">Email:</label>
+					    				<input type="text" maxlength="100">
+					    				<div class="form-item-count"><span>0</span>/100</div>
+				    				</div>
+				    				<div class="form-item">
+				    					<label for="">Free text:</label>
+					    				<textarea maxlength="512"></textarea>
+					    				<div class="form-item-count"><span>0</span>/512</div>
+				    				</div>
+				    			</div>
+				    		</div>
+				    		<div class="flex align-justify align-middle mt-16">
+				    			<div class="flex items">
+									<div class="item mr-16">
+										<span class="title">Provider:</span>
+										<span class="text">BMW</span>
+									</div>
+									<div class="item">
+										<span class="title">Sub-provider:</span>
+										<span class="text">ConnectedDrive</span>
+									</div>
+				    			</div>
+								<div class="btns mr-48">
+									<a href="#" class="btn btn-color-grey  mr-8 modal-cancel">Cancel</a>
+									<a href="#" class="btn btn-color-dark_grey creatPoi-save">Save</a>
+								</div>
+				    		</div>
+				    	</form>
+				    </div>
+				</div>
+			</div>
+		</div>
+
+		<div id="editPoi" class="modal">
+			<div class="modal-close"><img src="/project/templates/altabeltest.link/_ares/img/png/close-d.png" alt=""></div>
+			<div class="modal-name">Edit Points Of Interest</div>
+			<div class="tabs-small">
+			    <div class="tabs-panel is-active" id="form-no-position-modal">
+			    	<form class="form" id="editPOIForm">
+			    		<div class="col-row modal-row">
+			    			<div class="col mr-44">
+			    				
+								<div class="form-item">
+				    					<label for="">Name:</label>
+					    				<input name="Name" type="text" maxlength="100">
+					    				<div class="form-item-count"><span>0</span>/100</div>
+				    				</div>
+				    				<div class="form-item">
+				    					<label for="">Street:</label>
+					    				<input name="POI.street" type="text" maxlength="100">
+					    				<div class="form-item-count"><span>0</span>/100</div>
+				    				</div>
+				    				<div class="form-item">
+				    					<label for="">City/town or postal code:</label>
+					    				<input name="POI.city" type="text" maxlength="100">
+					    				<div class="form-item-count"><span>0</span>/100</div>
+				    				</div>
+				    				<div class="form-item">
+				    					<label for="">Country/ or state:</label>
+					    				<input name="POI.country" type="text" maxlength="100">
+					    				<div class="form-item-count"><span>0</span>/100</div>
+				    				</div>
+				    				<div class="form-item">
+				    					<label for="">Latitude:</label>
+					    				<input name="POI.lat" type="text" maxlength="100">
+				    				</div>
+				    				<div class="form-item">
+				    					<label for="">Longtitude:</label>
+					    				<input  name="POI.lon" type="text" maxlength="100">					    				
+				    			</div>
+								
+								
+			    			</div>
+							
+							
+							
+	
+			    			<div class="col">
+							
+			    					<div class="form-item">
+				    					<label for="">Phone 1:</label>
+				    					<select name="phone1prefix" id="" class="mr-8">
+											{%F:@tpl(TMS:parse({"section":"phonecodes"}))%}
+				    						
+				    					</select>
+					    				<input  name="POI.phone1"  type="text" maxlength="100">
+					    				<div class="form-item-count"><span>0</span>/100</div>
+				    				</div>
+				    				<div class="form-item">
+				    					<label for="">Phone 2:</label>
+				    					<select name="phone2prefix" id="" class="mr-8">
+				    						{%F:@tpl(TMS:parse({"section":"phonecodes"}))%}
+				    					</select>
+					    				<input name="POI.phone2" type="text" maxlength="100">
+					    				<div class="form-item-count"><span>0</span>/100</div>
+				    				</div>
+				    				<div class="form-item">
+				    					<label for="">Phone 3:</label>
+				    					<select name="phone3prefix" id="" class="mr-8">
+				    						{%F:@tpl(TMS:parse({"section":"phonecodes"}))%}
+				    					</select>
+					    				<input name="POI.phone3" type="text" maxlength="100">
+					    				<div class="form-item-count"><span>0</span>/100</div>
+				    				</div>
+				    				<div class="form-item">
+				    					<label for="">URL:</label>
+					    				<input name="POI.url" type="text" maxlength="100">
+				    				</div>
+				    				<div class="form-item">
+				    					<label for="">Email:</label>
+					    				<input name="POI.email" type="text" maxlength="100">
+					    				<div class="form-item-count"><span>0</span>/100</div>
+				    				</div>
+				    				<div class="form-item">
+				    					<label for="">Free text:</label>
+					    				<textarea name="POI.text" maxlength="512"></textarea>
+					    				<div class="form-item-count"><span>0</span>/512</div>
+				    				</div>
+									
+			    			</div>
+			    		</div>
+			    		<div class="flex align-justify align-middle mt-16">
+			    			<div class="flex items">
+								<div class="item mr-16">
+									<span class="title">Provider:</span>
+									<span class="text">BMW</span>
+								</div>
+								<div class="item">
+									<span class="title">Sub-provider:</span>
+									<span class="text">ConnectedDrive</span>
+								</div>
+			    			</div>
+							<div class="btns mr-48">
+								<a href="#" class="btn btn-color-grey  mr-8 modal-cancel">Cancel</a>
+								<a href="#" class="btn btn-color-dark_grey creatPoi-save-edited">Save</a>
+							</div>
+			    		</div>
+			    	</form>
+			    </div>
+			</div>
+		</div>
+
+	<div id="manageFavorites" class="modal">
+			<div class="modal-close"><img src="{%F:ARES%}img/png/close-d.png" alt=""></div>
+			<div class="modal-name">Manage favorites</div>
+			<form id="form-manage-favorite" class="tabs-modal">
+				<ul class="tabs" data-deep-link="true" data-update-history="true" data-deep-link-smudge="true" data-deep-link-smudge-delay="500" data-tabs id="modal-tabs">
+					<li class="tabs-title is-active"><a href="#add-favorites-modal">Add search filter to favorites</a></li>
+					<li class="tabs-title " aria-selected="true"><a href="#edit-delete-modal">Edit/Delete favorites</a></li>
+				</ul>
+				<div class="tabs-content" data-tabs-content="modal-tabs">
+				    <div class="tabs-panel is-active" id="add-favorites-modal">
+				    	<div class="col-row">
+				    		<div class="col col-2_7">
+				    			<div class="filter-item">
+				    				<div class="form-item checkbox">
+				    					<input type="checkbox">
+				    					<span></span>
+				    				</div>
+				    				<img src="{%F:ARES%}img/png/icons/restr.png" alt="">
+				    				<div class="filter-name">restaurant/cafe</div>
+				    			</div>
+				    			<div class="filter-item">
+				    				<div class="form-item checkbox">
+				    					<input type="checkbox">
+				    					<span></span>
+				    				</div>
+				    				<img src="{%F:ARES%}img/png/icons/avia.png" alt="">
+				    				<div class="filter-name">travel</div>
+				    			</div>
+				    			<div class="filter-item">
+				    				<div class="form-item checkbox">
+				    					<input type="checkbox">
+				    					<span></span>
+				    				</div>
+				    				<img src="{%F:ARES%}img/png/icons/theatre.png" alt="">
+				    				<div class="filter-name">theatre</div>
+				    			</div>
+				    			<div class="filter-item">
+				    				<div class="form-item checkbox">
+				    					<input type="checkbox">
+				    					<span></span>
+				    				</div>
+				    				<img src="{%F:ARES%}img/png/icons/shopping.png" alt="">
+				    				<div class="filter-name">shopping</div>
+				    			</div>
+				    			<div class="filter-item">
+				    				<div class="form-item checkbox">
+				    					<input type="checkbox">
+				    					<span></span>
+				    				</div>
+				    				<img src="{%F:ARES%}img/png/icons/museum.png" alt="">
+				    				<div class="filter-name">museum</div>
+				    			</div>
+				    			<div class="filter-item">
+				    				<div class="form-item checkbox">
+				    					<input type="checkbox">
+				    					<span></span>
+				    				</div>
+				    				<img src="{%F:ARES%}img/png/icons/groceries.png" alt="">
+				    				<div class="filter-name">groceries</div>
+				    			</div>
+				    		</div>
+				    		<div class="col col-2_7">
+				    			<div class="filter-item">
+				    				<div class="form-item checkbox">
+				    					<input type="checkbox">
+				    					<span></span>
+				    				</div>
+				    				<img src="{%F:ARES%}img/png/icons/garage.png" alt="">
+				    				<div class="filter-name">garage/workshop/repair</div>
+				    			</div>
+				    			<div class="filter-item">
+				    				<div class="form-item checkbox">
+				    					<input type="checkbox">
+				    					<span></span>
+				    				</div>
+				    				<img src="{%F:ARES%}img/png/icons/beach.png" alt="">
+				    				<div class="filter-name">beach</div>
+				    			</div>
+				    			<div class="filter-item">
+				    				<div class="form-item checkbox">
+				    					<input type="checkbox">
+				    					<span></span>
+				    				</div>
+				    				<img src="{%F:ARES%}img/png/icons/tourist.png" alt="">
+				    				<div class="filter-name">tourist Information</div>
+				    			</div>
+				    			<div class="filter-item">
+				    				<div class="form-item checkbox">
+				    					<input type="checkbox">
+				    					<span></span>
+				    				</div>
+				    				<img src="{%F:ARES%}img/png/icons/sightseeing.png" alt="">
+				    				<div class="filter-name">sightseeing</div>
+				    			</div>
+				    			<div class="filter-item">
+				    				<div class="form-item checkbox">
+				    					<input type="checkbox">
+				    					<span></span>
+				    				</div>
+				    				<img src="{%F:ARES%}img/png/icons/station.png" alt="">
+				    				<div class="filter-name">gas station</div>
+				    			</div>
+				    			<div class="filter-item">
+				    				<div class="form-item checkbox">
+				    					<input type="checkbox">
+				    					<span></span>
+				    				</div>
+				    				<img src="{%F:ARES%}img/png/icons/cash.png" alt="">
+				    				<div class="filter-name">cash machine</div>
+				    			</div>
+				    		</div>
+				    		<div class="col col-3_7 manager">
+				    			<div class="form-item">
+			    					<label for="">Favorite name:</label>
+			    					<input name="favorite_favoriteName" type="text">
+			    				</div>
+			    				<div class="form-item">
+			    					<label for="">Search type:</label>
+			    					<select name="favorite_searchType" id="">
+			    						<option value="By map">By map</option>
+										<option value="By map1">By map1</option>
+										<option value="By map2">By map2</option>
+										<option value="By map3">By map3</option>
+			    					</select>
+			    				</div>
+			    				<div class="form-item">
+			    					<label for="">Language:</label>
+			    					<select name="favorite_language" id="">
+			    						<option value="English">English</option>
+										<option value="German">German</option>
+										<option value="China">China</option>
+										<option value="Spain">Spain</option>
+			    					</select>
+			    				</div>
+			    				<div class="form-item">
+			    					<label for="">What:</label>
+			    					<input  name="favorite_what" type="text">
+			    				</div>
+			    				<div class="form-item">
+			    					<label for="">Category:</label>
+			    					<select name="favorite_category" id="" multiple>
+										<option value="BMW Service Partner">BMW Service Partner</option>
+										<option value="BMW Retailers">BMW Retailers</option>
+										<option value="School">School</option>
+										<option value="ATM">ATM</option>
+										<option value="Bank">Bank</option>
+										<option value="Public Parking">Public Parking</option>
+										<option value="Pharmacy">Pharmacy</option>
+										<option value="Medical Services">Medical Services</option>
+			    						<option value="Restaurants">Restaurants</option>
+			    						<option value="Named Place">Named Place</option>
+			    						<option value="German Food">German Food</option>
+			    						<option value="Speciality Store">Speciality Store</option>
+			    					</select>
+			    				</div>
+				    		</div>
+				    	</div>
+				    	<div class="flex align-justify align-middle mt-16">
+				    		<div class="items">
+								<a href="#" id="btn-favorites-copy" class="btn btn-color-blue">Copy data from search form</a>
+			    			</div>
+							<div class="btns">
+								<a href="#" class="btn btn-color-dark_grey mr-8" id="form-manage-favorite-submit">Submit</a>
+								<a href="#" class="btn btn-color-grey modal-cancel">Cancel</a>
+							</div>
+						</div>
+				    </div>
+				    <div class="tabs-panel" id="edit-delete-modal">
+				    	<div id="favorites-items" class="col-row" >
+				    		
+				    	</div>
+						<div class="flex align-right align-middle mt-16">
+							<div class="btns">
+								<a href="#" class="btn btn-color-grey modal-cancel">Cancel</a>
+							</div>
+						</div>
+				    </div>
+				</div>
+			</form>
+		</div>
+
+	<div class="overlay-top">
+		<div id="success" class="modal">
+			<!-- <div class="modal-close"><img src="{%F:ARES%}img/png/close-d.png" alt=""></div> -->
+			<div class="modal-title mb-34">Successfully sent to vehicle!</div>
+			<a href="#" class="btn btn-color-grey">OK</a>
+		</div>
+
+		
+		<div id="successHistory" class="modal">
+			<!-- <div class="modal-close"><img src="assets/img/png/close-d.png" alt=""></div> -->
+			<div class="modal-title mb-34">Successfully resent to vehicle!</div>
+			<a href="#" class="btn btn-color-grey">OK</a>
+		</div>
+
+		<div id="reportSuccess" class="modal">
+			<!-- <div class="modal-close"><img src="assets/img/png/close-d.png" alt=""></div> -->
+			<div class="modal-title mb-34">Report has been successfully filed!</div>
+			<a href="#" class="btn btn-color-grey">OK</a>
+		</div>
+
+		<div id="removeFavorites" class="modal">
+			<div class="modal-close"><img src="{%F:ARES%}img/png/close-d.png" alt=""></div>
+			<div class="modal-name">Remove POI</div>
+			<div class="modal-title mb-34">Do you want to remove '<span></span>'</div>
+			<div class="flex-row">
+				<a href="#" class="btn btn-color-dark_grey mr-8 removeFavorites">Remove</a>
+				<a href="#" class="btn btn-color-grey modal-cancel">Cancel</a>
+			</div>
+		</div>
+
+		<div id="closeCall" class="modal ">
+			<div class="modal-close"><img src="{%F:ARES%}img/png/close-d.png" alt=""></div>
+			<div class="modal-name">Please confirm</div>
+			<div class="modal-title mb-34">Do you want to close the call?</div>
+			<div class="flex-row">
+				<a href="#" class="btn btn-color-red mr-8" id="closeCallBtn">Close</a>
+				<a href="#" class="btn btn-color-grey modal-cancel">Cancel</a>
+			</div>
+		</div>
+
+		<div id="closeCallMore" class="modal">
+			<div class="modal-close"><img src="{%F:ARES%}img/png/close-d.png" alt=""></div>
+			<div class="modal-name">Please confirm</div>
+			<div class="modal-pretitle">POIs to be sent:  '<span class="countPois"></span>'</div>
+			<div class="modal-title mb-34">Do you want to close the call and send POIs?</div>
+			<div class="flex-row">
+				<a href="#" class="btn btn-color-red mr-8" id="closeCallMoreBtn">Close and Send</a>
+				<a href="#" class="btn btn-color-grey modal-cancel">Close without sending</a>
+			</div>
+		</div>
+
+		<div id="deleteFavorites" class="modal">
+			<div class="modal-close"><img src="{%F:ARES%}img/png/close-d.png" alt=""></div>
+			<div class="modal-name">Delete Favorites</div>
+			<div class="modal-title mb-34">Do you want to remove '<span class="modal-title-span"></span>'</div>
+			<div class="flex-row">
+				<a href="#" class="btn btn-color-dark_grey mr-8 deleteFavorites">Delete</a>
+				<a href="#" class="btn btn-color-grey modal-cancel">Cancel</a>
+			</div>
+		</div>
+
+		<div id="confirmEditFavorites" class="modal modal-edit-favorite">
+			<div class="modal-close"><img src="{%F:ARES%}img/png/close-d.png" alt=""></div>
+			<div class="modal-name">Edit Favorites</div>
+			<div class="modal-title mb-34">Do you want to edit '<span class="modal-title-span"></span>'</div>
+			<div class="flex-row">
+				<a href="#" class="btn btn-color-dark_grey mr-8 confirmEditFavorites">Edit</a>
+				<a href="#" class="btn btn-color-grey modal-cancel">Cancel</a>
+			</div>
+		</div>
+
+		<form id="editFavorites" class="modal">
+			<div class="modal-close"><img src="{%F:ARES%}img/png/close-d.png" alt=""></div>
+			<div class="modal-name">Edit Favorites</div>
+			<div class="tabs-modal">
+		    	<div class="col-row">
+		    		<div class="col col-2_7">
+		    			<div class="filter-item">
+		    				<div class="form-item checkbox">
+		    					<input type="checkbox">
+		    					<span></span>
+		    				</div>
+		    				<img src="{%F:ARES%}img/png/icons/restr.png" id="restr.png" alt="">
+		    				<div class="filter-name">restaurant/cafe</div>
+		    			</div>
+		    			<div class="filter-item">
+		    				<div class="form-item checkbox">
+		    					<input type="checkbox">
+		    					<span></span>
+		    				</div>
+		    				<img src="{%F:ARES%}img/png/icons/avia.png" alt="">
+		    				<div class="filter-name">travel</div>
+		    			</div>
+		    			<div class="filter-item">
+		    				<div class="form-item checkbox">
+		    					<input type="checkbox">
+		    					<span></span>
+		    				</div>
+		    				<img src="{%F:ARES%}img/png/icons/theatre.png" alt="">
+		    				<div class="filter-name">theatre</div>
+		    			</div>
+		    			<div class="filter-item">
+		    				<div class="form-item checkbox">
+		    					<input type="checkbox">
+		    					<span></span>
+		    				</div>
+		    				<img src="{%F:ARES%}img/png/icons/shopping.png" alt="">
+		    				<div class="filter-name">shopping</div>
+		    			</div>
+		    			<div class="filter-item">
+		    				<div class="form-item checkbox">
+		    					<input type="checkbox">
+		    					<span></span>
+		    				</div>
+		    				<img src="{%F:ARES%}img/png/icons/museum.png" alt="">
+		    				<div class="filter-name">museum</div>
+		    			</div>
+		    			<div class="filter-item">
+		    				<div class="form-item checkbox">
+		    					<input type="checkbox">
+		    					<span></span>
+		    				</div>
+		    				<img src="{%F:ARES%}img/png/icons/groceries.png" alt="">
+		    				<div class="filter-name">groceries</div>
+		    			</div>
+		    		</div>
+		    		<div class="col col-2_7">
+		    			<div class="filter-item">
+		    				<div class="form-item checkbox">
+		    					<input type="checkbox">
+		    					<span></span>
+		    				</div>
+		    				<img src="{%F:ARES%}img/png/icons/garage.png" alt="">
+		    				<div class="filter-name">garage/workshop/repair</div>
+		    			</div>
+		    			<div class="filter-item">
+		    				<div class="form-item checkbox">
+		    					<input type="checkbox">
+		    					<span></span>
+		    				</div>
+		    				<img src="{%F:ARES%}img/png/icons/beach.png" alt="">
+		    				<div class="filter-name">beach</div>
+		    			</div>
+		    			<div class="filter-item">
+		    				<div class="form-item checkbox">
+		    					<input type="checkbox">
+		    					<span></span>
+		    				</div>
+		    				<img src="{%F:ARES%}img/png/icons/tourist.png" alt="">
+		    				<div class="filter-name">tourist Information</div>
+		    			</div>
+		    			<div class="filter-item">
+		    				<div class="form-item checkbox">
+		    					<input type="checkbox">
+		    					<span></span>
+		    				</div>
+		    				<img src="{%F:ARES%}img/png/icons/sightseeing.png" alt="">
+		    				<div class="filter-name">sightseeing</div>
+		    			</div>
+		    			<div class="filter-item">
+		    				<div class="form-item checkbox">
+		    					<input type="checkbox">
+		    					<span></span>
+		    				</div>
+		    				<img src="{%F:ARES%}img/png/icons/station.png" alt="">
+		    				<div class="filter-name">gas station</div>
+		    			</div>
+		    			<div class="filter-item">
+		    				<div class="form-item checkbox">
+		    					<input type="checkbox">
+		    					<span></span>
+		    				</div>
+		    				<img src="{%F:ARES%}img/png/icons/cash.png" alt="">
+		    				<div class="filter-name">cash machine</div>
+		    			</div>
+		    		</div>
+		    		<div class="col col-3_7 manager">
+		    			<div class="form-item">
+	    					<label for="">Favorite name:</label>
+	    					<input name="favorite.favoriteName" type="text">
+	    				</div>
+	    				<div class="form-item">
+	    					<label for="">Search type:</label>
+	    					<select name="favorite.searchType" id="">
+	    						<option value="By map">By map</option>
+	    						<option value="By map1">By map1</option>
+	    						<option value="By map2">By map2</option>
+	    						<option value="By map3">By map3</option>
+	    					</select>
+	    				</div>
+	    				<div class="form-item">
+	    					<label for="">Language:</label>
+	    					<select name="favorite.language" id="" >
+	    						<option value="English">English</option>
+								<option value="German">German</option>
+								<option value="China">China</option>
+	    						<option value="Spain">Spain</option>
+	    					</select>
+	    				</div>
+	    				<div class="form-item">
+	    					<label for="">What:</label>
+	    					<select name="favorite.what" id="">
+	    						<option value="Champions Sportsbar">Champions Sportsbar</option>
+								<option value="Hotel">Hotel</option>
+								<option value="Canteen">Canteen</option>
+								<option value="Service station">Service station</option>
+							</select>
+	    				</div>
+	    				<div class="form-item">
+	    					<label for="">Category:</label>
+	    					<select name="favorite.category" id=""  multiple>
+									<option value="Restaurant">Restaurant</option>
+									<option value="Named Place">Named Place</option>
+									<option value="German Food">German Food</option>
+									<option value="Speciality Store">Speciality Store</option>
+									<option value="School">School</option>
+									<option value="ATM">ATM</option>
+									<option value="Bank">Bank</option>
+									<option value="Public Parking">Public Parking</option>
+									<option value="Pharmacy">Pharmacy</option>
+									<option value="Medical Services">Medical Services</option>
+									<option value="BMW Service Partner">BMW Service Partner</option>
+									<option value="BMW Retailers">BMW Retailers</option>
+								
+	    					</select>
+	    				</div>
+		    		</div>
+		    	</div>
+		    	<div class="flex align-right align-middle mt-16">
+					<div class="btns">
+						<a href="#" id="btn-edit-save" class="btn btn-color-dark_grey mr-8" >Save</a>
+						<a href="#" class="btn btn-color-grey modal-cancel">Cancel</a>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+
+
+{%endsection:catalogObject%}
+
+
+
+                      
+
+

@@ -1,0 +1,31 @@
+{%section:newsInterval%}
+
+
+
+                <div class="news">
+                    <h2>News</h2>
+                                        
+                    {%each({F:newsList},k,v)%}
+                    
+                        <div>
+                         <a href="{%F:v>link%}">   <img src="{%F:v>image%}" alt="{%F:v>header%} "></a>
+                         <a href="{%F:v>link%}"><strong>{%F:v>header%}</strong></a>
+                            <p>{%F:v>news_short%}</p>
+                        </div>
+                    
+                    {%endeach%}
+                    
+                    <div class="clear"></div>
+                </div>
+                
+                
+                   
+                
+       
+        
+                
+        
+{%endsection:newsInterval%}
+
+
+

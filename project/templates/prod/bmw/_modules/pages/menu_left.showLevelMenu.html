@@ -1,0 +1,40 @@
+
+{%section:_menu_main_level0%}
+    
+    <div class="col-sm-3 col-sm-offset-0 col-xs-6 col-xs-offset-1 side_menu">
+                
+        <ul>
+              {%F:menuItems%}
+        </ul>
+    
+    </div>
+    
+{%endsection:_menu_main_level0%}
+
+
+
+{%section:_menu_item_level0%}
+    
+    
+    <li>{%F:Name%} {%F:submenu%}</li>
+
+{%endsection:_menu_item_level0%}
+
+
+
+{%section:_menu_main_level1%}
+                
+        <ul>
+              {%F:menuItems%}
+        </ul>
+    
+{%endsection:_menu_main_level1%}
+
+
+
+{%section:_menu_item_level1%}
+    
+    
+    <li><a class="{%if({F:selected})%} selected {%endif%}" href="{%F:link%}">{%F:Name%}</a>{%F:submenu%}</li>
+
+{%endsection:_menu_item_level1%}

@@ -1,0 +1,29 @@
+{%section:popupChanger%}
+<script>
+$(document).ready(function(){
+
+    $.fancybox('#popuper'
+        ,{
+        'titlePosition': 'inside',
+        'transitionIn': 'none',
+        'transitionOut': 'none',
+        'autoCenter': 'true',
+        helpers: {
+            overlay: {
+                locked: false
+            }
+        }
+    } );
+
+
+});
+</script>
+
+<div id="popuper">
+    <div class="popup_block" style="display:block;width:800px">
+
+            {%F:content%}
+
+    </div>
+</div>
+{%endsection:popupChanger%}

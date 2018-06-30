@@ -1,0 +1,72 @@
+{%section:catalogImport%}
+
+<div class="panel-body">
+    <div class="form-group">
+
+        <form id="importXLS">
+
+            <div class="form-group">
+                <label>{select_file_to_import}</label>
+
+                <div class="input-group">
+                    <input id="filename" name="filename" readonly class="form-control validate-selection text-sm"/>
+
+                    <span class="input-group-btn">
+                                    <a class="fileManagerApplyButton btn btn-default"> <i
+                                            class="fa fa-folder-open-o"></i></a>
+                                </span>
+
+                    <span class="input-group-btn">
+                                    <a class="fileManagerClearInput btn btn-default"> <i class="fa fa-times"></i></a>                                                    
+                                </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+                <label>{type_for_downloadable_categories}</label>
+                <select id="categoryType" class="form-control" name="categoryType" type="text"></select>
+            </div>
+
+
+            <div class="form-group">
+                <label>{type_for_downloadable_objects}</label>
+                <select id="objectType" class="form-control" name="objectType" type="text"></select>
+            </div>
+
+
+            <div class="form-group">
+
+                <label>{import_category}</label>
+
+                <div class="input-group">
+                    <input id="ancestor" name="ancestor" readonly class="form-control validate-selection xoad-ignore">
+                    <span class="input-group-btn"><a href="#"
+                                                     data-wintext="{catobj_situation}" data-winwidth="500"
+                                                     data-callback="catalog.onDialogGroup"
+                                                     data-destination="ancestor" data-topindex="45"
+                                                     data-info="_ROOT,_CATGROUP" class="xList btn btn-default">
+              {choose}</a> <input name="ancestorId" id="ancestorId"
+                                  type="hidden"></span>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label>{encoding}:</label>
+                <select class="required form-control" name="priority" type="text">
+                    <option value="windows-1251">windows-1251</option>
+                    <option value="utf8">utf-8</option>
+                </select>
+
+            </div>
+
+
+            <a class="btn btn-success m-b-sm importFilesCatalog">{import}</a>
+
+        </form>
+    </div>
+</div>
+{%section:catalogImport%}

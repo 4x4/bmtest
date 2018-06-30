@@ -1,0 +1,33 @@
+{%section:showUserPriceCategory%}
+
+<script>
+$(document).ready(function() {
+    
+    $("#userPriceCategory").on('change',function(e)
+    {
+       document.location.href='/?userPriceCategory='+$(this).val();
+    });
+    
+
+}); 
+</script>
+
+
+        <form id="selectPrice" action="{%F:actionLink%}" method="GET">
+                            <select id="userPriceCategory"  name="userPriceCategory">
+                            
+                            
+                            {%each({F:userPrices},k,v)%}
+                                
+                                <option value="{%F:k%}" {%if({F:v>selected})%}selected{%endif%}>{%F:v>alias%}</option>                            
+                                
+                            {%endeach%}
+                            </select>
+                    
+                    </form>
+                    
+                </div>
+
+{%endsection:showUserPriceCategory%}
+
+

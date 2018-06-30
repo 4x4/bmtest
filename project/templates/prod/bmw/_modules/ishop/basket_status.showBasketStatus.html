@@ -1,0 +1,60 @@
+
+{%section:showBasketStatus%}
+
+
+
+<script id="basket-template" type="text/x-handlebars-template">
+						
+						
+						 {{#each cartItems}}
+  
+								<li class="product-unit">		  								
+										<div class="product-img left">
+				  							<img  src="{{skuObject.params.objimage}}" alt=""/>
+				  						</div>
+				  						<div class="product-info right">
+				  							<p class="bold">{{object._main.Name}}</p>
+				  							<p>Модель: <span>{{object.tovarbase.articul}}</span></p>
+				  							<p>Цена: <span>{{price}} руб.</span></p>
+				  							<p>Цвет: <span style="background: url({{skuObject.params.image}})" class="color"></span></p>
+				  							<p>Размер: <span>{{skuObject.params.size}}</span></p>
+				  							<p>Количество: <span>{{count}}</span></p>
+				  						</div>
+				  						<div class="clear"></div>
+			  						</li>			  		
+					{{/each}}		
+			
+			
+</script>
+
+
+       <div class="column large-4">
+                <div class="flex_block">
+                    
+                    <!--<div class="arrow_block">
+                        <i class="arrow_left-right_alt"></i>
+                        <span class="badge">0</span>
+                    </div>-->
+                    
+                    <div class="basket_block">
+                        <a href="{%F:cartPageLink%}"><i class="ion-bag"></i></a>
+						<span class="badge active"><a style="color:white" href="{%F:cartPageLink%}">{%F:allCount%}</a></span>
+                    </div>
+                    <div class="money_block">
+                        <span class="number">{%F:orderSumFormatted%}</span>
+                        <span class="curency">kr</span>
+                    </div>
+                </div>
+            </div>
+
+ 
+  
+
+  
+
+                                
+	   												  
+ 
+{%endsection:showBasketStatus%}
+
+

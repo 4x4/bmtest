@@ -1,0 +1,30 @@
+{%section:assist%}
+ 
+ 
+ 
+ 
+ {%if('{F:test}'=='1')%}
+<FORM ACTION="https://test.paysec.by/pay/order.cfm" METHOD="POST" id="assist"> 
+{%else%}
+<FORM ACTION="https://test.paysec.by/pay/order.cfm" METHOD="POST"  id="assist"> 
+{%endif%}
+
+
+
+
+<INPUT TYPE="HIDDEN" NAME="Merchant_ID" VALUE="{%F:Merchant_ID%}"> 
+<INPUT TYPE="HIDDEN" NAME="OrderNumber" VALUE="{%F:OrderNumber%}"> 
+<INPUT TYPE="HIDDEN" NAME="OrderAmount" VALUE="{%F:OrderAmount%}"> 
+<INPUT TYPE="HIDDEN" NAME="OrderCurrency" VALUE="{%F:OrderCurrency%}"> 
+
+<INPUT TYPE="HIDDEN" NAME="Delay" VALUE="0"> 
+
+<INPUT TYPE="HIDDEN" NAME="Language" VALUE="RU"> 
+
+<INPUT TYPE="HIDDEN" NAME="Email" VALUE="{%F:Email%}"> 
+<INPUT TYPE="HIDDEN" NAME="OrderComment" VALUE="{%F:OrderComment%}"> 
+</FORM>
+
+{%endsection:assist%}
+
+

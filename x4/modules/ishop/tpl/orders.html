@@ -1,0 +1,82 @@
+
+<div class="panel ishopFilter">
+    <div class="panel-body">
+        <form class="form-inline" role="form" id="orderFilterData">
+
+
+        <div class="form-group">
+             <label>{start_date_order}:</label>
+                                <div class="input-group">
+                                    <input name="ordersStartDate" type="text"
+                                           data-format="dd/MM/yyyy hh:mm:ss" size="23"
+                                           class="datepicker-input form-control">
+                                    <span class="add-on input-group-btn">
+                      <a class="btn btn-default">      <i data-time-icon="fa fa-clock-o" data-date-icon="fa fa-calendar"
+                                                          class=""></i> </a>
+                   </span>
+
+                                    <span class="input-group-btn">
+                                             <a class="clearNearest btn btn-default"> <i class="fa fa-times"></i></a>
+                   </span>
+                   </div>
+
+        </div>
+
+        <div class="form-group">
+             <label>{end_date_order}:</label>
+                                <div class="input-group">
+                                    <input name="ordersEndDate" type="text"
+                                           data-format="dd/MM/yyyy hh:mm:ss" size="23"
+                                           class="datepicker-input form-control">
+                                    <span class="add-on input-group-btn">
+                      <a class="btn btn-default">      <i data-time-icon="fa fa-clock-o" data-date-icon="fa fa-calendar"
+                                                          class=""></i> </a>
+                   </span>
+
+                                    <span class="input-group-btn">
+                                             <a class="clearNearest btn btn-default"> <i class="fa fa-times"></i></a>
+                   </span>
+
+                                </div>
+             </div>
+
+        <div class="form-group">
+                    <label>{order_status}:</label>
+                    <div class="input-group">
+                        <select id="statuses"  name="statuses" class="chosen-select form-control"  multiple>
+
+                        </select>
+                    </div>
+        </div>
+
+
+        <div class="form-group">
+                    <label>{order_type}:</label>
+                    <div class="input-group">
+                        <select id="orderType"  name="orderType" class="chosen-select form-control" multiple></select>
+                    </div>
+        </div>
+
+            <div class="form-group">
+                <label>{phone}:</label>
+                <div class="input-group">
+                    <input id="orderPhone"  name="orderPhone" class="form-control">
+                </div>
+            </div>
+
+        <div class="form-group">
+
+
+                <a  href="#" class="btn m-t-lg btn-success" >ok</a>
+        </div>
+
+
+
+       </form>
+    </div>
+
+</div>
+
+<div id="orderListContainer" style="width:99%;height:800px;margin-left:15px"></div>
+
+<footer class="panel-footer ordersPaginator"></footer>

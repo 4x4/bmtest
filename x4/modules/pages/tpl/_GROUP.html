@@ -1,0 +1,132 @@
+{%section:_GROUP%}
+{%F:#tpl(TMS:load({"module":"pages","prefix":"MODULES","path":"pages/tpl/slotzContainer.html"}))%}
+
+
+<div class="row">
+    <div class="col-lg-6">
+        <section>
+            <div class="panel-body">
+                {%if('{F:action}'=='edit')%}
+                <form role="form" id="edit_GROUP">
+                    {%else%}
+                    <form role="form" id="create_GROUP">
+                        {%endif%}
+
+
+                        <div class="form-group">
+
+                            <h5>{group_name}</h5>
+                            <input id="Name" name="Name" class="form-control validate[required,custom[alpha]]"
+                                   placeholder="{enter_page_name}"/>
+                            <span class="help-block m-b-none">{page_name_displayed_in_menu}</span>
+
+                        </div>
+
+
+                        <div class="form-group">
+                            <h5>{link}</h5>
+                            <div class="input-group m-b">
+                                <span class="input-group-btn">
+                                        <button type="button" class="btn generate-link btn-default">{create}</button>
+                                 </span>
+                                <input name="basic" id="basic"
+                                       class="form-control validate[required,custom[alphaNum]]"/>
+                            </div>
+                        </div>
+
+                        {%if('{F:action}'!='edit')%}
+                        <div class="form-group">
+                            <h5>{group_situation}</h5>
+
+                            <div class="input-group">
+                                <input id="ancestor" name="ancestor" readonly
+                                       class="form-control validate-selection xoad-ignore"/>
+                                <span class="input-group-btn">
+                                <a href="#" data-wintext="{page_situation}" data-winwidth="500"
+                                   data-on-data-return="pages.onTreeDialogReturnGroup"
+                                   data-callback="pages.onDialogGroup"
+                                   data-destination="ancestor" data-topindex="45" data-info="_GROUP,_LVERSION"
+                                   class="xList btn btn-default"> <i class="fa fa-css3"></i> {choose}</a>                                                     <input
+                                        name="ancestorId" id="ancestorId" type="hidden"/></span>
+                            </div>
+                        </div>
+
+
+                        {%endif%}
+
+                        {%if('{F:action}'=='edit')%}
+                        <div class="form-group">
+                            <h5>{home_page_group}</h5>
+                            <select name="StartPage" id="StartPage" class="form-control"></select>
+                        </div>
+
+                        {%endif%}
+
+                        <section class="panel panel-default pos-rlt clearfix">
+
+                            <header class="panel-heading">
+                                <ul class="nav nav-pills pull-right">
+                                    <li><a class="panel-toggle text-muted" href="#"><i
+                                            class="fa fa-caret-down text-active"></i><i class="fa fa-caret-up text"></i></a>
+                                    </li>
+                                </ul>
+                                {group_visibility}
+                            </header>
+
+                            <div class="panel-body clearfix">
+
+
+                                <div class="checkbox i-checks">
+                                    <label>
+                                        <input type="checkbox" name="Visible">
+                                        <i></i>{do_not_display_the_global_menu}</label>
+                                </div>
+
+                                <div class="checkbox i-checks">
+                                    <label>
+                                        <input type="checkbox" name="DisableMapLink">
+                                        <i></i>{disconnect_the_link_from_the_site_map}</label>
+                                </div>
+
+
+                                <div class="checkbox i-checks">
+                                    <label>
+                                        <input type="checkbox" name="DisablePath">
+                                        <i></i>{do_not_display_in_the_way_of_the_page}</label>
+                                </div>
+
+                                <div class="checkbox i-checks">
+                                    <label>
+                                        <input type="checkbox" name="DisableCache">
+                                        <i></i>{do_not_cache_this_page}</label>
+                                </div>
+
+
+                            </div>
+                        </section>
+
+
+                        <div class="form-group">
+                            <h5>{Comment}</h5>
+                            <textarea name="comment" id="comment" class="form-control"></textarea>
+                        </div>
+
+
+                        <a href="#" class="btn btn-success  save">{save}</a>
+
+                        {%if('{F:action}'=='edit')%}
+                        <a href="#" class="btn btn-primary">{view_page_on_website}</a>
+
+                        {%endif%}
+                    </form>
+            </div>
+
+
+        </section>
+
+    </div>
+    {%F:@t(TMS:parse({"section":"slotzContainer"}))%}
+</div>
+
+
+{%endsection:_GROUP%}

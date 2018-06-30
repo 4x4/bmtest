@@ -1,0 +1,107 @@
+{%section:_SEARCHELEMENT%}
+
+<!--{%F:action%}-->
+{%if('{F:action}'=='edit')%}
+
+<form id="edit_SEARCHELEMENT">
+    {%else%}
+    <form id="create_SEARCHELEMENT">
+
+        {%endif%}
+
+        <section class="panel panel-default text-sm propertyEditor">
+            <div class="panel-body">
+
+                <div class="form-group">
+                    <label class="control-label">{element_alias}:</label>
+                    <input class="form-control  validate[required]" name="alias" type="text"/>
+                </div>
+
+                <div class="form-group">
+                    <label>{propertyset_name}</label>
+                    <select class="required form-control" name="propertySet" type="text"></select>
+
+                </div>
+
+
+                <div class="form-group">
+                    <label>{property}</label>
+                    <select class="required form-control" name="property" type="text"></select>
+
+                </div>
+
+
+                <div class="form-group">
+                    <label>{comparsion_type}:</label>
+                    <select class="required form-control" name="comparsionType" type="text"></select>
+
+                </div>
+
+
+                <div class="form-group">
+                    <label>{priority}:</label>
+                    <select class="required form-control" name="priority" type="text">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+                    <label>{sort_value}:</label>
+                    <select class="required form-control" name="sort" type="text">
+                        <option value="asc">{ascending}</option>
+                        <option value="desc">{descending}</option>
+
+                    </select>
+
+                </div>
+
+                <div class="form-group">
+                    <label>{sorting_key}:</label>
+                    <input class="required form-control" name="sortKey" id="sortKey" type="text">
+
+                </div>
+
+
+                <div class="form-group">
+                    <label class="control-label">{default_value}:</label>
+                    <input class="form-control" name="defaultValue" type="text"/>
+                </div>
+
+                <div class="checkbox i-checks">
+                    <label>
+                        <input type="checkbox" name="useAsDirectLink">
+                        <i></i>{useAsDirectLink}</label>
+                </div>
+
+
+                {%if('{F:action}'=='edit')%}
+
+                <a class="btn btn-success m-b-sm saveEdited">{save}</a>
+                {%else%}
+                <a class="btn  btn-success m-b-sm save">{save}</a>
+                {%endif%}
+
+
+            </div>
+        </section>
+    </form>
+
+
+    {%endsection:_SEARCHELEMENT%}

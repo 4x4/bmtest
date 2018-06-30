@@ -1,0 +1,80 @@
+{%section:_TREAD%}
+
+<div class="col-sm-8">
+    <div class="panel-body">
+        {%if('{F:action}'=='edit')%}
+
+        <form id="edit_TREAD" name="edit_TREAD">
+            {%else%}
+
+            <form id="create_TREAD" name="create_TREAD">
+                {%endif%}
+
+
+                <div class="form-group">
+                    <label>{tread_alias}</label>
+                    <input id="Alias" name="Alias" class="validate[required,custom[alphaExt]] form-control"
+                           placeholder="">
+                </div>
+
+                {%if('{F:action}'!='edit')%}
+                <div class="form-group">
+                    <label>{tread_name}</label>
+                    <input id="basic" name="basic" class="validate[required,custom[onlyLetterNumber]] form-control"
+                           placeholder="">
+                </div>
+                {%else%}
+
+                <div class="form-group">
+                    <label>{tread_name}</label>
+                    <input id="basic" name="basic" readonly
+                           class="validate[required,custom[onlyLetterNumber]] form-control" placeholder="">
+                </div>
+
+
+                {%endif%}
+
+
+                <div class="form-group">
+                    <label>{tread_sorting}</label>
+
+                    <select id="treadSort" data-placeholder="{tags_news}" name=treadSort" class="form-control">
+
+                        <option value="asc">{asc}</option>
+                        <option value="desc">{desc}</option>
+
+                    </select>
+                </div>
+
+
+                <div class="panel-body clearfix collapse auto-show">
+
+                    <div class="checkbox i-checks">
+                        <label>
+                            <input type="checkbox" name="moderation">
+                            <i></i>{tread_moderation}</label>
+                    </div>
+
+                    <div class="checkbox i-checks">
+                        <label>
+                            <input type="checkbox" name="active">
+                            <i></i>{tread_activity}</label>
+                    </div>
+
+                    <div class="checkbox i-checks">
+                        <label>
+                            <input type="checkbox" name="captcha">
+                            <i></i>{captcha}</label>
+                    </div>
+
+                </div>
+
+                <a href="#" class="btn btn-success save">{apply}</a>
+
+
+            </form>
+
+
+    </div>
+</div>
+{%endsection:_TREAD%}

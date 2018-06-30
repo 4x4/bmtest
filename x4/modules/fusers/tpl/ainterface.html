@@ -1,0 +1,77 @@
+{%section:showAuthPanel%}
+
+<div class="form-group">
+    <h5>{template_authorize_the_withdrawal_of_the_panel}</h5>
+    <select id="Template" class="form-control"></select>
+</div>
+
+
+<div class="form-group">
+    <h5>{page_the_user_control_panel}</h5>
+    <select id="userPanelPage" class="form-control"></select>
+</div>
+
+
+<!--<a class="button" onclick="$('hideLinkAuth').show();" href="javascript:void(0)">{after_authorization_by_visiting}</a> <br />
+<br />
+<p style="font-weight:normal;">({default_will_moving_into_the_control_panel_user})</p>
+<div style="display:none" id="hideLinkAuth">
+  <input id="Link" class="inp-b1" />
+  <input id="LinkId" type="hidden" />
+  <a class="button small" href="javascript:void(0)" id="startXXlist">{select}</a> </div>
+  -->
+
+{%endsection:showAuthPanel%}
+
+
+{%section:userPanel%}
+
+<div class="form-group">
+    <h5>{template_to_display_the_pane_the_user}</h5>
+    <select id="Template" class="form-control"></select>
+</div>
+
+
+<div class="form-group">
+    <div class="checkbox i-checks">
+        <label>
+            <input name="useEmailVerify" type="checkbox"/>
+            <i></i>{use_email_verify}</label>
+    </div>
+
+    <div class="checkbox i-checks">
+        <label>
+            <input name="doNotVerifyUser" type="checkbox"/>
+            <i></i>{do_not_verify_user}</label>
+    </div>
+</div>
+
+
+<p><strong>{redirect}</strong></p>
+<div class="form-group">
+    <div class="checkbox i-checks">
+        <label>
+            <input id="stayOnSamePage" name="stayOnSamePage" type="checkbox"/>
+            <i></i>{after_authorization_to_remain_on_the_same_page}</label>
+    </div>
+</div>
+
+
+<div class="form-group">
+    <h5>{fuser_menu}</h5>
+    <textarea id="frontUserMenu" name="frontUserMenu" class="form-control"/>
+</div>
+
+
+{%endsection:userPanel%} 
+
+
+{%section:showUserPriceCategory%}
+
+<div class="form-group">
+    <h5>{template_prices}</h5>
+    <select id="Template" class="form-control"></select>
+</div>
+
+
+{%endsection:showUserPriceCategory%}

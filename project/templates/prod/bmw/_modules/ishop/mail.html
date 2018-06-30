@@ -1,0 +1,29 @@
+{%section:body%}
+<table border="1">
+    <tr>
+        <th>ФИО</th>
+        <th>Телефон</th>
+        <th>Email</th>
+        <th>Наименование</th>
+        {%if({F:set})%}<th>Состав комплекта</th>{%endif%}
+        <th>Кол-во</th>
+        <th>Итоговая стоимость</th>
+		<th>Пожелания</th>
+    </tr>
+    <tr>
+        <td>{%F:fio%}</td>
+        <td>{%F:phone%}</td>
+        <td>{%F:email%}</td>
+        <td>{%F:product%}</td>
+        
+        {%if({F:set})%}
+                <td>{%F:set%}</td>
+        {%endif%}
+        
+        <td>{%F:count%}</td>
+        <td>{%F:sum%}</td>
+		<td>{%F:wishs%}</td>
+    </tr>
+
+</table>
+{%endsection:body%}

@@ -1,0 +1,51 @@
+{%section:textareaProperty%}
+
+
+<div class="form-group"><label>{{alias}}</label>
+    <span class="pull-right">
+     {symbols_count}: <span class="charsCount"></span>/<span class="charsMax"></span>
+    <a href="#" class="btn btn-xs btn-default typographApplyButton">{typograph} {{options.disableEditor}}</a>
+    
+    {{#if options.useSimpleEditor}}
+    {{else}}
+     <a {{#if options.disableEditor}}style="display:none"{{/if}}    href="#" class="btn btn-xs btn-default  {{#if options.useSimpleEditor}}  mini {{/if}} editorApplyButton">{edit_in_editor}</a>
+     
+       {{/if}}
+     </span>
+     
+   
+     
+     
+    <textarea rows="8"   class="form-control ck-apply {{#if options.useSimpleEditor}} mini {{/if}}"  id="{{basic}}" name="{{basic}}"></textarea></div>
+
+
+{%endsection:textareaProperty%}
+
+
+
+
+
+{%section:textareaPropertyOptions%}
+
+
+<div class="form-group"><label>{textarea_length}</label>
+
+            <input id="fieldLength" name="options.fieldLength"  class="form-control">
+        
+           <div class="checkbox i-checks">
+                        <label>
+                            <input type="checkbox" id="disableEditor" name="options.disableEditor">
+                            <i></i>{disableEditor}</label>
+                    </div>
+                    
+                    
+                    <div class="checkbox i-checks">
+                        <label>
+                            <input type="checkbox" id="useSimpleEditor" name="options.useSimpleEditor">
+                            <i></i>{useSimpleEditor}</label>
+                    </div>
+
+</div>
+
+{%endsection:textareaPropertyOptions%}
+

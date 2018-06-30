@@ -1,0 +1,81 @@
+@Базовый шаблон отправки формы
+{%F:@s(D:getVars())%}
+{%F:#e(D:dump({"value":"{F:value}"}))%}
+
+{%section:message%}
+<html><head>
+<title>{%F:Name%}</title>
+<meta http-equiv="Content-Type" content="text/html; charset={%F:charset%}">
+</head>
+<body>
+<b>{%F:subject%}</b><br><br>
+<table border="1" cellpadding="10" cellspacing="0">{%F:text%}</table>
+</body>
+</html>
+{%endsection:message%}
+
+
+{%section:group%}
+<tr>
+    <td align="center" colspan="2">{%F:Name%}</td>
+</tr>
+{%F:rows%}
+{%endsection:group%}
+
+
+{%section:row%}
+  <tr>
+    <td>{%F:name%}</td>
+    <td>{%F:value%}</td>
+  </tr>
+{%endsection:row%}
+
+
+
+{%section:saved_message%}
+<p><b>{%F:Name%}</b>: {%F:subject%}</p>
+<table class="table" cellpadding="0" cellspacing="0">{%F:text%}</table>
+{%endsection:saved_message%}
+
+
+
+<!-- Сообщения после отправки формы методом POST -->
+{%section:success%}
+<div style="color:green">{%F:message_after%}</div>
+{%endsection:success%}
+
+
+{%section:failed%}
+<div style="color:red;"><b>Произошла непридвиденная ошибка при отправке сообщения. Попробуйте отправить сообщение еще раз.</b><br /><br /></div>
+{%endsection:failed%}
+
+
+{%section:timeout%}
+<div style="color:red;"><b>Вы часто отправляете сообщение. Подождите еще - {%F:sec%} сек.</b><br /><br /></div>
+{%endsection:timeout%}
+
+
+{%section:captcha%}
+<div style="color:red;"><b>Код подтверждения отсутствует, либо Вы ввели его неправильно.</b><br /><br /></div>
+{%endsection:captcha%}
+
+{%section:failed_data%}
+<div style="color:red;"><b>Ошибка! Отсутствуют данные для отправки.</b><br /><br /></div>
+{%endsection:failed_data%}
+
+{%section:failed_template%}
+<div style="color:red;"><b>Ошибка! Отсутствует или не подключён шаблон отправки сообщений. Сообщите об ошибке администрации сайта.</b><br /><br /></div>
+{%endsection:failed_template%}
+
+
+{%section:error_msg%}
+    {%if('{F:error_type}' == 'timeout')%}
+    Вы часто отправляете сообщение. Подождите еще - {%F:time_left%} сек.
+    {%endif%}
+    {%if('{F:error_type}' == 'captcha')%}
+    Код подтверждения отсутствует, либо Вы ввели его неправильно.
+    {%endif%}
+    {%if('{F:error_type}' == 'undefined')%}
+    Произошла непридвиденная ошибка при отправке сообщения. Попробуйте отправить сообщение еще раз.
+    {%endif%}
+{%endsection:error_msg%}

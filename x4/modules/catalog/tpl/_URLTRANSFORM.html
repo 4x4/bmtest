@@ -1,0 +1,79 @@
+{%section:_URLTRANSFORM%}
+
+    <!--{%F:action%}-->
+{%if('{F:action}'=='edit')%}
+<form id="edit_URLTRANSFORM">
+    {%else%}
+    <form id="create_URLTRANSFORM">
+
+        {%endif%}
+        <section class="panel panel-default">
+            <div class="panel-body">
+
+                <div class="form-group">
+                    <label class="control-label">{tree}:</label>
+                    <select id="tree" class="form-control" name="tree">
+                        <option value="s">{SKU}</option>
+                        <option value="f">{catalog}</option>
+
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>{propertyset_name}</label>
+                    <select class="required form-control" name="propertySet" type="text"></select>
+
+                </div>
+
+
+                <div class="form-group">
+                    <label>{property}</label>
+                    <select class="required form-control" name="property" type="text"></select>
+
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label">{comparsion}:</label>
+                    <select id="comparsion" class="form-control" name="comparsion">
+
+                    </select>
+                </div>
+
+
+                <div class="form-group">
+
+                    <div class="checkbox i-checks">
+                        <label>
+                            <input type="checkbox" id="multi" name="multi">
+                            <i></i>{multifield}</label>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label class="control-label">{transform_url}:</label>
+                    <input id="transform_url" class="form-control" name="transform_url" type="text">
+                </div>
+
+
+                <div class="form-group">
+                    <label class="control-label">{value}:</label>
+                    <input id="value" class="form-control" name="value" type="text">
+                </div>
+
+
+                <div class="form-group">
+                    <label class="control-label">{priority}:</label>
+                    <input id="priority" class="form-control" name="priority" value="0" type="text">
+                </div>
+
+                <a class="btn btn-success m-b-sm save">{save}</a>
+            </div>
+
+        </section>
+
+    </form>
+
+
+    {%endsection:_URLTRANSFORM%}
+

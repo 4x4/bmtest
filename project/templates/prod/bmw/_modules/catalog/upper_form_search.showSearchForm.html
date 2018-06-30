@@ -1,0 +1,44 @@
+  {%F:#e(D:dump({"value":"{F:value}"}))%}
+  {%F:@s(D:getVars())%}
+
+{%section:showSearchForm%}
+
+
+  <div class="select_block">
+      <select name="onPage" id="onPage" class="select_product">
+          <option value="">Sortera produkter</option>
+
+                {%F:fields%}
+
+
+      </select>
+  </div>
+
+  {%endsection:showSearchForm%}
+
+
+ 
+ 
+{%section:sort-currencyIshop%}
+
+            
+			<option {%if({F:field>_filter>active})%} selected {%endif%} value="{%F:field>_filter>link%}"> {%F:field>alias%}</option>
+
+
+ {%endsection:sort-currencyIshop%}
+
+
+
+
+
+
+ 
+ 
+
+
+ 
+ 
+   
+
+ 
+  

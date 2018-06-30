@@ -1,0 +1,100 @@
+{%section:_COMMENT_reply%}
+
+<div class="col-sm-6">
+    <div class="panel-body">
+
+        <h2 class="cobjectName">{reply_message} </h2>
+
+
+        <form id="reply_COMMENT" name="reply_COMMENT">
+
+            <div class="form-group">
+                <label>{userName}</label>
+                <input id="userName" name="userName" class="validate[required] form-control" placeholder="">
+            </div>
+
+
+            <div class="form-group">
+                <label>{message}</label>
+                <textarea id="message" name="message" class="validate[required] classy-editor-sec form-control">
+                </textarea>
+            </div>
+
+
+            <div class="panel-body clearfix collapse auto-show">
+
+                <div class="checkbox i-checks">
+                    <label>
+                        <input type="checkbox" name="active" id="active" checked>
+                        <i></i>{active}</label>
+                </div>
+
+                <div class="checkbox i-checks">
+                    <label>
+                        <input type="checkbox" name="notify" id="notify" checked>
+                        <i></i>{notify_user_by_email}</label>
+                </div>
+
+            </div>
+
+
+            <a href="#" class="btn btn-success save">{apply}</a>
+
+
+        </form>
+    </div>
+</div>
+
+<div class="col-sm-6">
+
+
+    <div class="panel-body">
+
+        <h2 class="cobjectName">{original_message} </h2>
+
+
+        <form id="readonly_COMMENT" name="readonly_COMMENT">
+
+            <div class="form-group">
+                <label>{userName}</label>
+                <input id="userName" name="userName" readonly class="form-control" placeholder="">
+            </div>
+
+            <div class="form-group">
+                <label>{header}</label>
+                <input id="header" name="header" class=" form-control" placeholder="">
+            </div>
+
+
+            <div class="form-group">
+                <label>E-mail</label>
+                <input id="email" name="email" readonly class="form-control" placeholder="">
+            </div>
+
+            <div class="form-group">
+                <label>{message}</label>
+                <textarea id="message" name="message" readonly class="form-control" style="height:200px">
+                </textarea>
+            </div>
+
+
+            <!--<div class="form-group">
+              <label>{rating}</label>
+              <input id="rating" name="rating" readonly class="form-control" >
+              </input>
+            </div>-->
+
+
+        </form>
+    </div>
+
+
+</div>
+
+{%endsection:_COMMENT_reply%}
+
+
+{%section:replyEmailMessage%}
+
+
+{%endsection:replyEmailMessage%}

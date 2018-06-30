@@ -1,0 +1,84 @@
+{%section:main%}
+
+
+<!DOCTYPE html>
+<html lang="en" class="app">
+<head>
+<meta charset="utf-8" />
+<title>X4 content managment</title>
+<meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<link rel="stylesheet" href="/x4/adm/xres/scale/app.v1.css" type="text/css" />
+
+<!--[if lt IE 9]> <script src="js/ie/html5shiv.js"></script> <script src="js/ie/respond.min.js"></script> <script src="js/ie/excanvas.js"></script> <![endif]-->
+<style>
+
+.gcontainer {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+
+.x4-logo{display:block;
+		margin:auto;
+		width:169px; height:150px; background-image:url(/x4/adm/xres/ximg/x4/x4logo-big.png);
+}
+
+.button-mag{background:#781641; color:white;}
+
+.m-t-xxl{
+    margin-top:10%;    
+}
+#content
+{
+margin-left:40%;
+}
+</style>
+</head>
+<body>
+   <div id="container" class="gcontainer">
+	<div id="output" class="gcontainer"></div>
+	  
+		  <section id="content" class="m-t-lg wrapper-md animated fadeInUp">
+			<div class="aside-xl m-t-xxl"> 
+		  
+			<a class="navbar-brand block x4-logo" href="/admin"></a>
+			
+			<section class="m-b-lg" >
+			  <header class="wrapper text-center"> <strong></strong> </header>
+			  
+			  <form action="login.php" method="POST">
+				<div class="list-group">
+				  <div class="list-group-item">
+					<input placeholder="Логин" name="login" class="form-control no-border">
+					
+				  </div>
+				  <div class="list-group-item">
+					<input type="password" placeholder="Пароль"  name="password" class="form-control no-border">
+				  </div>
+				</div>
+				<button type="submit" class="btn m-t-sm button-mag btn-block">Войти</button>        
+				<div class="line line-dashed"></div>        
+			  </form>
+			  
+			 
+			</section>
+   
+	  	   </div>
+		  </section>
+
+   </div>
+
+   <script src="/x4/adm/xres/fss/deploy/fss.js"></script>
+   <script src="/x4/adm/xres/fss/deploy/script.js"></script>
+   <script src="{%F:components%}scale/app.v1.js"></script>
+
+</body>
+</html>
+
+{%endsection:main%}
+
+
+{%section:error->error%}
+<div class="log-error">{error_login_message}</div>
+{%endsection:error%}

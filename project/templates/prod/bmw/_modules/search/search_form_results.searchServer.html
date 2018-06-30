@@ -1,0 +1,81 @@
+{%section:xtr_search_results%}
+    <div class="news_wrapper">
+        <div class="left_cont search">
+            <img src="/templates/_ares/images/search_block.png" alt="">
+        </div>
+        <div class="content">
+            <h1>По вашему запросу "{%F:query%}" найдено <span class="blue_text">{%F:query_num%}</span> страниц</h1>
+
+            {%->:xtr_search_result%}
+        </div>
+    </div>
+        
+    {%->:page_line%}
+
+{%endsection:xtr_search_results%}
+
+{%section:xtr_search_result->%}
+
+    <a target="_blank" href="{%F:url%}" class="all_news">{%F:num%}. {%F:url%}</a>
+    <p>{%F:body%}</p>
+  
+{%endsection:xtr_search_result%}
+
+{%section:xtr_search_nothing_found%}
+
+    <h2>По вашему запросу "{%F:query%}" ничего не найдено</h2>
+     
+{%endsection:xtr_search_nothing_found%}
+
+{%section:xtr_search_empty%}
+
+    <h2>Вы ввели пустой запрос</h2>
+   
+{%endsection:xtr_search_empty%}
+
+{%section:page_line->%}
+
+{%F:+b(E:setNavPageMove({"pages":"4"}))%}
+
+    <div class="pagination">
+        <ul>
+            {%->:previous_page%}
+            {%F:page_line%}
+            {%->:next_page%}
+        </ul>
+    </div>
+
+{%endsection:page_line%}
+
+{%section:next_page->%}
+ 
+<li><a href="{%F:link%}" class="next_pagin"></a></li>
+
+{%endsection:next_page%}
+
+{%section:previous_page->%}
+<li><a href="{%F:link%}" class="prev_pagin"></a></li>
+    
+{%endsection:previous_page%}
+
+{%section:one_page%}
+
+   <li><a href="{%F:link%}">{%F:pnum%}</a></li>
+    
+
+{%endsection:one_page%}
+
+{%section:dots%}
+
+   <li><a href="javascript:void();">...</a></li>
+    
+
+{%endsection:dots%}
+
+          
+{%section:one_page_selected%}
+
+            <li class="selected"><a href="javascript:void();">{%F:pnum%}</a></li>
+
+{%endsection:one_page_selected%}
+

@@ -1,0 +1,32 @@
+{%section:_NEWSGROUP%}
+
+<div class="col-md-10">
+
+    <div class="panel-body wrapper">
+
+        {%if('{F:action}'=='edit')%}
+        <form id="edit_NEWSGROUP">
+
+            {%else%}
+
+            <form id="create_NEWSGROUP">
+                {%endif%}
+
+                <div class="form-group">
+                    <h5>{category_name}</h5>
+                    <input id="Name" name="Name" class="inp validate[required,custom[alpha]] form-control"
+                           placeholder=""/>
+                </div>
+
+
+                <a id="saveNewsGroup" href="#" class="btn btn-success save">{save}</a>
+
+            </form>
+    </div>
+
+</div>
+
+
+{%endsection:_CONTENTGROUP%}
+
+ 

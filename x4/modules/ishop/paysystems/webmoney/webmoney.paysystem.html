@@ -1,0 +1,51 @@
+@Платежная система WEBMONEY
+
+
+{%section:webmoney.paysystem%}
+
+{%F:#tpl(TMS:load({"module":"ishop","prefix":"MODULES","path":"ishop/tpl/commonPaysystemSections.html"}))%}
+<div class="panel-body">
+
+
+    <form id="edit_PAYSYSTEM">
+        <div class="row">
+            <div class="col-lg-5">
+
+
+                <input type="hidden" name="paysystem" value="webmoney">
+
+                {%F:@t(TMS:parse({"section":"commonPaysystemSections"}))%}
+
+
+                <div class="form-group">
+                    <p>{webmoney_purse}</p> <input class="form-control" name="payee_purse" value="">
+                </div>
+
+
+                <div class="form-group">
+                    <p>{success_url}</p> <input class="form-control" name="success_url" value="">
+                </div>
+
+
+                <div class="form-group">
+                    <p>{result_url}</p> <input class="form-control" name="result_url" value="">
+                </div>
+
+
+                <div class="form-group">
+                    <p>{fail_url}</p> <input class="form-control" name="fail_url" value="">
+                </div>
+
+                <div class="form-group">
+                    <div class="checkbox i-checks">
+                        <p><input type="checkbox" id="webmoney_test" name="webmoney_test"><i></i>{webmoney_test}</p>
+                    </div>
+                </div>
+
+
+    </form>
+    <a class="btn btn-primary save" href="#">{save}</a>
+
+</div>
+
+{%endsection:webmoney.paysystem%}

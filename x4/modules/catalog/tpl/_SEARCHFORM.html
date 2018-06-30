@@ -1,0 +1,41 @@
+{%section:_SEARCHFORM%}
+
+  <!--{%F:action%}-->
+{%if('{F:action}'=='edit')%}
+<form id="edit_SEARCHFORM">
+    {%else%}
+    <form id="create_SEARCHFORM">
+
+        {%endif%}
+        <section class="panel panel-default">
+            <div class="panel-body">
+                <div class="form-inline">
+                    <div class="form-group">
+                        <label class="control-label">{searchform_alias}:</label>
+                        <input class="form-control validate[required]" id="Name" name="Name" value="">
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+    </form>
+
+    <div type="persistentGrid">
+        <a class="btn btn-sm btn-primary m-b-sm addSearchProperty">
+            <i class="fa fa-plus text addSearchProperty"></i> <span class="text"> {add_searchform_element}</span>
+        </a>
+
+
+        <div id="comparsions" style="min-height:400px"></div>
+
+        <a class="btn btn-success m-b-sm save">
+            {save}
+        </a>
+    </div>
+    </div>
+
+    {%endsection:_SEARCHFORM%}
+

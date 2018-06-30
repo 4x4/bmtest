@@ -1,0 +1,62 @@
+{%section:_XPEROLE%}
+
+
+<div class="m-t-lg m-l-sm">
+
+    <div class="col-sm-11">
+        <div class="panel-body">
+
+
+            <div class="btn-group m-t-md m-b-sm">
+                <button class="btn btn-info btn-switch" data-target="rules-data" type="button">{rules}</button>
+                <button class="btn btn-switch" data-target="affectors" type="button">{affectors}</button>
+
+            </div>
+
+            <div class="m-t-sm rules-data">
+                {%if('{F:action}'=='edit')%}
+
+                <form id="edit_XPEROLE" name="edit_XPEROLE">
+                    {%else%}
+
+                    <form id="create_XPEROLE" name="create_XPEROLE">
+                        {%endif%}
+
+
+                        <div class="m-t-sm object-data">
+
+                            <div class="form-group">
+                                <label>{xpe-name-roles}</label>
+
+                                <input id="Alias" name="Alias" class="validate[required,funcCall[module.XPEROLE.checkDuplicateRoles]] form-control">
+
+                            </div>
+
+                        </div>
+
+
+                    </form>
+
+                    <div id="conditionList" style="min-height:400px"></div>
+
+            </div>
+
+
+            <div class="m-t-sm affectors hide">
+
+                <a href="#" class="add-affector btn btn-primary m-b-md">
+                    <i class="fa fa-plus text"></i> <span class="text"> {add_affector}</span>
+                </a>
+
+                <div id="affectorsList" style="min-height:500px"></div>
+
+            </div>
+
+            <a class="btn btn-primary saveback" href="#">{save}</a>
+
+        </div>
+    </div>
+</div>
+
+
+{%endsection:_XPEROLE%}

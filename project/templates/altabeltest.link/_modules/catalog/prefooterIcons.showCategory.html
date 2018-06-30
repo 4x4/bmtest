@@ -1,0 +1,28 @@
+@Banners on main
+{%F:@s(D:getVars())%}
+{%F:#e(D:dump({"value":"{F:value}"}))%}
+
+{%section:catalogCategoryList%}
+
+<section class="main_stock">
+    <div class="row">
+	
+				{%each({F:objects},k,val)%}
+        <div class="column large-3">
+            <div class="one_stock">
+                <div class="img_block">
+                    <img src="{%F:val>picon>image%}" alt="">
+                </div>
+                <div class="text_block">
+                    <p class="title">{%F:val>_main>Name%}</p>
+                    <p>{%F:val>picon>description%}</p>
+                </div>
+            </div>
+        </div>
+			
+			{%endeach%}
+    </div>
+</section>
+   
+
+{%endsection:catalogCategoryList%}

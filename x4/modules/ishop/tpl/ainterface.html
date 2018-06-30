@@ -1,0 +1,49 @@
+{%section:showBasket%}
+
+<div class="form-group">
+    <h5>{template_output_basket_of_goods}</h5>
+    <select id="Template" class="form-control"></select>
+</div>
+
+
+<div class="form-group">
+    <h5>{page_for_display_the_goods_in_the_catalogue}</h5>
+    <select id="catalogServerPage" class="form-control"></select>
+</div>
+
+<div class="checkbox i-checks">
+    <label>
+        <input type="checkbox" name="enableNotFinishedOrders">
+        <i></i>{enable_not_finished_orders}</label>
+</div>
+
+
+{%endsection:showBasket%}
+
+
+{%section:showCurrencyList%}
+<div class="form-group">
+    <h5>{template_display_currency}</h5>
+    <select id="Template" class="form-control">
+    </select>
+</div>
+
+{%endsection:showCurrencyList%}
+
+
+{%section:showBasketStatus%}
+
+<div class="form-group">
+    <h5>{page_transition_to_a_basket_of_the_goods}</h5>
+    <select id="basketPage" class="form-control">
+    </select>
+</div>
+
+
+<div class="form-group">
+    <h5>{template_display_the_status_of_the_basket}</h5>
+    <select id="Template" class="form-control"></select>
+</div>
+
+
+{%endsection:showBasketStatus%} 

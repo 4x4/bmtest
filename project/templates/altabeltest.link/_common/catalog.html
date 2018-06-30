@@ -1,0 +1,739 @@
+{%section:MAIN%} {%->:HEADER%} {%->:TOP%} {%->:MIDDLE%} {%->:FOOTER%} {%endsection:MAIN%}
+{%section:HEADER->%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=1920, initial-scale=1">
+	<meta charset="UTF-8">
+	<title>BMW tech demo</title>
+	<link rel="stylesheet" href="{%F:ARES%}css/styles.css">
+	<link rel="stylesheet" href="{%F:ARES%}css/map.css">
+</head>
+<body>
+	<header class="header">
+		<div class="header-top">
+			<div class="row">
+				<div class="columns small-12 flex align-middle">
+					<div class="logos">
+						<img src="{%F:ARES%}img/png/group.png" alt="">
+						<img src="{%F:ARES%}img/svg/bmw-logo.svg" alt="">
+						<img src="{%F:ARES%}img/svg/mini_cooper-logo.svg" alt="">
+						<img src="{%F:ARES%}img/png/rr-logo.png" alt="">
+					</div>
+					<div class="profile">
+						<span>Helen Lampard</span>
+						 at
+						<span>BMW</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="header-middle">
+			<div class="row">
+				<div class="columns small-12 flex align-middle">
+					<ul class="header-menu">
+						<li><a id="serviceRequestMenuItem">Service Request</a></li>
+						<li><a id="servicesMenuItem" href="/catalog">Services</a></li>
+						<li><a href="#" class="disabled">CIC Viewer</a></li>
+						<li><a href="#" class="disabled">Remote B-Call</a></li>
+						<li><a href="#" class="disabled">Remote Services</a></li>
+						<li><a href="#">Vehicle Status</a></li>
+						<li><a href="#">History</a></li>
+						<li><a href="#">Preferences</a></li>
+						<li><a href="#">Admin</a></li>
+					</ul>
+					<a href="#" class="log-out">Logout</a>
+				</div>
+			</div>
+		</div>
+		<div class="header-bottom">
+			<div class="row">
+				<div class="columns small-12 flex align-middle">
+					<div class="infortation-client">
+						<div class="item">
+							<span class="title">Customer:</span>
+							<span class="text">Testname B2V12</span>
+						</div>
+						<div class="item">
+							<span class="title">VIN:</span>
+							<span class="text">B2V12</span>
+						</div>
+						<div class="item">
+							<span class="title">EventID:</span>
+							<span class="text">2846464738383939@bmw.de</span>
+						</div>
+					</div>
+					<div class="infortation-user">
+						<div class="item">
+							<div class="text">Assigned to me</div><div id="pin" class="pin assignedToMe"></div>
+						</div>
+						<div class="item">
+							<div class="text">Users logged in</div><div class="pin usersLoggedin"></div>
+						</div>
+						<div class="item">
+							<div class="text">All requests</div><div class="pin allRequests"></div>
+						</div>
+						<div class="item">
+							<div class="text">Currently unassigned</div><div class="pin unassigned"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+{%endsection:HEADER%}
+	
+{%section:MIDDLE->%}
+	{%MF:filter%}
+	{%MF:center%}
+
+{%endsection:MIDDLE%}
+
+{%section:FOOTER->%}
+	
+	<!--- HANDLE BARS -->
+	
+		<script id="listOfFavoritesHideDetails" type="text/x-handlebars-template">
+	
+		{{#each result}}
+		
+		<div class="favorites-item">
+			<div class="item">
+				<span class="title">Favorite name:</span>
+				<span class="text">{{favorite_favoriteName}}</span>
+			</div>
+			<div class="item">
+				<span class="title">Search type:</span>
+				<span class="text">{{favorite_searchType}}</span>
+			</div>
+			<div class="item">
+				<span class="title">Language:</span>
+				<span class="text">{{favorite_language}}</span>
+			</div>
+			<div class="item">
+				<span class="title">What:</span>
+				<span class="text">{{favorite_what}}</span>
+			</div>
+			<div class="item">
+				<span class="title">Category:</span>
+				<span class="text">{{favorite_category}}</span>
+			</div>
+		</div>
+		
+		{{/each}}
+	
+	</script>
+
+	<script id="listOfFavorites" type="text/x-handlebars-template">
+			{{#each result}}
+
+				<div class="flex-row favorites-mini mr-10">
+					<img src="{%F:ARES%}img/png/icons/{{this.favorite_iconType}}" alt="">						    	
+				</div>
+			
+			{{/each}}
+	</script>
+	
+	<script id="headerTempl" type="text/x-handlebars-template">
+	 				
+	 					<div class="col col-1_3">
+							<div class="item">
+								<span class="title">Title:</span>
+								<span class="text">Mr</span>
+							</div>
+
+							<div class="item">
+								<span class="title">First name:</span>
+								<span class="text">{{tovarbase_firstname}}</span>
+							</div>
+							<div class="item">
+								<span class="title">Last name:</span>
+								<span class="text">{{tovarbase_lastname}}</span>
+							</div>
+							<div class="item">
+								<span class="title">Phone number:</span>
+								<span class="text">{{tovarbase_phonenumber}}</span>
+							</div>
+							<div class="item">
+								<span class="title">Email:</span>
+								<span class="text">{{tovarbase_email}}</span>
+							</div>
+							<div class="item">
+								<span class="title">Alias:</span>
+								<span class="text">{{tovarbase_alias}}</span>
+							</div>
+
+							<div class="item">
+								<span class="title">Home address:</span>
+								<span class="text">{{tovarbase_homeaddress}}</span>
+							</div>
+							<div class="item">
+								<span class="title">Home town:</span>
+								<span class="text">{{tovarbase_hometown}}</span>
+							</div>
+							<div class="item">
+								<span class="title">Country:</span>
+								<span class="text">{{tovarbase_country}}</span>
+							</div>
+							<div class="item">
+								<span class="title">HMI language:</span>
+								<span class="text" >{{tovarbase_HMIlanguage}}</span>
+							</div>
+							<div class="item">
+								<span class="title">ConnectedDrive username:</span>
+								<span class="text">{{tovarbase_ConnectedDriveusername}}</span>
+							</div>
+						</div>
+						<div class="col col-1_3">
+							<div class="item">
+								<span class="title">Position:</span>
+								<span class="text">{{tovarbase_position}}</span><br>
+								<span data-lat="{{tovarbase_lat}}" data-lon="{{tovarbase_lon}}"   class="text nowPositionLatLon">{{tovarbase_lat}}<br>{{tovarbase_lon}}</span>
+							</div>
+							<div class="item">
+								<span class="title">Heading:</span>
+								<span class="text">North (00)</span>
+							</div>
+							<div class="item">
+								<span class="title">Altitude:</span>
+								<span class="text">0m</span>
+							</div>
+						</div>
+						<div class="col col-1_3"></div>				
+	 </script>
+
+	 
+	 <script id="destinationTemplate" type="text/x-handlebars-template">
+		<div class="col">
+					<div class="title-block">Destination</div>
+				</div>
+				<div class="container">
+					<div class="col col-1_3">
+						<div class="item">
+							<span class="title">Destination:</span>
+							<span class="text">{{destination_destination}}</span>
+						</div>
+					</div>
+					<div class="col col-1_3">
+						<div class="item">
+							<span class="title">Distance:</span>
+							<span class="text">{{destination_distance}} m</span>
+						</div>
+						<div class="item">
+							<span class="title">Time of arrival:</span>
+							<span class="text">{{destination_minutes}}</span>
+						</div>
+					</div>
+					<div class="col col-1_3">
+						<div class="item">
+							<span class="title">Range:</span>
+							<span class="text">{{destination_range}} km</span>
+						</div>
+					</div>
+				</div>
+	 
+	 </script>
+	 
+	 
+	 <script id="vehicleTempl" type="text/x-handlebars-template">
+									<div class="flex">
+										<div class="col col-1_2">
+											<div class="item">
+												<span class="title">Country code:</span>
+												<span class="text">{{car_Countrycode}}</span>
+												<span class="driver-lang">
+													<img src="{%F:ARES%}img/png/flags/ger.png" alt="">
+												</span>
+											</div>
+											<div class="item">
+												<span class="title">VIN:</span>
+												<span class="text">{{car_VIN}}</span>
+											</div>
+											<div class="item">
+												<span class="title">License plate:</span>
+												<span class="text">{{car_Licenseplate}}</span>
+											</div>
+											<div class="item">
+												<span class="title">Account group:</span>
+												<span class="text">{{car_Accountgroup}}</span>
+											</div>
+											<div class="item">
+												<span class="title">Products:</span>
+												<span class="text">{{car_Products}}</span>
+											</div>
+											<div class="item">
+												<span class="title">Navigation system:</span>
+												<span class="text">{{car_Navigationsystem}}</span>
+											</div>
+											<div class="item">
+												<span class="title">Device:</span>
+												<span class="text">{{car_Device}}</span>
+											</div>
+											<div class="item">
+												<span class="title">Vehicle phone:</span>
+												<span class="text">{{car_Vehiclephone}}</span>
+												<a class="driver-lang">
+													<img src="{%F:ARES%}_ares/img/png/call.png" alt="">
+												</a>
+											</div>
+										</div>
+										<div class="col col-1_2">
+											<div class="item">
+												<span class="title">Brand:</span>
+												<span class="text">{{car_Brand}}</span>
+											</div>
+											<div class="item">
+												<span class="title">Series:</span>
+												<span class="text">{{car_Series}}</span>
+											</div>
+											<div class="item">
+												<span class="title">Basic model:</span>
+												<span class="text">{{car_Basicmodel}}</span>
+											</div>
+											<div class="item">
+												<span class="title">Body:</span>
+												<span class="text">{{car_Body}}</span>
+											</div>
+											<div class="item">
+												<span class="title">Model range:</span>
+												<span class="text">{{car_Modelrange}}</span>
+											</div>
+											<div class="item">
+												<span class="title">Model key:</span>
+												<span class="text">{{car_Modelkey}}</span>
+											</div>
+											<div class="item">
+												<span class="title">Production date:</span>
+												<span class="text">{{car_Productiondate}}</span>
+											</div>
+											<div class="item">
+												<span class="title">Color:</span>
+												<span class="text">{{car_Color}}</span>
+											</div>
+											<div class="item">
+												<span class="title">Type of drive:</span>
+												<span class="text">{{car_Typeofdrive}}</span>
+											</div>
+											<div class="item">
+												<span class="title">Type of hybrid:</span>
+												<span class="text">{{car_Typeofhybrid}}</span>
+											</div>
+											<div class="item">
+												<span class="title">Drive type:</span>
+												<span class="text">{{car_Drivetype}}</span>
+											</div>
+										</div>
+									</div>	
+	 </script>
+
+	
+	
+	
+	 <script id="POISearchResultTemplate" type="text/x-handlebars-template">
+							
+							  {{#each result}}
+								<div data-id="{{this.id}}" class="pois-item">
+									<div class="pois-name">{{this.Name}}</div>
+									<div class="pois-adress">{{this.POI_address}}</div>
+									<div class="icons ml-auto">
+										<a href="#" class="flag-poi">
+											<img src="/project/templates/altabeltest.link/_ares/img/png/flag.png" alt="">
+										</a>
+										<a href="#" class="edit-poi">
+											<img src="/project/templates/altabeltest.link/_ares/img/png/edit.png" alt="">
+										</a>
+										<a href="#" class="close-poi">
+											<img src="/project/templates/altabeltest.link/_ares/img/png/close.png" alt="">
+										</a>
+									</div>
+								</div>
+							 {{/each}}
+							
+							<div class="flex align-right">
+								<a id="sendSuccess" href="#" class="btn btn-color-blue">Send</a>
+							</div>
+	
+	 </script>
+	 
+	 
+	 
+	 	 <script id="POIListItemTemplate" type="text/x-handlebars-template">
+	 		  
+			  {{#each result}}
+					<div class="pois-list-item " data-id="{{this.id}}">
+									<div class="pois-list-header">
+										<div class="pois-list-col mr-16">
+											<div class="pois-placeholder">
+												<img width="25px" src="{%F:ARES%}img/png/placeholder-pois.png" alt="">
+												<span class="pois-placeholder-num">A</span>
+											</div>
+										</div>
+										<div class="pois-list-col">
+											<div class="pois-list-name">{{this.Name}}</div>
+											<div class="pois-list-adress">{{this.POI_address}}</div>
+										</div>
+										<div class="pois-list-col mr-48">
+											<div class="icons">
+												<a href="">
+													<img src="{%F:ARES%}img/png/call-d.png" alt="">
+												</a>
+												<div class="pois-status open"></div>
+											</div>
+										</div>
+										<div class="pois-list-col mr-52">
+											<div class="item">
+												<span class="title">Distance:</span>
+												<span class="text">{{this.distance}} km</span>
+											</div>
+										</div>
+										<div class="pois-list-col">
+											<div class="item">
+												<span class="title">Provider:</span>
+												<span class="text">{{this.scope}}</span>
+											</div>
+										</div>
+										<div class="icons ml-auto">
+											<a href="#" class="add-poi">
+												<img src="{%F:ARES%}img/png/add-poi.png" alt="">
+											</a>
+											<a href="#" class="car-poi">
+												<img src="{%F:ARES%}img/png/car-poi.png" alt="">
+											</a>
+											<a href="#" class="way-poi">
+												<img src="{%F:ARES%}img/png/way-poi.png" alt="">
+											</a>
+											<a href="#" class="flag-poi-test">
+												<img src="{%F:ARES%}img/png/flag.png" alt="">
+											</a>
+										</div>
+									</div>
+									<div class="pois-list-content">
+										<div class="col col-1_2">
+											<div class="item">
+												<span class="title">URL:</span>
+												<span class="text">{{this.POI_Url}}</span>
+											</div>
+											<div class="item">
+												<span class="title">Rating:</span>
+												<span class="text"><span class="rating-pois">{{this.POI_rating}}</span></span>
+											</div>
+											<div class="item">
+												<span class="title">Phone:</span>
+												<span class="text">{{POI_Phone}}</span>
+												<a class="driver-lang">
+													<img src="{%F:ARES%}img/png/call.png" alt="">
+												</a>
+											</div>
+											<div class="item item-reviews">
+												<span class="title">Reviews:</span>
+												<span class="text">{{POI_review}} <a href="#" class="more">more</a></span>
+											</div>
+										</div>
+										<div class="col col-1_2">
+											<div class="item">
+												<span class="title">Provider:</span>
+												<span class="text">{{this.scope}}</span>
+											</div>
+											<div class="item">
+												<span class="title">Distance from vehicle:</span>
+												<span class="text">{{this.distance}} m</span>
+											</div>
+											<div class="item item-reviews">
+												<span class="title">Position:</span>
+												<span class="text">{{this.lat}} {{this.lon}}</span>
+											</div>
+											<div class="item">
+												<span class="title">Opening hours:</span>
+												<div class="open-hours">
+													<div class="open-hours-day">
+														<div class="open-hours-title">Mon</div>
+														<div class="open-hours-text">10:00 23:00</div>
+													</div>
+													<div class="open-hours-day">
+														<div class="open-hours-title">Tue</div>
+														<div class="open-hours-text">10:00 23:00</div>
+													</div>
+													<div class="open-hours-day">
+														<div class="open-hours-title">Wed</div>
+														<div class="open-hours-text">10:00 23:00</div>
+													</div>
+													<div class="open-hours-day">
+														<div class="open-hours-title">Thu</div>
+														<div class="open-hours-text">10:00 23:00</div>
+													</div>
+													<div class="open-hours-day">
+														<div class="open-hours-title">Fri</div>
+														<div class="open-hours-text">10:00 23:00</div>
+													</div>
+													<div class="open-hours-day">
+														<div class="open-hours-title">Sat</div>
+														<div class="open-hours-text">10:00 23:00</div>
+													</div>
+													<div class="open-hours-day">
+														<div class="open-hours-title">Sun</div>
+														<div class="open-hours-text">10:00 23:00</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							{{/each}}
+	
+		 </script>
+
+
+		 <script  id="FavoriteItemTemplate" type="text/x-handlebars-template">	
+		 	{{#each result}}
+		 					<div class="col col-1_3" data-id="{{this.id}}">
+				    			<div class="favorites-modal-item">
+				    				<div class="favorites-modal-icons icons">
+				    					<a href="#" class="edit-favorites">
+											<img src="{%F:ARES%}img/png/edit.png" alt="">
+										</a>
+										<a href="#" class="close-favorites">
+											<img src="{%F:ARES%}img/png/close.png" alt="">
+										</a>
+				    				</div>
+				    				<div class="favorites-modal-icon">
+											
+				    					<img src="{%F:ARES%}img/png/icons/{{this.favorite_iconType}}" alt="">
+				    				</div>
+				    				<div class="item">
+										<span class="title">Favorite name:</span>
+										<span class="text favorites-names">{{this.favorite_favoriteName}}</span>
+									</div>
+									<div class="item">
+										<span class="title">Search type:</span>
+										<span class="text">{{this.favorite_searchType}}</span>
+									</div>
+									<div class="item">
+										<span class="title">Language:</span>
+										<span class="text">{{this.favorite_language}}</span>
+									</div>
+									<div class="item">
+										<span class="title">What:</span>
+										<span class="text">{{this.favorite_what}}</span>
+									</div>
+									<div class="item">
+										<span class="title">Category:</span>
+
+										<span class="text">{{this.favorite_category}}</span>
+									</div>
+				    			</div>
+				    		</div>
+				    {{/each}}		
+		 </script>
+	
+	
+		 <script  id="historyItem" type="text/x-handlebars-template">	
+			 	{{#each history}}
+								<div class="table_row-header">
+										<div class="table_row-td">{{this.history.requestType}}</div>
+										<div class="table_row-td">{{this.history.originalService}}</div>
+										<div class="table_row-td">{{this.history.startTime}}</div>
+										<div class="table_row-td">{{this.history.VIN}}</div>
+									</div>
+									<div class="table_row-content">
+										<div class="col">
+											<div class="item mb-24">
+												<span class="title">EventID:</span>
+												<span class="text"><b>2846464738383939@bmw.de</b></span>
+											</div>
+										</div>
+										<div class="col col-1_2">
+											<div class="item">
+												<span class="title">Start time:</span>
+												<span class="text">2018-01-15 16:26 CET</span>
+											</div>
+											<div class="item">
+												<span class="title">Stop time:</span>
+												<span class="text">2018-01-15 16:26 CET</span>
+											</div>
+											<div class="item">
+												<span class="title">Time filed:</span>
+												<span class="text">2018-01-15 16:26 CET</span>
+											</div>
+											<div class="item">
+												<span class="title">Last event:</span>
+												<span class="text">Canceled</span>
+											</div>
+											<div class="item">
+												<span class="title">Sent POIs:</span>
+												<span class="text">2</span>
+												<a href="#" class="item_accardion-btn">
+													<span class="hide">Hide</span>
+													<span class="show">Show</span>
+												</a>
+												<div class="item_accardion">
+													<div class="item">
+														<span class="text"><b>Vapiano Pizza</b></span>
+														<span class="text">Rathausstrasse 6, 10178 Berlin, Germany</span>
+													</div>
+													<div class="item">
+														<span class="text"><b>Vapiano Pizza</b></span>
+														<span class="text">Rathausstrasse 6, 10178 Berlin, Germany</span>
+													</div>
+
+													<a id="resendHistory" href="#" class="btn btn-color-dark_grey mt-10">Resend POIs</a>
+												</div>
+											</div>
+											<div class="item">
+												<span class="title">Call center:</span>
+												<span class="text">BMW Germany</span>
+											</div>
+											<div class="item">
+												<span class="title">Agent:</span>
+												<span class="text">Helen Lampard</span>
+											</div>
+										</div>
+										<div class="col col-1_3">
+											<div class="item">
+												<span class="title">Phone number:</span>
+												<span class="text">+49 89 1250 16000</span>
+												<a class="driver-lang">
+													<img src="/project/templates/altabeltest.link/_ares/img/png/call.png" alt="">
+												</a>
+											</div>
+											<div class="item">
+												<span class="title">Address:</span>
+												<span class="text">Rathenaustrasse 92</span>
+											</div>
+											<div class="item">
+												<span class="title">Postal code:</span>
+												<span class="text">80937</span>
+											</div>
+											<div class="item">
+												<span class="title">City/town:</span>
+												<span class="text">Munchen</span>
+											</div>
+											<div class="item">
+												<span class="title">Province:</span>
+												<span class="text">Oberbayern</span>
+											</div>
+											<div class="item">
+												<span class="title">State/province:</span>
+												<span class="text">Bayern</span>
+											</div>
+											<div class="item">
+												<span class="title">Country:</span>
+												<span class="text">Germany</span>
+											</div>
+											<div class="item">
+												<span class="title">Current location:</span><br>
+												<span class="text">N 520 31’ 12.023’’, E 130 24’ 17.834’’ N 52.52, E 13.405  </span>
+											</div>
+										</div>
+										<div class="col mt-34 mb-24">
+											<div class="accardion-block">
+												<div class="accardion-block-header">Notes</div>
+												<div class="accardion-block-content">
+													<div class="blue_table">
+										    			<div class="col-1_3"><div class="blue_table-title">Time</div></div>
+										    			<div class="col-1_3"><div class="blue_table-title">Agent</div></div>
+										    			<div class="col-1_3"><div class="blue_table-title">Note</div></div>
+											    	</div>
+											    	<div class="flex flex-block">
+										    			<div class="col-1_3"><div class="">2018-01-15 16:26 CET</div></div>
+										    			<div class="col-1_3"><div class="">Cleanup Admin</div></div>
+										    			<div class="col-1_3"><div class="">Closed by supervisor using cleanup function. User: Cleanup Admin</div></div>
+											    	</div>
+											    	<div class="col">
+														<div class="title-block">Additional note</div>
+														<div class="form-item" >
+										    				<textarea></textarea>
+									    				</div>
+									    				<div class="flex align-right align-middle mt-16">
+															<div class="btns">
+																<a href="#" class="btn btn-color-grey mr-8 modal-cancel">Cancel</a>
+																<a href="#" class="btn btn-color-dark_grey creatPoi-save">Save</a>
+															</div>
+											    		</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col mb-24">
+											<div class="accardion-block">
+												<div class="accardion-block-header">Dealer Information</div>
+												<div class="accardion-block-content">
+													<div class="col-row">
+														<div class="col">
+															<div class="item">
+																<span class="text"><b>Automag GmbH </b></span>
+																<span class="title">Home dealer</span>
+															</div>
+														</div>
+														<div class="col col-1_2">
+															<div class="item">
+																<span class="title">Address:</span>
+																<span class="text">Frankfurter Ring 35, 80807, Munchen, Germany</span>
+															</div>
+															<div class="item">
+																<span class="title">Phone:</span>
+																<span class="text">+49 89 353510</span>
+															</div>
+															<div class="item">
+																<span class="title">Fax:</span>
+																<span class="text">+49 89 353510</span>
+																<a class="driver-lang">
+																	<img src="/project/templates/altabeltest.link/_ares/img/png/call-blue.png" alt="">
+																</a>
+															</div>
+															<div class="item">
+																<span class="title">Portfolio:</span>
+																<span class="text"></span>
+															</div>
+														</div>
+														<div class="col col-1_2">
+															<div class="item">
+																<span class="title">Dealer code:</span>
+																<span class="text">00009773</span>
+															</div>
+															<div class="item">
+																<span class="title">Partner number:</span>
+																<span class="text">04107</span>
+															</div>
+															<div class="item">
+																<span class="title">Company number:</span>
+																<span class="text">4</span>
+															</div>
+															<div class="item">
+																<span class="title">Email:</span>
+																<span class="text"></span>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+							{{/each}}	
+	</script>
+	
+    {%F:Meta%} {%F:XFRONT_API%} 
+	
+    <script src="{%F:ARES%}components/jquery/jquery-3.3.1.min.js"></script>
+    <script src="{%F:ARES%}components/foundation/foundation.min.js"></script>
+    <script src="{%F:ARES%}components/form-styler/jquery.formstyler.js"></script>
+    <script src="{%F:ARES%}components/select2/select2.full.js"></script>
+	
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<script src="/x4/modules/catalog/js/catalogFront.js"></script>
+	<script src="/x4/modules/pages/js/pagesFront.js"></script>
+	
+	
+    <script src="{%F:ARES%}js/map.js"></script>
+	<script src="{%F:ARES%}js/dynamicPanel.js"></script>	
+	<script src="{%F:ARES%}js/code.js"></script>
+	<script src="{%F:ARES%}js/favorites.js"></script>
+	<script src="{%F:ARES%}js/report.js"></script>
+	<script src="{%F:ARES%}js/history.js"></script>
+    <script src="{%F:ARES%}js/app.js"></script>
+	<script src="{%F:ARES%}js/catalog.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCM5DWOuibYiCiuvr6Eqmim_uq5CaT8m80&callback=initMap&libraries=places"></script>
+
+</body>
+</html>
+{%endsection:FOOTER%}

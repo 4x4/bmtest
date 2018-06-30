@@ -1,0 +1,88 @@
+{%section:_FORM%}
+<style>
+    .fieldsetPanel.current {border: 1px solid #177BBB;}
+    .component {cursor: pointer;}
+</style>
+
+<div id="formBuilderContainer" class="form-block container" style="width:100%;">
+    <section class="row m-b-md">
+        <div class="col-sm-8">
+            <h3 id="header" class="m-b-xs text-black">{form_name}</h3>
+        </div>
+        <div class="col-sm-4 text-right text-left-xs m-t-md">
+            <a href="#" id="saveForms" class="btn btn-s-md btn-success {%if('{F:action}'=='edit')%}edit{%else%}save{%endif%}">
+                <i class="fa fa-floppy-o hover-rotate"></i> {save}
+            </a>
+            <a id="show_form_settings" class="btn btn-s-md btn-info" href="#formSettings" title="{form_settings}" alt="{form_settings}">
+                <i class="fa fa-cog hover-rotate"></i> {form_settings}
+            </a>
+        </div>
+    </section>
+
+  <div id="builderPalette" class="row">
+     <div class="floatingPanelIdentifier"></div>
+     <div class="floatingPanel col-sx-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="row">
+                <div class="col-sx-12 col-sm-12 col-md-12 col-lg-12" style="display:none;">
+                    <ul>
+                        <li><a href="#addField">{add_field}</a></li>
+                        <li><a href="#formSettings">{form_settings}</a></li>
+                    </ul>
+                </div>
+                <!--dker - фон темнее--> <!--opacity:0.9;-->
+                <div id="formSettings" class="settingsBlock bg-light panel panel-default col-lg-offset-9 col-lg-3 col-sx-12 col-sm-12" style="position:absolute; z-index:100; display:none;">
+                    <a id="formSettingsClose" href="#" class="btn btn-icon b-2x btn-default btn-rounded" style="float:right;"><i class="fa fa-times-circle"></i></a>
+                    {%if('{F:action}'=='edit')%}
+                    <form id="edit_FORM" role="form">
+                    {%else%}
+                    <form id="create_FORM" role="form">
+                    {%endif%}
+                        <div class="general panel-body"></div>
+                    </form>
+                </div>
+            </div>
+     </div>
+  </div>
+
+   <div class="row">
+
+
+  <form id="builderForm" action="#" class="uniForm">
+      <input type="hidden" id="Name" name="Name" />
+      <input type="hidden" id="settings" name="settings" />
+
+      <div id="dynamicFieldsets" class="col-lg-9"></div>
+
+      <div class="col-lg-3">
+                <section id="addField" class="panel panel-default">
+                  <header class="panel-heading bg-light">
+                    <ul class="nav nav-tabs nav-justified">
+                      <li class="active"><a data-toggle="tab" href="#standard_fields"><span class="m-t-lg"><strong>{standard_fields}</strong></span></a></li>
+                      <li><a data-toggle="tab" href="#alt_fields"><span class="m-t-lg"><strong>{alt_fields}</strong></span></a></li>
+                    </ul>
+                  </header>
+                  <div class="panel-body">
+                    <div class="tab-content">
+                      <div id="standard_fields" class="tab-pane active">
+                        <div id="standardFields" class="btn-group"></div>
+                      </div>
+                      <div id="alt_fields" class="tab-pane">
+                        <div id="altFields" class="btn-group"></div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+      </div>
+  </form>
+   </div>
+   <!--<div class="row m-t">
+       <div class="col-lg-12">
+            <div class="doc-buttons">
+                <a href="#" id="saveForms" class="btn btn-s-md btn-success {%if('{F:action}'=='edit')%}edit{%else%}save{%endif%}">
+                <i class="fa fa-floppy-o hover-rotate"></i> {save}
+                </a>
+            </div>
+       </div>
+   </div>-->
+</div>
+{%endsection:_FORM%}

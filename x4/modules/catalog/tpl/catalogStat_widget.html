@@ -1,0 +1,30 @@
+{%section:catalogStat_widget%}
+
+
+<div class="col-sm-12" id="widget_{{data.name}}">
+    <div class="panel b-a">
+        <div class="row m-n">
+            <div class="col-md-6 b-b b-r"><a class="block padder-v hover" href="#"> <span
+                    class="i-s i-s-2x pull-left m-r-sm"> <i class="i i-hexagon2 i-s-base text-danger hover-rotate"></i> <i
+                    class="i i-file i-sm text-white"></i> </span> <span class="clear"> <span
+                    class="h3 block m-t-xs text-danger">{{data.catobjs}}</span> <small class="text-muted text-u-c">{catalog_elements}</small> </span>
+            </a></div>
+
+            <div class="col-md-6 b-b"><a class="block padder-v hover" href="#"> <span
+                    class="i-s i-s-2x pull-left m-r-sm"> <i
+                    class="i i-hexagon2 i-s-base text-success-lt hover-rotate"></i> <i
+                    class="i i-folder2 i-sm text-white"></i> </span> <span class="clear"> <span
+                    class="h3 block m-t-xs text-success">{{data.catgroups}}</span> <small class="text-muted text-u-c">{catalog_categories}</small> </span>
+            </a></div>
+
+            <div class="col-md-6 b-b"><a class="block padder-v hover" href="#"> <span
+                    class="i-s i-s-2x pull-left m-r-sm"> <i class="i i-hexagon2 i-s-base text-primary hover-rotate"></i> <i
+                    class="i i-file i-sm text-white"></i> </span> <span class="clear"> <span
+                    class="h3 block m-t-xs text-primary">{{data.sku}}</span> <small class="text-muted text-u-c">{sku_elements}</small> </span>
+            </a></div>
+        </div>
+    </div>
+</div>
+
+
+{%endsection:catalogStat_widget%}

@@ -1,0 +1,45 @@
+{%section:imageAutoProperty%}
+
+
+<div class="form-group">
+    <label>{{alias}}</label>
+    <div class="input-group">
+        <input id="{{basic}}" name="{{basic}}" readonly class="form-control validate-selection text-sm"/>
+        <span class="input-group-btn">
+                                    <a class="{{basic}}-autoApply btn btn-default" data-target="folder"> <i
+                                            class="fa fa-folder-open-o"></i></a>
+                                </span>
+        <span class="input-group-btn">
+                                    <a class="fileManagerClearInput btn btn-default"> <i class="fa fa-times"></i></a>                                                    
+                                </span>
+    </div>
+</div>
+
+{%endsection:imageAutoProperty%}
+
+
+{%section:imageAutoPropertyOptions%}
+
+
+
+
+<div class="form-group"><label>{width}</label>
+
+            <input id="width" name="options.width"  class="form-control">
+
+</div>
+
+<div class="form-group"><label>{height}</label>
+
+            <input id="height" name="options.height"  class="form-control">
+
+</div>
+
+
+<div class="form-group"><label>{proportions}</label>
+
+            <input id="proportions" name="options.proportions"  class="form-control">
+
+</div>
+
+{%endsection:imageAutoPropertyOptions%}

@@ -1,0 +1,68 @@
+{%section:authPanel%}
+         
+    <div class="row">
+        <div class="column large-9">
+        </div>
+        <div class="column large-9">
+            <div class="login_block text-right">
+
+                <a href="/compare"><span class="catalogCurrentComparseCount"> </span> in comparsion</a> &nbsp;
+                <a class="login_link" data-toggle="login_modal">Logga in</a>
+
+                <div class="reveal" id="login_modal" data-reveal data-close-on-click="true" >
+                <h1>Logga in</h1>
+                <form id="authform" method="POST" action="{%F:authAction%}">
+
+                    <label for="login">Logga in</label>
+                    <input type="text" id="login" name="login" placeholder="Ваш логин">
+                    <label for="password">Lösenord</label>
+                    <input type="password" id="password" name="password">
+
+                    <input type="submit" class="submit" value="Skriva in">
+                </form>
+
+            </div>
+            </div>
+        </div>
+    </div>
+
+
+                        
+<!--
+<div class="authorization">
+          <div class="title">Auth <span>/</span> <a href="{%F:registration_link%}">Registration</a> </div>
+          
+              
+          <form id="authform" method="POST" action="{%F:auth_link%}">    
+          <ul class="form">
+              <li><label><span>Name:</span><input name="login" /></label></li>
+              <li><label><span>Password:<input name="password" onKeyPress="return submitenter(this,event)"  type="password"  value="" />
+                </label></li>
+              </li>
+            </ul>
+          </form>
+          
+
+          <a href="javascript:void(0)" onclick="$('#authform').submit()" class="button">Войти</a>
+          </div>
+          
+
+
+-->
+{%endsection:authPanel%}
+
+
+{%section:authorizedPanel%}
+
+
+<div class="right"><a href="/user/~userPanel" >User cabinet</a> | <a href="/dealer/~logout" >Logout</a></div>
+<div class="login right">
+
+    
+
+                            <p>Hi, {%F:siteUser>userdata>name%}!</p>
+                        </div>
+                        
+
+
+{%endsection:authorizedPanel%}

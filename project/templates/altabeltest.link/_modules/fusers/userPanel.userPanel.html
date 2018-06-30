@@ -1,0 +1,575 @@
+{%section:authPanel%}
+
+
+<div class="reveal" id="login_modal" data-reveal data-close-on-click="true" >
+    <h1>Logga in</h1>
+    <form id="authform" method="POST" action="{%F:authAction%}">
+
+        <label for="login">Logga in</label>
+        <input type="text" id="login" name="login" placeholder="Ваш логин">
+        <label for="password">Lösenord</label>
+        <input type="password" id="password" name="password">
+
+        <input type="submit" class="submit" value="okej">
+    </form>
+
+</div>
+
+<div class="row">
+    <div class="columns small-12 checkout_form">
+        <div class="personal_data">
+            <p class="title">Tillstånd</p>
+            <form id="loginInner"  method="POST" action="{%F:authAction%}">
+                <ul>
+                    <li>
+                        <p>Logga in</p>
+                        <input type="text" id="login" name="login" >
+                    </li>
+                    <li>
+                        <p>Lösenord*</p>
+                        <input  id="pass" name="password" type="password">
+                    </li>
+
+                </ul>
+            </form>
+
+
+            <div class="checkout_buttons">
+                <a class="enterLK approve" href="#">
+                    Skriva in</a>
+            </div>
+        </div>
+
+
+    </div>
+
+    <!--  <p class="forgot_pass">
+ <a href="{%F:forgotPasswordLink%}">Забыли пароль?</a>
+ <a href="{%F:registrationLink%}">Зарегистрироваться</a>
+</p>-->
+
+</div>
+
+
+
+
+
+
+
+
+
+
+{%endsection:authPanel%}
+
+
+
+
+
+
+{%section:noAccessGranted%}
+
+У вас не хватает прав для доступа к этой странице.
+
+{%endsection:noAccessGranted%}
+
+
+
+
+{%section:logout%}
+
+
+
+{%endsection:logout%}
+
+
+<input type="text" value="тот логин кототрый вводили" class="err"/>
+
+<div class="err_text">* такой логин уже существует</div>
+
+{%section:registration%}
+
+
+
+<h1>Регистрация</h1>
+<div class="authorization">
+    <p class="mandatory_fields">* поля являются обязательными к заполнению</p>
+    <div class="authorization_form authorization_form_reg">
+
+        <form id="newUser" action={%F:actionNewUserLink%} method="POST">
+
+            <p><label for="login">*Логин:</label><input class="error validate[required]" id="login" name="login" type="text" ></p>
+            <p><label for="email">*Email:</label><input class="validate[required,custom[email]]" type="text" id="email" name="email"></p>
+            <p><label for="pass">*Пароль:</label><input class="validate[required]" type="password" name="password" id="pass"></p>
+            <p><label for="repeat_pass">*Повторите пароль:</label><input class="validate[required,equals[pass]]" name="passwordAgain" type="password" id="repeat_pass"></p>
+            <p><label for="surname">*Фамилия:</label><input class="validate[required]" id="surname" name="surname" type="text" ></p>
+            <p><label for="name">*Имя:</label><input class="validate[required]" id="name"  name="name" type="text" ></p>
+            <p><label for="last_name">*Отчество:</label><input class="validate[required]"  name="patronymic" id="last_name" type="text" ></p>
+
+            <p><label for="region">Область</label>
+                <select  class="chosen-select" name="region"><option value="">Область</option><option value="11">Брестская</option><option value="4">Витебская</option><option value="2">Гомельская</option><option value="13">Гродненская</option><option value="6">Минская</option><option value="8">Могилевская</option></select>
+            </p>
+
+            <p><label for="district">Район:</label>
+                <select  class="chosen-select" class="selectBox" name="district"><option value="">Район</option><option value="34">Барановичский</option><option value="43">Белыничский</option><option value="144">Березинский</option><option value="257">Березовский</option><option value="234">Берестовицкий</option><option value="166">Бешенковичский</option><option value="200">Бобруйский</option><option value="126">Борисовский</option><option value="118">Брагинский</option><option value="70">Браславский</option><option value="59">Брестский</option><option value="217">Буда-Кошелевский</option><option value="20">Быховский</option><option value="4">Верхнедвинский</option><option value="208">Ветковский</option><option value="137">Вилейский</option><option value="6">Витебский</option><option value="288">Волковысский</option><option value="24">Воложинский</option><option value="254">Ганцевичский</option><option value="113">Глубокский</option><option value="79">Глусский</option><option value="63">Гомельский</option><option value="83">Горецкий</option><option value="10">Городокский</option><option value="109">Гродненский</option><option value="196">Дзержинский</option><option value="92">Добрушский</option><option value="40">Докшицкий</option><option value="309">Дрибинский</option><option value="267">Дрогичинский</option><option value="47">Дубровенский</option><option value="230">Дятловский</option><option value="51">Ельский</option><option value="103">Жабинковский</option><option value="150">Житковичский</option><option value="49">Жлобинский</option><option value="303">Зельвенский</option><option value="223">Ивановский</option><option value="174">Ивацевичский</option><option value="122">Ивьевский</option><option value="53">Калинковичский</option><option value="146">Каменецкий</option><option value="45">Кировский</option><option value="265">Клецкий</option><option value="55">Климовичский</option><option value="141">Кличевский</option><option value="191">Кобринский</option><option value="188">Копыльский</option><option value="88">Кореличский</option><option value="262">Кормянский</option><option value="148">Костюковичский</option><option value="214">Краснопольский</option><option value="94">Кричевский</option><option value="61">Круглянский</option><option value="246">Крупский</option><option value="204">Лельчицкий</option><option value="105">Лепельский</option><option value="268">Лидский</option><option value="22">Лиозненский</option><option value="8">Логойский</option><option value="2">Лоевский</option><option value="155">Лунинецкий</option><option value="184">Любанский</option><option value="244">Ляховичский</option><option value="176">Малоритский</option><option value="139">Минский</option><option value="180">Миорский</option><option value="182">Могилевский</option><option value="186">Мозырский</option><option value="162">Молодечненский</option><option value="210">Мостовский</option><option value="170">Мстиславский</option><option value="38">Мядельский</option><option value="90">Наровлянский</option><option value="316">Несвижский</option><option value="251">Новогрудский</option><option value="72">Октябрьский</option><option value="86">Оршанский</option><option value="178">Осиповичский</option><option value="221">Ошмянский</option><option value="115">Петриковский</option><option value="172">Пинский</option><option value="12">Полоцкий</option><option value="76">Поставский</option><option value="26">Пружанский</option><option value="130">Пуховичский</option><option value="96">Речицкий</option><option value="74">Рогачевский</option><option value="14">Россонский</option><option value="168">Светлогорский</option><option value="212">Свислочский</option><option value="30">Сенненский</option><option value="164">Славгородский</option><option value="202">Слонимский</option><option value="32">Слуцкий</option><option value="98">Смолевичский</option><option value="240">Сморгонский</option><option value="81">Солигорский</option><option value="237">Стародорожский</option><option value="152">Столбцовский</option><option value="158">Столинский</option><option value="18">Толочинский</option><option value="68">Узденский</option><option value="36">Ушачский</option><option value="66">Хойникский</option><option value="135">Хотимский</option><option value="16">Чаусский</option><option value="28">Чашникский</option><option value="107">Червенский</option><option value="100">Чериковский</option><option value="111">Чечерский</option><option value="153">Шарковщинский</option><option value="57">Шкловский</option><option value="132">Шумилинский</option><option value="259">Щучинский</option></select>
+            </p>
+
+
+
+
+            <p><label for="adress">*Адрес:</label><input  class="validate[required]" name="address" id="adress" type="text" >
+            <div class="your-index">Узнай свой индекс <a href="http://zip.belpost.by/">http://zip.belpost.by/"<a></div>
+            </p>
+            <p><label for="tel">*Телефон:</label><input  class="validate[required,custom[phone]]" id="phone" name="phone" type="text" placeholder="+375 xx x xxxxxx"></p>
+            <!--<p class="check_what"><label for="reg_check">Зарегистривораться как:</label></p>
+
+            <p class="reg_check"><input  name="userType" value="1" type="radio" ><span>розничный покупатель</span></p>
+            <p class="reg_check"><input  name="userType" value="2" type="radio" ><span>оптовый покупатель</span></p>
+            -->
+
+
+        </form>
+
+    </div>
+
+    {%each({F:errors},k,v)%}
+
+    <p>{%F:v%}</p>
+
+    {%endeach%}
+
+    <p class="registration_button">
+        <a href="#" class="big_red_button register">Зарегистрироваться</a>
+        <a href="#">Очистить форму</a>
+    </p>
+</div>
+
+
+
+{%endsection:registration%}
+
+
+
+{%section:editUser%}
+
+<p class="title">Личный кабинет</p>
+
+
+
+
+<div class="checkout_info">
+    <div class="row">
+        <div class="col-xs-8 checkout_form">
+            <div class="personal_data">
+                <p class="title">Мои данные</p>
+
+
+                <form id="editUser" action={%F:saveEditUserLink%} method="POST">
+
+                    <ul>
+
+
+                        <li>
+                            <p>Имя, Фамилия, Отчество*</p>
+                            <input class="validate[required]" id="name"  name="name" type="text" value="{%F:user>params>name%}">
+                        </li>
+
+                        <li>
+                            <p>Название компании*</p>
+                            <input class="validate[required]" id="company"  name="company" type="text" value="{%F:user>params>name%}">
+                        </li>
+
+
+                        <li>
+                            <p>Номер телефона*</p>
+                            <input  class="validate[required,custom[phone]]"  id="phone" name="phone" value="{%F:user>params>phone%}" type="text" placeholder="+375 xx x xxxxxx">
+                        </li>
+
+
+                        <li>
+                            <p>Номер телефона*</p>
+                            <input class="validate[required,custom[email]]"   type="text" id="email" value="{%F:user>params>email%}" name="email"></p>
+                        </li>
+
+
+                    </ul>
+
+
+
+                </form>
+            </div>
+            {%each({F:errors},k,v)%}
+
+            <p>{%F:v%}</p>
+
+            {%endeach%}
+            <div class="checkout_buttons">
+                <a class="approve" href="">Сохранить данные</a>
+            </div>
+
+
+
+
+
+        </div>
+        <div class="col-xs-4">
+            <div class="my_files">
+                <p class="title">Мои файлы</p>
+
+
+                {%F:#files(module.catalog.tpl:getObjectsByFilter({"filter":{"onpage":"30","f":{"ancestor":{"ancestor":"83814","endleafs":"2"}}}}))%}
+
+                {%each({F:files},k,val)%}
+
+                <div class="file {%F:@fileInfo(module.catalog.tpl:fileInfo({"file":"{F:val>dealerfile>file}"}))%}">
+
+                <a href="{%F:val>dealerfile>file%}"> {%F:val>_main>Name%} ({%F:@fileInfo(module.catalog.tpl:getFileSizeFormatted({"file":"{F:val>dealerfile>file}"}))%})</a>
+                <a href="{%F:val>dealerfile>file%}" class="red">скачать</a>
+            </div>
+
+            {%endeach%}
+
+
+        </div>
+    </div>
+</div>
+</div>
+
+{%endsection:editUser%}
+
+
+{%section:emailRegistrationPassed%}
+
+
+<p class="title">Спасибо за регистрацию! На указанный Вами при регистрации E-mail было выслано письмо с инструкциями о подверждении регистрации.</p>
+
+
+
+{%endsection:emailRegistrationPassed%}
+
+
+{%section:registrationPassed%}
+
+<p class="title">Регистрация вашего аккаунта завершена. <a href="/reg/~login">Авторизоваться на сайте </a></p>
+
+{%endsection:registrationPassed%}
+
+
+
+
+
+{%section:registrationMailSubject%}
+Потверждение регистрации на сайте avex.by
+{%endsection:registrationMailSubject%}
+
+{%section:registrationMailText%}
+
+Уважаемый {%F:name%} {%F:surname%}! Добро пожаловать на avex.by<br>
+Перейдите по <a href="http://markformelle.by/reg/~verifyUser/?code={%F:vcode%}"> ссылке для подтверждения регистрации</a><br>
+
+
+
+
+{%endsection:registrationMailText%}
+
+
+/-----user panel-----------------------------------------------------------------------------------------------------/
+
+
+<li><a href="/reg/~userPanel/?show=orders">История заказов</a></li>
+/reg/~userPanel/?userAction={%F:v>action%}
+{%section:userPanelMenu->%}
+
+
+
+<ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix  ui-corner-all">
+    <li class="ui-state-default ui-corner-top"><a href="{%F:editUserLink%}">Личные данные</a></li>
+    {%each({F:userMenu},k,v)%}
+    <li class="ui-state-default ui-corner-top"><a href="{%F:v>link%}">{%F:v>name%}</a></li>
+    {%endeach%}
+
+</ul>
+
+{%endsection:userPanelMenu%}
+
+{%section:userPanel%}
+
+
+<p class="title">Личный кабинет</p>
+
+
+
+
+
+<div class="checkout_info">
+    <div class="row">
+        <div class="columns small-12 checkout_form">
+            <div class="personal_data">
+
+                {%->:userPanelMenu%}
+                {%->:userPanelInfo%}
+
+            </div>
+
+        </div>
+        <div class="col-xs-4">
+            <div class="my_files">
+                <p class="title">Мои файлы</p>
+
+
+                {%F:#files(module.catalog.tpl:getObjectsByFilter({"filter":{"onpage":"30","f":{"ancestor":{"ancestor":"83814","endleafs":"2"}}}}))%}
+
+                {%each({F:files},k,val)%}
+
+                <div class="file {%F:@fileInfo(module.catalog.tpl:fileInfo({"file":"{F:val>dealerfile>file}"}))%}">
+
+                <a href="{%F:val>dealerfile>file%}"> {%F:val>_main>Name%} ({%F:@fileInfo(module.catalog.tpl:getFileSizeFormatted({"file":"{F:val>dealerfile>file}"}))%})</a>
+                <a href="{%F:val>dealerfile>file%}" class="red">скачать</a>
+            </div>
+
+            {%endeach%}
+
+
+        </div>
+    </div>
+</div>
+
+</div>
+
+{%endsection:userPanel%}
+
+
+
+
+{%section:userPanelSavedCart->userPanelInfo%}
+
+
+
+{%endsection:userPanelSavedCart%}
+
+
+
+{%section:userPanelOrders->userPanelInfo%}
+
+<div id="tabs-3">
+    <table class="profile_table">
+        <tbody>
+
+        <tr>
+            <th>Номер заказа</th>
+
+            <th class="data_table_col">Дата<p class="arrows_filter">
+                <a class="up" href="#"></a>
+                <a class="down" href="#"></a>
+            </p>
+            </th>
+
+            <th class="cost_table_col">Сумма
+                <p class="arrows_filter">
+                    <a class="up" href="#"></a>
+                    <a class="down" href="#"></a>
+                </p>
+            </th>
+
+
+            <th>Оплата</th>
+            <th>Статус</th>
+            <th>Комментарий</th>
+            <th></th>
+
+        </tr>
+
+        {%each({F:orders},k,v)%}
+        <tr>
+
+            <td><strong>{%F:v>id%}</strong></td>
+            <td > {%F:@ee(E:dateRu({"value":"{F:v>date}","format":"d x Y"}))%}</td>
+            <td><span class="red bold">{%F:v>total_sum%}</span> руб. </td>
+            <td> {%F:v>paysystem%}
+
+
+                {%if('{F:v>paysystem}')%}
+                Номер в платежной системе:  {%F:v>paysystem_order_num%}
+                {%else%}
+                Оплата наличными
+                {%endif%}
+
+            </td>
+            <td> {%F:v>status%}</td>
+
+            <td> <a href="#" class="viewOrder">Посмотреть заказ</a></td>
+        </tr>
+
+
+        <tr style="display:none">
+            <td colspan="6">
+
+                {%F:#ordersGoods(module.ishop.tpl:getUserOrderGoods({"id":"{F:v>id}"}))%}
+
+
+
+                <table width="100%"  style="border:1px solid #E1E1E1">
+
+                    {%each({F:ordersGoods},key,val)%}
+                    <tr>
+
+                        <td width="25px">{%F:val>id%}</td>
+                        <td width="28%">{%F:val>name%}  {%F:val>sku>params>articul%}
+                            <br>
+                            Цвет: <strong>{%F:val>sku>params>color%}</strong>,
+                            Размер: <strong>{%F:val>sku>params>size%}</strong>
+                        </td>
+
+                        <td>{%F:val>price(E:number_format(|[2,"."]|))%} руб.</td>
+                        <td>{%F:val>count%} шт. </td>
+                        <td> {%F:val>sum%} руб.</td>
+
+                    </tr>
+
+                    {%endeach%}
+                </table>
+
+        </tr>
+
+
+
+
+
+        {%endeach%}
+
+        </tbody></table>
+
+</div>
+
+
+
+
+{%endsection:userPanelOrders%}
+
+
+
+
+
+
+{%section:favorites->%}
+
+<tr>
+    {%F:#obj(catalog:get_obj_params({F:obj_id}))%}
+
+    <td><a href="/icatalog/catalog/~showobj/id/{%F:obj_id%}">{%F:#image(E:get_from({F:obj},props>image))%}
+
+        {%if(Common::is_file_exists('{F:image}'))%}
+        <img src="{%F:image(E:image_transform(90,90))%}" alt="{%F:Name%}"/>
+        {%else%}
+        <img src="/images/nomage.jpg" alt="{%F:Name%}"/>
+        {%endif%}
+
+    </td>
+
+    <td><a href="/icatalog/catalog/~showobj/id/{%F:obj_id%}">{%F:obj(E:get(props>Name))%}</td>
+    <td>{%F:obj(E:get(props>color))%}</td>
+    <td>{%F:obj(E:get(props>material))%}</td>
+    <td> <a class="delfavorite" lang="{%F:obj_id%}" href="javascript:void(0)">Удалить</a></td>
+</tr>
+
+{%endsection:favorites%}
+
+{%section:goods->%}
+
+<tr>
+    <td>{%F:name%}</td>
+    <td>{%F:price(E:number_format(|[2,"."]|))%} {%F:currency%}</td>
+    <td>{%F:count%} шт. </td>
+
+    <td> {%F:#calc(E:calc({F:price}*{F:count}))%}  {%F:calc(E:number_format(|[2,"."]|))%} {%F:currency%}</td>
+    <td>{%F:comments%}</td>
+</tr>
+
+{%endsection:goods%}
+
+
+
+
+
+
+
+{%section:accountConfirmed%}
+
+<p class="title"> Ваш аккаунт успешно подтвержден.</p>
+<p class="title" >Перейдите <a href="/reg/~login">по ссылке для авторизации.</a></p>
+
+{%endsection:accountConfirmed%}
+
+
+{%section:accountdDeleted%}
+
+<p>Аккаунт удален. </p>
+
+{%endsection:accountdDeleted%}
+
+{%section:accountNotExists%}
+
+<p>Аккаунт не существует. </p>
+{%endsection:accountNotExists%}
+
+
+
+
+
+{%section:forgotPasswordEnterEmail%}
+<script src="/xjs/livevalidation.js" type="text/javascript"></script>
+<link href="css/lv.css" rel="stylesheet" type="text/css" />
+<h2>Забыли пароль?</h2>
+<p>Чтобы получить пароль, введите полный адрес электронной почты, который Вы указали при регистрации.</p>
+<div style="color:red;">{%F:error%}</div>
+<form id="enter_email" name="enter_email" method="post" action="">
+    <div class="form">
+        <ul>
+            <li>
+                <p>Email: <span>*</span></p>
+                <input id="Email" value="{%F:Email%}" size="40" name="Email" type="text" />
+            </li>
+            <li>
+                <a href="javascript:void(0)" id="submit" class="button">Отправить</a>
+            </li>
+        </ul>
+    </div>
+</form>
+
+<script type="text/javascript">
+    var Form = document.getElementById('enter_email');
+    var Email = new LiveValidation('Email',{onlyOnSubmit:false});
+    Email.add(Validate.Email,{failureMessage: "Неправильный email"} );
+    Email.add(Validate.Presence,{failureMessage:"Обязательно для заполнения"});
+
+    var submitEmail = function(){
+        var automaticOnSubmit = Email.form.onsubmit;
+        if(automaticOnSubmit()){Form.submit();}
+        else {return false;}
+    };
+
+    document.getElementById('submit').onclick = submitEmail;
+</script>
+
+{%endsection:forgotPasswordEnterEmail%}
+
+
+{%section:forgotPasswordEmailSend%}
+<p>На Ваш Email выслан новый пароль для <a href="{%F:authLink%}">входа</a> в панель пользователя сайта.</p>
+{%endsection:forgotPasswordEmailSend%}
+
+
+{%section:forgotPasswordEmailNotSend%}
+<h2>Сообщение не отправлено или новый пароль не сохранен. Повторите попытку.</h2>
+{%endsection:forgotPasswordEmailNotSend%}
+
+
+{%section:forgotPasswordEmailNotUser%}
+Пользователь с этим адресом электронной почты не найден. Повторите попытку.
+{%endsection:forgotPasswordEmailNotUser%}
+
+
+{%section:forgotPasswordMailText%}
+<p>Новый пароль для <a href="{%F:auth_link%}">входа в профиль</a> ({%F:HOST%}) - {%F:newPassword%}</p>
+{%endsection:forgotPasswordMailText%}
+
+

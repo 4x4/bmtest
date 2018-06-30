@@ -1,0 +1,109 @@
+{%section:showNewsInterval%}
+<div class="form-group">
+    <h5>{select_categories_of_news}</h5>
+    <select class="form-control" id="Categories" multiple name="Categories"></select>
+</div>
+
+
+<div class="form-group">
+    <h5>{template_display_of_news}</h5>
+    <select class="form-control" id="Template" name="Template"></select>
+</div>
+
+<div class="form-group">
+    <h5>{quantity_displayed_news}</h5>
+    <p style="font-weight:normal;">({zero_or_empty_no_restrictions})</p>
+    <input class="form-control" id="OnPage" name="OnPage" type="text" value='0'/>
+
+</div>
+
+<div class="checkbox i-checks">
+    <label> <input name="HideOldNews" type="checkbox" value=""><i></i>{hide_old_news}
+    </label>
+</div>
+
+<!--
+ <div class="form-group">  
+        <h5>{show_by_author}</h5>
+        <p>{zero_or_empty_no_restrictions}</p>
+            <select class="form-control"  id="author"></select>
+
+</div>
+-->
+
+<div class="form-group">
+    <h5>{show_by_tags}</h5>
+    <p>{zero_or_empty_no_restrictions}</p>
+
+    <select id="showByTags" data-placeholder="{tags_news}" multiple name="showByTags"
+            class="chosen-select form-control tagManSource noTagButton">
+
+    </select>
+
+</div>
+
+
+<div class="form-group">
+    <h5>{transition_page}</h5>
+    <select class="form-control" id="DestinationPage" name="DestinationPage"></select>
+
+
+</div>
+
+{%endsection:showNewsInterval%}
+
+
+{%section:showCorrespodingTags%}
+
+<div class="form-group">
+    <h5>{template_display_of_tags}</h5>
+    <select class="form-control" id="Template" name="Template"></select>
+</div>
+
+<div class="form-group">
+    <h5>{transition_page}</h5>
+    <select class="form-control" id="DestinationPage" name="DestinationPage"></select>
+
+</div>
+{%endsection:showCorrespodingTags%}
+
+
+{%section:show_news_categories%}
+<p>{template_display_categories_of_news}</p>
+<select id="Template" class="validate-selection">
+</select>
+<p>{template_display_category}</p>
+<select id="TemplateInterval" class="validate-selection">
+</select>
+<p>{transition_page}</p>
+<p style="font-weight:normal;">{if_it_is_not_specified_that_current_page}</p>
+<select id="DestinationPage">
+</select>
+{%endsection:show_news_categories%}
+
+
+{%section:newsServer%}
+
+<div class="form-group">
+    <h5>{template_display_news}</h5>
+    <select class="form-control" id="Template" name="Template"></select>
+</div>
+
+<div class="form-group">
+    <h5>{template_display_of_news}</h5>
+    <select class="form-control" id="TemplateInterval" name="TemplateInterval"></select>
+</div>
+
+<div class="form-group">
+    <h5>{quantity_displayed_news}</h5>
+    <p style="font-weight:normal;">({zero_or_empty_no_restrictions})</p>
+    <input class="form-control" id="OnPage" name="OnPage" type="text" value='0'/>
+
+</div>
+
+<div class="form-group">
+    <h5>{action_carried_out_by_default}</h5>
+    <select id="secondaryAction" name="secondaryAction" class="form-control"></select>
+</div>
+
+{%endsection:newsServer%} 

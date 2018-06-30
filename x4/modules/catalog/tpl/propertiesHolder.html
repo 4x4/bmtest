@@ -1,0 +1,21 @@
+{%section:propertiesHolder%}
+<section data-setindex={{setIndex}} class="panel  panel-info pset-{{psetBasic}} portlet-item">
+    <header class="panel-heading font-bold">
+      
+      <ul class="nav nav-pills pull-right">
+                        <li>
+                         {{#if doExpand}}{{else}}
+                         <a class="panel-toggle text-muted" href="#">                       
+                        <i class="fa fa-caret-down text-active"></i><i class="
+                         fa fa-caret-up  text"></i></a>                         
+                         {{/if}}
+                         </li>
+                    </ul>
+    
+     {{psetAlias}}</header>
+    <div class="panel-body {{#if doExpand}} {{else}} collapse {{/if}}  ">
+        {{{psetBody}}}
+    </div>
+</section>
+
+{%endsection:propertiesHolder%}                

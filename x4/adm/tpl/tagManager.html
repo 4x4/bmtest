@@ -1,0 +1,50 @@
+{%section:tagManager%}
+
+<section class = "hbox stretch">
+    <aside id = "tags-list" class = "aside-lg wrapper">
+        <section class = "panel">
+            <header class = "dker header clearfix">
+                <div class = "row m-t-sm padder">
+                    <div class = "input-group">
+                        <input type = "text" placeholder = "{search_for_tag}" class = "input-sm form-control">
+                        <span class = "input-group-btn">
+                        <button type = "button" class = "btn btn-sm btn-default">Go!</button> </span>
+                    </div>
+                </div>
+            </header>
+
+            <section class = "scrollable hover w-f">
+                
+                <div style="height:500px" id="tagTable"></div>
+                
+            </section>
+        </section>
+    </aside>
+
+    <aside id = "add-tags" class="aside  wrapper">
+        <section class = "panel panel-default">
+            <header class = "panel-heading ">{add_new_tag} </header>
+
+            <div class = "panel-body">
+             <form id="addNewTag">
+                <div class = "form-group"><label>{tag}</label>
+                    <input name="tag" type = "text" class = "form-control input-sm">
+                </div>
+                
+                    <div class = "form-group">
+                       <label>{tag_source_module}</label>
+                    <select id="tagModuleSource"  name="tagModuleSource" class="form-control ">
+                    </select>
+                    </div>
+                <button class = "btn btn-primary btn-xs addNewTag" type = "submit">{add}</button>
+           </form>
+            </div>
+        </section>
+        
+        
+
+        
+    </aside>
+</section>
+
+{%endsection:tagManager%}

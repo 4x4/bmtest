@@ -1,0 +1,151 @@
+{%section:_CATOBJ%}
+
+{%F:#tpl(TMS:load({"module":"catalog","prefix":"MODULES","path":"catalog/tpl/commonSections.html"}))%}
+  <!--{%F:action%}-->
+  
+{%F:#indexationPermission(module.catalog.back:getPermission({"permission":"objectIndexation"}))%}
+                
+{%if('{F:action}'=='edit')%}
+
+<form id="edit_CATOBJ">
+    {%else%}
+    <form id="create_CATOBJ">
+        {%endif%}
+
+        <div class="panel-body col-md-12 col-lg-10">
+            <div class="btn-group m-t-md m-b-sm">
+            
+            
+                <button class="btn btn-info btn-switch" data-target="object-data" type="button">{object_data}</button>
+                {%if({F:indexationPermission})%}
+                    <button class="btn btn-switch" data-target="meta-data" type="button">{seo_data} {and_index}</button>
+                {%endif%}
+                <button class="btn btn-switch" data-target="sku-data" type="button">{SKU}</button>
+                <!--<button class="btn btn-switch" data-target="backConnection" type="button">{back_connection}</button>-->
+                {%if('{F:action}'=='edit')%}
+                <button class="btn btn-switch" data-target="position" type="button">{subject_directory}</button>
+                {%endif%}
+
+                <!--<button class="btn btn-switch" data-target="object-placement" type="button">{object_placement}</button>-->
+
+            </div>
+
+            <div class="m-t-sm sku-data hide">
+
+                <a href="#" class="btn btn-primary m-b-lg btn-sm addNewSku">
+                    <i class="fa fa-plus text"></i> <span class="text"> {add_SKU}</span>
+                </a>
+
+                <div id="skuList" style="min-height:500px"></div>
+
+
+            </div>
+
+
+            {%if('{F:action}'=='edit')%}
+            <div class="m-t-sm position hide">
+
+                <div class="form-group col-lg-11">
+                    <label>{subject_directory}</label>
+                    <div class="input-group">
+                        <select id="Position" multiple name="Position" class="chosen-select"></select>
+
+                        <span class="input-group-btn">
+                                                      
+                                                          <span class="input-group-btn"><a href="#"
+                                                                                           data-wintext="{catobj_situation}"
+                                                                                           data-winwidth="500"
+                                                                                           data-callback="catalog.onDialogGroupPosition"
+                                                                                           data-destination="ancestor"
+                                                                                           data-topindex="45"
+                                                                                           data-info="_CATGROUP"
+                                                                                           class="xList btn btn-default">
+                                                          {choose}</a> </span>
+                                                                  
+                                                </span>
+                    </div>
+                </div>
+
+
+            </div>
+            {%endif%}
+
+
+            <div class="m-t-sm backConnection hide">
+
+                {%F:@t(TMS:parse({"section":"backConnection"}))%}
+
+            </div>
+
+
+            <div class="m-t-sm meta-data hide">
+                {%F:@t(TMS:parse({"section":"seoparams"}))%}
+            </div>
+
+
+            <div class="m-t-sm object-data">
+                <div class="form-group">
+                    <label class="control-label">{name_of_the_object}:</label>
+                    <input id="Name" class="form-control validate[required]" name="Name" type="text">
+                </div>
+
+
+                {%if('{F:action}'!='edit')%}
+                <div class="form-group">
+                    <div class="input-group">
+                        <input id="ancestor" name="ancestor" readonly
+                               class="form-control validate-selection xoad-ignore">
+                        <span class="input-group-btn"><a href="#"
+                                                         data-wintext="{catobj_situation}" data-winwidth="500"
+                                                         data-callback="catalog.onDialogGroup"
+                                                         data-destination="ancestor" data-topindex="45"
+                                                         data-info="_ROOT,_CATGROUP" class="xList btn btn-default">
+              {choose}</a> <input name="ancestorId" id="ancestorId"
+                                  type="hidden"></span>
+                    </div>
+                </div>
+                {%endif%}
+
+
+                {%if('{F:action}'=='edit')%}
+                <div class="section">
+
+
+                    <div class="form-group col-lg-6">
+                        <label class="control-label">{object_type}:</label>
+                        <select id="PropertySetGroup" class="form-control validate[required]" name="PropertySetGroup"
+                                type="text"></select>
+                    </div>
+
+
+                    <div class="form-group col-lg-6">
+                        <label class="control-label">{object_rating}:</label>
+                        <input id="rate" class="form-control validate[required]" name="rate" type="text">
+                    </div>
+
+                </div>
+                {%else%}
+
+                <div class="form-group col-lg-12">
+                    <label class="control-label">{object_type}:</label>
+                    <select id="PropertySetGroup" class="form-control validate[required]" name="PropertySetGroup"
+                            type="text"></select>
+                </div>
+
+
+                {%endif%}
+
+
+                <div class="line line-dashed b-b line-lg pull-in"></div>
+                <div class="row properties-holder">
+                    <div class="left col-md-12"></div>
+                    <div class="right col-md-12"></div>
+                </div>
+
+            </div>
+            <a class="btn btn-success m-b-sm save">{save}</a>
+        </div>
+    </form>
+
+    {%endsection:_CATOBJ%}
+  

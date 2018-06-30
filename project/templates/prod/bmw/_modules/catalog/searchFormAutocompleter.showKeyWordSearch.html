@@ -1,0 +1,69 @@
+@show search results by keywords
+{%F:@s(D:getVars())%}
+{%F:#e(D:dump({"value":"{F:value}"}))%}
+
+{%section:showKeyWordSearch%}
+
+
+<div class="column large-10 large-offset-1">
+                <div class="search_block">
+                    <form id="{%F:moduleId%}" class="searching" action="{%F:action%}" method="GET">
+                        <input placeholder="Sök" id="showKeyWordSearch{%F:moduleId%}" type="search" name="{%F:name%}">
+
+                        <div class="window_search showKeywordsContainerResults" style="display:none"></div>
+                    </form>
+                </div>
+
+
+            </div>
+
+	
+	
+<script type="text/javascript">
+  jQuery(document).ready(function(){
+    jQuery('#showKeyWordSearch{%F:moduleId%}').showKeywordSearch({
+      onready:function(e){
+        jQuery('.search .close').toggle();
+        selector = '.showKeywordsContainerResults';
+      }
+    });
+    jQuery('.search .close').on('click',function(e){
+        e.preventDefault(); e.stopPropagation();
+        jQuery(this).hide();
+        jQuery('.showKeywordsContainerResults, .mobile_search_input_sab, .mobile_search_line').hide();
+    });
+  });
+</script>
+{%endsection:showKeyWordSearch%}
+
+
+{%section:smartResults%}
+                <ul>
+                  {%each({F:objects},k,value)%}
+                  <li class="category">
+                    <a href="{%F:value>ancestor>_main>link%}">{%F:value>ancestor>_main>Name%} {%F:value>ancestor>_main>id%} (<span class="sum">{%F:value>count%}</span>)</a>
+                    <ul>
+                      {%each({F:value>items},k,val)%}
+                      <li class="object">
+                        <a href="{%F:val>_main>link%}">
+                            <div class="img_wrapper">
+                              <img src="{%F:val>tovarbase>image%}"/>
+                            </div>
+                            <div class="text_wrapper">
+                                <span>{%F:val>_main>Name%}</span>
+                            </div>
+                        </a>
+                      </li>
+                      {%endeach%}
+                    </ul>
+                  </li>
+                  {%endeach%}
+                </ul>
+                <a href="{%F:allResultsLink%}" class="all_result">Visa alla resultat(<span class="all_sum">{%F:objectsCount%}</span>)</a>
+{%endsection:smartResults%}
+
+
+
+{%section:noResults%}
+              Inga produkter hittades.
+{%endsection:noResults%}

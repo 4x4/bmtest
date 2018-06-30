@@ -1,0 +1,29 @@
+{%section:currencyIshopProperty%}
+
+
+<div class="form-group pull-in clearfix">
+    <div class="col-sm-5">
+        <label>{{alias}}</label>
+        <input id="{{basic}}" name="{{basic}}" class="form-control">
+    </div>
+
+    <div class="col-sm-4">
+        <label>{{alias}} {with_discount}</label>
+        <input id="{{basic}}__discount" name="{{basic}}__discount" class="form-control">
+    </div>
+
+    <div class="col-sm-3">
+        <label> </label>
+        <select class="form-control" id="{{basic}}__currency" name="{{basic}}__currency">
+        </select>
+    </div>
+</div>
+
+
+{%endsection:currencyIshopProperty%}
+
+
+{%section:currencyIshopPropertyOptions%}
+
+
+{%endsection:currencyIshopPropertyOptions%}

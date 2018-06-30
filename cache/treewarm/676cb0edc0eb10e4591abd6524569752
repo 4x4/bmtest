@@ -1,0 +1,1 @@
+a:7:{s:12:"selectStruct";s:1:"*";s:12:"selectParams";s:1:"*";s:5:"where";a:1:{i:0;a:3:{i:0;s:3:"@id";i:1;s:1:"=";i:2;s:6:"120657";}}s:10:"jsonDecode";b:1;s:12:"singleResult";b:1;s:9:"pathCache";a:0:{}s:8:"treeName";s:17:"catalog_container";}

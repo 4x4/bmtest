@@ -1,0 +1,59 @@
+{%section:_DELIVERY%}
+
+<div class="panel-body">
+    <div class="col-lg-6">
+        {%if('{F:action}'=='edit')%}
+
+        <form id="edit_DELIVERY" name="edit_DELIVERY">
+            {%else%}
+
+            <form id="create_DELIVERY" name="create_DELIVERY">
+                {%endif%}
+
+                <div class="form-group">
+                    <label>{delivery_name}</label>
+                    <input id="Name" name="Name" class="validate[required,custom[alpha]] form-control" placeholder="">
+                </div>
+
+
+                <div class="form-group">
+                    <label>{delivery_id}</label>
+                    <input id="deliveryId" name="deliveryId" class="validate[required,custom[alpha]] form-control">
+                </div>
+
+                <div class="form-group">
+                    <label>{delivery_cost}</label>
+                    <input id="deliveryCost" name="deliveryCost" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label>{delivery_descr}</label>
+                    <textarea id="description" name="description" class="form-control"></textarea>
+                </div>
+
+                <header class="panel-heading">{delivery_range}</header>
+                <div class="panel-body">
+                    <div class="form-inline">
+                        <div class="form-group">
+                            <p class="control-label">{from}:</p>
+                            <input class="form-control" id="from" name="from" value="">
+                        </div>
+
+                        <div class="form-group m-l-sm">
+                            <p class="control-label">{to}:</p>
+                            <input class="form-control" id="to" name="to" value="">
+                        </div>
+                    </div>
+
+                </div>
+
+            </form>
+
+
+            <a class="btn btn-primary save" href="#">{save}</a>
+
+
+    </div>
+</div>
+{%endsection:_DELIVERY%}
+

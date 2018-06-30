@@ -1,0 +1,28 @@
+@Footer text
+
+{%section:content%}
+ 
+ 
+        <div class="column large-3">
+            
+			<p class="logo_text">Layers 5</p>
+            <p class="phone">+1(732)446–6721</p>
+            <p class="address">5 South Main Street, Englishtown, NJ 07726</p>
+			
+			{%F:@in(content:field({"type":"TEXT","name":"Footer text"}))%} 
+			
+            <div class="soc_block">
+			
+			{%F:@article2(content:field({"type":"TEXT","name":"Social links"}))%} 
+			
+                <a href="#"><i class="ion-social-facebook"></i></a>
+                <a href="#"><i class="ion-social-twitter"></i></a>
+                <a href="#"><i class="ion-social-instagram"></i></a>
+                <a href="#"><i class="ion-social-pinterest"></i></a>
+				
+            </div>
+        </div>
+		
+ 
+ 
+{%endsection:content%}

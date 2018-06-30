@@ -1,0 +1,64 @@
+{%section:_COMMENT%}
+
+<div class="col-sm-12">
+    <div class="panel-body">
+
+        <h2 class="cobjectName"></h2>
+
+
+        {%if('{F:action}'=='edit')%}
+
+        <form id="edit_COMMENT" name="edit_COMMENT">
+            {%else%}
+
+            <form id="create_COMMENT" name="create_COMMENT">
+
+                {%endif%}
+
+
+                <div class="form-group">
+                    <label>{userName}</label>
+                    <input id="userName" name="userName" class="validate[required] form-control" placeholder="">
+                </div>
+
+                <div class="form-group">
+                    <label>E-mail</label>
+                    <input id="email" name="email" class=" form-control" placeholder="">
+                </div>
+
+                <div class="form-group">
+                    <label>{header}</label>
+                    <input id="header" name="header" class=" form-control" placeholder="">
+                </div>
+
+                <div class="form-group">
+                    <label>{message}</label>
+                    <textarea id="message" name="message" class=" classy-editor ">
+                </textarea>
+                </div>
+
+
+                <div class="form-group">
+                    <label>{rating}</label>
+                    <input id="rating" name="rating" class=" form-control" placeholder="">
+                </div>
+
+
+                <!--<div class="form-group">
+                  <label>{rating}</label>
+                  <input id="rating" name="rating" class="form-control" >
+                  </input>
+                </div>-->
+
+
+                <a href="#" class="btn btn-success save">{apply}</a>
+
+
+            </form>
+    </div>
+</div>
+
+{%endsection:_COMMENT%}
+
+
+

@@ -1,0 +1,25 @@
+@Banners on main
+{%F:@s(D:getVars())%}
+{%F:#e(D:dump({"value":"{F:value}"}))%}
+
+{%section:catalogCategoryList%}
+    
+	
+	<section class="main_banners">
+    <div class="row">
+		
+			{%each({F:objects},k,val)%}
+        <div class="column large-6">
+            <div class="one_banner" style="background-image: url({%F:val>banner>image%});">                
+                <p class="question">{%F:val>banner>description%}</p>
+                <a href="{%F:val>banner>link%}" class="link">{%F:val>banner>linkTitle%}</a>
+            </div>
+        </div>
+         {%endeach%}
+    </div>
+</section>
+	
+
+
+
+{%endsection:catalogCategoryList%}

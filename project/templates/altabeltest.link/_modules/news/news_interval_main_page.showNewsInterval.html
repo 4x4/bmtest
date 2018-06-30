@@ -1,0 +1,29 @@
+{%F:@d(D:getVars())%}
+
+{%section:newsInterval%}
+   
+    <div class="heading">
+        <p class="title"><a href="/about/news">Новости</a></p>
+    </div>
+    <div class="row article_list">
+                                        
+        {%each({F:newsList},k,v)%}
+
+            <div class="col-xs-4 article">
+                <a href="{%F:v>link%}">
+                    <div class="inner_article">
+                        <img src="{%F:@v>image(E:imageTransform({"r":{"w":"382","h":"191"}}))%}" alt="" />
+                    </div>
+                    <p class="date">{%F:@v>news_date(E:dateRu({"format":"j x Y"}))%}</p>
+                    <p class="title">{%F:v>header%}</p>
+                    <p>{%F:v>news_short%}</p>
+                </a>
+            </div>
+        
+        {%endeach%}
+                    
+    </div>               
+        
+{%endsection:newsInterval%}
+
+

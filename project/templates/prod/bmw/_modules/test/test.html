@@ -1,0 +1,25 @@
+{%section:menu%}
+        <ul>
+            {%each({F:menuItems},num,item)%}
+            
+                {%F:@val(TMS:send({"section":"menuItem","values":{"item":"{F:item}","iteration":"{F:each.iterator}"}}))%}
+            
+            {%endeach%}
+        </ul>
+
+{%endsection:menu%}
+                     
+                     
+                                                       
+
+{%section:menuItem%}
+
+<li>
+    <a href="{%F:item>name%}">{%F:item>name%}  {%F:iteration%}</a>
+
+</li>
+
+{%endsection:menuItem%}
+
+
+

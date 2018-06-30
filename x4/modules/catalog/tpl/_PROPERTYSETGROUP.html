@@ -1,0 +1,70 @@
+{%section:_PROPERTYSETGROUP%}
+
+<!--{%F:action%}-->
+
+{%if('{F:action}'=='edit')%}
+<form id="edit_PROPERTYSETGROUP">
+    {%else%}
+    <form id="create_PROPERTYSETGROUP">
+
+        {%endif%}
+
+
+        <section class="panel  col-lg-10 panel-default">
+            <div class="panel-body">
+
+                <div class="form-inline">
+                    <div class="form-group">
+                        <label class="control-label">{propertygroup_set_alias}:</label>
+                        <input class="form-control validate[required]" id="alias" name="alias" value="">
+                    </div>
+
+                    <div class="form-group m-l-sm">
+                        <label class="control-label">{propertygroup_set_name}:</label>
+                        <input class="form-control validate[required]" id="basic" name="basic" value="">
+                    </div>
+                </div>
+
+
+                <div class="form-group  m-t-sm">
+                    <label class="control-label">{sku_link}:</label>
+                    <select id="skuLink" class="form-control" name="skuLink" type="text"></select>
+                </div>
+                
+                
+                <div class="form-group  m-t-sm">
+                    <label class="control-label">{listSequence}:</label>
+                    <textarea id="listSequence" class="form-control" name="listSequence"></textarea>
+                </div>
+                
+                  <div class="form-group  m-t-sm">
+                    <label class="control-label">{itemSequence}:</label>
+                    <textarea id="itemSequence" class="form-control" name="itemSequence"></textarea>
+                </div>
+            </div>
+
+
+        </section>
+
+    </form>
+
+   <section class="panel  col-lg-12 panel-default">
+    <div class="panel-body">
+        <table cellpadding="6" cellspacing="5">
+            <tr>
+                <td style="padding:4px;">
+                    <div id="propertyLinkList" style="width:400px;min-height:300px"></div>
+                </td>
+                <td>
+                    <div id="propertySetsList" style="width:400px;min-height:300px"></div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <a class="btn btn-success m-b-sm save">{save_property_group}</a>
+    </section>
+
+
+    {%endsection:_PROPERTYSETGROUP%}
+

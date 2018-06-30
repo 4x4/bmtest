@@ -1,0 +1,34 @@
+{%section:newsInterval%}
+
+    <div class="our_works three_blocks row">
+        <div class="heading">
+            <p class="title"><a href="">Новости</a></p>
+        </div>
+        <div class="row article_list">
+                   
+        {%each({F:newsList},k,v)%}
+        
+            <div class="col-xs-4 article">
+                <a href="{%F:v>link%}">
+                    <div class="inner_article image_scale">
+                        <img src="{%F:@v>image(E:imageTransform({"r":{"w":"382","h":"191"}}))%}" alt="" />
+                    </div>
+                    <p class="date">{%F:@v>news_date(E:dateRu({"format":"j x Y"}))%}</p>
+                    <p class="title">{%F:v>header%}</p>
+                    <p>{%F:v>news_short%}</p>
+                </a>
+            </div>
+
+        {%endeach%}
+                    
+        </div>
+    </div>
+
+    {%F:+tpl(TMS:load({"path":"_modules/extended/paginator.html"}))%}
+
+    {%->:page_line%}
+              
+{%endsection:newsInterval%}
+
+
+

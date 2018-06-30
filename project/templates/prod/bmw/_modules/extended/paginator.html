@@ -1,0 +1,47 @@
+{%section:page_line->%}
+
+{%F:+b(E:setPageNavRadius({"pages":"4"}))%}
+
+
+        <ul class="pagination">
+        
+            {%->:previous_page%}
+            {%F:page_line%}
+            {%->:next_page%}
+        
+        </ul>
+
+
+{%endsection:page_line%}
+
+{%section:next_page->%}
+
+<li class="pagination-next"><a href="{%F:link%}" aria-label="Next page">Nästa</a></li>
+
+{%endsection:next_page%}
+
+{%section:previous_page->%}
+
+<li class="pagination-previous"><a href="{%F:link%}">Previous</a></li>
+    
+{%endsection:previous_page%}
+
+{%section:one_page%}
+
+   <li><a href="{%F:link%}">{%F:pnum%}</a></li>
+    
+
+{%endsection:one_page%}
+          
+{%section:one_page_selected%}
+
+    <li class="current"><span class="show-for-sr">Du är på sidan</span>{%F:pnum%}</li>
+
+{%endsection:one_page_selected%}
+
+{%section:dots%}
+
+<li class="ellipsis"></li>
+
+{%endsection:dots%}
+

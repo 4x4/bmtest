@@ -1,0 +1,205 @@
+{%F:#e(D:dump({"value":"{F:value}"}))%}
+
+
+<div class="col-row mb-38">
+							<div class="col flex align-justify mb-20">
+								<div class="pois-sort">
+									<label for="">Service</label>
+									<select name="" id="">
+										<option value="All">All</option>
+										<option value="E-call">E-call</option>
+										<option value="B-call">B-call</option>
+										<option value="A-call">A-call</option>
+										<option value="I-call">I-call</option>
+										<option value="Hotline">Hotline</option>
+									</select>
+								</div>
+
+								<div class="pois-filter">
+									<input type="search" placeholder="Search Caller ID">
+								</div>
+								<div class="pois-filter">
+									<input type="search" placeholder="Search Country">
+								</div>
+								<div class="pois-filter pois-filter-small">
+									<input type="search" placeholder="Search VIN">
+								</div>
+								<div class="pois-filter">
+									<input type="search" placeholder="Search License plate">
+								</div>
+								<div class="pois-filter pois-filter-large">
+									<input type="search" placeholder="Search Customer name">
+								</div>
+								<div class="pois-filter">
+									<input type="search" placeholder="Search 1st agent">
+								</div>
+								<div class="pois-filter">
+									<input type="search" placeholder="Search 2nd agent">
+								</div>
+							</div>
+							<div class="col flex align-justify">
+								<div class="pois-sort pois-sort-green">
+									<label for="">Last event</label>
+									<select name="" id="">
+										<option value="All">All</option>
+										<option value="Last 15 minutes">Last 15 minutes</option>
+										<option value="Last 30 minutes">Last 30 minutes</option>
+										<option value="1 hour ago">1 hour ago</option>
+										<option value="2 hours ago">2 hours ago</option>
+										<option value="4 hours ago">4 hours ago</option>
+										<option value="8 hours ago">8 hours ago</option>
+										<option value="12 hours ago">12 hours ago</option>
+									</select>
+								</div>
+							</div>
+						</div>
+
+
+{%section:showSearchForm%}
+<main class="main main_services">
+		<div class="col">
+			<div class="block table_services">
+				<ul class="tabs" data-tabs id="example-tabs">
+					<li class="tabs-title is-active"><a href="#all" aria-selected="true">All</a></li>
+					<li class="tabs-title"><a href="#onboard">Onboard</a></li>
+					<li class="tabs-title"><a href="#unassigned">Unassigned</a></li>
+					<li class="tabs-title"><a href="#remote">Remote</a></li>
+					<li class="tabs-title"><a href="#mine">Mine</a></li>
+					<li class="tabs-title"><a href="#position">Remote position</a></li>
+				</ul>
+				<div class="tabs-content"  data-tabs-content="example-tabs">
+					<div class="tabs-panel is-active" id="all">
+
+
+
+			<div class="col-row mb-38">
+			  <form id="mainFilter">
+			  <div class="col flex align-justify mb-20">  
+			  
+				
+						{%F:fields%}
+						
+				
+				<!--            <a href="/catalog/{%F:request>requestActionPath%}"  class="reset_filter_btn"><i class="ion-android-close"></i>Rensa allt filter</a>-->
+				
+			 </div>
+			 </form>
+ 
+{%endsection:showSearchForm%} 
+
+
+
+{%section:interval%}
+</div>
+
+			<div class="col flex align-justify">
+								<div class="pois-sort pois-sort-green">
+									<label for="">Last event</label>
+									<select  id="lastEvent">
+										<option value="">All</option>
+										<option value="900">Last 15 minutes</option>
+										<option value="1800">Last 30 minutes</option>
+										<option value="3600">1 hour ago</option>
+										<option value="7200">2 hours ago</option>
+										<option value="14400">4 hours ago</option>
+										<option value="28800">8 hours ago</option>
+										<option value="43200">12 hours ago</option>
+									</select>
+									
+								</div>
+							</div>
+							
+							  <input value="{%F:filterValues>min%}" type="hidden" id="fmin"  name="{%F:field>_filter>filterNameMin%}">
+                              <input value="{%F:filterValues>max%}" type="hidden" id="fmax"  name="{%F:field>_filter>filterNameMax%}" >
+
+{%endsection:interval%}
+
+
+
+{%section:equal-input%}
+
+<div class="pois-filter">
+        
+
+	<input placeholder="{%F:field>alias%}"  value="{%F:v>value%}" name="f[like][{%F:field>gpth%}]" id="{%F:field>property%}">
+					
+
+</div>
+
+                                            
+{%endsection:equal-input%}
+ 
+ 
+ 
+ 
+{%section:equal-input-service-service%}
+
+<div class="pois-sort">
+					<label for="">{%F:field>alias%}</label>
+        
+					<select name="f[equal][{%F:field>gpth%}]" id="{%F:field>property%}{%F:each.iterator%}">
+						<option value="">All</option>
+						{%each({F:filterValues},k,v)%}
+                    
+						   <option {%if('{F:v>_filter>active}')%}  {%if('{F:v>_filter>inFilter}')%} selected {%endif%} {%endif%}  value="{%F:v>value%}" id="{%F:field>property%}{%F:each.iterator%}">
+							  
+								{%F:v>value%}
+						
+							</option>
+                    
+					{%endeach%}
+					</select>
+        </div>
+
+
+                                            
+{%endsection:equal-input-service-service%}
+ 
+
+ 
+{%section:equal-selector%}
+             
+    <div class="manufacturer">
+       
+        <p class="title">{%F:field>alias%}</p>
+        
+        <div class="col-xs-12 {%if(count({F:filterValues})>4)%} flexcroll {%endif%}">
+            <!--<p>{%F:field>alias%}</p>-->
+            <!--{%F:field>property%}-->
+            
+            <ul>
+				    
+                {%each({F:filterValues},k,v)%}
+              
+                    <li>
+				        <!--{%F:v>_filter>active%}-->
+                        <input {%if('{F:v>_filter>active}')%} {%if('{F:v>_filter>inFilter}')%} checked {%endif%} {%endif%} {%if(!'{F:v>_filter>active}')%} disabled {%endif%}   value="{%F:v>value>_main>id%}" type="checkbox" name="{%F:v>_filter>filterName%}" id="{%F:field>property%}{%F:each.iterator%}">
+                        
+                        <label {%if(!'{F:v>_filter>active}')%} style="color:#EEE" {%endif%}  for="{%F:field>property%}{%F:each.iterator%}">                                      
+                        
+					        {%F:v>value>_main>Name%}&nbsp;({%F:v>_filter>counterActive%})
+				        
+                        </label>
+                    </li>
+                    
+                {%endeach%}
+               
+            </ul>
+        </div>
+    </div>      
+
+{%endsection:equal-selector%}
+ 
+   
+ 
+ 
+ 
+   
+
+ 
+  
+
+ 
+ 
+
+             

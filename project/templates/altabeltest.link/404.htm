@@ -1,0 +1,58 @@
+{%section:error404%}
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{%F:Title%}</title>
+    <meta name="description" content="{%F:Description%}">
+    <meta name="keywords" content="{%F:Keywords%}">
+    <meta name="viewport" content="width=1020,user-scalable=yes">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=latin,cyrillic-ext,cyrillic' rel='stylesheet' type='text/css'>
+    <link href="/templates/_ares/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="/templates/_ares/css/jquery.fancybox.css">
+    <link rel="stylesheet" href="/templates/_ares/css/jquery.fancybox-thumbs.css">
+    <link href="/templates/_ares/css/non_responsive.css" rel="stylesheet">
+    <link href="/templates/_ares/css/jquery.bxslider.css" rel="stylesheet">
+    <link rel="stylesheet" href="/templates/_ares/css/chosen.css">
+    <link rel="stylesheet" href="/templates/_ares/js/nouislider/nouislider.css">
+    <link href="/templates/_ares/css/flexcrollstyles.css" rel="stylesheet" type="text/css" />
+    <link href="/templates/_ares/js/rs/royalsli.css" rel="stylesheet">
+    <link href="/templates/_ares/js/rs/rs-defau.css" rel="stylesheet">
+    <script src="/templates/_ares/bower_components/jquery/dist/jquery.js"></script>
+    <!--  <link href="/templates/_ares/css/jquery.bxslider.css" rel="stylesheet" />-->
+    {%F:+b(TPA:setGlobalField({"compressMainJs":"0"}))%} {%F:+e(E:enableJsFile({"file":"js/jquery-ui.min.js"}))%} {%F:+e(E:enableJsFile({"file":"js/jquery.bxslider.min.js"}))%} {%F:+e(E:enableJsFile({"file":"js/flexcroll.js"}))%} {%F:+e(E:enableJsFile({"file":"js/nouislider/nouislider.js"}))%} {%F:+e(E:enableJsFile({"file":"js/valid/validationEngine.js"}))%} {%F:+e(E:enableJsFile({"file":"js/valid/validationRulesRu.js"}))%} {%F:+e(E:enableJsFile({"file":"bootstrap/js/bootstrap.min.js"}))%} {%F:+e(E:enableJsFile({"customFile":"modules/ishop/js/ishopFront.js"}))%} {%F:+e(E:enableJsFile({"customFile":"modules/catalog/js/catalogFront.js"}))%} {%F:+e(E:enableJsFile({"customFile":"modules/comments/js/commentsFront.js"}))%} {%F:+e(E:enableJsFile({"file":"js/chosen.jquery.js"}))%} 
+    
+    <script src="/templates/_ares/js/jquery.fancybox.js"></script>
+    <script src="/templates/_ares/js/jquery.fancybox-thumbs.js"></script>
+    {%F:+e(E:enableJsFile({"file":"js/main.js"}))%} {%F:+e(E:enableJsFile({"file":"js/image-select.js"}))%} {%F:+e(E:enableJsFile({"file":"js/basket.js"}))%} {%F:+e(E:enableJsFile({"file":"js/catalog.js"}))%} {%F:+e(E:enableJsFile({"file":"js/reg.js"}))%} {%F:+e(E:enableJsFile({"file":"js/rs/jquery00.js"}))%} {%F:+e(E:enableJsFile({"file":"js/rs/rs.js"}))%} {%F:+e(E:enableJsFile({"file":"js/jquery.elevatezoom.js"}))%} {%F:Meta%} {%F:XFRONT_API%} {%F:JS%}
+    <link rel="stylesheet" type="text/css" href="/_adm/xjs/_components/jq.validation/validation.css" />
+    <link href="/templates/_ares/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="wrapper error404_wrap">
+        <div class="content " >
+            <div class="container ">
+                <div class="error404">
+                    <a href=""><img src="/templates/_ares/images1/logo_big.png" alt=""></a>
+                    <p class="title">ОШИБКА 404</p>
+                    <p>Данная страница не существует, либо ещё не создана,
+                        <br /> но вы можете вернуться на
+                        <br />
+                        <a href="/">главную</a>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+{%endsection:error404%}

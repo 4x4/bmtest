@@ -1,0 +1,40 @@
+{%section:connector%}
+
+{%F:xoadHeader%}
+
+
+
+<script type="text/javascript" src="/x4/front-base/core-js/accounting.js" ></script>
+<script type="text/javascript" src="/x4/front-base/core-js/handlebars-v13.js" ></script>
+<script type="text/javascript" src="/x4/front-base/core-js/mootools-core-151.js" ></script>
+<script type="text/javascript" src="/x4/front-base/core-js/purl.js" ></script>
+<script type="text/javascript" src="/x4/front-base/core-js/x4.js" ></script>
+
+{%if('{F:frontEditor}')%}
+    <script type="text/javascript">var __uid = '{%F:__uid%}';</script> 
+    <script type="text/javascript" src="/x4/adm/xjs/debug.js" ></script>
+    <script type="text/javascript" src="/x4/adm/xjs/boot.js" ></script>
+    <script type="text/javascript" src="/x4/adm/xjs/frontEditorOut.js" ></script>    
+    
+    
+{%endif%}
+
+<script type="text/javascript" language="javascript">
+
+    var xConnector = {%F:xConnector%}
+    var x4 = null;    
+    var enableJsonDebugging="{%F:enableJsonDebugging%}";              
+    document.addEventListener("DOMContentLoaded", function(event) 
+    { 
+            
+        x4= new x4Base();
+        
+        {%if('{F:frontEditor}')%}
+            
+            var x4frontEditor= new __x4frontEditor();
+            
+        {%endif%}    
+        
+    },false);   
+</script>
+{%endsection:connector%}

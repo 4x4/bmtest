@@ -1,0 +1,58 @@
+{%section:selectorProperty%}
+
+<div class="form-group">
+    <div class="row">
+        <div class="col-sm-4">{{alias}}</div>
+        <div class="col-sm-8">
+                                
+            <select id="{{basic}}" {{#ifCond options.onlyOne '!=' 1}} multiple{{/ifCond}} name="{{basic}}" class="chosen-select">
+            {{#ifCond options.onlyOne '==' 1}} <option value=""></option>{{/ifCond}}
+
+            </select>
+        </div>
+    </div>
+
+</div>
+
+{%endsection:selectorProperty%}
+
+
+{%section:selectorPropertyOptions%}
+
+
+<div class="form-group">
+    <div class="input-group">
+        <input id="optionssrcGroup" name="options.srcGroup" readonly class="form-control validate-selection">
+        <span class="input-group-btn"><a href="#"
+                                         data-wintext="{catobj_situation}" data-winwidth="500"
+                                         data-callback="catalog.onDialogGroup"
+                                         data-destination="optionssrcGroup" data-topindex="104"
+                                         data-info="_CATGROUP" class="xList btn btn-default">
+              {choose}</a> <input name="options.srcGroupId" id="optionssrcGroupId"
+                                  type="hidden"></span>
+    </div>
+</div>
+
+<div class="checkbox i-checks">
+        <label>
+            <input type="checkbox" id="onlyOne" name="options.onlyOne">
+            <i></i> {choose_only_one}</label>
+    </div>
+
+<div class="checkbox i-checks">
+        <label>
+            <input type="checkbox" id="assoc" name="options.assoc">
+            <i></i> {as_assoc}</label>
+    </div>
+
+
+<div class="form-group"><label>{take_it_from_deep_level}</label>
+            <input id="selectorDeepLevel" name="options.deep"  class="form-control">
+</div>
+
+<div class="form-group"><label>{take_it_from_basic}</label>
+            <input id="deepBasic" name="options.deepBasic"  class="form-control">
+</div>
+
+
+{%endsection:selectorPropertyOptions%}

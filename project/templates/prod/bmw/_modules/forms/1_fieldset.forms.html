@@ -1,0 +1,63 @@
+@Базовая Форма обратной связи
+{%F:@s(D:getVars())%}
+{%F:#e(D:dump({"value":"{F:value}"}))%}
+
+{%section:forms%}
+            <div class="left_about" style="height:auto;">
+                <a href="#">{%F:object>params>Name%}</a>
+                {%if({F:object>params>Description})%}
+                <p>{%F:object>params>Description%}</p>
+                {%endif%}
+            </div>
+
+
+            <div class="left_time_rates">
+
+                {%F:#fieldset1(forms:fieldset({"type":"FIELDSET","name":"Группа"}))%}
+
+                {%if({F:object} AND {F:fieldset1})%}
+                    <div class="errors{%F:object>id%}">{%F:error%}</div>
+
+                    <form id="{%F:object>id%}" method="POST" action="{%F:object>action%}">
+                        <fieldset id="{%F:object>id%}{%F:fieldset1>id%}" title="{%F:fieldset1>params>Name%}">
+                            <legend>{%F:fieldset1>params>Name%}</legend>
+
+                            {%if({F:fieldset1>fields})%}
+                            <ul>
+                                {%each({F:fieldset1>fields},k,field)%}
+                                    {%F:field>fieldHTML%}
+                                {%endeach%}
+
+                                {%F:captcha%}
+                            </ul>
+                            {%endif%}
+
+                        </fieldset>
+
+                        <input type="hidden" name="form[id]" readonly="readonly" value="{%F:object>id%}" />
+                        <input id="submit{%F:object>id%}" type="submit" value="Отправить" />
+                    </form>
+
+                    <div class="errors{%F:object>id%}">{%F:error%}</div>
+                {%endif%}
+
+            </div>
+
+            {%if('{F:captcha}')%}
+            <script type="text/javascript">
+                var checkCaptcha = function (field, rules, i, options){
+                    var forms = x4.getModule('formsFront');
+                    return forms.checkCaptcha(field, rules, i, options);
+                }
+                jQuery(document).ready(function(){
+                    jQuery('#updateFormCaptcha{%F:object>id%}').updateFormCaptcha({'formId':'{%F:object>id%}'});
+                });
+            </script>
+            {%endif%}
+
+            <script type="text/javascript">
+                jQuery(document).ready(function(){
+                    jQuery('#submit{%F:object>id%}').submitForm({'formId':'{%F:object>id%}','async':'{%F:object>params>Async%}'});
+                });
+            </script>
+{%endsection:forms%}

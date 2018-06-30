@@ -1,0 +1,118 @@
+
+{%section:no-comments%}
+
+                
+                
+                    
+    
+{%endsection:no-comments%}
+
+{%section:comments%}
+
+
+<div class="product_reviews" id="reviews">
+                    <div class="heading">
+                            <p class="title">Комментарии</p>
+                    </div>
+                    <div class="reviews">
+             
+                    {%->:comment%}         
+             
+             </div></div>    
+    
+    
+{%endsection:comments%}
+
+                                
+{%section:comment->%}
+	
+    
+            <div class="rev row">
+                                    <div class="customer col-sm-2 col-sm-offset-0 col-xs-10 col-xs-offset-1">
+                                        <p class="name">{%F:userName%}</p>
+                                        
+                                        
+                                        <p class="date">{%F:@date(E:dateRu({"format":"d x Y G:i:s"}))%}</p>
+                                      <!--    {%F:rating%}-->
+                                        <div class="stars">
+                                        
+                                        {%each(4,k,v)%}
+                                        
+                                        
+                                        
+                                        <span class="star{%if('0{F:k}'<'0{F:rating}')%} filled{%endif%}"></span>
+                                                       
+                                            
+                                        {%endeach%}
+                                        
+                                        
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="description col-sm-10 col-sm-offset-0 col-xs-10 col-xs-offset-1">
+                                      <h4>{%F:header%}</h4>
+                                        <p>{%F:message%}</p>
+                                    </div>
+                        </div>
+                        
+   
+		
+{%endsection:comment%}
+
+
+
+{%section:sendCommentsForm%}
+<div class="product_reviews leave_review">
+	<div class="heading">
+       <p class="title">Оставить комментарий</p>
+    </div>
+	<div class="row">
+		<div class="col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1">
+		<form class="x4-add-comment-form" name="comments" id="comments" method="POST">
+     
+                                    <input id="rating"  name="rating" type="hidden" value="5">
+        
+                                            <table>
+												<tr>
+													<td><label for="title">Заголовок<span class="req">*</span></label></td>
+													<td><input type="text" name="header" id="title"></td>
+												</tr>
+												<tr>
+													<td><label for="name">Ваше имя</label></td>
+													<td><input type="text" class="short" id="name" name="userName"></td>
+												</tr>
+
+												<tr>
+													<td><label for="feedback">Отзыв<span class="req">*</span></label></td>
+
+													<td><textarea id="feedback" name="message"></textarea></td>
+											   </tr>
+
+                                               <tr>
+													<td><label for="title">Оценить<span class="req">*</span></label></td>
+												</div>
+                                               
+													<td>
+
+														<input class="stars" checked="checked" name="rate"  id="stars_one" type="checkbox"><label for="stars_one"></label>
+                                                        <input class="stars"  checked="checked" name="rate" id="stars_two" type="checkbox"><label for="stars_two"></label>
+                                                        <input class="stars" checked="checked" name="rate" id="stars_three" type="checkbox"><label for="stars_three"></label>
+                                                        <input class="stars"  checked="checked" name="rate" id="stars_four" type="checkbox"><label for="stars_four"></label>
+                                                        <input class="stars" checked="checked" name="rate" id="stars_five" type="checkbox"><label for="stars_five"></label>
+                                                        
+													</td>
+												 </tr>
+                                                 
+											</table>
+											  <input class="add-comment" type="submit"  data-comment='{%F:data-comment%}' value="Отправить">
+                                            
+                                            
+		</form>
+	</div>                                        
+</div>
+
+
+
+{%endsection:sendCommentsForm%}
+
+

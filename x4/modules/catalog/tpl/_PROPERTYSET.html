@@ -1,0 +1,57 @@
+{%section:_PROPERTYSET%}
+
+ <!--{%F:action%}-->
+{%if('{F:action}'=='edit')%}
+<form id="edit_PROPERTYSET">
+    {%else%}
+    <form id="create_PROPERTYSET">
+
+        {%endif%}
+        <section class="panel panel-default">
+            <div class="panel-body">
+                <div class="form-inline">
+                    <div class="form-group">
+                        <label class="control-label">{property_set_alias}:</label>
+                        <input class="form-control validate[required]" id="alias" name="alias" value="">
+                    </div>
+
+                    <div class="form-group m-l-sm">
+                        <label class="control-label">{property_set_name}:</label>
+                        <input class="form-control validate[required,custom[onlyLetterNumber]]" id="basic" name="basic"
+                               value="">
+                    </div>
+
+
+                </div>
+
+                <div class="form-group">
+                    <div class="checkbox i-checks">
+                        <label>
+                            <input type="checkbox" id="isSKU" name="isSKU">
+                            <i></i>{isSKU}</label>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </section>
+    </form>
+
+    <div type="persistentGrid">
+        <a class="btn btn-sm btn-primary m-b-sm addProperty">
+            <i class="fa fa-plus text addProperty"></i> <span class="text"> {add_property}</span>
+        </a>
+
+
+        <div id="properties" style="min-height:400px"></div>
+
+
+        <a class="btn btn-success m-b-sm save">
+            {save_propertySet}
+        </a>
+    </div>
+    </div>
+
+    {%endsection:_PROPERTYSET%}
+

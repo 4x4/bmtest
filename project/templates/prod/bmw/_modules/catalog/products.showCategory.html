@@ -1,0 +1,225 @@
+@show products list
+{%F:@s(D:getVars())%}
+{%F:#e(D:dump({"value":"{F:value}"}))%}
+
+{%section:catalogCategoryList%}
+
+{%F:+tpl(TMS:load({"path":"opsio.bi/_modules/extended/paginator.html"}))%}
+
+{%F:#b(TPA:setGlobalField({"useOneColumn":"1"}))%}
+
+{%F:#user(module.fusers.tpl:getUser())%}
+
+
+
+<div class="columns small-18 large-14 catalogListHolder">
+    <div class="catalog_list">
+        <div class="info_line">
+            <p class="searched">Vi hittade</p>
+            <p class="quantity"><span class="num">{%F:count%}</span> produkter</p>
+            <p class="available">tillgänglig för dig</p>
+
+                {%F:@filt(E:callModuleAction({"module":"catalog","params":{"_cacheLevel":"dynamic","_Cache":"1","pointNode":"60902","_Action":"showSearchForm","_Priority":"7","searchProperty":"category.upperfilter","DestinationPage":"8714","SearchTemplate":"upper_form_search.showSearchForm.html"}}))%}
+
+
+        </div>
+
+        {%if('{F:searchMode}')%}
+
+        <div class="search_panel">
+            <p class="title_search">Din sökning returnerade <span class="red">{%F:count%}</span> produkter.</p>
+
+
+
+            {%each({F:existInCategories},k,v)%}
+
+
+
+            <div class="search_panel_block after_block">
+                <a href="{%F:v>_main>searchLink%}">{%F:v>_main>Name%}</a>
+                <div class="number_position">{%F:v>count%} objekt</div>
+            </div>
+
+            {%endeach%}
+
+            <div style="clear: both"></div>
+        </div>
+
+
+        {%else%}
+
+
+
+
+        {%each({F:objects},k,val)%}
+
+
+        {%F:#extended(plugin.catalog.mf.tpl:loadExtendedData({"ean":"{F:val>tovarbase>ean}"}))%}
+
+
+                <div class="item">
+                    <div class="img_block">
+                        <img src="{%F:val>tovarbase>image%}" alt="">
+                        <div class="comparison_badge">
+                            <a href="#" data-id="{%F:val>_main>id%}" class="addToComparse"><i class="arrow_left-right_alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="disc_block">
+                        <p class="category">{%F:category>_main>Name%}</p>
+                        <p class="title"><a href="{%F:val>_main>link%}">{%F:val>_main>Name%}</a></p>
+                        <p class="discription">{%F:@s(plugin.catalog.mf.tpl:ntobr({"value":"{F:extended>ProductDescription>@attributes>ShortDesc}"}))%}</p>
+
+
+
+
+                        {%F:#minMax(module.catalog.tpl:getMinMaxIshopPrice({"skuList":"{F:val>_sku}","param":"price"}))%}
+
+                        {%if({F:val>tovarbase>advantages})%}
+
+                        {%F:#cutAdvantages(plugin.catalog.mf.tpl:cutAdvantages({"advantages":"{F:val>tovarbase>advantages}"}))%}
+
+                        <ul class="advantages">
+                            {%each({F:cutAdvantages},ka,adv)%}
+                            <li>– {%F:adv>0%}</li>
+                            {%endeach%}
+                        </ul>
+                        {%endif%}
+
+                    </div>
+                    <div class="order_block">
+
+                        {%F:#inStock(plugin.catalog.mf.tpl:checkInStock({"skuList":"{F:val>_sku}"}))%}
+
+                        {%if({F:inStock})%}
+                            <p class="agree">I lager</p>
+                        {%else%}
+
+                            <p class="agree" style="color:red">Slut i lager</p>
+                        {%endif%}
+
+
+
+                        {%if({F:minMax>min})%}
+                            <p class="price">{%F:minMax>min>valueFormatted%} <span class="curency">kr</span></p>
+                        {%endif%}
+
+                        {%if({F:user>authorized})%}
+
+                            <div class="how_much_block">
+                                <p>ANTAL</p>
+                                <input type="number" min="1"  value="1">
+                            </div>
+
+                            <a href="#" id="{%F:val>_main>id%}" class="round_btn add_tobasket">Lägg till i kundvagn</a>
+
+                        {%endif%}
+
+                    </div>
+                </div>
+
+        {%endeach%}
+
+
+        <div class="under_list_line">
+            <select name="onPage" id="onPage" class="number_products">
+
+                {%F:#onpage(module.catalog.tpl:getOnPageList())%}
+
+
+
+
+                {%each({F:onpage},on_num,on_link)%}
+                    <option  {%if({F:on_link>page}=={F:onPage})%}selected{%endif%} value="{%F:on_link>link%}">Visa {%F:on_num%} produkter</option>
+                {%endeach%}
+            </select>
+
+
+            {%->:page_line%}
+
+
+        </div>
+    </div>
+
+    {%endif%}
+<!--
+    <div class="tile">
+        <p class="title"><b>Nyligen visade</b> produkter</p>
+        <div class="row">
+            <div class="columns small-12 large-6">
+                <div class="product">
+                    <div class="img_block">
+                        <img src="./img/products/tile1.png" alt="">
+                    </div>
+                    <div class="text_block">
+                        <div class="price">59 999 <span class="curency">kr</span></div>
+                        <p class="discription">Garmin Approach G10  GPS-navigator</p>
+                    </div>
+                </div>
+            </div>
+            <div class="columns small-12 large-6">
+                <div class="product">
+                    <div class="img_block">
+                        <img src="./img/products/tile1.png" alt="">
+                    </div>
+                    <div class="text_block">
+                        <div class="price">59 999 <span class="curency">kr</span></div>
+                        <p class="discription">Garmin Approach G10  GPS-navigator</p>
+                    </div>
+                </div>
+            </div>
+            <div class="columns small-12 large-6">
+                <div class="product">
+                    <div class="img_block">
+                        <img src="./img/products/tile1.png" alt="">
+                    </div>
+                    <div class="text_block">
+                        <div class="price">59 999 <span class="curency">kr</span></div>
+                        <p class="discription">Garmin Approach G10  GPS-navigator</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="columns small-12 large-6">
+                <div class="product">
+                    <div class="img_block">
+                        <img src="./img/products/tile1.png" alt="">
+                    </div>
+                    <div class="text_block">
+                        <div class="price">59 999 <span class="curency">kr</span></div>
+                        <p class="discription">Garmin Approach G10  GPS-navigator</p>
+                    </div>
+                </div>
+            </div>
+            <div class="columns small-12 large-6">
+                <div class="product">
+                    <div class="img_block">
+                        <img src="./img/products/tile1.png" alt="">
+                    </div>
+                    <div class="text_block">
+                        <div class="price">59 999 <span class="curency">kr</span></div>
+                        <p class="discription">Garmin Approach G10  GPS-navigator</p>
+                    </div>
+                </div>
+            </div>
+            <div class="columns small-12 large-6">
+                <div class="product">
+                    <div class="img_block">
+                        <img src="./img/products/tile1.png" alt="">
+                    </div>
+                    <div class="text_block">
+                        <div class="price">59 999 <span class="curency">kr</span></div>
+                        <p class="discription">Garmin Approach G10  GPS-navigator</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    -->
+</div>
+</div>
+	
+
+
+
+{%endsection:catalogCategoryList%}

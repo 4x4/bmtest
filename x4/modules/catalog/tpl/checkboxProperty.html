@@ -1,0 +1,30 @@
+{%section:checkboxProperty%}
+
+<div class="form-group {{#if options.inlineShow}}checkbox-inline{{/if}}">
+
+    <div class="checkbox i-checks">
+        <label>
+            <input type="checkbox" id="{{basic}}" name="{{basic}}">
+            <i></i>{{alias}}</label>
+    </div>
+</div>
+{%endsection:checkboxProperty%}
+
+
+{%section:checkboxPropertyOptions%}
+
+<div class="form-group"><label>{show_inline}</label>
+
+           
+        
+           <div class="checkbox i-checks">
+                        <label>
+                            <input type="checkbox" id="inlineShow" name="options.inlineShow">
+                            <i></i>{show_inline}</label>
+                    </div>
+                    
+
+</div>
+{%endsection:checkboxPropertyOptions%}
+
+

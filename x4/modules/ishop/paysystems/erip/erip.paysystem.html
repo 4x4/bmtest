@@ -1,0 +1,68 @@
+@Платежная система ЕРИП
+
+{%section:erip.paysystem%}
+
+{%F:#tpl(TMS:load({"module":"ishop","prefix":"MODULES","path":"ishop/tpl/commonPaysystemSections.html"}))%}
+<div class="panel-body">
+
+
+    <form id="edit_PAYSYSTEM">
+        <div class="row">
+            <div class="col-lg-5">
+                <input type="hidden" name="paysystem" value="erip">
+
+                {%F:@t(TMS:parse({"section":"commonPaysystemSections"}))%}
+
+                <div class="form-group">
+                    <p>{salt}</p> <input class="form-control" name="salt">
+                </div>
+
+                <div class="form-group">
+                    <p>{currency}</p> <input class="form-control" name="currency">
+                </div>
+
+                <div class="form-group">
+                    <p>{time_to_approve}</p> <input class="form-control" name="timeInterval">
+                </div>
+
+
+            </div>
+
+
+            <div class="col-lg-5">
+
+
+                <div class="form-group">
+                    <p>{status_order_ready_to_pay}</p> <select name="readyToPayStatus" id="readyToPayStatus"
+                                                               class="form-control"></select>
+                </div>
+
+
+                <div class="form-group">
+                    <p>{status_order_payed}</p><select name="orderPayedStatus" id="orderPayedStatus"
+                                                       class="form-control"></select>
+                </div>
+
+
+                <div class="form-group">
+                    <p>{cancel_status}</p> <select name="cancelStatus" id="cancelStatus" class="form-control"></select>
+                </div>
+
+
+                <div class="form-group">
+                    <p>{transaction_blocking_status}</p> <select name="transactionBlockingStatus"
+                                                                 id="transactionBlockingStatus"
+                                                                 class="form-control"></select>
+                </div>
+
+
+            </div>
+        </div>
+    </form>
+
+    <a class="btn btn-primary save" href="#">{save}</a>
+
+
+    {%endsection:erip.paysystem%}
+
+

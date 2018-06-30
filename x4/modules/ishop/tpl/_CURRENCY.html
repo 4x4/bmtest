@@ -1,0 +1,81 @@
+{%section:_CURRENCY%}
+
+<div class="panel-body">
+    <div class="col-lg-6">
+        {%if('{F:action}'=='edit')%}
+
+        <form id="edit_CURRENCY" name="edit_CURRENCY">
+            {%else%}
+
+            <form id="create_CURRENCY" name="create_CURRENCY">
+                {%endif%}
+
+
+                <div class="checkbox i-checks">
+                    <label>
+                        <input type="checkbox" name="isMain">
+                        <i></i>{isMainCurrency}</label>
+                </div>
+
+
+                <div class="checkbox i-checks">
+                    <label>
+                        <input type="checkbox" name="showOnFront">
+                        <i></i>{showOnFront}</label>
+                </div>
+
+                <div class="form-group">
+                    <label>{currency_name}</label>
+                    <input id="Name" name="Name" class="validate[required,custom[alpha]] form-control" placeholder="">
+                </div>
+
+
+                <div class="form-inline">
+                    <div class="form-group">
+                        <label class="control-label">{currency_divider}</label>
+                        <input value="" name="divider" id="divider" class="form-control">
+                    </div>
+
+
+                    <div class="form-group">
+                        <label class="control-label">{currency_separator}</label>
+                        <input value="" name="separator" id="separator" class="form-control">
+                    </div>
+
+
+                </div>
+
+
+                <div class="form-group m-t-sm">
+                    <label>{currency_id}</label>
+                    <input id="currencyId" name="currencyId" class="validate[required,custom[alpha]] form-control">
+                </div>
+
+
+                <div class="form-group">
+                    <label>{currencySymbol}</label>
+                    <input id="currencySymbol" name="currencySymbol" class="form-control">
+                </div>
+
+
+                <div class="form-group">
+                    <label>{rate}</label>
+                    <input id="rate" name="rate" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label>{comments}</label>
+                    <textarea id="comments" name="comments" class="form-control"></textarea>
+                </div>
+
+
+            </form>
+
+
+            <a class="btn btn-primary save" href="#">{save}</a>
+
+
+    </div>
+</div>
+{%endsection:_CURRENCY%}
+

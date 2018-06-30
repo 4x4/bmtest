@@ -1,0 +1,11 @@
+@Text and header
+
+{%section:content%}
+ 
+ <h1>{%F:@in(content:field({"type":"INPUT","name":"Заголовок"}))%} </h1>
+  <div class="text-wrapper">
+ {%F:@article2(content:field({"type":"TEXT","name":"Текст"}))%} 
+ </div>
+ 
+ 
+{%endsection:content%}

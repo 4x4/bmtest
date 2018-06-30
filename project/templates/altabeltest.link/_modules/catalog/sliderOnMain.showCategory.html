@@ -1,0 +1,39 @@
+@Slider on main
+{%F:@s(D:getVars())%}
+{%F:#e(D:dump({"value":"{F:value}"}))%}
+
+{%section:catalogCategoryList%}
+    
+	
+	<section class="main_slider">
+    <div class="row">
+        <div class="column large-18">
+            <div class="main_corousel owl-carousel">
+                
+				
+				{%each({F:objects},k,val)%}
+				
+				<div class="slide_item">
+                    <div class="text_block">
+                        <p class="title">{%F:val>_main>Name%}</p>
+                        <p>{%F:val>slider>description%}</p>
+                        
+						<p class="price">{%F:val>slider>price%}
+                            <span class="curency">Kr</span>
+                        </p>
+						
+                        <a href="{%F:val>slider>link%}" class="btn btn_green">Köpa</a>
+                    </div>
+                    <div class="img_block">
+                        <img src="{%F:val>slider>image%}" alt="slide">
+                    </div>
+                </div>
+				
+                 {%endeach%}
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{%endsection:catalogCategoryList%}

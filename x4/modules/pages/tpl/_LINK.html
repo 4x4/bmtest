@@ -1,0 +1,137 @@
+{%section:_LINK%}
+{%F:#tpl(TMS:load({"module":"pages","prefix":"MODULES","path":"pages/tpl/slotzContainer.html"}))%}
+
+
+<div class="row">
+    <div class="col-md-6">
+        <section>
+            <div class="panel-body wrapper">
+                {%if('{F:action}'=='edit')%}
+                <form role="form" id="edit_LINK">
+                    {%else%}
+                    <form role="form" id="create_LINK">
+                        {%endif%}
+
+
+                        <div class="form-group">
+
+                            <h5>{link_name}</h5>
+                            <input id="Name" name="Name" class="form-control validate[required,custom[alpha]]"
+                                   placeholder="{enter_link_name}"/>
+
+
+                        </div>
+
+
+                        <div class="form-group">
+                            <h5>{link}</h5>
+
+
+                            <input name="Link" id="Link" class="form-control validate[required]"/>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <h5>{connected_page}</h5>
+
+                            <div class="input-group">
+
+                                <input id="connectedPage" name="connectedPage" readonly class="form-control validate-selection xoad-ignore"/>
+
+                                <span class="input-group-btn">
+                                    <a href="#" data-wintext="{connected_page}" data-winwidth="500"
+                                       data-on-data-return="pages.onTreeDialogReturn" data-callback="pages.onDialogGroupPage"
+                                       data-destination="connectedPage" data-topindex="45" data-info="_GROUP,_PAGE"
+                                       class="xList btn btn-default"> <i class="fa fa-css3"></i> {choose}</a>
+
+                                    <input name="connectedPageId" id="connectedPageId" type="hidden"/>
+                                </span>
+                            </div>
+                        </div>
+
+                        {%if('{F:action}'!='edit')%}
+                        <div class="form-group">
+                            <h5>{link_situation}</h5>
+
+                            <div class="input-group">
+                                <input id="ancestor" name="ancestor" readonly
+                                       class="form-control validate-selection xoad-ignore"/>
+                                <span class="input-group-btn">
+                                    <a href="#" data-wintext="{link_situation}" data-winwidth="500"
+                                       data-on-data-return="pages.onTreeDialogReturn"
+                                       data-callback="pages.onDialogGroup"
+                                       data-destination="ancestor" data-topindex="45" data-info="_GROUP,_LVERSION"
+                                       class="xList btn btn-default"> <i class="fa fa-css3"></i> {choose}</a> <input
+                                        name="ancestorId" id="ancestorId" type="hidden"/></span>
+                            </div>
+                        </div>
+
+                        {%endif%}
+
+
+                        <section class="panel panel-default pos-rlt clearfix">
+
+                            <header class="panel-heading">
+                                <ul class="nav nav-pills pull-right">
+                                    <li><a class="panel-toggle text-muted" href="#"><i
+                                            class="fa fa-caret-down text-active"></i><i class="fa fa-caret-up text"></i></a>
+                                    </li>
+                                </ul>
+                                {link_visibility}
+                            </header>
+
+                            <div class="panel-body clearfix collapse auto-show">
+
+                                <div class="checkbox i-checks">
+                                    <label>
+                                        <input type="checkbox" name="DisableGlobalLink">
+                                        <i></i>{disable_link}</label>
+                                </div>
+
+                                <div class="checkbox i-checks">
+                                    <label>
+                                        <input type="checkbox" name="Visible">
+                                        <i></i>{do_not_display_the_global_menu}</label>
+                                </div>
+
+                                <div class="checkbox i-checks">
+                                    <label>
+                                        <input type="checkbox" name="DisableMapLink">
+                                        <i></i>{disconnect_the_link_from_the_site_map}</label>
+                                </div>
+
+
+                                <div class="checkbox i-checks">
+                                    <label>
+                                        <input type="checkbox" name="DisablePath">
+                                        <i></i>{do_not_display_in_the_way_of_the_page}</label>
+                                </div>
+
+
+                            </div>
+                        </section>
+
+                        <div class="form-group">
+                            <h5>{Comment}</h5>
+                            <textarea name="Comment" id="Comment" class="form-control"></textarea>
+                        </div>
+
+
+                        <a href="#" class="btn btn-success save">{save}</a>
+
+                        {%if('{F:action}'=='edit')%}
+                        <a href="#" target="_blank" class="btn btn-primary showOnSite">{view_page_on_website}</a>
+
+                        {%endif%}
+                    </form>
+            </div>
+
+
+        </section>
+
+    </div>
+
+</div>
+
+{%endsection:_LINK%}

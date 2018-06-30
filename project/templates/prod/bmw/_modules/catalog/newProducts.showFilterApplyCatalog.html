@@ -1,0 +1,185 @@
+@New items template on main
+{%F:@s(D:getVars())%}
+{%F:#e(D:dump({"value":"{F:value}"}))%}
+
+
+
+
+{%section:showFilterApplyCatalog%}
+
+<section class="main_tabs">
+    <div class="row">
+        <div class="column large-18">
+            <p class="section_title"><b>Heta nya</b> ankomster</p>
+            <ul class="tabs" data-tabs id="main-tabs">
+                <li class="tabs-title is-active">
+                    <a href="#panel1" aria-selected="true">Gateways</a>
+                </li>
+                <li class="tabs-title">
+                    <a data-tabs-target="panel2" href="#panel2">Routerns</a>
+                </li>
+            </ul>
+            <div class="tabs-content" data-tabs-content="main-tabs">
+                <div class="tabs-panel is-active" id="panel1">
+                    <div class="main_catalog_slider owl-carousel">
+                        <div class="row">
+                            <div class="column small-12 large-8">
+                                <div class="catalog-medium">
+
+
+                                    {%each({F:objects},k,val)%}
+                                        <div class="product_block">
+                                            <div class="image_block">
+                                                <a href="{%F:val>_main>link%}">
+                                                    <img src="{%F:val>tovarbase>image%}" alt="">
+                                                    <div class="actions_block">
+                                                        <div class="like_block">
+                                                            <a href="{%F:val>_main>link%}">
+                                                                <i class="icon_heart_alt"></i>
+                                                            </a>
+                                                        </div>
+                                                        <div class="tocard_block">
+                                                            <i class="arrow_left-right_alt"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="flags_block">
+
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="text_block">
+                                                <p class="price">
+                                                    <a href="#">{%F:val>tovarbase>price>valueFormatted%} <span class="curency">kr</span></a>
+                                                </p>
+                                                <p class="discription">{%F:val>_main>Name%}</p>
+                                            </div>
+                                        </div>
+
+                                    {%endeach%}
+
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="column small-12 large-6">
+                                <div class="catalog-big">
+
+                                    <div class="product_block">
+                                        <div class="image_block">
+                                            <img src="{%F:objects>1>tovarbase>image%}" alt="">
+                                            <div class="actions_block">
+                                                <div class="like_block">
+                                                    <i class="icon_heart_alt"></i>
+                                                </div>
+                                                <div class="tocard_block">
+                                                    <i class="arrow_left-right_alt"></i>
+                                                </div>
+                                            </div>
+                                            <div class="flags_block">
+                                                <div class="auction">auction</div>
+                                            </div>
+                                        </div>
+                                        <div class="text_block">
+                                            <p class="price">{%F:objects>1>tovarbase>price>valueFormatted%}
+                                                <span class="curency">Kr</span>
+                                            </p>
+                                            <p class="old_price">{%F:objects>1>tovarbase>price>nonDiscountedValueFormatted%}
+                                                <span class="curency">Kr</span>
+                                            </p>
+                                            <p class="discription">{%F:objects>1>_main>Name%}</p>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                            <div class="column small-12 large-4">
+                                <div class="catalog-small">
+
+                                    {%each({F:objects},k,val)%}
+                                    <div class="product_block">
+                                        <div class="image_block">
+                                            <a href="{%F:val>_main>link%}">
+                                                <img src="{%F:val>tovarbase>image%}" alt="">
+                                                <div class="actions_block">
+                                                    <div class="like_block">
+                                                        <a href="{%F:val>_main>link%}">
+                                                            <i class="icon_heart_alt"></i>
+                                                        </a>
+                                                    </div>
+                                                    <div class="tocard_block">
+                                                        <i class="arrow_left-right_alt"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="flags_block">
+
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="text_block">
+                                            <p class="price">
+                                                <a href="#">{%F:val>tovarbase>price>valueFormatted%} <span class="curency">kr</span></a>
+                                            </p>
+                                            <p class="discription">{%F:val>_main>Name%}</p>
+                                        </div>
+                                    </div>
+
+                                    {%endeach%}
+
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="column large-18">Second slider</div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="tabs-panel" id="panel2">
+                    <p>Suspendisse dictum feugiat nisl ut dapibus. Vivamus hendrerit arcu sed erat molestie vehicula. Ut
+                        in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Sed auctor
+                        neque eu tellus rhoncus ut eleifend nibh porttitor.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+{%endsection:showFilterApplyCatalog%}
+
+
+
+{%if({F:objects})%}
+<section class="main_product_slider">
+    <div class="row">
+        <div class="column large-18 small-18">
+            <p class="section_title"><b>Nyligen visade</b> produkter</p>
+            <div class="main_product_small_slider owl-carousel">
+
+
+                {%each({F:objects},k,val)%}
+
+                <div class="slider_item">
+                    <div class="img_block">
+                        <a href="{%F:val>_main>link%} "><img src="{%F:val>tovarbase>image%}" alt=""></a>
+                    </div>
+                    <div class="text_block">
+                        <p class="title">{%F:object>tovarbase>price>valueFormatted%} <span class="curency">kr</span></p>
+                        <p class="name">{%F:val>_main>Name%}</p>
+                        <p class="discription">{%F:val>tovarbase>brand%}</p>
+                    </div>
+                </div>
+
+                {%endeach%}
+            </div>
+        </div>
+</section>
+{%endif%}
+

@@ -1,0 +1,459 @@
+{%section:showCompareServer%}
+
+<div class="form-group">
+    <h5>{template_display_compare_results}</h5>
+    <select id="Template" class="form-control"></select>
+</div>
+
+<div class="form-group">
+    <h5>{page_display_of_search_results_by_product}</h5>
+    <select id="DestinationPage" class="form-control"></select>
+</div>
+
+<div class="form-group">
+    <h5>{maximum_objects_to_compare}</h5>
+    <input id="maximumCompareObjects" class="form-control" value="10">
+</div>
+
+
+{%endsection:showCompareServer%}
+
+
+{%section:showKeyWordSearch%}
+
+<div class="form-group">
+    <h5>{template_display_search_the_catalog}</h5>
+    <select id="Template" class="form-control"></select>
+</div>
+
+
+<div class="form-group">
+    <h5>{category_url_point}</h5>
+
+    <div class="input-group">
+        <input id="showGroup" name="showGroup" readonly class="form-control validate-selection xoad-ignore">
+        <span class="input-group-btn"><a href="#"
+                                         data-wintext="{catobj_situation}" data-winwidth="500"
+                                         data-callback="catalog.onDialogGroup"
+                                         data-destination="showGroup" data-topindex="45"
+                                         data-info="_CATGROUP" class="xList btn btn-default">
+              {choose}</a> <input name="showGroupId" id="showGroupId" type="hidden"></span>
+    </div>
+</div>
+
+<div class="checkbox i-checks">
+    <label>
+        <input type="checkbox" name="groupByCategories">
+        <i></i>{group_by_categories}</label>
+</div>
+
+
+<div class="form-group">
+    <h5>{groupOffset}</h5>
+    <input id="groupOffset" name="groupOffset" class="form-control" value="1">
+</div>
+
+<div class="form-group">
+    <h5>{page_display_of_search_results_by_product}</h5>
+    <select id="DestinationPage" class="form-control validate[required]"></select>
+</div>
+
+
+<div class="form-group">
+    <h5>{smartOnPage}</h5>
+    <input id="smartOnPage" class="form-control" value="10">
+</div>
+
+
+{%endsection:showKeyWordSearch%}
+
+
+{%section:showReactMenu%}
+
+
+<div class="form-group">
+    <h5>{template_menu}</h5>
+    <select class="form-control" id="menuTemplate" name="menuTemplate"></select>
+
+</div>
+
+
+<div class="form-group">
+    <h5>{page_display_catalog}</h5>
+    <select class="form-control" id="DestinationPage"></select>
+
+
+</div>
+<div class="form-group">
+    <div class="checkbox i-checks">
+        <label>
+            <input type="checkbox" name="getObjects">
+            <i></i>{select_a_category_and_directory_objects}</label>
+    </div>
+
+
+    <div class="checkbox i-checks">
+        <label>
+            <input type="checkbox" name="showChildsObjectOnSelected">
+            <i></i>{show_child_objects_on_selected}</label>
+    </div>
+</div>
+
+<div class="form-group">
+    <h5>{number_of_up_levels}</h5>
+    <p style="font-weight:normal;">({0_meant_to_show_the_menu_for_any_nested_menu})</p>
+    <input class="form-control" name="upperLevel" id="upperLevel" type="text" value='0'/>
+
+</div>
+
+
+<div class="form-group">
+    <h5>{number_of_levels_in_the_menu}</h5>
+    <p style="font-weight:normal;">({0_meant_to_show_the_menu_for_any_nested_menu})</p>
+    <input class="form-control" id="Levels" type="text" value='0'/>
+
+</div>
+
+
+{%endsection:showReactMenu%}
+
+
+{%section:showCatalogMenu%}
+
+<p>{select_group_to_display_the_menu}:</p>
+<div class="form-group">
+    <h5>{category_url_point}</h5>
+    <div class="input-group">
+
+        <input id="sourceCatGroup" name="sourceCatGroup" readonly class="form-control validate-selection xoad-ignore">
+        <span class="input-group-btn"><a href="#"
+                                         data-wintext="{catobj_situation}" data-winwidth="500"
+                                         data-callback="catalog.onDialogGroup"
+                                         data-destination="sourceCatGroup" data-topindex="45"
+                                         data-info="_CATGROUP" class="xList btn btn-default">
+              {choose}</a> <input name="sourceCatGroupId" id="sourceCatGroupId" type="hidden"></span>
+    </div>
+</div>
+
+
+<div class="form-group">
+    <h5>{template_menu}</h5>
+    <select class="form-control" id="menuTemplate" name="menuTemplate"></select>
+
+</div>
+
+
+<div class="form-group">
+    <h5>{page_display_catalog}</h5>
+    <select class="form-control validate[required]" name="DestinationPage" id="DestinationPage"></select>
+
+
+</div>
+<div class="form-group">
+    <div class="checkbox i-checks">
+        <label>
+            <input type="checkbox" name="getObjects">
+            <i></i>{select_a_category_and_directory_objects}</label>
+    </div>
+</div>
+
+
+<div class="form-group">
+    <h5>{number_of_levels_in_the_menu}</h5>
+    <p style="font-weight:normal;">({0_meant_to_show_the_menu_for_any_nested_menu})</p>
+    <input class="form-control" id="Levels" name="Levels" type="text" value='0'/>
+
+</div>
+
+
+</div>
+
+
+{%endsection:showCatalogMenu%}
+
+
+{%section:showCategory%}
+<div class="form-group">
+    <h5>{template_display_a_list_of_categories}</h5>
+    <select id="categoryTemplate" name="categoryTemplate" class="form-control"></select>
+
+
+</div>
+
+
+<div class="form-group">
+    <h5>{page_display_catalog}</h5>
+    <select class="form-control validate[required]" name="DestinationPage" id="DestinationPage"></select>
+</div>
+
+<div class="form-group">
+    <h5>{category_url_point}</h5>
+
+    <div class="input-group">
+
+        <input id="showGroup" name="showGroup" readonly class="form-control validate-selection xoad-ignore">
+        <span class="input-group-btn"><a href="#"
+                                         data-wintext="{catobj_situation}" data-winwidth="500"
+                                         data-callback="catalog.onDialogGroup"
+                                         data-destination="showGroup" data-topindex="45"
+                                         data-info="_CATGROUP" class="xList btn btn-default">
+              {choose}</a> <input name="showGroupId" id="showGroupId" type="hidden"></span>
+    </div>
+</div>
+<div class="form-group">
+    <h5>{depth_of_selection}</h5>
+    <input class="form-control" id="endleafs" name="endleafs" value="1">
+</div>
+
+<div class="form-group">
+    <p>{number_of_objects_on_the_page}</p>
+    <input class="form-control validate[required]" id="onPage" name="onPage">
+</div>
+
+
+<div class="form-group">
+    <div class="checkbox i-checks">
+        <label>
+            <input type="checkbox" name="getCategories">
+            <i></i>{select_a_category_and_directory_objects}</label>
+    </div>
+
+    <div class="form-group">
+        <h5>{set_add_filter}</h5>
+        <textarea class="form-control" id="filter" name="filter"></textarea>
+    </div>
+
+
+</div>
+{%endsection:showCategory%}
+
+
+{%section:showCatalogServer%}
+
+<div class="form-group">
+    <h5>{template_display_a_list_of_categories}</h5>
+    <select class="form-control" id="categoryTemplate" name="categoryTemplate"></select>
+
+</div>
+
+<div class="form-group">
+    <h5>{template_display_object}</h5>
+    <select class="form-control" id="objectTemplate" name="objectTemplate"></select>
+
+</div>
+<div class="form-group">
+    <h5>{category_url_point}</h5>
+
+    <div class="input-group">
+
+        <input id="showBasicPoint" name="showBasicPoint" readonly class="form-control validate-selection xoad-ignore">
+        <span class="input-group-btn"><a href="#"
+                                         data-wintext="{catobj_situation}" data-winwidth="500"
+                                         data-callback="catalog.onDialogGroup"
+                                         data-destination="showBasicPoint" data-topindex="45"
+                                         data-info="_CATGROUP" class="xList btn btn-default">
+              {choose}</a> <input name="showBasicPointId" id="showBasicPointId" type="hidden"></span>
+    </div>
+</div>
+
+
+<div class="form-group">
+    <div class="checkbox i-checks">
+        <label>
+            <input type="checkbox" name="getCategories">
+            <i></i>{select_a_category_and_directory_objects}</label>
+
+
+    </div>
+</div>
+
+
+<div class="form-group">
+    <h5>{set_add_filter}</h5>
+    <textarea class="form-control" id="filter" name="filter"></textarea>
+</div>
+
+
+<div class="form-group">
+    <h5>{number_of_objects_on_the_page}</h5>
+    <input class="form-control" id="onPage" name="onPage">
+</div>
+
+
+<div class="form-group">
+    <h5>{depth_of_selection}</h5>
+    <input class="form-control" id="endleafs" name="endleafs" value="1">
+</div>
+
+
+<div class="form-group">
+    <div class="checkbox i-checks">
+        <label>
+            <input type="checkbox" id="doNotExtractSKU" name="doNotExtractSKU">
+            <i></i>{doNotExtractSKU}</label>
+
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="checkbox i-checks">
+        <label>
+            <input type="checkbox" id="applyFilterOnSku" name="applyFilterOnSku">
+            <i></i>{applyFilterOnSku}</label>
+    </div>
+</div>
+
+
+<div class="form-group">
+    <h5>{agregateToLevel}</h5>
+    <input class="form-control" id="endleafs" name="agregateToLevel" value="1">
+</div>
+
+
+<div class="form-group">
+    <h5>{action_is_performed_by_default}</h5>
+    <select id="secondaryAction" name="secondaryAction" class="form-control"></select>
+</div>
+
+
+</div>
+
+
+{%endsection:showCatalogServer%}
+
+
+{%section:showFilterApplyCatalog%}
+
+
+<div class="form-group">
+    <h5>{FilterPreset}</h5>
+    <textarea id="filter" class="form-control"></textarea>
+</div>
+
+
+<div class="form-group">
+    <div class="checkbox i-checks">
+        <label>
+            <input type="checkbox" id="applyFilterOnSku" name="applyFilterOnSku">
+            <i></i>{applyFilterOnSku}</label>
+    </div>
+</div>
+
+
+<div class="form-group">
+    <h5>{template_to_show_filter_result}</h5>
+    <select id="Template" class="form-control"></select>
+</div>
+
+
+<div class="form-group">
+    <h5>{page_display_of_search_results_by_product}</h5>
+    <select id="DestinationPage" class="form-control"></select>
+</div>
+
+
+{%endsection:showFilterApplyCatalog%}
+
+
+{%section:showCurrentSelectedFilters%}
+
+
+<div class="form-group">
+    <h5>{page_display_catalog}</h5>
+    <select id="Template" class="form-control"></select>
+</div>
+
+
+<div class="form-group">
+    <h5>{page_display_of_search_results_by_product}</h5>
+    <select id="DestinationPage" class="form-control"></select>
+</div>
+
+
+{%endsection:showCurrentSelectedFilters%}
+
+
+{%section:showSearchForm%}
+
+
+<div class="form-group">
+    <h5>{template_display_search_the_catalog}</h5>
+    <select id="SearchTemplate" class="form-control"></select>
+</div>
+
+
+<div class="form-group">
+    <h5>{page_display_of_search_results_by_product}</h5>
+    <select id="DestinationPage" class="form-control"></select>
+</div>
+
+<div class="form-group">
+    <h5>{searchProperty} </h5>
+    <select id="searchProperty" class="form-control" name="searchProperty"></select>
+</div>
+
+
+<div class="form-group">
+    <div class="checkbox i-checks">
+        <label>
+            <input type="checkbox" id="applyOnlyInListing" name="applyOnlyInListing">
+            <i></i>{applyOnlyInListing}</label>
+    </div>
+</div>
+
+
+<div class="form-group">
+    <div class="checkbox i-checks">
+        <label>
+            <input type="checkbox" id="applyOnlySearchResults" name="applyOnlyInListing">
+            <i></i>{applyOnlySearchResults}</label>
+    </div>
+</div>
+
+
+
+<div class="form-group">
+    <div class="checkbox i-checks">
+        <label>
+            <input type="checkbox" id="sortActive" name="sortActive">
+            <i></i>{sortActive}</label>
+    </div>
+</div>
+
+
+{%endsection:showSearchForm%}
+
+
+
+
+{%section:showObject%}
+<div class="form-group">
+    <h5>{template_display_a_list_of_categories}</h5>
+    <select id="objectTemplate" name="objectTemplate" class="form-control"></select>
+</div>
+
+
+
+<div class="form-group">
+    <h5>{category_url_point}</h5>
+
+    <div class="input-group">
+
+        <input id="showObject" name="showObject" readonly class="form-control validate-selection xoad-ignore">
+        <span class="input-group-btn"><a href="#"
+                                         data-wintext="{catobj_situation}" data-winwidth="500"
+                                         data-callback="catalog.onDialogObject"
+                                         data-destination="showObject" data-topindex="45"
+                                         data-info="_CATOBJ,_CATGROUP" class="xList btn btn-default">
+              {choose}</a> <input name="showObjectId" id="showObjectId" type="hidden"></span>
+    </div>
+</div>
+
+{%endsection:showObject%}
+
+
+{%section:ishop->%}
+<p>{select_a_page_serving_the_basket_this_directory}</p>
+<select id="BasketPage">
+</select>
+{%endsection:ishop%} 

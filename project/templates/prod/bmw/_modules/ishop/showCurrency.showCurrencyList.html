@@ -1,0 +1,31 @@
+{%section:showCurrencyList%}   
+
+<script>
+$(document).ready(function() {
+    
+    $(".currencyChange").change(function()
+    {
+       document.location.href=$(this).val();
+    });
+    
+
+}); 
+</script>
+   
+   {%F:#currencies(plugin.catalog.mf.tpl:filterDealersCurrency({"currencies":"{F:currencies}"}))%}
+   
+   
+   {%if(count({F:currencies})>1)%}
+   <div class="currency right">
+                            <select class="currencyChange">
+                            {%each({F:currencies},k,v)%}
+                                
+                                <option {%if('{F:v>selected}')%} selected {%endif%} value="{%F:v>link%}">{%F:v>Name%}</option>
+                                
+                            {%endeach%}
+                            
+                            </select>
+                        </div>
+     {%endif%}                   
+     
+{%endsection:showCurrencyList%}                        

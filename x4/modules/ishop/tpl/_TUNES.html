@@ -1,0 +1,124 @@
+{%section:_TUNES%}
+
+<div class="panel-body">
+    <div class="col-lg-6">
+
+
+        <form id="edit_TUNES" name="edit_TUNES">
+
+
+            <div class="form-group">
+                <label>{name_the_properties_of_the_directory_corresponding_to_the_name_of_product}</label>
+                <input id="nameProperty" name="nameProperty" class="validate[required,custom[alpha]] form-control"
+                       placeholder="">
+            </div>
+
+
+            <div class="form-group">
+                <label>{name_the_properties_of_the_corresponding_catalog_price_of_the_goods}</label>
+                <input id="priceProperty" name="priceProperty" class="validate[required,custom[alpha]] form-control">
+            </div>
+
+
+            <div class="form-group">
+                <label>{name_the_properties_of_the_corresponding_catalog_price_SKU_of_the_goods}</label>
+                <input id="priceSKUProperty" name="pricePropertySKU"
+                       class="validate[required,custom[alpha]] form-control">
+            </div>
+
+
+            <div class="form-group">
+                <label>{status_order_by_default}</label> <select name="defaultOrderStatus" id="defaultOrderStatus"
+                                                                 class="form-control"></select>
+            </div>
+
+            <div class="form-group">
+                <label>{status_not_finished_by_default}</label> <select name="notFinshedStatus" id="notFinshedStatus"
+                                                                        class="form-control"></select>
+            </div>
+
+            <div class="form-group">
+                <label>{status_edited_by_default}</label> <select name="editedStatus" id="editedStatus"
+                                                                  class="form-control"></select>
+            </div>
+
+            <div class="form-group">
+                <label>{status_payed_by_default}</label> <select name="payedStatus" id="payedStatus"
+                                                                 class="form-control"></select>
+            </div>
+
+
+            <div class="form-group">
+                <label>{url_handle_not_finished_orders}</label>
+                <select id="notFinishedOrdersUrl" name="notFinishedOrdersUrl" class="form-control">
+
+                </select>
+            </div>
+
+
+            <div class="form-group">
+                <label>{email_notify_from}</label>
+                <input id="emailNotifyFrom" name="emailNotifyFrom" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label>{email_notify_list}</label>
+                <input id="emailNotifyList" name="emailNotifyList" class="form-control">
+            </div>
+
+
+            <div class="form-group">
+                <label>{email_encoding}</label>
+                <input id="emailEncoding" name="emailEncoding" class="form-control">
+            </div>
+
+
+            <div class="form-group">
+                <label>{email_subject}</label>
+                <input id="emailSubject" name="emailSubject" class="form-control">
+            </div>
+
+
+            <div class="checkbox i-checks">
+                <label>
+                    <input type="checkbox" name="notifyUser">
+                    <i></i>{notify_user}</label>
+            </div>
+
+            <div class="checkbox i-checks">
+                <label>
+                    <input type="checkbox" name="notifyAdmin">
+                    <i></i>{notify_admin}</label>
+            </div>
+
+
+            <div class="form-group">
+                <label>{sku_properties_list}</label>
+                <input id="skuPropertiesList" name="skuPropertiesList" class="form-control">
+            </div>
+
+            
+                 <div class="form-group">
+                <label>{redirecting_adress}</label>
+                <input id="redirectingAdress" name="redirectingAdress" class="form-control">
+            </div>
+
+
+            <div class="form-group">
+                <h5>{cart_storage_type}</h5>
+                <select id="cartStorageType" class="form-control">
+                    <option value="cartSessionStorage">{cart_session_storage}</option>
+                    <option value="cartDataBaseStorage">{cart_database_storage}</option>
+                </select>
+            </div>
+            
+
+        </form>
+        <a class="btn btn-primary save" href="#">{save}</a>
+
+
+    </div>
+</div>
+
+{%endsection:_TUNES%}
+

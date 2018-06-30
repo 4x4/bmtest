@@ -1,0 +1,141 @@
+@Стандартный шаблон объект
+{%F:#e(D:dump({"value":"{F:connectedObjects}"}))%}
+
+
+
+{%section:showCompareServer%}
+
+
+<div class="comparison">
+	<div class="container">
+		<div class="compare_goods">
+			<div class="row">
+				<div class="col-xs-2"><p>Produktegenskaper</p></div>
+
+				<div class="col-xs-10 goods_list">
+
+
+					<ul>
+
+						{%each({F:objects},k,val)%}
+						<li>
+							<div class="image_wrap text-center">
+								<div class="remove_compare"><a href="/compare/~remove/?id={%F:val>_main>id%}"><img src="/templates/_ares/images/compare/close_result.png" alt=""></a></div>
+								<img width="150px" src="{%F:val>tovarbase>image%}" alt="">
+
+							</div>
+							<div class="text_wrap">
+								<p>{%F:val>_main>Name%}</p>
+							</div>
+						</li>
+						{%endeach%}
+
+
+					</ul>
+
+
+
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+		<div class="compare_details">
+			<div class="row">
+
+				<div class="col-xs-2 parameters">
+					<table>
+						{%each({F:compareData},k,v)%}
+
+						{%each({F:v>items},key,item)%}
+
+						<tr>
+							<td>{%F:item>field>alias%}</td>
+
+						</tr>
+						{%endeach%}
+						{%endeach%}
+
+						</tbody>
+					</table>
+				</div>
+
+				<div class="col-xs-10 characteristicsTable">
+					<table>
+						<tbody>
+
+						{%each({F:compareData},k,v)%}
+
+						{%each({F:v>items},key,item)%}
+
+						<tr>
+
+
+							{%each({F:item>values},zkey,zval)%}
+
+
+
+
+							{%if({F:item>field>type}=='selector')%}
+
+							<td> {%F:zval>_main>Name%}</td>
+
+							{%else%}
+
+
+
+							{%if({F:zval}=='Y')%}
+
+							<td><img src="/templates/_ares/images/compare/check.png" alt=""></td>
+
+							{%else%}
+
+							{%if({F:zval}=='N')%}
+
+							<td><img src="/templates/_ares/images/compare/uncheck.png" alt=""></td>
+
+							{%else%}
+							<td> {%F:zval%}</td>
+							{%endif%}
+
+							{%endif%}
+
+
+
+
+
+							{%endeach%}
+
+						</tr>
+						{%endeach%}
+						{%endeach%}
+
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+
+
+
+
+{%endsection:showCompareServer%}
+
+
+
+{%section:emptyComparsion%}
+
+
+<p>Inga produkter att jämföra</p>
+
+
+{%endsection: emptyComparsion%}
+
+ 

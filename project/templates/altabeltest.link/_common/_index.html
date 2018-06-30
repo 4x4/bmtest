@@ -1,0 +1,64 @@
+@Основной шаблон 
+{%section:MAIN%} {%->:HEADER%} {%->:TOP%} {%->:MIDDLE%} {%->:FOOTER%} {%endsection:MAIN%}
+{%section:HEADER->%}
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
+
+    <meta name="viewport" content="width=1000" />
+    <title>{%F:Title%}</title>
+    <meta name="description" content="{%F:Description%}">
+    <link rel="icon" href="../../../../imagerender.php" type="image/x-icon">
+    <meta name="keywords" content="{%F:Keywords%}">
+    <meta name="viewport" content="width=1020,user-scalable=yes">
+    <meta name="format-detection" content="telephone=no">
+	{%F:extendedMeta%}
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&amp;subset=cyrillic" rel="stylesheet">
+    <link href="{%F:ARES%}css/jquery.formstyler.css" rel="stylesheet" />
+    <link href="{%F:ARES%}css/jquery.formstyler.theme.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{%F:ARES%}/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="{%F:ARES%}css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="{%F:ARES%}css/ionicons.css">
+    <link rel="stylesheet" href="{%F:ARES%}css/styleelegant.css">
+    <link rel="stylesheet" href="{%F:ARES%}css/foundation.css">
+    <link rel="stylesheet" href="{%F:ARES%}css/app.css">
+    <link rel="stylesheet" href="{%F:ARES%}css/slick.css">
+    <link rel="stylesheet" href="{%F:ARES%}css/style.css">
+    <link rel="stylesheet" href="{%F:ARES%}js/nouislider/nouislider.css">
+
+    
+    {%F:+b(TPA:setGlobalField({"compressMainJs":"1"}))%}
+
+    {%F:+e(E:enableJsFile({"file":"js/vendor/jquery.js"}))%}
+    {%F:+e(E:enableJsFile({"file":"js/slick.min.js"}))%}
+    {%F:+e(E:enableJsFile({"file":"js/jquery.matchHeight-min.js"}))%}
+
+    {%F:+e(E:enableJsFile({"file":"js/owl.carousel.min.js"}))%}
+
+    {%F:+e(E:enableJsFile({"file":"js/jquery.formstyler.min.js"}))%}
+    {%F:+e(E:enableJsFile({"file":"js/swal.js"}))%}
+    {%F:+e(E:enableJsFile({"file":"js/catalog.js"}))%}
+
+    {%F:+e(E:enableJsFile({"file":"js/vendor/what-input.js"}))%}
+
+    {%F:+e(E:enableJsFile({"file":"js/vendor/foundation.min.js"}))%}
+    {%F:+e(E:enableJsFile({"file":"js/nouislider/nouislider.js"}))%}
+
+    {%F:+e(E:enableJsFile({"customFile":"x4/modules/ishop/js/ishopFront.js"}))%}
+    {%F:+e(E:enableJsFile({"customFile":"x4/modules/catalog/js/catalogFront.js"}))%}
+    {%F:+e(E:enableJsFile({"customFile":"x4/modules/pages/js/pagesFront.js"}))%}
+    {%F:+e(E:enableJsFile({"customFile":"x4/modules/forms/js/formsFront.js"}))%}
+
+
+    {%F:+e(E:enableJsFile({"file":"js/main.js"}))%}
+
+
+    {%F:Meta%} {%F:XFRONT_API%} {%F:JS%}
+
+<body>
+{%endsection:HEADER%}
+

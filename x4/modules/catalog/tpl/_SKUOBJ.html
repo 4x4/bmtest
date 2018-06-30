@@ -1,0 +1,31 @@
+{%section:_SKUOBJ%}
+
+  <!--{%F:action%}-->
+{%if('{F:action}'=='edit')%}
+
+<form id="edit_SKUOBJ">
+    {%else%}
+    <form id="create_SKUOBJ">
+        {%endif%}
+
+        <div class="panel-body col-md-10 col-lg-12">
+
+            <div class="m-t-sm object-data">
+                <div class="form-group">
+                    <label class=
+                                   "control-label">{sku_name}:</label>
+                    <input id="Name" class="form-control validate[required]" name="Name" type="text">
+                </div>
+
+
+                <div class="properties-holder">
+                    <div class="left"></div>
+                </div>
+
+            </div>
+            <a class="btn btn-success m-b-sm save">{save}</a>
+        </div>
+    </form>
+
+    {%endsection:_SKUOBJ%}
+  

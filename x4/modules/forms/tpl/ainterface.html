@@ -1,0 +1,50 @@
+{%section:showForms%}
+<div class="form-group">
+    <h5>{select_forms_or_form}</h5>
+    <div class="input-group">
+        <input id="formsSource" name="formsSource" readonly class="form-control xoad-ignore" />
+        <span class="input-group-btn">
+            <a href="#"
+                  data-wintext="{forms_situation}" data-winwidth="500"
+                  data-callback="forms.onDialogGroupFull"
+                  data-destination="formsSource" data-topindex="45"
+                  data-info="_FORM" class="xList btn btn-default">
+              {choose}</a>
+            <input name="formsSourceId" id="formsSourceId" type="hidden">
+        </span>
+    </div>
+</div>
+
+<!--<div class="form-group">
+    <h5>{template_form}</h5>
+    <select class="form-control" id="Template" name="Template"></select>
+</div>-->
+
+<!--<div class="form-group">
+    <h5>{template_for_submitting_form}</h5>
+    <select class="form-control" id="submitTemplate" name="submitTemplate"></select>
+</div>-->
+
+<div class="form-group">
+    <h5>{template_for_field_styles}</h5>
+    <select class="form-control" id="fieldStyles" name="fieldStyles"></select>
+</div>
+
+<!--<div class="form-group">
+    <h5>{page_display_forms_not_required}</h5>
+    <select class="form-control" id="destinationPage" name="destinationPage"></select>
+</div>-->
+{%endsection:showForms%}
+
+
+{%section:formsServer%}
+<div class="form-group">
+    <h5>{pattern_of_output_instead_of_the_standard}</h5>
+    <select class="form-control" id="Template"></select>
+</div>
+
+<div class="form-group">
+    <h5>{action_is_performed_by_default}</h5>
+    <select id="secondaryAction" name="secondaryAction" class="form-control"></select>
+</div>
+{%endsection:formsServer%}

@@ -1,0 +1,80 @@
+{%section:_SCHEMEITEM%}
+
+<div class="m-t-lg m-l-sm">
+
+    <div class="col-sm-8">
+        <div class="panel-body">
+
+            <form id="edit_SCHEMEITEM" name="edit_SCHEMEITEM">
+                <div class="m-t-sm object-data">
+
+                    <div class="form-group">
+                        <label>{schemeitem_name}</label><input id="Name" name="Name"
+                                                               class="validate[required] form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group">
+                        <label>{schemeitem_alias}</label><input id="Alias" name="Alias"
+                                                                class="validate[required] form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group">
+                        <label>{schemeitem_storageParamName}</label><input id="StorageParamName" name="StorageParamName"
+                                                                           class="form-control" placeholder="">
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>{schemeitem_valuetype}</label>
+
+                        <select class="required form-control" id="ValueType" name="ValueType" >
+                            <option value="string">Строка</option>
+                            <option value="integer">Целое число</option>
+                            <option value="double">Число с дробной частью</option>
+                            <option value="boolean">Да/Нет</option>
+                            <option value="datetime">Дата</option>
+
+                        </select>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>{schemeitem_type}</label>
+                        <select class="required form-control" id="Type" name="Type" >
+                        </select>
+                    </div>
+
+
+
+                    <div class="form-group schemeOptions" style="display:none">
+                        <label>{schemeitem_options}</label>
+                        <select class="required form-control" id="Options" name="Options">
+                        </select>
+                    </div>
+
+                    <div class="form-group schemeOptionsData" style="display:none">
+                        <label>{schemeitem_options_data}</label>
+                        <select class="required form-control" id="OptionsData" name="OptionsData">
+                        </select>
+                    </div>
+
+                </div>
+
+                {%if('{F:action}'=='edit')%}
+
+                <a href="#" class="btn btn-success saveEdited">{apply}</a>
+                {%else%}
+
+                <a href="#" class="btn btn-success save">{apply}</a>
+                {%endif%}
+
+
+        </div>
+
+        </form>
+
+    </div>
+</div>
+</div>
+
+{%endsection:_SCHEMEITEM%}

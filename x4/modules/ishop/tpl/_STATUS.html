@@ -1,0 +1,33 @@
+{%section:_STATUS%}
+
+<div class="panel-body">
+    <div class="col-lg-6">
+        {%if('{F:action}'=='edit')%}
+
+        <form id="edit_STATUS" name="edit_STATUS">
+            {%else%}
+
+            <form id="create_STATUS" name="create_STATUS">
+                {%endif%}
+
+                <div class="form-group">
+                    <label>{status_name}</label>
+                    <input id="Name" name="Name" class="validate[required,custom[alpha]] form-control" placeholder="">
+                </div>
+
+
+                <div class="form-group">
+                    <label>{status_id}</label>
+                    <input id="statusId" name="statusId" class="validate[required,custom[alpha]] form-control">
+                </div>
+
+            </form>
+
+
+            <a class="btn btn-primary save" href="#">{save}</a>
+
+
+    </div>
+</div>
+{%endsection:_STATUS%}
+

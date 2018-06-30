@@ -1,0 +1,22 @@
+@Форма регистрации
+{%F:@s(D:getVars())%}
+{%F:#e(D:dump({"value":"{F:value}"}))%}
+{%section:forms%}
+
+            <div class="left_about">
+                <a href="#">Форма регистрации</a>
+            </div>
+
+            <div class="left_time_rates">
+
+                {%F:#fieldset1(forms:fieldset({"type":"FIELDSET","name":"Группа 1"}))%}
+
+                {%F:#fieldset2(forms:fieldset({"type":"FIELDSET","name":"Группа 2"}))%}
+
+                {%F:#fieldset3(forms:fieldset({"type":"FIELDSET","name":"Группа 3"}))%}
+
+                {%F:#fieldset4(forms:fieldset({"type":"FIELDSET","name":"Группа 4"}))%}
+
+            </div>
+
+{%endsection:forms%}

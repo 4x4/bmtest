@@ -1,0 +1,77 @@
+{%section:_PROPERTY%}
+
+<!--{%F:action%}-->
+
+{%if('{F:action}'=='edit')%}
+
+<form id="edit_PROPERTY">
+    {%else%}
+    <form id="create_PROPERTY">
+
+        {%endif%}
+
+        <section class="panel panel-default text-sm propertyEditor">
+            <div class="panel-body">
+
+                <div class="form-group">
+                    <label class="control-label">{name_of_the_properties_latin_only}:</label>
+                    <input id="Name" class="form-control validate[required,validate-alpha]" name="basic" type="text"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label">{alias_properties}:</label>
+                    <input class="form-control  validate[required]" name="alias" type="text"/>
+                </div>
+
+
+                <div class="checkbox i-checks">
+                    <label>
+                        <input id="isComparse" name="isComparse" type="checkbox"/>
+                        <i></i>{not_compare_to_this_property}</label>
+                </div>
+
+                <div class="checkbox i-checks">
+                    <label>
+                        <input id="isObligatorily" name="isObligatorily" type="checkbox"/>
+                        <i></i> {is_obligatorily_property}</label>
+                </div>
+
+
+                <div class="checkbox i-checks">
+                    <label>
+                        <input id="isListingReady" name="isListingReady" type="checkbox"/>
+                        <i></i> {is_listing_ready}</label>
+                </div>
+
+
+                <div class="form-group">
+                    <label class="control-label">{tags} ({use_symbol_to_delimite}):</label>
+                    <input class="form-control" name="tags" type="text"/>
+                </div>
+
+
+                <div class="form-group">
+                    <label>{type_of_property}</label>
+                    <select class="required form-control" name="type" type="text"></select>
+
+                </div>
+
+
+                <div class="propertyTypeEditor">
+
+                </div>
+
+                {%if('{F:action}'=='edit')%}
+
+                <a class="btn btn-success m-b-sm saveEdited">{save}</a>
+                {%else%}
+                <a class="btn  btn-success m-b-sm save">{save}</a>
+                {%endif%}
+
+
+            </div>
+        </section>
+    </form>
+
+
+    {%endsection:_PROPERTY%}

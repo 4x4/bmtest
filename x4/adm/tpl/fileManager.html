@@ -1,0 +1,119 @@
+{%section:fileManager%}
+
+<div id="fm" class="fm">
+
+
+<section class="panel panel-default text-sm doc-buttons">
+                  <div class="panel-body">
+                   
+                   <div class="col-md-2"> 
+                        <a class="back btn  btn-default">
+                         <i class="fa fa-arrow-left text"></i> <span class="text"> {back}</span>                     
+                       </a>
+                       
+                        
+                    </div>
+
+                    <div class="col-xs-5"> 
+                      <input type="text" name="currentPath" class="form-control text-sm">
+                    </div>
+                    
+                   <div class="col-md-5"> 
+                   
+                     <a class="selectFolder folder-submit btn btn-success m-b-sm " style="display:none">
+                              <span class="text"> {select_folder}</span>
+                    </a>
+                    <a class="createFolder btn  btn-default">
+                             <i class="fa fa-folder-o text"></i> <span class="text"> {create_folder}</span>
+                        </a>
+                        
+                        <div class="btn-group">
+                          <button class="btn btn-default dropdown-toggle" data-toggle="dropdown"> <span class="dropdown-label">{icons}</span> <span class="caret"></span> </button>
+                          <ul class="dropdown-menu viewSelect">
+                            <li><a data-view="ficon" href="#">{icons}</a></li>
+                            <li><a data-view="ftable" href="#">{table}</a></li>                    
+                            <li><a data-view="fthumbs" href="#">{thumbs}</a></li>                    
+                          </ul>               
+                        </div>
+                
+                </div>
+                
+                  </div>
+                </section>
+                
+    <!--             
+    <div class="files-menu">
+        <a class="folder"><span></span>Создать папку</a>
+        <a class="copy"><span></span>Копировать</a>
+        <a class="delete"><span></span>Удалить</a>
+        <a class="pack"><span></span>В архив</a>
+        <a class="unpack"><span></span>Распаковать</a>
+        
+        <a class="download"><span></span>Закачать</a
+        
+        <a class="dropbox"><span></span>Dropbox</a>
+    </div>             -->
+ <!--   <div id="files-tree" style="display:none;height:300px;width:200px">
+
+    </div>                                    -->
+    <div id="files"  class="panel-body" style="height:400px;">
+    </div>
+    
+    
+ 
+    <div id="iptcwin"  style="display:none" class="iptcwin">
+    
+    
+             <form id="iptcForm">
+                <div class = "form-group">
+                <label>{caption}</label>
+                    <input name="name" type = "text" class = "form-control input-sm">
+                </div>
+                
+                    <div class = "form-group">
+                       <label>{short_description}</label>
+                             <textarea rows="6" cols="30" name="description" class = "form-control"></textarea>
+                             
+                    </div>
+                    
+                    
+                    <div class = "form-group">
+
+                       <label>{owner_email}</label>
+
+                               <input name="ownerEmail" type = "text" class = "form-control input-sm">                                                                                       
+
+                    </div>
+
+                    
+
+                <div class = "form-group">
+
+                         <div class="checkbox i-checks">
+
+                                            <label>
+
+                                              <input type="checkbox" name="disable">
+
+                                              <i></i>{disable}</label>
+
+                                    </div>
+
+                </div>
+
+                
+                <button class = "btn btn-primary iptcsave">{save}</button>
+                <button class = "btn btn-primary iptccancel" type = "cancel">{cancel}</button>
+           </form>
+            
+    
+    </div>
+    
+    <div id="dropzone"  class="dropzone">
+    </div>
+    
+        
+    
+</div>
+
+{%endsection:fileManager%}

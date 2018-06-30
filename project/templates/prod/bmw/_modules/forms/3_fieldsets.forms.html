@@ -1,0 +1,88 @@
+@Форма регистрации
+{%F:@s(D:getVars())%}
+{%F:#e(D:dump({"value":"{F:value}"}))%}
+{%section:forms%}
+
+            <div class="left_about">
+                <a href="#">{%F:object>params>Name%}</a>
+                {%if({F:object>params>Description})%}
+                <p>{%F:object>params>Description%}</p>
+                {%endif%}
+            </div>
+
+            <div class="left_time_rates">
+
+                {%F:#fieldset1(forms:fieldset({"type":"FIELDSET","name":"Группа 1"}))%}
+
+                {%F:#fieldset2(forms:fieldset({"type":"FIELDSET","name":"Группа 2"}))%}
+
+                {%F:#fieldset3(forms:fieldset({"type":"FIELDSET","name":"Группа 3"}))%}
+
+                {%if({F:object} AND {F:fieldset1} AND {F:fieldset2} AND {F:fieldset3})%}
+                    <form id="{%F:object>id%}" method="POST" action="{%F:object>action%}">
+                        <fieldset id="{%F:object>id%}{%F:fieldset1>id%}" title="{%F:fieldset1>params>Name%}">
+                            <legend>{%F:fieldset1>params>Name%}</legend>
+
+                            {%if({F:fieldset1>fields})%}
+                            <ul>
+                                {%each({F:fieldset1>fields},k,field)%}
+                                    {%F:field>fieldHTML%}
+                                {%endeach%}
+                            </ul>
+                            {%endif%}
+
+                        </fieldset>
+
+                        <fieldset id="{%F:object>id%}{%F:fieldset2>id%}" title="{%F:fieldset2>params>Name%}">
+                            <legend>{%F:fieldset2>params>Name%}</legend>
+
+                            {%if({F:fieldset2>fields})%}
+                            <ul>
+                                {%each({F:fieldset2>fields},k,field)%}
+                                    {%F:field>fieldHTML%}
+                                {%endeach%}
+                            </ul>
+                            {%endif%}
+
+                        </fieldset>
+
+                        <fieldset id="{%F:object>id%}{%F:fieldset3>id%}" title="{%F:fieldset3>params>Name%}">
+                            <legend>{%F:fieldset3>params>Name%}</legend>
+
+                            {%if({F:fieldset3>fields})%}
+                            <ul>
+                                {%each({F:fieldset3>fields},k,field)%}
+                                    {%F:field>fieldHTML%}
+                                {%endeach%}
+
+                                {%F:captcha%}
+                            </ul>
+                            {%endif%}
+
+                        </fieldset>
+
+                        <input type="hidden" name="form[id]" readonly="readonly" value="{%F:object>id%}" />
+                        <input id="submit{%F:object>id%}" type="submit" value="Отправить" />
+                    </form>
+                {%endif%}
+
+            </div>
+
+            {%if('{F:captcha}')%}
+            <script type="text/javascript">
+                var checkCaptcha = function (field, rules, i, options){
+                    var forms = x4.getModule('formsFront');
+                    return forms.checkCaptcha(field, rules, i, options);
+                }
+                jQuery(document).ready(function(){
+                    jQuery('#updateFormCaptcha{%F:object>id%}').updateFormCaptcha({'formId':'{%F:object>id%}'});
+                });
+            </script>
+            {%endif%}
+
+            <script type="text/javascript">
+                jQuery(document).ready(function(){
+                    jQuery('#submit{%F:object>id%}').submitForm({'formId':'{%F:object>id%}','async':'{%F:object>params>Async%}'});
+                });
+            </script>
+{%endsection:forms%}

@@ -1,0 +1,76 @@
+@Шаблон стилей элементов формы
+{%F:@s(D:getVars())%}
+{%F:#e(D:dump({"value":"{F:value}"}))%}
+
+{%section:PlainText%}
+<li>
+    <p>{%F:text%}</p>
+</li>
+{%endsection:PlainText%}
+
+
+{%section:SingleLineText%}
+<li {%if('{F:type}' == 'hidden')%}style="display:none;"{%endif%}>
+    <label for="{%F:attr>id%}">{%F:Name%} {%if('{F:required}' == 1)%}*{%endif%} <!-- {%F:params>settings>label%} --></label><br />
+    <input id="{%F:attr>id%}" name="{%F:attr>name%}" type="{%F:type%}" placeholder="{%F:placeholder%}" {%if('{F:required}' == 1)%}class="{%F:validationEngineClass%}"{%endif%} value="{%F:defaultValue%}" />
+    <p>{%F:description%}</p>
+</li>
+{%endsection:SingleLineText%}
+
+
+{%section:Textarea%}
+<li>
+    <label for="{%F:attr>id%}">{%F:Name%} {%if('{F:required}' == 1)%}*{%endif%} <!-- {%F:params>settings>label%} --></label><br />
+    <textarea id="{%F:attr>id%}" name="{%F:attr>name%}" placeholder="{%F:placeholder%}" {%if('{F:required}' == 1)%}class="{%F:validationEngineClass%}"{%endif%} cols="50" rows="6">{%F:defaultValue%}</textarea>
+    <p>{%F:description%}</p>
+</li>
+{%endsection:Textarea%}
+
+
+{%section:SingleSelect%}
+<li>
+    <label for="{%F:attr>id%}">{%F:Name%} {%if('{F:required}' == 1)%}*{%endif%} <!-- {%F:params>settings>label%} --></label><br />
+    <select id="{%F:attr>id%}" name="{%F:attr>name%}">
+        {%each({F:params>options},k,option)%}
+            <option value="{%F:option>value%}" {%F:option>selected%}>{%F:option>name%}</option>
+        {%endeach%}
+    </select>
+    <p>{%F:description%}</p>
+</li>
+{%endsection:SingleSelect%}
+
+
+{%section:MultipleSelect%}
+{%F:#size(module.forms.tpl:valuesCount({F:params>settings>value}))%}
+<li>
+    <label for="{%F:attr>id%}">{%F:Name%} {%if('{F:required}' == 1)%}*{%endif%} <!-- {%F:params>settings>label%} --></label><br />
+    <select id="{%F:attr>id%}" name="{%F:attr>name%}" multiple size="{%F:size%}">
+        {%each({F:params>options},k,option)%}
+            <option value="{%F:option>value%}" {%F:option>selected%}>{%F:option>name%}</option>
+        {%endeach%}
+    </select>
+    <p>{%F:description%}</p>
+</li>
+{%endsection:MultipleSelect%}
+
+
+{%section:SingleCheckbox%}
+<li>
+    <label for="{%F:attr>id%}">{%F:Name%} {%if('{F:required}' == 1)%}*{%endif%} <!-- {%F:params>settings>label%} --></label><br />
+    <input id="{%F:attr>id%}" name="{%F:attr>name%}" type="checkbox" {%if('{F:required}' == 1)%}class="{%F:validationEngineClass%}"{%endif%} value="{%F:defaultValue%}" {%if({F:checked})%}checked{%endif%} />
+    <p>{%F:description%}</p>
+</li>
+{%endsection:SingleCheckbox%}
+
+
+{%section:captcha%}
+<li>
+    <p>Введите код с картинки</p>
+    <img id="{%F:attr>id%}_img" onclick="javascript:tmp = new Date();tmp = tmp.getTime();this.src='/captcha.php?fid=form{%F:formId%}&rand='+tmp;" src="/captcha.php?fid=form{%F:formId%}" alt="Нажмите для обновления" />
+    <a href="#" id="updateFormCaptcha{%F:formId%}">обновить</a>
+</li>
+<li>
+    <label for="{%F:attr>id%}">Код подтверждения({%F:length%} {%F:@c(E:declination({"num":"{F:length}","declination":["символ","символа","символов"]}))%}) *</label><br />
+    <input id="{%F:attr>id%}" name="{%F:attr>name%}" class="validate[required,funcCall[checkCaptcha]]" type="text" maxlength="{%F:length%}" />
+</li>
+{%endsection:captcha%}

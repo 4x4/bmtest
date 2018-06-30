@@ -1,0 +1,175 @@
+{%section:_USER%}
+
+
+<div class="col-md-10">
+
+    <div class="panel-body wrapper">
+
+        {%if('{F:action}'=='edit')%}
+        <form id="edit_USER">
+
+            <div class="btn-group m-t m-b">
+                <button class="btn btn-info btn-switch" data-target="users-data" type="button">{user_data}</button>
+                <button class="btn btn-switch" data-target="permissions" type="button">{change_permissions}</button>
+                <button class="btn btn-switch" data-target="change-password" type="button">{change_password}</button>
+            </div>
+
+
+            {%else%}
+
+            <form id="create_USER">
+
+                {%endif%}
+
+
+                <div class="m-t-sm users-data">
+
+                    <div class="checkbox i-checks">
+                        <label>
+                            <input type="checkbox" name="active">
+                            <i></i>{user_is_active}</label>
+                    </div>
+
+
+                    {%if('{F:action}'!='edit')%}
+                    <div class="form-group">
+                        <h5>{user_group}</h5>
+                        <select class="form-control" id="userGroup" name="userGroup"></select>
+                    </div>
+
+                    <div class="form-group">
+                        <h5>{login}</h5>
+                        <input class="form-control" id="login" class="required validate-alphanum" name="login"
+                               type="text"/>
+                    </div>
+
+                    {%else%}
+
+                    <div class="form-group">
+                        <h5>{user_group}</h5>
+                        <input class="form-control xoad-ignore" readonly id="userGroup" name="userGroup">
+                    </div>
+
+
+                    <div class="form-group">
+                        <h5>{login}</h5>
+                        <input class="form-control" id="login" readonly class="required validate-alphanum" name="login"
+                               type="text"/>
+                    </div>
+
+
+                    {%endif%}
+
+
+                    {%if('{F:action}'!='edit')%}
+                    <div class="form-group">
+                        <h5>{password}</h5>
+                        <input class="form-control" id="password" name="password" type="password"/>
+                    </div>
+                    {%endif%}
+
+
+                    <div class="form-group">
+                        <h5>{name}</h5>
+                        <input id="name" name="name" class="form-control"/>
+                    </div>
+
+
+                    <div class="form-group">
+                        <h5>{surname}</h5>
+                        <input id="surname" name="surname" class="form-control"/>
+                    </div>
+
+
+                    <div class="form-group">
+                        <h5>{patronymic}</h5>
+                        <input id="patronymic" name="patronymic" class="form-control"/>
+                    </div>
+
+
+                    <div class="form-group">
+                        <h5>{email}</h5>
+                        <input id="email" name="email" class="form-control"/>
+                    </div>
+
+
+                    <div class="form-group">
+                        <h5>{phone}</h5>
+                        <input id="phone" name="phone" class="form-control"/>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>{avatar}</label>
+                        <div class="input-group">
+                            <input id="avatar" name="avatar" readonly class="form-control validate-selection text-sm"/>
+                            <span class="input-group-btn">
+                                    <a class="fileManagerApplyButton btn btn-default"> <i
+                                            class="fa fa-folder-open-o"></i></a>
+                                </span>
+                            <span class="input-group-btn">
+                                    <a class="fileManagerClearInput btn btn-default"> <i class="fa fa-times"></i></a>                                                    
+                                </span>
+                        </div>
+                    </div>
+
+
+                    <a href="#" class="btn btn-success save">{save}</a>
+
+            </form>
+    </div>
+
+
+    {%if('{F:action}'=='edit')%}
+    <div class="m-t-sm change-password hide">
+
+        <form id="exportPassword_USER">
+            <div class="form-group">
+                <h5>{new_password}</h5>
+                <input id="newPassword" name="newPassword" type="password" class="form-control"/>
+            </div>
+        </form>
+        <a href="#" class="btn btn-info save-new-password">{change_password}</a>
+
+    </div>
+
+
+    <div class="m-t-sm permissions hide">
+
+        <form id="permissions">
+
+            {{#each modules}}
+
+                <div class="checkbox i-checks">
+                    <label>
+                        <input type="checkbox" name="{{this.name}}" value="{{this.name}}">
+                        <i></i>{{this.moduleName}}</label>
+                        
+                        <ul style="margin-left:5px">
+                             {{#each this.acl}}
+                                <li><label><input type="checkbox" name="__{{../this.name}}.{{@key}}" value="{{@key}}"><i></i>{{this}}</label></li>                            
+                             {{/each}}
+                        </ul>
+                </div>
+
+            {{/each}}
+
+
+        </form>
+
+    </div>
+
+
+
+
+    {%endif%}
+
+
+</div>
+
+</div>
+
+
+{%endsection:_USER%}
+
+ 

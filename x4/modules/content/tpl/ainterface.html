@@ -1,0 +1,89 @@
+{%section:showContent%}
+<div class="form-group">
+    <h5>{select_an_article}</h5>
+    <div class="input-group">
+        <input id="contentSource" name="contentSource" readonly class="form-control xoad-ignore">
+        <span class="input-group-btn"><a href="#"
+                                         data-wintext="{content_situation}" data-winwidth="500"
+                                         data-callback="content.onDialogGroupFull"
+                                         data-destination="contentSource" data-topindex="45"
+                                         data-info="_CONTENT" class="xList btn btn-default">
+              {choose}</a> <input name="contentSourceId" id="contentSourceId" type="hidden"></span>
+    </div>
+</div>
+
+
+<div class="form-group">
+    <h5>{leave_blank_if_you_do_not_need_forced_to_choose_another_template_display}</h5>
+    <select class="form-control" id="Template" name="Template"></select>
+</div>
+
+{%endsection:showContent%}
+
+
+{%section:showContentAnnounce%} <br/>
+<p>{select_an_article}</p>
+<input id="showContentName" class="inp-b1 validate-selection"/>
+<input id="contentId" type="hidden"/>
+<a class="button small" href="javascript:void(0)" id="startXXlist">{select}</a>
+<p>{template_withdrawal_articles}</p>
+<select id="aTemplate">
+</select>
+<p>{page_display_articles}</p>
+<select class="validate-selection" id="page" name="page">
+</select>
+{%endsection:showContentAnnounce%}
+
+
+{%section:showContentsList%}
+
+
+<div class="form-group">
+    <h5>{display_group_of_articles}</h5>
+    <select class="form-control" id="category" name="category"></select>
+</div>
+
+
+<div class="form-group">
+    <h5>{pattern_of_output}</h5>
+    <select class="form-control" id="listTemplate" name="listTemplate"></select>
+</div>
+
+
+<div class="form-group">
+    <p>{quantity_displayed_articles}</h5>
+
+        <small>({zero_or_empty_no_restrictions})</small>
+
+        <input id="onPage" class="form-control" type="text" name="onPage" value='0'/>
+</div>
+
+
+<div class="form-group">
+    <h5>{page_display_articles}</h5>
+    <select class="form-control" id="destinationPage" name="destinationPage"></select>
+</div>
+
+
+{%endsection:showContentsList%}
+
+
+{%section:showContentGroupsList%}
+<p>{template}</p>
+<select id="Template"></select>
+
+<p>{page_display_articles}</p>
+<select class="validate-selection" id="page" name="page"></select>
+{%endsection:showContentGroupsList%}
+
+
+{%section:contentServer%}
+<div class="form-group">
+    <h5>{pattern_of_output_instead_of_the_standard}</h5>
+    <select class="form-control" id="Template"></select>
+</div>
+<div class="form-group">
+    <h5>{action_is_performed_by_default}</h5>
+    <select id="secondaryAction" name="secondaryAction" class="form-control"></select>
+</div>
+{%endsection:contentServer%} 

@@ -1,0 +1,304 @@
+@show products list
+{%F:@s(D:getVars())%}
+{%F:#e(D:dump({"value":"{F:value}"}))%}
+
+{%section:catalogCategoryList%}
+
+
+<script>
+
+	document.addEventListener("DOMContentLoaded", function(){
+		$('#servicesMenuItem').addClass('active');
+	
+	});
+	
+</script>
+
+
+{%F:+tpl(TMS:load({"path":"opsio.bi/_modules/extended/paginator.html"}))%}
+
+		{%F:#splitted(plugin.catalog.mf.tpl:splitByCallType({"objects":"{F:objects}"}))%}
+		
+						<div class="col-row">
+							<div class="col">
+								<div class="table">
+									<div class="table_row">
+										<div class="table_row-th">SERVICE</div>
+										<div class="table_row-th">CALLER ID</div>
+										<div class="table_row-th">COUNTRY</div>
+										<div class="table_row-th">VIN</div>
+										<div class="table_row-th">LICENSE PLATE</div>
+										<div class="table_row-th">CUSTOMER NAME</div>
+										<div class="table_row-th">1ST AGENT</div>
+										<div class="table_row-th">2ND AGENT</div>
+										<div class="table_row-th">EVENT START TIME</div>
+										<div class="table_row-th">LAST EVENT</div>
+									</div>
+									
+									   {%each({F:objects},k,val)%}
+
+										<div class="table_row table_row-col" data-href="{%F:val>_main>link%}" >
+											<div class="table_row-header">
+												<div class="table_row-td">{%F:val>service>service%}</div>
+												<div class="table_row-td handleId">{%F:val>service>callerID%}</div>
+												<div class="table_row-td">{%F:val>tovarbase>country%}</div>
+												<div class="table_row-td">{%F:val>service>VIN%}</div>
+												<div class="table_row-td">{%F:val>service>licenseplate%}</div>
+												<div class="table_row-td">{%F:val>tovarbase>firstname%} {%F:val>tovarbase>lastname%}</div>
+												<div class="table_row-td">{%F:val>service>firstAgent%}</div>
+												<div class="table_row-td">{%F:val>service>secondAgent%}</div>
+												<div class="table_row-td">{%F:@d(E:dateFormat({"value":"{F:val>service>startEvent}","format":"d-m-y H:i:s"}))%}</div>
+												<div class="table_row-td">{%F:@d(E:dateFormat({"value":"{F:val>service>lastEvent}","format":"d-m-y H:i:s"}))%}  Assigned manually</div>
+											</div>
+										</div>
+									
+									{%endeach%}
+									
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="tabs-panel" id="onboard">
+					
+					<div class="col-row">
+							<div class="col">
+								<div class="table">
+									<div class="table_row">
+										<div class="table_row-th">SERVICE</div>
+										<div class="table_row-th">CALLER ID</div>
+										<div class="table_row-th">COUNTRY</div>
+										<div class="table_row-th">VIN</div>
+										<div class="table_row-th">LICENSE PLATE</div>
+										<div class="table_row-th">CUSTOMER NAME</div>
+										<div class="table_row-th">1ST AGENT</div>
+										<div class="table_row-th">2ND AGENT</div>
+										<div class="table_row-th">EVENT START TIME</div>
+										<div class="table_row-th">LAST EVENT</div>
+									</div>
+									
+									   {%each({F:splitted>Onboard},k,val)%}
+
+										<div class="table_row table_row-col" data-href="{%F:val>_main>link%}" >
+											<div class="table_row-header">
+												<div class="table_row-td">{%F:val>service>service%}</div>
+												<div class="table_row-td handleId">{%F:val>service>callerID%}</div>
+												<div class="table_row-td">{%F:val>tovarbase>country%}</div>
+												<div class="table_row-td">{%F:val>service>VIN%}</div>
+												<div class="table_row-td">{%F:val>service>licenseplate%}</div>
+												<div class="table_row-td">{%F:val>tovarbase>firstname%} {%F:val>tovarbase>lastname%}</div>
+												<div class="table_row-td">{%F:val>service>firstAgent%}</div>
+												<div class="table_row-td">{%F:val>service>secondAgent%}</div>
+												<div class="table_row-td">{%F:@d(E:dateFormat({"value":"{F:val>service>startEvent}","format":"d-m-y H:i:s"}))%}</div>
+												<div class="table_row-td">{%F:@d(E:dateFormat({"value":"{F:val>service>lastEvent}","format":"d-m-y H:i:s"}))%}  Assigned manually</div>
+											</div>
+										</div>
+									
+									{%endeach%}
+									
+								</div>
+							</div>
+						</div>
+					
+					
+					</div>
+					<div class="tabs-panel" id="unassigned">
+					
+					
+					<div class="col-row">
+							<div class="col">
+								<div class="table">
+									<div class="table_row">
+										<div class="table_row-th">SERVICE</div>
+										<div class="table_row-th">CALLER ID</div>
+										<div class="table_row-th">COUNTRY</div>
+										<div class="table_row-th">VIN</div>
+										<div class="table_row-th">LICENSE PLATE</div>
+										<div class="table_row-th">CUSTOMER NAME</div>
+										<div class="table_row-th">1ST AGENT</div>
+										<div class="table_row-th">2ND AGENT</div>
+										<div class="table_row-th">EVENT START TIME</div>
+										<div class="table_row-th">LAST EVENT</div>
+									</div>
+									
+									   {%each({F:splitted>Unassigned},k,val)%}
+
+										<div class="table_row table_row-col" data-href="{%F:val>_main>link%}" >
+											<div class="table_row-header">
+												<div class="table_row-td">{%F:val>service>service%}</div>
+												<div class="table_row-td handleId">{%F:val>service>callerID%}</div>
+												<div class="table_row-td">{%F:val>tovarbase>country%}</div>
+												<div class="table_row-td">{%F:val>service>VIN%}</div>
+												<div class="table_row-td">{%F:val>service>licenseplate%}</div>
+												<div class="table_row-td">{%F:val>tovarbase>firstname%} {%F:val>tovarbase>lastname%}</div>
+												<div class="table_row-td">{%F:val>service>firstAgent%}</div>
+												<div class="table_row-td">{%F:val>service>secondAgent%}</div>
+												<div class="table_row-td">{%F:@d(E:dateFormat({"value":"{F:val>service>startEvent}","format":"d-m-y H:i:s"}))%}</div>
+												<div class="table_row-td">{%F:@d(E:dateFormat({"value":"{F:val>service>lastEvent}","format":"d-m-y H:i:s"}))%}  Assigned manually</div>
+											</div>
+										</div>
+									
+									{%endeach%}
+									
+								</div>
+							</div>
+						</div>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					</div>
+					<div class="tabs-panel" id="remote">
+					
+					<div class="col-row">
+							<div class="col">
+								<div class="table">
+									<div class="table_row">
+										<div class="table_row-th">SERVICE</div>
+										<div class="table_row-th">CALLER ID</div>
+										<div class="table_row-th">COUNTRY</div>
+										<div class="table_row-th">VIN</div>
+										<div class="table_row-th">LICENSE PLATE</div>
+										<div class="table_row-th">CUSTOMER NAME</div>
+										<div class="table_row-th">1ST AGENT</div>
+										<div class="table_row-th">2ND AGENT</div>
+										<div class="table_row-th">EVENT START TIME</div>
+										<div class="table_row-th">LAST EVENT</div>
+									</div>
+									
+									   {%each({F:splitted>Remote},k,val)%}
+
+										<div class="table_row table_row-col" data-href="{%F:val>_main>link%}" >
+											<div class="table_row-header">
+												<div class="table_row-td">{%F:val>service>service%}</div>
+												<div class="table_row-td handleId">{%F:val>service>callerID%}</div>
+												<div class="table_row-td">{%F:val>tovarbase>country%}</div>
+												<div class="table_row-td">{%F:val>service>VIN%}</div>
+												<div class="table_row-td">{%F:val>service>licenseplate%}</div>
+												<div class="table_row-td">{%F:val>tovarbase>firstname%} {%F:val>tovarbase>lastname%}</div>
+												<div class="table_row-td">{%F:val>service>firstAgent%}</div>
+												<div class="table_row-td">{%F:val>service>secondAgent%}</div>
+												<div class="table_row-td">{%F:@d(E:dateFormat({"value":"{F:val>service>startEvent}","format":"d-m-y H:i:s"}))%}</div>
+												<div class="table_row-td">{%F:@d(E:dateFormat({"value":"{F:val>service>lastEvent}","format":"d-m-y H:i:s"}))%}  Assigned manually</div>
+											</div>
+										</div>
+									
+									{%endeach%}
+									
+								</div>
+							</div>
+						</div>
+					
+					</div>
+					<div class="tabs-panel" id="mine">
+					
+					<div class="col-row">
+							<div class="col">
+								<div class="table">
+									<div class="table_row">
+										<div class="table_row-th">SERVICE</div>
+										<div class="table_row-th">CALLER ID</div>
+										<div class="table_row-th">COUNTRY</div>
+										<div class="table_row-th">VIN</div>
+										<div class="table_row-th">LICENSE PLATE</div>
+										<div class="table_row-th">CUSTOMER NAME</div>
+										<div class="table_row-th">1ST AGENT</div>
+										<div class="table_row-th">2ND AGENT</div>
+										<div class="table_row-th">EVENT START TIME</div>
+										<div class="table_row-th">LAST EVENT</div>
+									</div>
+									
+									   {%each({F:splitted>Remote},k,val)%}
+
+										<div class="table_row table_row-col" data-href="{%F:val>_main>link%}" >
+											<div class="table_row-header">
+												<div class="table_row-td">{%F:val>service>service%}</div>
+												<div class="table_row-td handleId">{%F:val>service>callerID%}</div>
+												<div class="table_row-td">{%F:val>tovarbase>country%}</div>
+												<div class="table_row-td">{%F:val>service>VIN%}</div>
+												<div class="table_row-td">{%F:val>service>licenseplate%}</div>
+												<div class="table_row-td">{%F:val>tovarbase>firstname%} {%F:val>tovarbase>lastname%}</div>
+												<div class="table_row-td">{%F:val>service>firstAgent%}</div>
+												<div class="table_row-td">{%F:val>service>secondAgent%}</div>
+												<div class="table_row-td">{%F:@d(E:dateFormat({"value":"{F:val>service>startEvent}","format":"d-m-y H:i:s"}))%}</div>
+												<div class="table_row-td">{%F:@d(E:dateFormat({"value":"{F:val>service>lastEvent}","format":"d-m-y H:i:s"}))%}  Assigned manually</div>
+											</div>
+										</div>
+									
+									{%endeach%}
+									
+								</div>
+							</div>
+						</div>
+					
+					</div>
+					<div class="tabs-panel" id="position">
+					
+					
+						<div class="col-row">
+							<div class="col">
+								<div class="table">
+									<div class="table_row">
+										<div class="table_row-th">SERVICE</div>
+										<div class="table_row-th">CALLER ID</div>
+										<div class="table_row-th">COUNTRY</div>
+										<div class="table_row-th">VIN</div>
+										<div class="table_row-th">LICENSE PLATE</div>
+										<div class="table_row-th">CUSTOMER NAME</div>
+										<div class="table_row-th">1ST AGENT</div>
+										<div class="table_row-th">2ND AGENT</div>
+										<div class="table_row-th">EVENT START TIME</div>
+										<div class="table_row-th">LAST EVENT</div>
+									</div>
+									
+									   {%each({F:splitted>RemotePosition},k,val)%}
+
+										<div class="table_row table_row-col" data-href="{%F:val>_main>link%}" >
+											<div class="table_row-header">
+												<div class="table_row-td">{%F:val>service>service%}</div>
+												<div class="table_row-td handleId">{%F:val>service>callerID%}</div>
+												<div class="table_row-td">{%F:val>tovarbase>country%}</div>
+												<div class="table_row-td">{%F:val>service>VIN%}</div>
+												<div class="table_row-td">{%F:val>service>licenseplate%}</div>
+												<div class="table_row-td">{%F:val>tovarbase>firstname%} {%F:val>tovarbase>lastname%}</div>
+												<div class="table_row-td">{%F:val>service>firstAgent%}</div>
+												<div class="table_row-td">{%F:val>service>secondAgent%}</div>
+												<div class="table_row-td">{%F:@d(E:dateFormat({"value":"{F:val>service>startEvent}","format":"d-m-y H:i:s"}))%}</div>
+												<div class="table_row-td">{%F:@d(E:dateFormat({"value":"{F:val>service>lastEvent}","format":"d-m-y H:i:s"}))%}  Assigned manually</div>
+											</div>
+										</div>
+									
+									{%endeach%}
+									
+								</div>
+							</div>
+						</div>
+					
+					
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+	
+
+	<div class="overlay-top">
+		<div id="handleReqest" class="modal">
+			<div class="modal-close"><img src="/project/templates/altabeltest.link/_ares/img/png/close-d.png" alt=""></div>
+			<div class="modal-name">Please confirm</div>
+			<div class="modal-title modal-title-green">Caller ID <span></span></div>
+			<div class="modal-title mb-34">Do you want to handle this request?</div>
+			<div class="flex-row">
+				<a href="#" class="btn btn-color-dark_grey mr-8 handleBtn">Handle</a>
+				<a href="#" class="btn btn-color-grey modal-cancel">Cancel</a>
+			</div>
+		</div>
+	</div>
+
+	
+
+{%endsection:catalogCategoryList%}

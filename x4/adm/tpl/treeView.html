@@ -1,0 +1,74 @@
+{%section:treeView%}
+
+  
+ <section class="hbox stretch" id="{{data.module}}" style="display:none">
+                                                                      
+            
+          <aside  class="aside-{{data.treeSize}} bg-white dker b-r col1">
+           
+         {{#if data.customTreeHtml}}
+         
+         {{{data.customTreeHtml}}}                               
+                
+         
+         {{else}}
+                                  
+            <div class="treeBox" style="min-height:{{data.treeHeight}};"></div> 
+            
+            {{/if}} 
+          </aside>
+          
+          
+
+          <aside class="padder">
+
+          <header class="header bg-white b-b clearfix">
+                <div class="row m-t-sm">
+                  <div class="col-sm-8 m-b-xs"> 
+				  
+				  <!--<a class="btn btn-sm btn-default active" data-toggle="class:hide" href="#subNav"><i class="fa fa-caret-right text fa-lg"></i><i class="fa fa-caret-left text-active fa-lg"></i></a>-->
+				  
+                  </div>
+                  <div class="col-sm-4 m-b-xs">
+                    <div class="input-group">
+                      <input  type="text" placeholder="" class="input form-control searchInModuleInput">
+                      <span class="input-group-btn searchInModule"> <button type="submit" class="btn btn-default btn-icon"><i class="fa fa-search"></i></button> </span> </div>
+                  </div>
+                </div>
+              </header>
+              
+<!--<div class="m-b-md">
+              <h3 class="m-b-none">{data.moduleName}</h3>
+            </div> 
+            -->
+          
+           <section class="panel panel-default">
+                  <header class="panel-heading text-right bg-gradient">
+                  <ul class="nav nav-tabs pull-left tabs"></ul>
+           
+                    </ul>
+                    <span class="hidden-sm">&nbsp;</span>
+                  </header>                                    
+                  
+           <section class="vbox col2-inner">
+             
+            </section>
+            
+           </section>
+                
+           
+                    
+            
+            
+          </aside>
+          
+          
+          
+</section>
+        
+        <a data-target="#nav" data-toggle="class:nav-off-screen" class="hide nav-off-screen-block" href="#"></a> 
+        </section>
+        
+        
+        
+{%endsection:treeView%}

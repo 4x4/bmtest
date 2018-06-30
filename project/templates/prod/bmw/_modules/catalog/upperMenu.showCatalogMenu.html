@@ -1,0 +1,46 @@
+{%section:_menu_main_level0%}
+<div class="menu_wrapper" style="display: none">
+    <div class="row">
+        <div class="column">
+
+            <ul class="main_menu menu dropdown" data-dropdown-menu>
+
+                {%F:menuItems%}
+
+            </ul>
+        </div>
+    </div>
+</div>
+
+{%endsection:_menu_main_level0%}
+
+
+               
+{%section:_menu_item_level0%}
+
+<li class="main_menu_item">
+    <a href="{%F:_menu>link%}">{%F:_main>Name%}</a>{%F:_menu>submenu%}
+</li>
+
+{%endsection:_menu_item_level0%}
+
+
+
+{%section:_menu_main_level1%}
+
+        <ul class="menu">
+            {%F:menuItems%}
+        </ul>
+
+
+
+    
+{%endsection:_menu_main_level1%}
+
+
+
+{%section:_menu_item_level1%}
+    
+             <li><a href="{%F:_menu>link%}">{%F:_main>Name%}</a></li>    
+
+{%endsection:_menu_item_level1%}

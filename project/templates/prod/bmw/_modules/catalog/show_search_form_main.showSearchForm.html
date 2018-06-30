@@ -1,0 +1,185 @@
+{%F:#e(D:dump({"value":"{F:value}"}))%}
+
+
+
+
+<div class="columns small-18 large-4">
+    <div class="sidebar">
+        <form action="">
+            <div class="one_block">
+                <p class="title">Sortera efter</p>
+                <a href="">Standard</a>
+                <a href="">Popularitet</a>
+                <a href="">Nyhet</a>
+                <a href="">Pris: lågt till högt</a>
+                <a href="">Pris: högt till lågt</a>
+            </div>
+            <div class="one_block">
+                <p class="title">Pris</p>
+                <a href="">0 kr – 200 kr</a>
+                <a href="" class="active">200 kr – 1000 kr</a>
+                <a href="">1000 kr – 2000 kr</a>
+                <a href="">2000 kr – 5000 kr</a>
+            </div>
+            <div class="one_block">
+                <p class="title">Varumärke</p>
+                <ul class="checkbox_list square">
+                    <li><input id="brand0" type="checkbox"><label for="brand0">Apple</label></li>
+                    <li><input id="brand1" type="checkbox"><label for="brand1">Samsung</label></li>
+                    <li><input id="brand2" type="checkbox"><label for="brand2">Bosh</label></li>
+                    <li><input id="brand3" type="checkbox"><label for="brand3">LG</label></li>
+                    <li><input id="brand4" type="checkbox"><label for="brand4">Google</label></li>
+                </ul>
+            </div>
+            <div class="one_block">
+                <p class="title">Färg</p>
+                <ul class="checkbox_list round_color">
+                    <li><input id="color0" type="checkbox"><label class="red" for="color0">Röd</label></li>
+                    <li><input id="color1" type="checkbox"><label class="blue" for="color1">Blå</label></li>
+                    <li><input id="color2" type="checkbox"><label class="green" for="color2">Grön</label></li>
+                    <li><input id="color3" type="checkbox"><label class="grey" for="color3">Vit</label></li>
+                    <li><input id="color4" type="checkbox"><label class="black" for="color4">Svart</label></li>
+                </ul>
+            </div>
+            <div class="one_block tags">
+                <p class="title">Tags</p>
+                <p>Elektronik, Gadgets, Techno, Tillbehör, ljud, smartphones</p>
+            </div>
+            <a class="reset_filter_btn"><i class="ion-android-close"></i>Rensa allt filter</a>
+        </form>
+    </div>
+</div>
+
+
+{%section:showSearchForm%}
+
+
+
+<div class="columns small-18 large-4">
+    <div class="filterHolder">
+        <div class="sidebar">
+        <form id="mainFilter" method="GET">
+    
+            {%F:fields%}
+            
+    
+            <a href="/catalog/{%F:request>requestActionPath%}"  class="reset_filter_btn"><i class="ion-android-close"></i>Rensa allt filter</a>
+    
+        </form>
+        </div>
+    </div>
+</div>
+{%endsection:showSearchForm%} 
+
+
+
+{%section:interval-currencyIshop%}
+
+
+{%F:#currency(module.ishop.tpl:getCurrentCurrency())%}
+
+
+<div class="one_block" style="width: 80%;">
+
+    <p class="title">Price {%F:currency>params>currencySymbol%}</p>
+
+    <div id="slider-range" class="slider-range"></div>
+    <p class="amount_block after_clear">
+        <input value="{%F:filterValues>min>nonDiscountedValue%}" type="text" id="amount" data-currency="" class="col-xs-6 price_low" readonly style="border:0;" data-infiltermin="{%F:field>_filter>inFilterMin%}">
+
+        <input value="{%F:filterValues>min>nonDiscountedValue%}" type="hidden" name="{%F:field>_filter>filterNameMin%}" readonly="" class="price_low_real">
+
+        <input value="{%F:filterValues>max>nonDiscountedValue%}" type="text" id="amount1" class="col-xs-6 price_high"  data-currency="" readonly style="border:0;" data-infiltermax="{%F:field>_filter>inFilterMax%}">
+        <input value="{%F:filterValues>max>nonDiscountedValue%}" type="hidden" name="{%F:field>_filter>filterNameMax%}" readonly="" class="price_high_real">
+    </p>
+</div>
+
+
+
+{%endsection:interval-currencyIshop%}
+
+
+
+{%section:equal-input%}
+
+<div class="one_block" style="width: 90%">
+        
+        <p class="title">{%F:field>alias%}</p>
+
+            <!--<p>{%F:field>alias%}</p>-->
+            <!--{%F:field>property%}-->
+
+                <ul class="checkbox_list square">
+
+                {%each({F:filterValues},k,v)%}
+                     
+                    <li>
+                        <input {%if('{F:v>_filter>active}')%}  {%if('{F:v>_filter>inFilter}')%} checked {%endif%} {%endif%} {%if(!'{F:v>_filter>active}')%} disabled {%endif%}   value="{%F:v>value%}" type="checkbox" name="{%F:v>_filter>filterName%}" id="{%F:field>property%}{%F:each.iterator%}">
+                        
+                        <!--{%F:v>_filter>active%}-->
+
+                        <label  {%if(!'{F:v>_filter>active}')%} style="color:#EEE" {%endif%}   for="{%F:field>property%}{%F:each.iterator%}">
+                          
+                            {%F:v>value%}
+                            
+                            &nbsp;({%F:v>_filter>counter%})
+
+                        </label>
+                    </li>
+
+                {%endeach%}
+
+            </ul>
+        </div>
+
+                                            
+{%endsection:equal-input%}
+ 
+
+ 
+{%section:equal-selector%}
+             
+    <div class="manufacturer">
+       
+        <p class="title">{%F:field>alias%}</p>
+        
+        <div class="col-xs-12 {%if(count({F:filterValues})>4)%} flexcroll {%endif%}">
+            <!--<p>{%F:field>alias%}</p>-->
+            <!--{%F:field>property%}-->
+            
+            <ul>
+				    
+                {%each({F:filterValues},k,v)%}
+              
+                    <li>
+				        <!--{%F:v>_filter>active%}-->
+                        <input {%if('{F:v>_filter>active}')%} {%if('{F:v>_filter>inFilter}')%} checked {%endif%} {%endif%} {%if(!'{F:v>_filter>active}')%} disabled {%endif%}   value="{%F:v>value>_main>id%}" type="checkbox" name="{%F:v>_filter>filterName%}" id="{%F:field>property%}{%F:each.iterator%}">
+                        
+                        <label {%if(!'{F:v>_filter>active}')%} style="color:#EEE" {%endif%}  for="{%F:field>property%}{%F:each.iterator%}">                                      
+                        
+					        {%F:v>value>_main>Name%}&nbsp;({%F:v>_filter>counterActive%})
+				        
+                        </label>
+                    </li>
+                    
+                {%endeach%}
+               
+            </ul>
+        </div>
+    </div>      
+
+{%endsection:equal-selector%}
+ 
+   
+ 
+ 
+ 
+   
+
+ 
+  
+
+ 
+ 
+
+             

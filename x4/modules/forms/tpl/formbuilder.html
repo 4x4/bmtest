@@ -1,0 +1,68 @@
+{%section:formbuilder%}
+<link type="text/css" href="tests/formbuilder_css/smoothness/jquery-ui-1.8.7.custom.css" media="screen" rel="stylesheet" /> 
+<link type="text/css" href="tests/formbuilder_css/uni-form.css" media="screen" rel="stylesheet" />  
+<link type="text/css" href="tests/formbuilder_css/default.uni-form.css" media="screen" rel="stylesheet" />  
+<link type="text/css" href="tests/formbuilder_css/jquery.qtip.css" media="screen" rel="stylesheet" />
+<link type="text/css" href="tests/formbuilder_css/jquery.formbuilder.core.css" media="screen" rel="stylesheet" />  
+<link type="text/css" href="tests/formbuilder_css/jquery.formbuilder.plaintext.css" media="screen" rel="stylesheet" />
+<link type="text/css" href="tests/formbuilder_css/jquery.colorpicker.css" media="screen" rel="stylesheet" />  
+<link type="text/css" href="tests/formbuilder_css/jquery.fontpicker.css" media="screen" rel="stylesheet" />
+
+<div id="formBuilderContainer">
+  <div id="header"><h1>JQuery Form Builder Plugin</h1></div>
+  <div id="builderPalette">
+     <div class="floatingPanelIdentifier"></div>
+     <div class="floatingPanel">
+			<div id="paletteTabs">
+				<ul>
+					<li><a href="#addField">Add Field</a></li>
+					<li><a href="#formSettings">Form Settings</a></li>
+				</ul>
+				
+                <div id="addField" class="settingsBlock">
+				  <strong>Standard Fields</strong>
+					<div id="standardFields"></div>
+					<br />
+				  <strong>Alt Fields</strong>
+				  <div id="altFields"></div>
+				</div>
+                
+				<div id="formSettings" class="settingsBlock">
+                <form id="create_FORM">
+					<fieldset class="language">
+					<legend>
+					<label for="language">Language: </label>
+					<select id="language">
+					  <option value="en_EN">English</option>
+					  <option value="ru_RU">Русский</option>
+					</select>
+					</legend>
+					</fieldset>	
+					<div class="general"></div>
+                </form>								
+				</div>
+                
+			</div>     
+     </div>
+  </div>
+  <form id="builderForm" action="#" class="uniForm">
+      <input type="hidden" id="Name" name="Name" />
+      <input type="hidden" id="settings" name="settings" />
+      
+      <div id="dynamicFieldsets">
+            <div id="fieldsetPanel_0" class="fieldsetPanel" style="float: left; width: 290px;">
+                <div class="fieldsetHeading"></div>
+                    <fieldset class="connectedSortable">
+                        <div id="emptyBuilderPanel_0" class="emptyFieldsetPanel">Start adding some fields from the menu on the left.</div>
+                    </fieldset>
+                    <input type="hidden" id="fieldsets[0].id" name="fieldsets[0].id" />
+                    <input type="hidden" id="fieldsets[0].Name" name="fieldsets[0].Name" />
+                    <input type="hidden" id="fieldsets[0].settings" name="fieldsets[0].settings" />
+		    </div>
+      </div>
+      
+      <a href="#" class="green-button save">{save}</a>
+      <!--<input type="submit" name="create" class="save" value="Create" id="create" />-->
+  </form>
+</div>
+{%endsection:formbuilder%}

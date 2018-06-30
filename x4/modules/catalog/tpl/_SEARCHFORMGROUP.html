@@ -1,0 +1,28 @@
+{%section:_SEARCHFORMGROUP%}
+
+
+{%if('{F:action}'=='edit')%}
+<form id="edit_SEARCHFORMGROUP">
+    {%else%}
+    <form id="create_SEARCHFORMGROUP">
+
+        {%endif%}
+
+        <div class="panel-body wrapper">
+
+            <div class="form-group">
+                <label class="control-label">{searchformgroup_alias}:</label>
+                <input class="form-control validate[required]" id="Name" name="Name" value="">
+            </div>
+
+
+            <a class="btn btn-success m-b-sm save">
+                {save}
+            </a>
+
+        </div>
+    </form>
+
+
+    {%endsection:_SEARCHFORMGROUP%}
+

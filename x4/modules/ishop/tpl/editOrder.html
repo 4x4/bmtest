@@ -1,0 +1,367 @@
+{%section:order%}
+
+<section class="scrollable wrapper">
+
+    <div class="row">
+        <div class="col-md-10 m-b-sm">
+            <a class="btn btn-info" href="#e/ishop/orders/"> <i class="fa fa-angle-double-left"></i>
+                {back_to_orders}</a>
+        </div>
+    </div>
+
+    <form id="editOrderForm">
+        <div class="row">
+            <div class="col-md-5">
+                <section class="panel panel-default">
+                    <header class="panel-heading"><h4> {information_about_order}</h4></header>
+
+                    <table width="100%" class="table table-striped">
+
+                        <tr>
+                            <th>{change_the_status_of_your_order}
+                            </th>
+                            <td><select class="form-control" name="status" id="status"></select></td>
+                        </tr>      
+                        
+                        <tr>
+                            <th>{order_type}
+                            </th>
+                            <td>  <select id="orderType" name="orderType" class="form-control"></select></td>
+                        </tr>      
+                        <tr>
+                            <td>{date_and_time_of_receipt_of_the_order}
+                            </th>
+                            <td><strong>{%F:@ate(E:dateFormat({"value":"{F:date}","format":"d-m-Y H:i:s"}))%}</strong>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>{paysystem}</td>
+                            <td>{%F:paysystem%}</td>
+                        </tr>
+
+                        <tr>
+                            <td>{paysystem_options}</td>
+                            <td>{%F:paysystem_order_num%}</td>
+                        </tr>
+
+                        <tr>
+                            <td>{comments}</td>
+                            <td>{%F:comments%}</td>
+                        </tr>
+
+                        <tr>
+                            <td>{notes}</td>
+                            <td>{%F:notes%}</td>
+                        </tr>
+
+
+                    </table>
+
+                </section>
+
+
+                <section class="panel panel-default">
+                    <header class="panel-heading"><h4> {information_about_cost}</h4></header>
+
+                    <table width="100%" class="table table-striped">
+
+
+                        <tr>
+                            <td>{total_sum}</td>
+                            <td>{%F:total_sum%}</td>
+                        </tr>
+
+
+                        <tr>
+                            <td>{currency}</td>
+                            <td>{%F:currency%}</td>
+                        </tr>
+
+
+                        <tr>
+                            <td>{discount_sum}</td>
+                            <td><input class="form-control input-sm" value="{%F:discount_sum%}" name="discount_sum"
+                                       id="discount_sum"></td>
+                        </tr>
+
+                        <tr>
+                            <td>{order_sum_with_discount}</td>
+                            <td><input class="form-control input-sm" value="{%F:orderSums>orderTotalSumWithDiscount%}"
+                                       readonly></td>
+
+                        <tr>
+                            <td>{total_all}</td>
+                            <td><input class="form-control input-sm" value="{%F:orderSums>orderTotalSum%}" readonly>
+                            </td>
+                        </tr>
+
+                    </table>
+
+                </section>
+
+
+            </div>
+
+
+            <div class="col-md-5">
+                <section class="panel panel-default">
+                    <header class="panel-heading"><h4>{information_about_the_customer}</h4></header>
+
+                    <table width="100%" class="table table-striped">
+                        <tr>
+                            <td>{customer}
+                            </th>
+                            <td>{%F:name%}</td>
+                        </tr>
+
+                        <tr>
+                            <td>{email}
+                            </th>
+                            <td>{%F:email%}</td>
+                        </tr>
+
+                        <tr>
+                            <td>{phone2}</td>
+                            <td>{%F:phone%}</td>
+                        </tr>
+
+                    </table>
+                </section>
+
+
+                <section class="panel panel-default">
+                    <header class="panel-heading"><h4>{information_about_delivery}</h4></header>
+
+                    <table width="100%" class="table table-striped">
+                        <tr>
+                            <td>{delivery_address}</td>
+                            <td>{%F:address%}</td>
+                        </tr>
+
+                        <tr>
+                            <td>{city}</td>
+                            <td>{%F:city%}</td>
+                        </tr>
+
+                        <tr>
+                            <td>{street}</td>
+                            <td>{%F:street%}</td>
+                        </tr>
+
+                        <tr>
+                            <td>{house}</td>
+                            <td>{%F:house%}</td>
+                        </tr>
+
+                        <tr>
+                            <td>{room}</td>
+                            <td>{%F:room%}</td>
+                        </tr>
+
+
+                        <tr>
+                            <td>{delivery_time}</td>
+                            <td>{%F:deliv_time%}</td>
+                        </tr>
+
+                        <tr>
+                            <td>{type_delivery}</td>
+                            <td><select class="form-control" name="delivery_id" id="delivery_id"></select></td>
+                        </tr>
+
+                        <tr>
+                            <td>{delivery_cost}</td>
+                            <td>
+                                <input class="form-control input-sm" value="{%F:delivery_price%}" name="delivery_price"
+                                       id="delivery_price">
+                            </td>
+                        </tr>
+
+                    </table>
+                </section>
+
+            </div>
+            
+            <div class="col-md-10">
+            
+            
+             <section class="panel panel-default">
+                    <header class="panel-heading"><h4>{by_channel}</h4></header>
+
+                    <table width="100%" class="table table-striped">
+                        <tr>
+                            <td>{typ}</td>
+                            <td>{%F:typ%}</td>
+                        </tr>
+
+                        <tr>
+                            <td>{src}</td>
+                            <td>{%F:src%}</td>
+                        </tr>
+
+                      
+                
+
+                        <tr>
+                            <td>{cmp}</td>
+                            <td>{%F:cmp%}</td>
+                        </tr>
+
+                        <tr>
+                            <td>{cnt}</td>
+                            <td>{%F:cnt%}</td>
+                        </tr>
+
+                           <tr>
+                            <td>{cpg}</td>
+                            <td>{%F:cpg%}</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>{ep}</td>
+                            <td>{%F:ep%}</td>
+                        </tr>
+                        
+                         <tr>
+                            <td>{vst}</td>
+                            <td>{%F:vst%}</td>
+                        </tr>
+                        
+                           <tr>
+                            <td>{uag}</td>
+                            <td>{%F:uag%}</td>
+                        </tr>
+
+                        <tr>
+                            <td>{trm}</td>
+                            <td>{%F:trm%}</td>
+                        </tr>
+
+              
+                          
+                          <tr>                        
+                              <td>{mdm}</td>
+                                <td>{%F:utm_medium%}</td>   
+                            </tr>   
+                            
+                            <tr>                        
+                              <td>{referal}</td>
+                                <td>{%F:referal%}</td>   
+                            </tr>   
+                            
+                            <tr>                        
+                              <td>{referal_time}</td>
+                                <td>{%F:referal_time%}</td>   
+                            </tr>   
+                        
+                    </table>
+                </section>
+            
+            </div>
+
+
+        </div>
+
+
+        <div class="checkbox i-checks">
+            <label>
+                <input type="checkbox" name="notifyClient">
+                <i></i>{notify_user_about_changes}</label>
+        </div>
+    </form>
+
+    <div class="row m-b-lg">
+        <div class="col-md-10">
+            <a class="btn btn-primary save" href="#">{save}</a>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-10">
+            <section class="panel panel-default">
+                <div class="panel-heading b-b"><h4>{goods}</h4></div>
+
+                <div class="panel-body" class="m-t-lg">
+                    <div id="xGoodsList" style="min-height:400px">
+
+                    </div>
+                </div>
+                </sections>
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+<!--
+
+<div class="pw-edit big-window">
+  <form id="order">
+    
+  </form>
+  <br/>
+  <p>{data_order}</p>
+  <table cellspacing="4" cellpadding="4" border="0" width="100%"  class="s-table">
+    <thead>
+      <tr>
+        <th width="100">{date_and_time_of_receipt_of_the_order}</th>
+        <th width="30">{currency}</th>
+        <th width="200">{delivery_address}</th>
+        <th width="70">{phone2}</th>
+        <th width="70">{delivery_time}</th>
+        <th width="70">{type_delivery}</th>
+        <th width="200">{comment2}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{%F:date%}</td>
+        <td>{%F:currency%}</td>
+        <td>{%F:address%}</td>
+        <td>{%F:phone%}</td>
+        <td>{%F:deliv_time%}</td>
+        <td>{%F:delivery_type%}</td>
+        <td>{%F:comments%}</td>
+      </tr>
+    </tbody>
+  </table>
+  <br/>
+  <p>{information_about_the_customer}</p>
+  <table cellspacing="4" cellpadding="4" border="0" width="100%"  class="s-table">
+    <thead>
+      <tr>
+        <th width="150">{customer}</th>
+        <th width="100">{email}</th>
+        <th width="50">{notices}</th>
+        <th width="100">{personal_code}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{%F:fio%}</td>
+        <td>{%F:email%}</td>
+        <td>{%F:sendspecial%}</td>
+        <td>{%F:uniq_id%}</td>
+      </tr>
+    </tbody>
+  </table>
+  <br/>
+  <p>{ordered_goods}</p>
+  <div id="xgoodslist" style="height:300px"></div>
+    <table cellspacing="4" cellpadding="4" border="0" width="100%" class="s-table">
+    <thead>
+      <tr>
+        <td align="right" width="380">{amount_of_order}:</td>
+        <td width="70">{%F:tsum%}</td>
+      </tr>
+    </thead>
+  </table>
+</div>
+
+-->
+{%endsection:order%}

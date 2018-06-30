@@ -1,0 +1,889 @@
+@ishop basket template
+{%F:@s(D:getVars())%}
+{%F:#e(D:dump({"value":"{F:value}"}))%}
+
+{%section:ishopCart%}
+
+
+                  <div class="two_col_cart">
+        <div class="row">
+            <div class="columns small-18 large-14">
+                <p class="title_section"><b>Din</b> varukorg</p>
+                <div class="table_wrap_scroll">
+                
+                <form id="order" action="{%F:orderLink%}" method="POST">  
+                
+                    <table class="cart_table">
+                        <tbody>
+                            <tr>
+                                <th class="product">Produktnamn</th>
+                                <th class="price">Pris</th>
+                                <th class="quatity">Kvantitet</th>
+                                <th class="total">Total</th>
+                                <th></th>
+                            </tr>
+                            
+                            {%each({F:objects},id,val)%}
+                            <tr>
+                                <td>
+                                    <div class="td_block">
+                                        <div class="img_block">
+                                            <img src="{%F:val>object>tovarbase>thumb%}" alt="">
+                                        </div>
+                                        <div class="text_block">
+                                            <p class="name">{%F:val>object>_main>Name%}</p>
+                                            
+                                            
+                                        {%F:#objectProps(module.catalog.tpl:getAliasedParams({"object":"{F:val>object}","include":["specials.brand"],"clearEmpty":"true"}))%}
+                                
+
+
+                     <!--   <ul>
+                  
+                             {%each({F:objectProps},key,value)%}
+                             
+                                <p class="stil">> Stil: <span class="value">Klassisk</span></p>
+                                <li>  - {%F:value>alias%}:  {%if(is_array({F:value>value}))%}  {%F:value>value>_main>Name%}   {%else%}   {%F:value>value%} {%endif%}</li>                                
+                             
+                             {%endeach%}                                
+                             
+                            </ul>-->
+                                         
+                                            
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <p class="price">{%F:@v(module.ishop.tpl:transformToCurrencyFormat({"value":"{F:val>price}","toMain":"true"}))%} <span class="curency">kr</span></p>
+                                </td>
+                                <td class="quatity_td">                                
+                                    <input name="order[{%F:id%}][count]"  type="text" data-price="{%F:val>price%}" value="{%F:val>count%}"  min=1 type="number" >
+                                </td>
+                                <td>
+                                    <p class="price"> {%F:@vz(module.ishop.tpl:transformToCurrencyFormat({"value":"{F:val>priceSum}","toMain":"true"}))%} <span class="curency">kr</span></p>
+                                </td>
+                                <td>
+                                    <div class="close_block">
+                                        <a href="{%F:val>removeLink%}" class="close_btn"><i class="ion-android-close"></i></a>
+                                    </div>
+
+                                </td>
+                            </tr>
+                                {%endeach%}
+                        </tbody>
+                    </table>
+                </form>
+                </div>
+                <div class="under_table_line">
+                    <div class="back">
+                        <a href="#">
+                            <i class="ion-ios-arrow-back"></i>
+                            Fortsätt handla
+                        </a>
+                    </div>
+
+                    <a href="{%F:removeAll%}" class="remove_btn"><i class="ion-android-close"></i>Rensa alla</a>
+                </div>
+                <div class="cupon_block">
+                    <select name="rabat" id="rabat" class="cart_select">
+                        
+                        <option value="">Rabattkupong</option>
+                    </select>
+                    <p>Ange din kupongkod om du har en.</p>
+                    <input type="text" placeholder="Kupongskod">
+                    <a href="#" class="square_btn">Använd kupong</a>
+                </div>
+            </div>
+            <div class="columns small-18 large-4">
+                <div class="cart_total">
+                    <p class="title">Sammanfattning</p>
+                    <div class="small_total_tr">
+                        <p>Total</p>
+                        <p class="price"> {%F:@zvz(module.ishop.tpl:transformToCurrencyFormat({"value":"{F:orderSum}","toMain":"true"}))%} <span class="curency">kr</span></p>
+                    </div>
+                    <a href="#" class="round_btn submitOrder">Fortsätt till utcheckningen</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+{%endsection:ishopCart%}
+
+
+
+
+
+
+
+
+{%section:cartEmpty%}
+
+   <p class="cartIsEmpty">Din vagn är tom</p>
+
+{%endsection:cartEmpty%}
+
+
+
+
+
+
+{%section:ishopOrder%}
+
+
+
+
+
+<div class="two_col_sections checkout_two_col">
+    <form id="sendOrder" action="/cart/~submitOrder" method="POST">
+    <div class="row">
+
+
+        <div class="column small-18 large-14">
+            <div class="left_col">
+                <div class="question_line text-center">
+                    <span class="question_icon"><i class="ion-ios-chatbubble"></i></span>
+                    <span class="question">Har du en kupong?</span>
+                    <a href="#" class="question_link">Klicka här för att ange din kod</a>
+                </div>
+
+
+                {%F:#user(module.fusers.tpl:getUser())%}
+
+                <p class="title">Faktureringsuppgifter</p>
+                <div class="input_line">
+
+                    <div class="input_block half">
+                        <label for="surname">Efternamn*</label>
+                        <input type="text" placeholder="Efternamn" name="surname" class="validate[required]" value="{%F:user>userdata>surname%}" id="surname" >
+
+                    </div>
+
+
+
+
+                    <div class="input_block half">
+                        <label for="name">Namn*</label>
+                        <input type="text" placeholder="Namn" class="validate[required]"  name="name" value="{%F:user>userdata>name%}"  id="name" >
+                    </div>
+                </div>
+
+
+                <div class="input_line">
+
+                    <div class="input_block half">
+                        <label for="lastname">Efternamn*</label>
+                        <input type="text" name="lastname" class="validate[required]"  value="{%F:user>userdata>patronymic%}" type="text" id="lastname">
+
+                    </div>
+
+
+                    <div class="input_block half">
+                        <label for="phone">Telefon*</label>
+                        <input type="text" name="phone" class="validate[required]"  value="{%F:user>userdata>phone%}" type="text" id="phone">
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="input_line">
+
+                    <div class="input_block half">
+                        <label for="city">Stad*</label>
+                        <input class="validate[required]" type="text" id="city" name="city" >
+                    </div>
+
+
+                    <div class="input_block half">
+                        <label for="street">Gata*</label>
+                        <input class="validate[required]" type="text" id="street" name="street">
+                    </div>
+                </div>
+
+
+
+                <div class="input_line">
+                    <div class="input_block">
+                    <label for="email">E-mail*</label>
+                    <input  class="validate[required,custom[email]]" value="{%F:user>userdata>email%}" type="text" name="email" id="email">
+                </div>
+                </div>
+
+                <div class="input_line">
+                    <div class="input_block">
+                        <label for="house">Hus*</label>
+                        <input type="text" class="validate[required]" type="text" id="house" name="house" >
+                    </div>
+                </div>
+                <div class="input_line">
+                    <div class="input_block">
+                        <label for="room">Rum*</label>
+                        <input type="text" class="validate[required]" type="text" id="room" name="room" >
+                    </div>
+                </div>
+
+
+                <div class="input_line">
+                    <div class="input_block">
+                        <label for="email">Email*</label>
+                        <input class="validate[required,custom[email]]" value="{%F:user>userdata>email%}" type="text" name="email" id="email">
+                    </div>
+                </div>
+
+
+                <div class="input_line">
+                    <div class="input_block">
+                        <label for="comments">Kommentarer</label>
+                        <textarea id="comments" name="comments" placeholder=""></textarea>
+                    </div>
+                </div>
+
+
+                <div class="explanatory_text">
+                    <p>Skapa ett konto genom att ange informationen nedan. Om du är en återkommande kund, vänligen logga in längst upp på sidan.</p>
+                </div>
+
+
+            </div>
+        </div>
+
+
+        {%F:#cart(module.ishop.tpl:calculateShopCart())%}
+
+        <div class="column small-18 large-4">
+            <div class="right_col">
+                <p class="title">Du beställer</p>
+                <div class="small_table_order">
+
+                    {%F:#cartItems(module.ishop.tpl:getCart())%}
+
+                    {%each({F:cartItems},k,obj)%}
+
+                    {%F:#category(module.catalog.tpl:getNode({"id":"{F:obj>object>_main>ancestor}"}))%}
+
+                    <div class="tr">
+                        <div class="img_block">
+                            <img src="{%F:obj>object>tovarbase>image%}" alt="">
+                        </div>
+                        <div class="text_block">
+                            <p class="name">{%F:obj>object>_main>Name%}</p>
+                            <p class="category">{%F:category>_main>Name%}</p>
+                            <p class="quantity">ANTAL: <span class="num">{%F:obj>count%}</span></p>
+                            <p class="price">{%F:obj>priceSum%}<span class="curency">kr</span></p>
+                        </div>
+
+                    </div>
+                    {%endeach%}
+
+                </div>
+                <div class="small_total_tr">
+                    <p>Total</p>
+                    <p class="price">{%F:cart>orderSum%} <span class="curency">kr</span></p>
+                </div>
+                <div class="types_payment_table">
+                    <div class="tr">
+                        <p>Betalningsmetod</p>
+                    </div>
+                    <div class="tr">
+                        <input type="radio" name="browser" value=""> <label for="">Kontrollera betalningar</label>
+                    </div>
+                    <div class="tr with_img">
+                        <input type="radio" name="browser" value=""> <label for="">PayPal</label>
+                        <div class="img_block">
+                            <img src="/project/templates/opsio.bi/_ares/img/checkout_payment.png" alt="">
+                        </div>
+                    </div>
+                    <div class="tr grey_text">
+                        <p>Vad är PayPal?</p>
+                        <p>Betala via PayPal; du kan betala med din kredit kort om du inte har ett PayPal-konto.</p>
+                    </div>
+                </div>
+                <a href="#" class="round_btn sendOrder">beställa</a>
+            </div>
+        </div>
+    </div>
+
+
+
+</form>
+</div>
+
+
+
+{%endsection:ishop_order%}
+
+
+
+{%section:ishop_order_submit_ok%}
+
+   
+                       
+                <div class="dotted_content">
+                    <div class="zakaz_priniat">
+					
+					
+					<div class="custom_features">
+                        
+						{%if('{F:paysystem}'=='erip')%}
+						
+							<p>Номер заказа в cистеме «Расчет» (ЕРИП):<strong> {%F:paysystem_order_num%}</strong></p> 
+						
+                        {%else%}
+                        
+                            <p>Ваш номер заказа:<strong> {%F:id%}</strong></p> 
+                        
+						{%endif%}						
+						
+                        
+                        {%F:paysystemHtml%}
+						
+                        <p>Также на указанный Вами адрес электронной почты выслано письмо с данными заказа. Если возникли вопросы, обращайтесь к нам по указанным ниже данным.</p>
+                        <ul>
+                            <li><b>Телефон: 265-12-31 (32)</b></li>
+                            <li><b>Факс: 265-12-33</b></li>
+                            <li><b>e-mail:</b> <a class="grey_a" href="">info@avex.by</a></li>
+                        </ul>
+                        <div class="two_buttons">
+                            <a class="white_button" href="/about/news">смотреть новости и акции</a>
+                            <a class="red_button" href="/catalog">продолжить покупки</a>
+                        </div>
+                    </div>
+					
+					
+                        
+
+						
+                    </div>
+                </div>
+
+
+
+{%endsection:ishop_order_submit_ok%}
+
+
+{%section:ishop_order_submit_failed%}
+
+<div class="two_col_sections checkout_two_col">
+
+        <div class="row">
+
+            Beställning inte skickad - inga varor i kundvagnen.
+
+        </div>
+</div>
+
+{%endsection:ishop_order_submit_failed%}
+
+
+{%section:ishop_cart_email%}
+
+<h1>Заказ № {%F:id%}</h1>
+<table cellpadding="4" cellspacing="3" border="1">
+ 
+    <tr>
+        <td>Заказчик</td>
+        <td>{%F:name%}</td>
+    </tr>
+        <tr>
+        <td>E-mail</td>
+        <td>{%F:email%}</td>
+    </tr>
+	
+	<tr>
+        <td>Статус</td>
+        <td>{%F:status_name%}</td>
+    </tr>
+	
+    <tr>
+        <td colspan="2"><strong>Адрес</strong></td>
+   
+    </tr>
+   
+      <tr>
+        <td>Город</td>
+        <td>{%F:city%}</td>
+    </tr>
+   
+    
+      <tr>
+        <td>Улица</td>
+        <td>{%F:street%}</td>
+    </tr>
+    
+    <tr>
+        <td>Дом</td>
+        <td>{%F:house%}</td>
+    </tr>
+    
+      <tr>
+        <td>Квартира</td>
+        <td>{%F:room%}</td>
+        
+    </tr>
+
+    <tr>
+        <td>Телефон</td>
+        <td>{%F:phone%}</td>
+    </tr>
+    
+    <tr>
+        <td>Тип доставки</td>
+        <td>{%F:delivery>deliveryInfo>params>Name%}</td>
+    </tr>
+
+	 <tr>
+        <td>Стоимость доставки</td>
+        <td>
+		
+
+		{%if({F:delivery>deliveryInfo>basic}=='belarus_or_another_countries')%}
+				
+				Ожидайте расчета.
+			{%else%}
+			
+			{%F:@delivery_price(E:numberFormat({"decimals":"2","decpoint":".","thousands":" "}))%}</td>
+		{%endif%}
+		
+    </tr>
+
+    
+    <tr>
+        <td>Комментарий к заказу</td>
+        <td>{%F:comments%}</td>
+    </tr>
+    
+	{%if({F:status}=='1104')%}
+  
+  
+    <tr>
+        <td>Примечание</td>
+        <td>{%F:notes%}</td>
+    </tr>
+    
+  
+{%else%}
+	
+	
+  {%if({F:paysystem})%}  
+	    <tr>
+            <td>Система оплаты</td>
+            <td>{%F:paysystem%}</td>
+        </tr>
+  {%endif%}
+	
+	
+	{%if('{F:paysystem}'=='erip')%}
+	<tr>
+		<td>Номер заказа в системе ЕРИП</td>
+		<td> {%F:paysystem_order_num%}</td>
+		
+		
+    </tr>
+	{%endif%}
+    
+    <tr>
+        <td>Валюта</td>
+        <td>BYN</td>
+    </tr>
+</table>
+
+<h2>Заказанные товары</h2>
+<table cellpadding="5" cellspacing="4" border="1">
+<tr>
+    <th>Фото</th>
+    <th>Наименование</th>    
+    <th>Количество</th>   
+	<th>Цена</th>   
+	<th>Сумма</th>   
+    
+    
+    </tr>
+    {%->:ishop_cart_object_email%}
+
+</table>
+
+<table cellpadding="5" cellspacing="4" border="1">
+<tr>
+<td>Сумма стоимости товаров </td> <td>{%F:@total_sum(E:numberFormat({"decimals":"2","decpoint":".","thousands":" "}))%} </td>
+</tr>
+<tr>
+<td>Стоимость доставки </td> <td>
+
+
+
+        {%if({F:delivery>deliveryInfo>basic}=='belarus_or_another_countries')%}
+                
+                Ожидайте расчета.
+            {%else%}
+            
+            {%F:@delivery_price(E:numberFormat({"decimals":"2","decpoint":".","thousands":" "}))%}</td>
+        {%endif%}
+
+
+
+</td>
+</tr>
+<tr>
+<td>Итого:</td> <td>
+
+{%if({F:status}=='1104')%}
+  
+  Ожидайте расчета.
+  
+{%else%}
+
+{%F:@orderTotalSum(E:numberFormat({"decimals":"2","decpoint":".","thousands":" "}))%}
+
+{%endif%}
+
+ </td>
+</tr>
+</table>
+
+{%endsection:ishop_cart_email%}
+
+
+
+
+{%section:ishop_cart_object_email->%}
+<tr>
+<td><img width="50" height="50" src="{%F:@skuObject>params>image(E:imageTransform({"r":{"w":"50","h":"50"}}))%}"></td>
+	
+    <td>{%F:object>_main>Name%}, {%F:skuObject>params>color>_main>Name%} </td>
+    
+    <td>{%F:count%}</td>
+    <td>{%F:@price(E:numberFormat({"decimals":"2","decpoint":".","thousands":" "}))%} </td>
+    <td> {%F:@sum(E:numberFormat({"decimals":"2","decpoint":".","thousands":" "}))%} </td>	
+    
+</tr>
+
+
+
+{%endsection:ishop_cart_object_email%}
+
+
+
+{%section:ishop_order_submit_user_info_failed%}
+
+
+
+
+<div class="two_col_sections checkout_two_col">
+
+    <div class="row">
+
+
+                    Beställning ej accepterad - Inmatningsfel för användaren
+                        
+
+                    </div>
+                </div>
+            
+            
+
+
+{%endsection:ishop_order_submit_user_info_failed%}
+
+
+
+
+
+
+{%section:finishEditedOrder%}
+
+
+
+<h2>Подтверждение заказа №{%F:order>id%}</h2>
+
+
+
+
+   <table class="cart_info">
+                    <tr>
+                        <th>№</th>
+                        <th>Фото</th>
+                        <th>Наименование</th>
+                        <th>Цвет</th>
+                        <th>Цена</th>
+                        <th class="count_head">Кол-во</th>
+                        <th>Итого</th>
+                        
+                    </tr>
+          
+              {%each({F:objects},id,val)%}
+                    <tr>
+                         
+                    
+                         
+                         <td><p>{%F:@zz(E:calc({"eval":"{F:each.iterator}+1"}))%}.</p></td>
+          
+                       
+                       <td><a href="{%F:val>object>_main>link%}">
+                       
+                       
+                       {%if('{F:val>skuObject>params>image}')%}
+                        
+                                <img src="{%F:@val>skuObject>params>image(E:imageTransform({"r":{"w":"100","h":"100"}}))%}" alt=" "/>
+                       {%else%}
+                       
+                                <img src="{%F:@val>object>specials>picture(E:imageTransform({"r":{"w":"100","h":"100"}}))%}" alt=" "/>
+                       
+                       {%endif%}
+                       
+                       
+                       </a></td>
+                       
+                        <td class="descr">
+                    
+                        {%F:val>name%}
+                           
+                        {%if('{F:val>skuObject}')%}
+                        
+                            
+                            {%F:#objectProps(module.catalog.tpl:getAliasedParams({"object":"{F:val>object}","include":["specials.brand"],"clearEmpty":"true"}))%}
+                                
+                        {%endif%}
+
+                     <!--   <ul>
+                  
+                             {%each({F:objectProps},key,value)%}
+                             
+                                <li>  - {%F:value>alias%}:  {%if(is_array({F:value>value}))%}  {%F:value>value>_main>Name%}   {%else%}   {%F:value>value%} {%endif%}</li>                                
+                                {%endeach%}                                
+                            </ul>-->
+                            
+                       </td>
+                         
+
+                        <td class="colors">
+                            {%if('{F:val>skuObject>params>color>color>image}')%}
+                            <span>
+                                <img src="{%F:val>skuObject>params>color>color>image%}" />
+                            </span>
+                            <p>
+                                {%F:val>skuObject>params>color>color>code%}
+                            </p>
+                            {%endif%}
+                        
+                        </td>
+                        
+                       
+                               
+                               
+                        <td><p class="price">{%F:@v(module.ishop.tpl:transformToCurrencyFormat({"value":"{F:val>price}","toMain":"true"}))%} руб.</p></td>
+                        
+                        <td class="count">
+                            {%F:val>count%}
+                        </td>
+                        
+                        <td><p class="total_price">
+                        
+                        {%F:@vz(module.ishop.tpl:transformToCurrencyFormat({"value":"{F:val>priceSum}","toMain":"true"}))%} руб.</p></td>
+                        
+
+                        
+                    </tr>
+                    
+                               {%endeach%}
+                    
+                    
+               
+                </table>
+                
+                
+                
+                <div class="cart_details row">
+                    <div class="col-xs-7 comment">
+                        <div class="grey_bg ">
+                            <ul>
+                                <li>Тип доставки
+                                    <ul>
+                                        <li>{%F:order>delivery>Name%}</li>
+                                    </ul>
+                                </li>
+                                <li>Адрес доставки
+                                    <ul>
+                                        <li>г. {%F:order>city%}, ул. {%F:order>street%}, д. {%F:order>house%}, кв. {%F:order>room%}</li>
+                                    </ul>
+                                </li>
+                                <li>Личные данные покупателя
+                                    <ul>
+                                        <li> {%F:client>surname%} {%F:client>name%} {%F:client>lastname%}   , e-mail: {%F:client>email%} 
+                                        </li>
+                                    </ul>
+                                </li>
+                               
+                            </ul>
+                     
+                                             </div>
+                        
+                    </div>
+
+
+         
+                    <div class="col-xs-5 sum">
+                        <table>
+                            <tbody><tr>
+                                <td>Сумма заказа:</td>
+                                <td>{%F:@vz(module.ishop.tpl:transformToCurrencyFormat({"value":"{F:order>total_sum}","toMain":"true"}))%} руб.</td>
+                            </tr>
+                           {%if({F:order>discount_sum}>0)%}
+                            <tr>
+                                <td>Скидка:</td>
+                                <td>- {%F:@vza(module.ishop.tpl:transformToCurrencyFormat({"value":"{F:order>discount_sum}","toMain":"true"}))%} руб.</td>
+                            </tr>
+                            {%endif%}
+                            
+                            {%if({F:order>delivery_price}>0)%}
+                                <tr>
+                                    <td>Стоимость доставки:</td>
+                                    <td>{%F:@vzb(module.ishop.tpl:transformToCurrencyFormat({"value":"{F:order>delivery_price}","toMain":"true"}))%} руб.</td>
+                                </tr>
+                            
+                            {%endif%}
+                            
+                            <tr>
+                                <td>Итого к оплате:</td>
+                                <td>{%F:@vzz(module.ishop.tpl:transformToCurrencyFormat({"value":"{F:orderSums>orderTotalSum}","toMain":"true"}))%} руб.</td>
+                            </tr>
+                        </tbody></table>
+                        
+                        
+                         
+                    </div>
+              
+                </div>
+                
+                    
+                       <div class="decor_form checkout_form content">
+             
+                     <div class="col-xs-12">
+                                            <div class="radio_wrap payments">
+                                                <h4>Оплата</h4>
+                                                <form id="approveOrderFinished" action="{%F:submitFinishedOrderLink%}" method="POST">
+                                                
+                                                {%F:#paysystems(module.ishop.tpl:getPaysystemsList())%}
+                        
+                        
+                                                {%each({F:paysystems},k,v)%}
+                                                                                                
+                                                
+                                                    <div class="row">
+                                                        <input type="radio" name="paysystem" value="{%F:v>basic%}" {%if({F:each.first})%} checked {%endif%} class="radio_button" id="{%F:v>basic%}" >
+                                                        <label for="{%F:v>basic%}">{%F:v>params>Name%}</label>
+                                                    </div>
+                                                    
+                                                {%endeach%}
+                                              
+                                                
+                                               </form> 
+                                            </div>
+                                            
+    
+                     <div class="clear">                                            
+                                            <a href="#" class="approveOrderFinished red_button">подтвердить заказ</a>
+                                        </div>
+                        
+                    </div>
+                            
+                    </div>
+
+
+
+
+
+
+
+                                        
+</div>
+
+{%endsection:finishEditedOrder%}
+
+{%section:finishEditedOrderMailSubject%}
+
+ Данные о завершенном заказе.
+
+{%endsection:finishEditedOrderMailSubject%}
+
+
+{%section:finishEditedOrderMail%}
+
+                      <p>СПАСИБО ЗА ВАШ ЗАКАЗ на avex.by</p>     
+
+                        {%if('{F:order>paysystem}'=='erip')%}
+                        
+                            <p>Ваш номер заказа в cистеме «Расчет» (ЕРИП):<strong> {%F:order>paysystem_order_num%}</strong></p> 
+                        
+                        {%else%}
+                        
+                            <p>Ваш номер заказа:<strong> {%F:order>id%}</strong></p> 
+                        
+                        {%endif%}  
+
+{%endsection:finishEditedOrderMail%}
+
+
+{%section:finishEditedOrderSubmitOk%}
+
+      <div class="dotted_content">
+                    <div class="zakaz_priniat">
+                        <p class="red_title35">СПАСИБО ЗА ВАШ ЗАКАЗ!</p>     
+
+                        {%if('{F:order>paysystem}'=='erip')%}
+                        
+                            <p>Номер заказа в cистеме «Расчет» (ЕРИП):<strong> {%F:order>paysystem_order_num%}</strong></p> 
+                        
+                        {%else%}
+                        
+                            <p>Ваш номер заказа:<strong> {%F:order>id%}</strong></p> 
+                        
+                        {%endif%}                        
+                        
+                        {%F:paysystemHtml%}
+                        
+                        <a href="/" class="big_red_button">Продолжить покупки</a>
+                    </div>
+      </div>
+
+{%endsection:finishEditedOrderSubmitOk%}
+
+{%section:finishEditedOrderFail%}
+
+<p>Невозможно завершить данный заказ: заказ не существует либо уже подтвержден</p>
+
+{%endsection:finishEditedOrderFail%}
+
+
+{%section:orderEditedMailSubject%}
+AVEX: Заказ № {%F:orderData>id%}. Продолжить оформление.
+{%endsection:orderEditedMailSubject%}
+
+
+{%section:orderEditedMail%}
+
+Ваш заказ № {%F:orderData>id%} обработан,<br/>
+<br/>
+Сумма заказа: {%F:@orderData>total_sum(E:numberFormat({"decimals":"2","decpoint":".","thousands":" "}))%}<br/>
+
+{%if({F:orderData>discount_sum}>0)%}
+	Cумма скидки: {%F:@orderData>discount_sum(E:numberFormat({"decimals":"2","decpoint":".","thousands":" "}))%}<br/>
+{%endif%}
+
+{%if({F:orderData>delivery_price}>0)%}
+	Стоимость доставки: {%F:@orderData>delivery_price(E:numberFormat({"decimals":"2","decpoint":".","thousands":" "}))%}<br/><br/>
+{%endif%}
+
+Итого к оплате: <strong>{%F:@orderSums>orderTotalSum(E:numberFormat({"decimals":"2","decpoint":".","thousands":" "}))%} </strong><br/>
+<br/>
+Для продолжения оформления заказа пройдите по ссылке:
+ <a href="{%F:orderFinishLink%}">{%F:orderFinishLink%}</a>
+
+
+
+
+
+{%endsection:orderEditedMail%}

@@ -1,0 +1,34 @@
+{%section:fileFolderProperty%}
+
+
+<div class="form-group">
+    <label>{{alias}}</label>
+    <div class="input-group">
+        <input id="{{basic}}" name="{{basic}}" readonly class="form-control validate-selection text-sm"/>
+        <span class="input-group-btn">
+                                    <a class="fileManagerApplyButton btn btn-default" data-target="folder"> <i
+                                            class="fa fa-folder-open-o"></i></a>
+                                </span>
+        <span class="input-group-btn">
+                                    <a class="fileManagerClearInput btn btn-default"> <i class="fa fa-times"></i></a>                                                    
+                                </span>
+    </div>
+</div>
+
+{%endsection:fileFolderProperty%}
+
+
+{%section:fileFolderPropertyOptions%}
+<div class="form-group">
+
+
+    <div class="checkbox i-checks">
+        <label>
+            <input type="checkbox" id="chooseOnlyImages" name="chooseOnlyImage">
+            <i></i> {choose_only_images}</label>
+    </div>
+
+</div>
+
+
+{%endsection:fileFolderPropertyOptions%}
